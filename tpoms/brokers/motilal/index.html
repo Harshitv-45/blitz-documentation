@@ -1,0 +1,1487 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Blitz Trading Platform API, SDK and Broker Integration Documentation">
+      
+      
+        <meta name="author" content="Blitz">
+      
+      
+        <link rel="canonical" href="https://your-domain.com/tpoms/brokers/motilal/">
+      
+      
+        <link rel="prev" href="../zerodha/">
+      
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Motilal - Blitz Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#motilal-oswal-mofl-adapter-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Blitz Documentation" class="md-header__button md-logo" aria-label="Blitz Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blitz Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Motilal
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Blitz Documentation" class="md-nav__button md-logo" aria-label="Blitz Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/icon.png" alt="logo">
+
+    </a>
+    Blitz Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Trading APIs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Trading APIs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/trading/orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Orders
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/trading/trades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Trades
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Market Data APIs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Market Data APIs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/market-data/optionchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Option Chain
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/market-data/marketquote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Market Quote
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Blitz SDK
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Blitz SDK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    TPOMS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            TPOMS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blitz_order_request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Order Request
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Broker Integrations
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Broker Integrations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zerodha/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zerodha
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Motilal
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Motilal
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tpoms-mofl-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      TPOMS MOFL Connection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TPOMS MOFL Connection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connection-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection Details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Credentials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action" class="md-nav__link">
+    <span class="md-ellipsis">
+      Action
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Flow
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tpoms-mofl-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      TPOMS MOFL Connection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TPOMS MOFL Connection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connection-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection Details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Credentials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action" class="md-nav__link">
+    <span class="md-ellipsis">
+      Action
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Flow
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="motilal-oswal-mofl-adapter-documentation">Motilal Oswal (MOFL) Adapter Documentation<a class="headerlink" href="#motilal-oswal-mofl-adapter-documentation" title="Permanent link">&para;</a></h1>
+<p>This document explains how to connect <strong>Motilal Oswal (MOFL)</strong> with <strong>Blitz</strong> using the TPOMS MOFL adapter.</p>
+<hr />
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The MOFL adapter allows Blitz to place, modify, cancel orders and receive order updates using Motilal Oswal’s OMS APIs.</p>
+<hr />
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Before you begin, ensure that:</p>
+<ul>
+<li>You have an active <strong>Motilal Oswal trading account</strong></li>
+<li>API access is enabled for your account</li>
+<li>Your <strong>Client ID</strong>, <strong>Password</strong>, and <strong>API Key</strong> are issued by MOFL</li>
+<li>Your <strong>IP addresses</strong> are whitelisted with Motilal Oswal</li>
+</ul>
+<hr />
+<p><img alt="Motilal connection Page" src="../../../assets/Motilal/motilal_connect.png" /></p>
+<h2 id="tpoms-mofl-connection">TPOMS MOFL Connection<a class="headerlink" href="#tpoms-mofl-connection" title="Permanent link">&para;</a></h2>
+<h3 id="connection-details">Connection Details<a class="headerlink" href="#connection-details" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OMS Adapter</td>
+<td><code>MOFL</code></td>
+</tr>
+<tr>
+<td>Connection Type</td>
+<td>TPOMS</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>CONNECTED / DISCONNECTED</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="required-credentials">Required Credentials<a class="headerlink" href="#required-credentials" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client ID</td>
+<td>Motilal Oswal client code</td>
+<td><code>xyz</code></td>
+</tr>
+<tr>
+<td>Password</td>
+<td>Trading account password</td>
+<td><code>********</code></td>
+</tr>
+<tr>
+<td>API Key</td>
+<td>MOFL-issued API key</td>
+<td><code>xyz</code></td>
+</tr>
+<tr>
+<td>Date of Birth</td>
+<td>Account DOB (DD-MM-YYYY)</td>
+<td><code>20-09-1993</code></td>
+</tr>
+<tr>
+<td>Primary IP Address</td>
+<td>Whitelisted IP</td>
+<td><code>122.160.82.52</code></td>
+</tr>
+<tr>
+<td>Secondary IP Address</td>
+<td>Backup whitelisted IP</td>
+<td><code>122.160.82.52</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="action">Action<a class="headerlink" href="#action" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Connect</strong> — Establishes a session with MOFL OMS.</li>
+</ul>
+<hr />
+<h2 id="authentication-flow">Authentication Flow<a class="headerlink" href="#authentication-flow" title="Permanent link">&para;</a></h2>
+<ol>
+<li>User enters MOFL credentials in TPOMS UI</li>
+<li>Blitz sends authentication request to MOFL</li>
+<li>MOFL validates:</li>
+<li>Client ID</li>
+<li>Password</li>
+<li>API Key</li>
+<li>DOB</li>
+<li>IP address</li>
+<li>On success, session is established</li>
+<li>MOFL adapter status becomes <strong>CONNECTED</strong></li>
+</ol>
+<hr />
+<h1 id="blitz-mofl-conversion">Blitz → MOFL Conversion<a class="headerlink" href="#blitz-mofl-conversion" title="Permanent link">&para;</a></h1>
+<p>Blitz requests are published to the Redis channel and consumed by the <strong>MOFL adapter</strong>.</p>
+<hr />
+<h2 id="place-order">Place Order<a class="headerlink" href="#place-order" title="Permanent link">&para;</a></h2>
+<h3 id="blitz-request">Blitz Request<a class="headerlink" href="#blitz-request" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PLACE_ORDER&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MOFL&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;82681be6-577f-431e-ac97-5276a8d13405&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NEHA&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NEHA&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17376</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;SymbolName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXCEL&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeInstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXCEL&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ProductType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CNC&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Buy&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;TimeInForce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GFD&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;DisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;LimitPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.17</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;StopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3156574845</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;AlgoID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;AlgoCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;IsFictiveOrder&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;False&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The request is then processed with the to_motilal function which convert it to the motilal payload</p>
+<p><strong>Motilal Payload</strong> -&gt; Place Order</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;symboltoken&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17376</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;buyorsell&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ordertype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;producttype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DELIVERY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;quantityinlot&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;amoorder&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;N&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.17</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;triggerprice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderduration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3156574845&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>After calling the motilal API with the payload motilal send the response in the below format</p>
+<p><strong>Motilal Websocket Raw Response</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ordercategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DELIVERY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;clientid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;symboltoken&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17376</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXCEL EQ&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;series&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EQ&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;expirydate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;strikeprice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;optiontype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EQ&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000052711400&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderinitiatorid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ordertype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Limit&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderduration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;producttype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DELIVERY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderstatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CONFIRM&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;buyorsell&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;totalqtyremaining&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderqty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;qtytradedtoday&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;disclosedqty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.17</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;triggerprice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;entrydatetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;17-Feb-2026 12:41:06&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lastmodifiedtime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;17-Feb-2026 12:41:06&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;vendor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;uniqueorderid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1700005SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;goodtilldate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;algoid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;algocategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;averageprice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;totalqtytraded&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lotsize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3156574845&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h1 id="motilal-to-blitz-conversion">Motilal to Blitz Conversion<a class="headerlink" href="#motilal-to-blitz-conversion" title="Permanent link">&para;</a></h1>
+<p>The response is then processed and then converted to blitz format</p>
+<p><strong>Blitz Response</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NEHA&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3156574845</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000052711400&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17376</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Buy&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ProductType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CNC&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TimeInForce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GFD&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.17</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;New&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderAverageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CumulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderGeneratedDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;17-Feb-2026 12:41:06&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;17-Feb-2026 12:41:06&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastUpdateDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;17-Feb-2026 12:41:06&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CancelRejectReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastExecutionTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;17-Feb-2026 12:41:06&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="modify-order">Modify Order<a class="headerlink" href="#modify-order" title="Permanent link">&para;</a></h2>
+<p><strong>Blitz Request</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MODIFY_ORDER&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MOFL&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;82681be6-577f-431e-ac97-5276a8d13405&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NEHA&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NEHA&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17376</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;SymbolName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXCEL&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeInstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXCEL&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ModifiedProductType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CNC&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ModifiedOrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ModifiedTimeInForce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GFD&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ModifiedDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ModifiedOrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ModifiedLimitPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.18</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ModifiedStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;CummulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;LastOrderModifiedTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1771317855</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3156574888</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000070094631&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Motilal Payload</strong> -&gt; Modify Order</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;uniqueorderid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1700015SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;newordertype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;neworderduration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;newprice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.18</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;newtriggerprice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;newquantityinlot&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lastmodifiedtime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;17-Feb-2026 14:14:15&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;qtytradedtoday&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Motilal Websocket Raw Response (Order status is Open)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ordercategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DELIVERY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;clientid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;symboltoken&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17376</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXCEL EQ&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;series&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EQ&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;expirydate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;strikeprice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;optiontype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EQ&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000070094631&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderinitiatorid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ordertype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Limit&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderduration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;producttype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DELIVERY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderstatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CONFIRM&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;buyorsell&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;totalqtyremaining&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderqty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;qtytradedtoday&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;disclosedqty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.18</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;triggerprice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;entrydatetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;17-Feb-2026 14:14:15&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lastmodifiedtime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;17-Feb-2026 14:14:15&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;vendor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;uniqueorderid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1700015SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;goodtilldate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;algoid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;algocategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;averageprice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;totalqtytraded&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lotsize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3156574888&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h1 id="motilal-to-blitz-conversion_1">Motilal to Blitz Conversion<a class="headerlink" href="#motilal-to-blitz-conversion_1" title="Permanent link">&para;</a></h1>
+<p><strong>Blitz Response</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NEHA&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3156574888</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000070094631&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17376</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Buy&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ProductType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CNC&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TimeInForce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GFD&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Replaced&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderAverageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CumulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderGeneratedDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;17-Feb-2026 14:14:25&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;17-Feb-2026 14:14:25&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastUpdateDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;17-Feb-2026 14:14:25&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CancelRejectReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastExecutionTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;17-Feb-2026 14:14:25&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="cancel-order">Cancel Order<a class="headerlink" href="#cancel-order" title="Permanent link">&para;</a></h2>
+<p><strong>Blitz Request</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CANCEL_ORDER&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MOFL&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;82681be6-577f-431e-ac97-5276a8d13405&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NEHA&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NEHA&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17376</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;SymbolName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXCEL&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeInstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXCEL&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;CummulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;LastOrderModifiedTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1771473915</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3156574966</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000010027131&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Motilal Response</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ordercategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DELIVERY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;clientid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;symboltoken&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17376</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXCEL EQ&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;series&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EQ&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;expirydate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;strikeprice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;optiontype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EQ&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000010027131&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderinitiatorid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ordertype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Limit&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderduration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;producttype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DELIVERY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderstatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CANCEL&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;buyorsell&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;totalqtyremaining&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderqty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;qtytradedtoday&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;disclosedqty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.15</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;triggerprice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;entrydatetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;19-Feb-2026 09:35:23&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lastmodifiedtime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;19-Feb-2026 09:35:23&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;vendor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;uniqueorderid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1900001SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;goodtilldate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;algoid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;algocategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;averageprice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;totalqtytraded&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lotsize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3156574966&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Blitz Response</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NEHA&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3156574966</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000010027131&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17376</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Buy&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ProductType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CNC&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TimeInForce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GFD&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.15</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cancelled&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderAverageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CumulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderGeneratedDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;19-Feb-2026 09:35:23&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;19-Feb-2026 09:35:23&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastUpdateDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;19-Feb-2026 09:35:23&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CancelRejectReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastExecutionTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;19-Feb-2026 09:35:23&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © Blitz
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.tracking", "navigation.top", "navigation.instant", "toc.follow", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
