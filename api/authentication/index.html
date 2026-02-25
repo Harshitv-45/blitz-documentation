@@ -12,13 +12,13 @@
         <meta name="author" content="Blitz">
       
       
-        <link rel="canonical" href="https://your-domain.com/tpoms/overview/">
+        <link rel="canonical" href="https://your-domain.com/api/authentication/">
       
       
-        <link rel="prev" href="../../sdk/sdk/">
+        <link rel="prev" href="../overview/">
       
       
-        <link rel="next" href="../blitz_order_request/">
+        <link rel="next" href="../trading/orders/">
       
       
       <link rel="icon" href="../../assets/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Overview - Blitz Documentation</title>
+        <title>Authentication - Blitz Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#blitz-broker-adapter-documentation" class="md-skip">
+        <a href="#authentication-api" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Authentication
             
           </span>
         </div>
@@ -243,8 +243,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -255,13 +257,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -277,7 +277,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             API Reference
@@ -291,7 +291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -311,10 +311,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../api/authentication/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Authentication
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -325,6 +347,152 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curl-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      cURL Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Body
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-field-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Field Descriptions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Success Response
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-field-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response Field Descriptions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Response
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invalid-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invalid Credentials
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-access-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Access Token
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -379,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/trading/orders/" class="md-nav__link">
+      <a href="../trading/orders/" class="md-nav__link">
         
   
   
@@ -402,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/trading/trades/" class="md-nav__link">
+      <a href="../trading/trades/" class="md-nav__link">
         
   
   
@@ -475,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/market-data/optionchain/" class="md-nav__link">
+      <a href="../market-data/optionchain/" class="md-nav__link">
         
   
   
@@ -498,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/market-data/marketquote/" class="md-nav__link">
+      <a href="../market-data/marketquote/" class="md-nav__link">
         
   
   
@@ -608,8 +776,6 @@
       
   
   
-    
-  
   
   
     
@@ -622,11 +788,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -642,7 +810,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             TPOMS
@@ -653,19 +821,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../tpoms/overview/" class="md-nav__link">
         
   
   
@@ -676,7 +835,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -689,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blitz_order_request/" class="md-nav__link">
+      <a href="../../tpoms/blitz_order_request/" class="md-nav__link">
         
   
   
@@ -754,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../brokers/zerodha/" class="md-nav__link">
+      <a href="../../tpoms/brokers/zerodha/" class="md-nav__link">
         
   
   
@@ -777,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../brokers/motilal/" class="md-nav__link">
+      <a href="../../tpoms/brokers/motilal/" class="md-nav__link">
         
   
   
@@ -828,6 +986,140 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curl-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      cURL Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Body
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-field-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Field Descriptions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Success Response
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-field-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response Field Descriptions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Response
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invalid-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invalid Credentials
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-access-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Access Token
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -842,138 +1134,162 @@
 
 
 
-<h1 id="blitz-broker-adapter-documentation">Blitz Broker Adapter Documentation<a class="headerlink" href="#blitz-broker-adapter-documentation" title="Permanent link">&para;</a></h1>
-<p>Welcome to the Blitz Broker Adapter documentation.</p>
+<h1 id="authentication-api">Authentication API<a class="headerlink" href="#authentication-api" title="Permanent link">&para;</a></h1>
+<p>The <strong>Authentication API</strong> allows users to securely log in and obtain access to protected trading APIs.<br />
+Using this API, you can authenticate users and generate a session token for authorized requests.</p>
+<p>These endpoints let you <strong>authenticate users and manage access control</strong> securely.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Type</strong></th>
+<th><strong>Endpoint</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><a href="#user-login"><code>authentication/login</code></a></td>
+<td>Authenticate user and generate access token</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h1 id="adapter-architecture-structure">Adapter Architecture &amp; Structure<a class="headerlink" href="#adapter-architecture-structure" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The Adapter acts as a <strong>translation layer</strong> between Blitz and broker systems.</p>
-<p>It converts:</p>
-<ul>
-<li>Blitz requests → broker-specific API format</li>
-<li>Broker responses → standardized Blitz format</li>
-</ul>
-<p>This allows Blitz to work with multiple brokers using a unified interface.</p>
-<p>The adapter serves as a bridge between Blitz and external broker systems and ensures consistent communication.</p>
-<hr />
-<h2 id="adapter-responsibilities">Adapter Responsibilities<a class="headerlink" href="#adapter-responsibilities" title="Permanent link">&para;</a></h2>
-<p>The adapter is responsible for:</p>
-<ul>
-<li>Request validation</li>
-<li>Request transformation</li>
-<li>Broker API communication</li>
-<li>Response normalization</li>
-<li>Error handling</li>
-<li>Publishing responses back to Blitz</li>
-<li>Maintaining standardized message format</li>
-</ul>
-<p>The adapter must not contain trading or strategy logic.</p>
-<hr />
-<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>Blitz → Redis → Adapter → Broker API
-Broker → Adapter → Redis → Blitz
+<h2 id="user-login">Authentication<a class="headerlink" href="#user-login" title="Permanent link">&para;</a></h2>
+<p>Authenticate a user using valid credentials and generate an access token.</p>
+<h3 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>POST /v1/api/authentication/login
 </code></pre></div>
-<h3 id="flow-description">Flow Description<a class="headerlink" href="#flow-description" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Blitz publishes order request.</li>
-<li>Adapter consumes request from Redis.</li>
-<li>Adapter converts request to broker format.</li>
-<li>Broker processes order.</li>
-<li>Adapter receives broker response.</li>
-<li>Adapter converts response to Blitz format.</li>
-<li>Adapter publishes standardized response.</li>
-</ol>
+<h3 id="curl-example">cURL Example<a class="headerlink" href="#curl-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/authentication/login&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: */*&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">  &quot;userId&quot;: &quot;string&quot;,</span>
+<span class="s1">  &quot;password&quot;: &quot;string&quot;</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
 <hr />
-<h2 id="adapter-components">Adapter Components<a class="headerlink" href="#adapter-components" title="Permanent link">&para;</a></h2>
-<h3 id="1-request-listener">1. Request Listener<a class="headerlink" href="#1-request-listener" title="Permanent link">&para;</a></h3>
-<p>Subscribes to Redis channels and receives Blitz requests.</p>
-<p><strong>Responsibilities</strong></p>
+<h2 id="request-body">Request Body<a class="headerlink" href="#request-body" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="request-field-descriptions">Request Field Descriptions<a class="headerlink" href="#request-field-descriptions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Unique user identifier used for login</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>Password associated with the user account</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h2>
+<h3 id="success-response">Success Response<a class="headerlink" href="#success-response" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Request processed successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;accessToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbnRpdHlJZCI6IjliNGY5YSIsInVzZXJJZCI6IlBSQVNIQU5UIiwiaXBBZGRyZXNzIjoiMTcyLjE4LjAuMSIsInNlc3Npb25JZCI6ImI4YjA1ZjE2LWQ0MmMtNDM1NS05MWNiLTY1MTI0NWFiOWEyZiIsImRldmljZVR5cGUiOiJTREsiLCJodHRwOi8vc2NoZgvMDYvaWRlbnRpdHI&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;refreshToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9B1ja8YwHPZ8W8zZ5MAgRFeal1S39mI2V7KzsacLMrmmRp2NQhiiknsDQe3nMgR9po6QHkOH8pM53RSfKRUS3SoNRoy5wrYJHeZPMclRIJzDvtjyVqzUlR3blfitF3Qnuq0c0ceztxAJKoODLrCzLlJVMkz5ckGPPH0nG3HqYttvyPID6eWGs4yZKjHFVI1gUMjnzx97IcGmpJsxfoBQniU15MzLBr1cU0zeZw&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;requiresOtp&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;requireTotp&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="response-field-descriptions">Response Field Descriptions<a class="headerlink" href="#response-field-descriptions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Status of the request (<code>success</code> or <code>error</code>)</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>Informational message about the login result</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Contains authentication details</td>
+</tr>
+<tr>
+<td>accessToken</td>
+<td>string</td>
+<td>JWT or access token used for authenticated requests</td>
+</tr>
+<tr>
+<td>refreshToken</td>
+<td>string</td>
+<td>Token used to refresh access token</td>
+</tr>
+<tr>
+<td>requiresOtp</td>
+<td>boolean</td>
+<td>Indicates if OTP verification is required</td>
+</tr>
+<tr>
+<td>requireTotp</td>
+<td>boolean</td>
+<td>Indicates if TOTP verification is required</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="error-response">Error Response<a class="headerlink" href="#error-response" title="Permanent link">&para;</a></h2>
+<h3 id="invalid-credentials">Invalid Credentials<a class="headerlink" href="#invalid-credentials" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;invalid userId or password&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="using-the-access-token">Using the Access Token<a class="headerlink" href="#using-the-access-token" title="Permanent link">&para;</a></h2>
+<p>After successful authentication, include the token in the header of all protected API requests:</p>
+<div class="highlight"><pre><span></span><code>Authorization: Bearer &lt;token&gt;
+</code></pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/order/trades&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer &lt;token&gt;&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: */*&#39;</span>
+</code></pre></div>
+<hr />
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Message consumption</li>
-<li>Request validation</li>
-<li>Action routing</li>
-<li>Forward request to handler</li>
+<li>The token must be included in all secured endpoints.</li>
+<li>Tokens expire after the specified duration (<code>expiresIn</code>).</li>
+<li>Re-authentication is required once the token expires.</li>
+<li>Ensure credentials are transmitted securely over HTTPS in production environments.</li>
 </ul>
-<hr />
-<h3 id="2-request-mapper">2. Request Mapper<a class="headerlink" href="#2-request-mapper" title="Permanent link">&para;</a></h3>
-<p>Converts Blitz request fields into broker API fields.</p>
-<p><strong>Responsibilities</strong></p>
-<ul>
-<li>Field mapping</li>
-<li>Enum conversion</li>
-<li>Format transformation</li>
-<li>Payload construction</li>
-</ul>
-<hr />
-<h3 id="3-broker-client">3. Broker Client<a class="headerlink" href="#3-broker-client" title="Permanent link">&para;</a></h3>
-<p>Handles communication with broker APIs.</p>
-<p><strong>Responsibilities</strong></p>
-<ul>
-<li>Order placement</li>
-<li>Order modification</li>
-<li>Order cancellation</li>
-<li>Authentication handling</li>
-<li>API request execution</li>
-</ul>
-<hr />
-<h3 id="4-websocket-event-listener">4. WebSocket / Event Listener<a class="headerlink" href="#4-websocket-event-listener" title="Permanent link">&para;</a></h3>
-<p>Receives broker order updates and execution events.</p>
-<p><strong>Responsibilities</strong></p>
-<ul>
-<li>Subscribe to broker updates</li>
-<li>Receive execution events</li>
-<li>Forward raw responses to mapper</li>
-</ul>
-<hr />
-<h3 id="5-response-mapper">5. Response Mapper<a class="headerlink" href="#5-response-mapper" title="Permanent link">&para;</a></h3>
-<p>Converts broker responses into Blitz standardized response format.</p>
-<p><strong>Responsibilities</strong></p>
-<ul>
-<li>Field mapping</li>
-<li>Timestamp conversion</li>
-<li>Data validation</li>
-<li>Response construction</li>
-</ul>
-<hr />
-<h3 id="6-response-publisher">6. Response Publisher<a class="headerlink" href="#6-response-publisher" title="Permanent link">&para;</a></h3>
-<p>Publishes standardized responses back to Blitz.</p>
-<p><strong>Responsibilities</strong></p>
-<ul>
-<li>Publish response messages</li>
-<li>Ensure message structure consistency</li>
-<li>Deliver events to Redis channel</li>
-</ul>
-<hr />
-<h2 id="order-processing-flow">Order Processing Flow<a class="headerlink" href="#order-processing-flow" title="Permanent link">&para;</a></h2>
-<h3 id="place-order-flow">Place Order Flow<a class="headerlink" href="#place-order-flow" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Blitz publishes <code>PLACE_ORDER</code> request.</li>
-<li>Adapter validates request.</li>
-<li>Request Mapper converts request to broker format.</li>
-<li>Broker Client sends request.</li>
-<li>Broker returns response.</li>
-<li>Response Mapper converts response.</li>
-<li>Response Publisher publishes result.</li>
-</ol>
-<hr />
-<h3 id="order-update-flow">Order Update Flow<a class="headerlink" href="#order-update-flow" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Broker sends order update or execution event.</li>
-<li>Adapter receives update.</li>
-<li>Response Mapper converts update to Blitz format.</li>
-<li>Adapter publishes standardized response.</li>
-</ol>
-<hr />
-<h2 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h2>
-<p>The adapter must:</p>
-<ul>
-<li>Capture broker errors</li>
-<li>Handle failed API calls</li>
-<li>Normalize error responses</li>
-<li>Publish failure messages</li>
-<li>Maintain consistent response structure</li>
-</ul>
-<hr />
 
 
 

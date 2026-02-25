@@ -311,6 +311,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -326,10 +349,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -342,8 +365,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Trading APIs
           </label>
@@ -435,9 +458,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#field-descriptions" class="md-nav__link">
+  <a href="#field-descriptions-order-response" class="md-nav__link">
     <span class="md-ellipsis">
-      Field Descriptions
+      Field Descriptions (Order Response)
     </span>
   </a>
   
@@ -484,10 +507,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
             
   
   
@@ -500,8 +523,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             Market Data APIs
           </label>
@@ -872,9 +895,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#field-descriptions" class="md-nav__link">
+  <a href="#field-descriptions-order-response" class="md-nav__link">
     <span class="md-ellipsis">
-      Field Descriptions
+      Field Descriptions (Order Response)
     </span>
   </a>
   
@@ -925,67 +948,135 @@ Using this API, you can monitor executed orders, pending trades, and their execu
 <hr />
 <h2 id="fetching-trades"><strong>Trades</strong><a class="headerlink" href="#fetching-trades" title="Permanent link">&para;</a></h2>
 <p>Retrieve all trades currently recorded for a given client, entity, or strategy instance.</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/api/order/trades&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/api/order/trades&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: */*&#39;</span>
 </code></pre></div>
 <h4 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;entityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;163d2248-e81b-4cb3-9482-bb65e3e4ab3f&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;strategyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;STRAT123&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;strategyInstanceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INST001&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;strategyInstanceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Momentum_Strategy&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;strategyName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Momentum Trading&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;ivObjectName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY_FUT&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1010010000002885</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2885</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY24OCTFUT&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;instrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;blitzOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9001</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchangeOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EX123456&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;executionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXEC001&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACC001&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SIDD09&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;orderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;orderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;orderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Filled&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;orderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;orderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">22450.0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;orderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;orderTriggerPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;lastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;lastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">22450.0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;cumulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;leavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;tif&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;orderExpiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20251013</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;orderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;minimumQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;orderGeneratedDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1728796800</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;lastRequestDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1728797000</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1728797050</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;orderModificationCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;orderTradeCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;averageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">22450.0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;averageTradedValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1122500.0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;isFictiveOrder&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;rejectType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;rejectTypeReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;orderTag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StrategyOrder&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;ctclId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CTCL001&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;algoId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ALGO001&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;algoCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CAT001&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;clearingFirmId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLF001&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;panId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABCDE1234F&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;isOrderCompleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;userText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Auto-executed by Momentum Strategy&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;executionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;REGULAR&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;strategyTag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MOMENTUM&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;sequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10001</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;request processed successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;entityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9b4f9a76-f619-41a0-85bf-0d9ecff213c9&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;strategyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;36250ee3-ad08-4e09-862f-83deee8cdef9&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;strategyInstanceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;498cc797-3908-452a-91be-48157ebb9e71&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;strategyInstanceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM|IDEA&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;strategyName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manual Trading&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ivObjectName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000014366</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000014366</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;instrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;blitzOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">225121947920000011</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchangeOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3204124724133908&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;executionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3204124724134090&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PRASHANT&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Limit&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Buy&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Filled&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderTriggerPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;cumulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;leavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tif&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GFD&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderExpiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1772002820466</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;minimumQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderGeneratedDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1772002820466</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lastRequestDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1772002820466</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1772002820000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderModificationCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderTradeCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;averageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;averageTradedValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;isFictiveOrder&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;rejectType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;None&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;rejectTypeReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderTag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NormalOrder&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ctclId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123456781234567&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;algoId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12345&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;algoCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;clearingFirmId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;panId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AAAAC1234A&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;isOrderCompleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;userText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;executionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fill&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;strategyTag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;General&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;sequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;correlationOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;225121947920000011&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;productType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;sourceResponse&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;entityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9b4f9a76-f619-41a0-85bf-0d9ecff213c9&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;strategyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;36250ee3-ad08-4e09-862f-83deee8cdef9&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;strategyInstanceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;498cc797-3908-452a-91be-48157ebb9e71&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;strategyInstanceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM|IDEA&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;strategyName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manual Trading&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ivObjectName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000014366</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000014366</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;instrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;blitzOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">225121947920000010</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchangeOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3204124724133906&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;executionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3204124724134088&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PRASHANT&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Limit&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Buy&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Filled&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.49</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderTriggerPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.49</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;cumulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;leavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tif&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GFD&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderExpiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1772002647910</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;minimumQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderGeneratedDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1772002647910</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lastRequestDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1772002647910</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1772002647000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderModificationCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderTradeCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;averageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.49</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;averageTradedValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;isFictiveOrder&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;rejectType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;None&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;rejectTypeReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderTag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NormalOrder&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ctclId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123456781234567&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;algoId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12345&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;algoCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;clearingFirmId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;panId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AAAAC1234A&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;isOrderCompleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;userText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;executionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fill&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;strategyTag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;General&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;sequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">81</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;correlationOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;225121947920000010&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;productType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;sourceResponse&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="field-descriptions">Field Descriptions<a class="headerlink" href="#field-descriptions" title="Permanent link">&para;</a></h3>
+<h3 id="field-descriptions-order-response">Field Descriptions (Order Response)<a class="headerlink" href="#field-descriptions-order-response" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1003,17 +1094,17 @@ Using this API, you can monitor executed orders, pending trades, and their execu
 <tr>
 <td>entityId</td>
 <td>string</td>
-<td>ID of the entity (user) who placed the order</td>
+<td>Unique identifier of the entity (user/account) placing the order</td>
 </tr>
 <tr>
 <td>strategyId</td>
 <td>string</td>
-<td>Strategy associated with the order, if any</td>
+<td>Strategy ID associated with the order</td>
 </tr>
 <tr>
 <td>strategyInstanceId</td>
 <td>string</td>
-<td>Instance of the strategy executing the order</td>
+<td>Unique ID of the strategy instance executing the order</td>
 </tr>
 <tr>
 <td>strategyInstanceName</td>
@@ -1023,22 +1114,22 @@ Using this API, you can monitor executed orders, pending trades, and their execu
 <tr>
 <td>strategyName</td>
 <td>string</td>
-<td>Name of the strategy</td>
+<td>Name of the strategy used for trading</td>
 </tr>
 <tr>
 <td>ivObjectName</td>
 <td>string</td>
-<td>Name of the IV object linked to this order</td>
+<td>Name of the IV object or instrument reference</td>
 </tr>
 <tr>
 <td>instrumentId</td>
 <td>integer</td>
-<td>Internal ID of the instrument being traded</td>
+<td>Internal identifier of the instrument being traded</td>
 </tr>
 <tr>
 <td>exchangeSegment</td>
 <td>string</td>
-<td>Exchange segment (e.g., NSEFO, BSECM)</td>
+<td>Exchange segment where the order is placed (e.g., NSECM, NSEFO)</td>
 </tr>
 <tr>
 <td>exchangeInstrumentId</td>
@@ -1048,7 +1139,7 @@ Using this API, you can monitor executed orders, pending trades, and their execu
 <tr>
 <td>instrumentName</td>
 <td>string</td>
-<td>Symbol or name of the instrument</td>
+<td>Symbol or name of the trading instrument</td>
 </tr>
 <tr>
 <td>instrumentType</td>
@@ -1058,17 +1149,17 @@ Using this API, you can monitor executed orders, pending trades, and their execu
 <tr>
 <td>blitzOrderId</td>
 <td>integer</td>
-<td>Order ID in the OMS system</td>
+<td>Order ID generated by the OMS (Order Management System)</td>
 </tr>
 <tr>
 <td>exchangeOrderId</td>
 <td>string</td>
-<td>Exchange-assigned order ID</td>
+<td>Order ID assigned by the exchange</td>
 </tr>
 <tr>
 <td>executionId</td>
 <td>string</td>
-<td>Execution ID for trades generated by this order</td>
+<td>Unique execution ID for the trade</td>
 </tr>
 <tr>
 <td>account</td>
@@ -1078,27 +1169,27 @@ Using this API, you can monitor executed orders, pending trades, and their execu
 <tr>
 <td>clientId</td>
 <td>string</td>
-<td>Client ID who placed the order</td>
+<td>Client identifier placing the order</td>
 </tr>
 <tr>
 <td>orderType</td>
 <td>string</td>
-<td>Type of order (LIMIT, MARKET, SL, SL-M)</td>
+<td>Order type (Limit, Market, SL-M, SL)</td>
 </tr>
 <tr>
 <td>orderSide</td>
 <td>string</td>
-<td>Side of the order: Buy or Sell</td>
+<td>Direction of order: Buy or Sell</td>
 </tr>
 <tr>
 <td>orderStatus</td>
 <td>string</td>
-<td>Current status of the order (New, Cancelled, Filled)</td>
+<td>Current status of the order (New, Filled, Cancelled, etc.)</td>
 </tr>
 <tr>
 <td>orderQuantity</td>
 <td>number</td>
-<td>Quantity of the order</td>
+<td>Total quantity requested in the order</td>
 </tr>
 <tr>
 <td>orderPrice</td>
@@ -1108,7 +1199,7 @@ Using this API, you can monitor executed orders, pending trades, and their execu
 <tr>
 <td>orderStopPrice</td>
 <td>number</td>
-<td>Stop price, if applicable</td>
+<td>Stop price for stop orders</td>
 </tr>
 <tr>
 <td>orderTriggerPrice</td>
@@ -1118,37 +1209,37 @@ Using this API, you can monitor executed orders, pending trades, and their execu
 <tr>
 <td>lastTradedQuantity</td>
 <td>number</td>
-<td>Quantity executed in the last trade</td>
+<td>Quantity executed in the most recent trade</td>
 </tr>
 <tr>
 <td>lastTradedPrice</td>
 <td>number</td>
-<td>Price executed in the last trade</td>
+<td>Price at which last trade was executed</td>
 </tr>
 <tr>
 <td>cumulativeQuantity</td>
 <td>number</td>
-<td>Total quantity executed</td>
+<td>Total quantity executed so far</td>
 </tr>
 <tr>
 <td>leavesQuantity</td>
 <td>number</td>
-<td>Quantity remaining to be executed</td>
+<td>Remaining quantity yet to be executed</td>
 </tr>
 <tr>
 <td>tif</td>
 <td>string</td>
-<td>Time-in-force (GFD, IOC)</td>
+<td>Time-in-force instruction (GFD, IOC, etc.)</td>
 </tr>
 <tr>
 <td>orderExpiryDate</td>
 <td>integer</td>
-<td>Expiry date of the order</td>
+<td>Expiry timestamp of the order</td>
 </tr>
 <tr>
 <td>orderDisclosedQuantity</td>
 <td>number</td>
-<td>Disclosed quantity for iceberg orders</td>
+<td>Quantity disclosed to the market</td>
 </tr>
 <tr>
 <td>minimumQuantity</td>
@@ -1158,32 +1249,32 @@ Using this API, you can monitor executed orders, pending trades, and their execu
 <tr>
 <td>orderGeneratedDateTime</td>
 <td>integer</td>
-<td>Timestamp when order was generated</td>
+<td>Timestamp when the order was created</td>
 </tr>
 <tr>
 <td>lastRequestDateTime</td>
 <td>integer</td>
-<td>Timestamp of the last modification request</td>
+<td>Timestamp of the last order modification request</td>
 </tr>
 <tr>
 <td>exchangeTransactTime</td>
 <td>integer</td>
-<td>Exchange timestamp for the transaction</td>
+<td>Timestamp of exchange transaction</td>
 </tr>
 <tr>
 <td>orderModificationCount</td>
 <td>number</td>
-<td>Number of modifications made</td>
+<td>Number of times the order was modified</td>
 </tr>
 <tr>
 <td>orderTradeCount</td>
 <td>number</td>
-<td>Number of trades executed</td>
+<td>Number of trades executed for the order</td>
 </tr>
 <tr>
 <td>averageTradedPrice</td>
 <td>number</td>
-<td>Average price for executed trades</td>
+<td>Average price of executed trades</td>
 </tr>
 <tr>
 <td>averageTradedValue</td>
@@ -1193,12 +1284,12 @@ Using this API, you can monitor executed orders, pending trades, and their execu
 <tr>
 <td>isFictiveOrder</td>
 <td>boolean</td>
-<td>True if the order is simulated/fictive</td>
+<td>Indicates whether the order is simulated</td>
 </tr>
 <tr>
 <td>rejectType</td>
 <td>string</td>
-<td>Type of rejection, if any</td>
+<td>Type of rejection if order failed</td>
 </tr>
 <tr>
 <td>rejectTypeReason</td>
@@ -1208,27 +1299,27 @@ Using this API, you can monitor executed orders, pending trades, and their execu
 <tr>
 <td>orderTag</td>
 <td>string</td>
-<td>Optional tag for order categorization</td>
+<td>Optional tag assigned to the order</td>
 </tr>
 <tr>
 <td>ctclId</td>
 <td>string</td>
-<td>CTCL (Computer to Computer Link) ID</td>
+<td>CTCL (Computer to Computer Link) ID used for trading</td>
 </tr>
 <tr>
 <td>algoId</td>
 <td>string</td>
-<td>Algorithm ID if placed via algo</td>
+<td>Algorithm ID if order placed via algorithm</td>
 </tr>
 <tr>
 <td>algoCategoryId</td>
 <td>string</td>
-<td>Algorithm category ID</td>
+<td>Category ID of the trading algorithm</td>
 </tr>
 <tr>
 <td>clearingFirmId</td>
 <td>string</td>
-<td>Clearing firm ID</td>
+<td>Clearing firm identifier</td>
 </tr>
 <tr>
 <td>panId</td>
@@ -1238,27 +1329,42 @@ Using this API, you can monitor executed orders, pending trades, and their execu
 <tr>
 <td>isOrderCompleted</td>
 <td>boolean</td>
-<td>True if order is completed</td>
+<td>Indicates whether the order lifecycle is completed</td>
 </tr>
 <tr>
 <td>userText</td>
 <td>string</td>
-<td>Optional user notes</td>
+<td>Optional user-provided notes</td>
 </tr>
 <tr>
 <td>executionType</td>
 <td>string</td>
-<td>Execution type (New, PartialFill, Fill, Cancelled)</td>
+<td>Execution event type (New, PartialFill, Fill, Cancelled, etc.)</td>
 </tr>
 <tr>
 <td>strategyTag</td>
 <td>string</td>
-<td>Tag assigned to the strategy</td>
+<td>Tag associated with the strategy</td>
 </tr>
 <tr>
 <td>sequenceNumber</td>
 <td>number</td>
-<td>Sequence number of the order in the system</td>
+<td>Sequence number for order tracking</td>
+</tr>
+<tr>
+<td>correlationOrderId</td>
+<td>string</td>
+<td>Correlation ID used to track related orders</td>
+</tr>
+<tr>
+<td>productType</td>
+<td>string</td>
+<td>Product type (MIS, CNC, NRML, etc.)</td>
+</tr>
+<tr>
+<td>sourceResponse</td>
+<td>object/null</td>
+<td>Raw response from source system if available</td>
 </tr>
 </tbody>
 </table>
