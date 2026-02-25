@@ -21,7 +21,7 @@ This API helps traders analyze market sentiment, volatility, and strike-level ac
 | Header       | Value            | Required |
 | ------------ | ---------------- | -------- |
 | Content-Type | application/json | Yes      |
-| Accept       | _/_              | Yes      |
+| Accept       | `*/*`            | Yes      |
 
 ---
 

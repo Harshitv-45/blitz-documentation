@@ -9,7 +9,7 @@ These endpoints let you **retrieve, filter, and monitor trade executions** effic
 
 ---
 
-## ** Trades** {#fetching-trades}
+## **Trades** {#fetching-trades}
 
 Retrieve all trades currently recorded for a given client, entity, or strategy instance.
 

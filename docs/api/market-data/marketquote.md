@@ -19,7 +19,7 @@ The **Quote API** provides detailed market depth and quote-related information f
 | Header       | Value            | Required |
 | ------------ | ---------------- | -------- |
 | Content-Type | application/json | Yes      |
-| Accept       | _/_              | Yes      |
+| Accept       | `*/*`            | Yes      |
 
 ---
 
