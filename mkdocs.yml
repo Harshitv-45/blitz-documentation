@@ -65,6 +65,7 @@ nav:
           #- Last Trading Price: api/market-data/ltp.md
           - Option Chain: api/market-data/optionchain.md
           - Market Quote: api/market-data/marketquote.md
+          - Instruments: api/market-data/instruments.md
           #- Historical Data: api/market-data/historicaldata.md
 
   # ---------------------------------------------------

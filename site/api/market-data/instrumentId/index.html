@@ -12,13 +12,9 @@
         <meta name="author" content="Blitz">
       
       
-        <link rel="canonical" href="https://your-domain.com/api/market-data/optionchain/">
+        <link rel="canonical" href="https://your-domain.com/api/market-data/instrumentId/">
       
       
-        <link rel="prev" href="../../trading/trades/">
-      
-      
-        <link rel="next" href="../marketquote/">
       
       
       <link rel="icon" href="../../../assets/favicon.ico">
@@ -26,7 +22,7 @@
     
     
       
-        <title>Option Chain - Blitz Documentation</title>
+        <title>Instrument API - Blitz Documentation</title>
       
     
     
@@ -80,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#option-chain" class="md-skip">
+        <a href="#instrument-api" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Option Chain
+              Instrument API
             
           </span>
         </div>
@@ -243,8 +239,6 @@
       
   
   
-    
-  
   
   
     
@@ -257,11 +251,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -277,7 +273,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             API Reference
@@ -430,8 +426,6 @@
                 
   
   
-    
-  
   
   
     
@@ -441,11 +435,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -461,7 +457,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             Market Data APIs
@@ -472,32 +468,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Option Chain
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../optionchain/" class="md-nav__link">
         
   
   
@@ -508,71 +482,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#endpoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      Endpoint
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#headers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Headers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#successful-response-200-ok" class="md-nav__link">
-    <span class="md-ellipsis">
-      Successful Response (200 OK)
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -912,15 +821,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#fetch-instrument" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Instrument Details
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Instrument Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       Endpoint
@@ -928,29 +838,82 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#headers" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#curl-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Headers
+      cURL Example
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#successful-response-200-ok" class="md-nav__link">
+  <a href="#response" class="md-nav__link">
     <span class="md-ellipsis">
-      Successful Response (200 OK)
+      Response
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Success Response
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-field-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response Field Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Response Field Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-response-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Root Response Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrument-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instrument Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
     </span>
   </a>
   
@@ -972,80 +935,297 @@
 
 
 
-<h1 id="option-chain">Option Chain<a class="headerlink" href="#option-chain" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The <strong>Option Chain API</strong> provides the latest option chain data for a given symbol and expiry date. It returns detailed information about call and put options across multiple strike prices, including Greeks, implied volatility, and pricing data.</p>
-<p>This API helps traders analyze market sentiment, volatility, and strike-level activity.</p>
-<hr />
-<h2 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h2>
+<h1 id="instrument-api">Instrument API<a class="headerlink" href="#instrument-api" title="Permanent link">&para;</a></h1>
+<p>The <strong>Instrument API</strong> allows you to retrieve detailed information about a trading instrument using its instrument ID.</p>
+<p>Using this API, you can fetch instrument metadata such as symbol details, exchange information, price bands, tick size, lot size, and other trading parameters.</p>
+<p>These endpoints let you <strong>retrieve instrument details and metadata</strong> for trading and market analysis.</p>
 <table>
 <thead>
 <tr>
-<th>Method</th>
-<th>URL</th>
+<th><strong>Type</strong></th>
+<th><strong>Endpoint</strong></th>
+<th><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>GET</td>
-<td><code>http://uat.quantxpress.com/v1/api/optionChain</code></td>
+<td><a href="#fetch-instrument"><code>instruments/{id}</code></a></td>
+<td>Retrieve instrument details by ID</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="headers">Headers<a class="headerlink" href="#headers" title="Permanent link">&para;</a></h2>
+<h2 id="fetch-instrument">Instrument Details<a class="headerlink" href="#fetch-instrument" title="Permanent link">&para;</a></h2>
+<p>Retrieve detailed information for a specific instrument using its instrument ID.</p>
+<h3 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>GET /api/instruments/{id}
+</code></pre></div>
+<hr />
+<h3 id="curl-example">cURL Example<a class="headerlink" href="#curl-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/api/instruments/{instrumentId}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: */*&#39;</span>
+</code></pre></div>
+<hr />
+<h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h2>
+<h3 id="success-response">Success Response<a class="headerlink" href="#success-response" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;request processed successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000014366</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VODAFONE IDEA LIMITED&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Equity&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">14366</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;marketInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000014366</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;series&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EQ&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tickSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;isin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INE669E01016&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">12.23</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.01</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;multiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bvp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;priceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;priceNumerator&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;priceDenominator&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;freezeQty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;lotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;expiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;strikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;optionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;assetToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;underlyingInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;reserve1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;reserve2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;reserve3&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;reserve4&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;reserve5&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;reserve6&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;reserve7&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;reserve8&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="response-field-descriptions">Response Field Descriptions<a class="headerlink" href="#response-field-descriptions" title="Permanent link">&para;</a></h2>
+<h3 id="root-response-fields">Root Response Fields<a class="headerlink" href="#root-response-fields" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Header</th>
-<th>Value</th>
-<th>Required</th>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Content-Type</td>
-<td>application/json</td>
-<td>Yes</td>
+<td>status</td>
+<td>string</td>
+<td>Status of the request (<code>success</code> or <code>error</code>)</td>
 </tr>
 <tr>
-<td>Accept</td>
-<td><code>*/*</code></td>
-<td>Yes</td>
+<td>message</td>
+<td>string</td>
+<td>Response message</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Contains instrument details</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/optionChain&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: */*&#39;</span>
-</code></pre></div>
+<h3 id="instrument-fields">Instrument Fields<a class="headerlink" href="#instrument-fields" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrumentId</td>
+<td>integer</td>
+<td>Unique internal identifier of the instrument</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>string</td>
+<td>Exchange where instrument is traded (e.g., NSE, BSE)</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Trading symbol of the instrument</td>
+</tr>
+<tr>
+<td>ticker</td>
+<td>string</td>
+<td>Full company or instrument name</td>
+</tr>
+<tr>
+<td>exchangeSegment</td>
+<td>string</td>
+<td>Exchange segment (e.g., NSECM, NSEFO)</td>
+</tr>
+<tr>
+<td>instrumentType</td>
+<td>string</td>
+<td>Type of instrument (Equity, Futures, Options, etc.)</td>
+</tr>
+<tr>
+<td>instrumentName</td>
+<td>string</td>
+<td>Name of the instrument</td>
+</tr>
+<tr>
+<td>exchangeInstrumentId</td>
+<td>integer</td>
+<td>Instrument identifier assigned by exchange</td>
+</tr>
+<tr>
+<td>marketInstrumentId</td>
+<td>integer</td>
+<td>Market-wide instrument identifier</td>
+</tr>
+<tr>
+<td>series</td>
+<td>string</td>
+<td>Instrument series (e.g., EQ for equity)</td>
+</tr>
+<tr>
+<td>tickSize</td>
+<td>number</td>
+<td>Minimum price movement allowed</td>
+</tr>
+<tr>
+<td>isin</td>
+<td>string</td>
+<td>International Securities Identification Number</td>
+</tr>
+<tr>
+<td>priceBandHigh</td>
+<td>number</td>
+<td>Upper price band limit</td>
+</tr>
+<tr>
+<td>priceBandLow</td>
+<td>number</td>
+<td>Lower price band limit</td>
+</tr>
+<tr>
+<td>multiplier</td>
+<td>number</td>
+<td>Contract multiplier</td>
+</tr>
+<tr>
+<td>bvp</td>
+<td>number</td>
+<td>Base value point</td>
+</tr>
+<tr>
+<td>priceType</td>
+<td>string</td>
+<td>Price type configuration</td>
+</tr>
+<tr>
+<td>priceNumerator</td>
+<td>number</td>
+<td>Price calculation numerator</td>
+</tr>
+<tr>
+<td>priceDenominator</td>
+<td>number</td>
+<td>Price calculation denominator</td>
+</tr>
+<tr>
+<td>freezeQty</td>
+<td>number</td>
+<td>Maximum quantity allowed per order</td>
+</tr>
+<tr>
+<td>lotSize</td>
+<td>number</td>
+<td>Minimum tradable quantity</td>
+</tr>
+<tr>
+<td>expiryDate</td>
+<td>integer/null</td>
+<td>Expiry date (for derivatives)</td>
+</tr>
+<tr>
+<td>strikePrice</td>
+<td>number/null</td>
+<td>Strike price (for options)</td>
+</tr>
+<tr>
+<td>optionType</td>
+<td>string/null</td>
+<td>Option type (CE/PE)</td>
+</tr>
+<tr>
+<td>assetToken</td>
+<td>string/null</td>
+<td>Asset token reference</td>
+</tr>
+<tr>
+<td>underlyingInstrumentId</td>
+<td>integer/null</td>
+<td>Underlying instrument ID (for derivatives)</td>
+</tr>
+<tr>
+<td>open</td>
+<td>number</td>
+<td>Opening price</td>
+</tr>
+<tr>
+<td>high</td>
+<td>number</td>
+<td>Highest traded price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>number</td>
+<td>Lowest traded price</td>
+</tr>
+<tr>
+<td>close</td>
+<td>number</td>
+<td>Closing price</td>
+</tr>
+<tr>
+<td>ltp</td>
+<td>number</td>
+<td>Last traded price</td>
+</tr>
+<tr>
+<td>reserve1–reserve8</td>
+<td>string</td>
+<td>Reserved fields for future use</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="successful-response-200-ok">Successful Response (200 OK)<a class="headerlink" href="#successful-response-200-ok" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;request processed successfully&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1010010002000001</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BANKNIFTY&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1010010002000002</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FINNIFTY&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1010010002000030</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIDCPNIFTY&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1010010002000008</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Use instrument ID to fetch trading metadata.</li>
+<li>Derivative-specific fields like <code>expiryDate</code>, <code>strikePrice</code>, and <code>optionType</code> may be <code>null</code> for equities.</li>
+<li>Price band values define allowed trading range.</li>
+<li>Reserved fields are placeholders for future system extensions.</li>
+</ul>
 
 
 
