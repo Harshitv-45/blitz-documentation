@@ -84,7 +84,7 @@ Blitz request is published to the redis channel
   "Action": "PLACE_ORDER",
   "TPOmsName": "Zerodha",
   "UserId": "ABC123",
-  "UserName": "Harshit",
+  "UserName": "XYZ",
   "Data": {
     "Account": "Test123",
     "ExchangeClientID": "CLIENT_01",
@@ -275,7 +275,7 @@ The response is then processed and then converted to blitz format
   "Action": "MODIFY_ORDER",
   "TPOmsName": "Zerodha",
   "UserId": "ABC123",
-  "UserName": "Harshit",
+  "UserName": "XYZ",
   "Data": {
     "Account": "Test123",
     "ExchangeClientID": "CLIENT_01",
@@ -394,7 +394,7 @@ The response is then processed and then converted to blitz format
     "LastOrderModifiedTime": "2026-01-20 15:23:46",
     "BlitzAppOrderID": 4058284572,
     "ExchangeOrderID": "NSE_ORD_1234567",
-    "UserLoginName": "harshit"
+    "UserLoginName": "XYZ"
   }
 }
 ```
