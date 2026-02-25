@@ -54,6 +54,7 @@ nav:
 
   - API Reference:
       - Overview: api/overview.md
+      - Authentication: api/authentication.md
 
       - Trading APIs:
           - Orders: api/trading/orders.md
