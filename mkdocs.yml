@@ -59,6 +59,7 @@ nav:
       - Trading APIs:
           - Orders: api/trading/orders.md
           - Trades: api/trading/trades.md
+          - Signals: api/trading/signal.md
           #- Positions: api/trading/positions.md
 
       - Market Data APIs:
