@@ -1,45 +1,57 @@
 # Signals API Documentation
 
-## Overview
-
-The **Signals API** allows strategies or external systems to send actionable trading instructions to the Blitz OMS/Strategy.
-
+The **Signals API** allows strategies or external systems to send actionable trading instructions to the Blitz OMS/Strategy.  
 Using this API, you can broadcast **Start / Stop / Buy / Sell / Multi-instrument signals** between strategies or modules in real time.
 
 This API is useful for monitoring, routing, and executing strategy-level instructions across different modules.
 
-!!! note
+---
+
+<details>
+<summary><b>Tip</b></summary>
+
+<br>
+
 Signals are typically used to automate strategy communication and reduce manual order placement.
 
----
+</details>
 
-## Endpoint
+## Endpoints
 
-| Method | URL            | Description                                     |
-| ------ | -------------- | ----------------------------------------------- |
-| POST   | `/api/signals` | Send one or more signals to the strategy engine |
-
-!!! note
-Use the `Authorization` header with a valid token for authentication, just like other Blitz APIs.
+| Type | Endpoint                | Description                                     |
+| ---- | ----------------------- | ----------------------------------------------- |
+| POST | [signals](#post-signal) | Send one or more signals to the strategy engine |
 
 ---
+
+<details>
+<summary><b>Tip</b></summary>
+
+<br>
+
+Use the Authorization header with a valid token for authentication, just like other Blitz APIs.
+
+</details>
 
 ## Send Signals {#post-signal}
 
 Send an array of trading signals from one strategy or module to another.  
 Each signal contains **action**, **instruments**, **time**, and **routing information**.
 
-Signals are also published to the internal Redis channel `STRATEGYHOSTSERVICE`.
+Signals are also published to the internal **Redis channel `STRATEGYHOSTSERVICE`**.
 
-!!! note
-Signals are not persisted in a traditional database.  
- They are meant strictly for real-time strategy routing.
+<details>
+<summary><b>Note</b></summary>
+
+<br>
+
+Signals are not persisted in a traditional database — they are meant for real-time strategy routing.
+
+</details>
 
 ---
 
-## Examples
-
-### 1. One Signal – One Instrument
+## 1. One Signal - One Instrument
 
 ```json
 [
@@ -55,7 +67,7 @@ Signals are not persisted in a traditional database.
         "InstrumentName": "NIFTY16SEP2524700PE",
         "Action": "EnterLong",
         "Lot": "1",
-        "TimeStamp": "2025-06-24T12:57:00",
+        "TimeStamp": "24-06-2025 12:57:00",
         "InfoText": "Entry Signal"
       }
     ]
@@ -63,9 +75,7 @@ Signals are not persisted in a traditional database.
 ]
 ```
 
----
-
-### 2. One Signal – Multiple Instruments
+## 2. One Signal - Multiple Instruments
 
 ```json
 [
@@ -81,7 +91,7 @@ Signals are not persisted in a traditional database.
         "InstrumentName": "NIFTY29MAY2524600PE",
         "Action": "EnterLong",
         "Lot": "1",
-        "TimeStamp": "2025-06-24T12:57:00",
+        "TimeStamp": "24-06-2025 12:57:00",
         "InfoText": "Leg 1"
       },
       {
@@ -89,7 +99,7 @@ Signals are not persisted in a traditional database.
         "InstrumentName": "NIFTY29MAY2524650PE",
         "Action": "EnterLong",
         "Lot": "1",
-        "TimeStamp": "2025-06-24T12:57:05",
+        "TimeStamp": "24-06-2025 12:57:05",
         "InfoText": "Leg 2"
       }
     ]
@@ -97,9 +107,7 @@ Signals are not persisted in a traditional database.
 ]
 ```
 
----
-
-### 3. Multiple Signals – One Instrument Each
+## 3. Multiple Signals – One Instrument Each
 
 ```json
 [
@@ -115,7 +123,7 @@ Signals are not persisted in a traditional database.
         "InstrumentName": "NIFTY29MAY2524600PE",
         "Action": "EnterLong",
         "Lot": "1",
-        "TimeStamp": "2025-06-24T12:57:00",
+        "TimeStamp": "24-06-2025 12:57:00",
         "InfoText": "Signal 1"
       }
     ]
@@ -132,7 +140,7 @@ Signals are not persisted in a traditional database.
         "InstrumentName": "NIFTY29MAY2524650PE",
         "Action": "EnterShort",
         "Lot": "1",
-        "TimeStamp": "2025-06-24T12:58:00",
+        "TimeStamp": "24-06-2025 12:58:00",
         "InfoText": "Signal 2"
       }
     ]
@@ -140,9 +148,7 @@ Signals are not persisted in a traditional database.
 ]
 ```
 
----
-
-### 4. Multiple Signals – Multiple Instruments
+## 4. Multiple Signals – Multiple Instruments
 
 ```json
 [
@@ -158,7 +164,7 @@ Signals are not persisted in a traditional database.
         "InstrumentName": "NIFTY29MAY2524600PE",
         "Action": "EnterLong",
         "Lot": "1",
-        "TimeStamp": "2025-06-24T12:57:00",
+        "TimeStamp": "24-06-2025 12:57:00",
         "InfoText": "Signal A - Leg 1"
       },
       {
@@ -166,7 +172,7 @@ Signals are not persisted in a traditional database.
         "InstrumentName": "NIFTY29MAY2524650PE",
         "Action": "EnterLong",
         "Lot": "1",
-        "TimeStamp": "2025-06-24T12:57:05",
+        "TimeStamp": "24-06-2025 12:57:05",
         "InfoText": "Signal A - Leg 2"
       }
     ]
@@ -183,7 +189,7 @@ Signals are not persisted in a traditional database.
         "InstrumentName": "NIFTY29MAY2524700PE",
         "Action": "GoFlat",
         "Lot": "1",
-        "TimeStamp": "2025-06-24T12:58:00",
+        "TimeStamp": "24-06-2025 12:58:00",
         "InfoText": "Signal B - Exit"
       }
     ]
@@ -193,11 +199,12 @@ Signals are not persisted in a traditional database.
 
 ---
 
-## cURL Example
+## cURL
 
 ```bash
-curl -X POST "http://api.blitz.com/api/signals" \
-  -H "Accept: application/json" \
+curl -X POST \
+  "http://api.blitz.com/api/signals" \
+  -H "accept: application/json" \
   -H "Authorization: Bearer <TOKEN>" \
   -H "Content-Type: application/json" \
   -d '<YOUR_SIGNALS_PAYLOAD>'
@@ -213,45 +220,59 @@ curl -X POST "http://api.blitz.com/api/signals" \
 }
 ```
 
-!!! tip
-To debug signal flow, subscribe to the Redis channel `STRATEGYHOSTSERVICE` to monitor real-time messages.
+<details>
+<summary><b>Tip</b></summary>
+
+<br>
+
+If you want to debug, subscribe to SignalChannel in Redis to see incoming signals in real time.  
+Signals are published to Redis channel `STRATEGYHOSTSERVICE`.
+
+</details>
 
 ---
 
-# Field Descriptions
+## Field Descriptions
 
-## Signal Object
+### Signal Object
 
-| Field                 | Type   | Description                                      |
-| --------------------- | ------ | ------------------------------------------------ |
-| `SourceStrategy`      | string | Strategy sending the signal                      |
-| `DestinationStrategy` | string | Strategy that should receive the signal          |
-| `SourceSID`           | string | Unique strategy instance identifier              |
-| `InstanceRunningMode` | string | Mode: `Started`, `Stopped`, etc.                 |
-| `GlobalAction`        | string | High-level instruction: `Signal`, `GoFlat`, etc. |
-| `Instruments`         | array  | List of instrument-level actions                 |
+| Field                 | Type   | Description                             |
+| --------------------- | ------ | --------------------------------------- |
+| `sourceStrategy`      | string | Strategy sending the signal             |
+| `destinationStrategy` | string | Strategy that should receive the signal |
+| `sourceSID`           | string | Unique strategy instance identifier     |
+| `instanceRunningMode` | string | Mode: `Started`, `Stopped`, etc.        |
+| `globalAction`        | string | High-level instruction                  |
+| `instruments`         | array  | List of instrument-level actions        |
 
-- `InstanceRunningMode` tells the receiver strategy whether the sending strategy instance is running or stopped.
-- If `GlobalAction` is `GoFlat`, the strategy must close existing positions and avoid new entries until another `Signal` action is received.
+<details>
+<summary><b>Note</b></summary>
 
----
+<br>
 
-## Instrument Object
+- `InstanceRunningMode` tells the receiver strategy whether the sending strategy instance is actively running or stopped.
+- If `GlobalAction` is `GoFlat`, the strategy should not execute any trading logic other than closing existing positions. No fresh entries are allowed until another `Signal` action is received.
 
-| Field             | Type                  | Description                         |
-| ----------------- | --------------------- | ----------------------------------- |
-| `ExchangeSegment` | string                | NSECM / NSEFO / BSECM / BSEFO       |
-| `InstrumentName`  | string                | Name of the instrument              |
-| `Action`          | string                | `EnterLong`, `EnterShort`, `GoFlat` |
-| `Lot`             | string                | Lot size or quantity                |
-| `TimeStamp`       | string (ISO datetime) | Signal generation time              |
-| `InfoText`        | string                | Remarks or additional information   |
+</details>
 
 ---
 
-# Edge Cases & Error Handling
+### Instrument Object
 
-## No Signals Provided
+| Field             | Type                  | Description                           |
+| ----------------- | --------------------- | ------------------------------------- |
+| `exchangeSegment` | string                | NSECM / NSEFO / BSECM / BSEFO         |
+| `instrumentName`  | string                | Name of the instrument                |
+| `action`          | string                | `EnterLong` / `EnterShort` / `GoFlat` |
+| `lot`             | string                | Lot size or quantity                  |
+| `timeStamp`       | string (ISO datetime) | Signal generation time                |
+| `infoText`        | string                | Remarks or custom info                |
+
+---
+
+## Edge Cases & Error Handling
+
+### No Signals Provided
 
 ```json
 {
@@ -260,16 +281,45 @@ To debug signal flow, subscribe to the Redis channel `STRATEGYHOSTSERVICE` to mo
 }
 ```
 
-!!! note
-**Cause:** Payload array is empty (`[]`).  
- **Effect:** API rejects the request with `400 Bad Request`.
+<details>
+<summary><b>Cause</b></summary>
 
-!!! tip
-Always ensure the signals array contains at least one valid signal object before sending.
+<br>
+
+Triggered when the payload array is empty (`[]`).
+
+</details>
+
+<details>
+<summary><b>Effect</b></summary>
+
+<br>
+
+API rejects the request with a 400 Bad Request.
+
+</details>
+
+<details>
+<summary><b>Tip</b></summary>
+
+<br>
+
+Always ensure your signals array contains at least one valid signal object before sending.
+
+</details>
+
+<details>
+<summary><b>Note</b></summary>
+
+<br>
+
+Requests must include a valid, non-empty payload.
+
+</details>
 
 ---
 
-## Missing Required Fields in Signal Object
+### Missing Required Fields in Signal Object
 
 ```json
 {
@@ -288,5 +338,11 @@ Always ensure the signals array contains at least one valid signal object before
 }
 ```
 
-!!! tip
+<details>
+<summary><b>Tip</b></summary>
+
+<br>
+
 Validate each signal object before sending. Ensure all required fields are present.
+
+</details>
