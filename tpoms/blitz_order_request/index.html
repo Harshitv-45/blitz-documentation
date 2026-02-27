@@ -1175,6 +1175,96 @@
 <span class="p">}</span>
 </code></pre></div>
 <hr />
+<h1 id="drop-copy-trade-request">Drop Copy Trade Request<a class="headerlink" href="#drop-copy-trade-request" title="Permanent link">&para;</a></h1>
+<h2 id="action_3">Action<a class="headerlink" href="#action_3" title="Permanent link">&para;</a></h2>
+<p><code>DROP_COPY_TRADE</code></p>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>Requests real-time or latest trade execution updates from the broker.
+Drop copy trades provide a passive stream of executed trades without placing or modifying orders.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DROPCOPY_TRADES&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BROKER_NAME&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USER_ID&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="request-fields_1">Request Fields<a class="headerlink" href="#request-fields_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Action</td>
+<td>string</td>
+<td><code>DROPCOPY_TRADES</code></td>
+</tr>
+<tr>
+<td>TPOmsName</td>
+<td>string</td>
+<td>Target broker adapter</td>
+</tr>
+<tr>
+<td>UserId</td>
+<td>string</td>
+<td>Unique user identifier</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>string</td>
+<td>Reserved field (currently unused)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="drop-copy-trade-response">Drop Copy Trade Response<a class="headerlink" href="#drop-copy-trade-response" title="Permanent link">&para;</a></h1>
+<h2 id="action_4">Action<a class="headerlink" href="#action_4" title="Permanent link">&para;</a></h2>
+<p><code>DROPCOPY_INSTRUMENT_POSITION</code></p>
+<h2 id="structure_3">Structure<a class="headerlink" href="#structure_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DROPCOPY_INSTRUMENT_POSITION&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BROKER_NAME&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USER_ID&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="request-fields_2">Request Fields<a class="headerlink" href="#request-fields_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Action</td>
+<td>string</td>
+<td><code>DROPCOPY_INSTRUMENT_POSITION</code></td>
+</tr>
+<tr>
+<td>TPOmsName</td>
+<td>string</td>
+<td>Target broker adapter</td>
+</tr>
+<tr>
+<td>UserId</td>
+<td>string</td>
+<td>Unique user identifier</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>string</td>
+<td>Reserved field (currently unused)</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h1 id="response-structure">Response Structure<a class="headerlink" href="#response-structure" title="Permanent link">&para;</a></h1>
 <p>All broker responses must be converted into the Blitz standardized response format.</p>
 <h2 id="common-response-envelope">Common Response Envelope<a class="headerlink" href="#common-response-envelope" title="Permanent link">&para;</a></h2>
@@ -1219,7 +1309,7 @@
 </table>
 <hr />
 <h1 id="standard-order-response-orderlog">Standard Order Response (OrderLog)<a class="headerlink" href="#standard-order-response-orderlog" title="Permanent link">&para;</a></h1>
-<h2 id="structure_3">Structure<a class="headerlink" href="#structure_3" title="Permanent link">&para;</a></h2>
+<h2 id="structure_4">Structure<a class="headerlink" href="#structure_4" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACCOUNT_ID&quot;</span><span class="p">,</span>
