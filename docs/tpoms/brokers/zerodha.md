@@ -478,6 +478,176 @@ The response is then processed and then converted to blitz format
 }
 ```
 
+## Drop Copy Trade Request
+
+**Blitz Request**
+
+```json
+{
+  "action": "DROPCOPY_TRADES",
+  "tpOmsName": "Zerodha",
+  "user_id": "ABC123",
+  "Data": ""
+}
+```
+
+**Zerodha Response**
+
+```json
+{
+  "status": "success",
+  "data": [
+    {
+      "account_id": "RGZ539",
+      "trade_id": "206513893",
+      "order_id": "2026940545070718976",
+      "exchange": "NSE",
+      "tradingsymbol": "IDEA",
+      "instrument_token": 3677697,
+      "product": "MIS",
+      "average_price": 10.85,
+      "quantity": 1,
+      "exchange_order_id": "1100000067152039",
+      "transaction_type": "BUY",
+      "fill_timestamp": "2026-02-26 14:10:59",
+      "order_timestamp": "2026-02-26 14:10:59",
+      "exchange_timestamp": "2026-02-26 14:10:59"
+    }
+  ]
+}
+```
+
+## Response Fields
+
+### Root Fields
+
+| Field  | Type   | Description                           |
+| ------ | ------ | ------------------------------------- |
+| status | string | Request status (`success` or `error`) |
+| data   | array  | List of executed trades               |
+
+---
+
+### Trade Object Fields
+
+| Field              | Type   | Description                       |
+| ------------------ | ------ | --------------------------------- |
+| account_id         | string | Trading account identifier        |
+| trade_id           | string | Unique trade execution identifier |
+| order_id           | string | Broker order identifier           |
+| exchange           | string | Exchange name                     |
+| tradingsymbol      | string | Trading symbol                    |
+| instrument_token   | number | Instrument identifier             |
+| product            | string | Product type (`MIS`, `CNC`, etc.) |
+| average_price      | number | Average execution price           |
+| quantity           | number | Executed quantity                 |
+| exchange_order_id  | string | Exchange order reference          |
+| transaction_type   | string | `BUY` or `SELL`                   |
+| fill_timestamp     | string | Trade execution time              |
+| order_timestamp    | string | Order placement time              |
+| exchange_timestamp | string | Exchange processing time          |
+
+# Drop Copy Instrument Position Response
+
+## Description
+
+Represents instrument-wise position updates received from the broker.
+
+This response provides both:
+
+- **Day positions** → intraday activity
+- **Net positions** → overall position state
+
+Each position entry contains quantity, price, PnL, and trade statistics for a specific instrument.
+
+---
+
+## Response Structure
+
+```json
+{
+  "status": "success",
+  "data": {
+    "day": [
+      {
+        "tradingsymbol": "IDEA",
+        "exchange": "NSE",
+        "instrument_token": 3677697,
+        "product": "MIS",
+        "segment": "CASH",
+        "quantity": 0,
+        "overnight_quantity": 0,
+        "overnight_price": 0,
+        "overnight_value": 0,
+        "multiplier": 1,
+        "average_price": 0,
+        "close_price": 0,
+        "last_price": 10.84,
+        "value": 0.009999999999999787,
+        "pnl": -0.009999999999999787,
+        "m2m": -0.009999999999999787,
+        "unrealised": -0.009999999999999787,
+        "realised": 0,
+        "buy_quantity": 1,
+        "buy_price": 10.85,
+        "buy_value": 10.85,
+        "buy_m2m": 10.85,
+        "sell_quantity": 1,
+        "sell_price": 10.84,
+        "sell_value": 10.84,
+        "sell_m2m": 10.84,
+        "day_buy_quantity": 1,
+        "day_buy_price": 10.85,
+        "day_buy_value": 10.85,
+        "day_sell_quantity": 1,
+        "day_sell_price": 10.84,
+        "day_sell_value": 10.84,
+        "settlement": false
+      }
+    ],
+    "net": [
+      {
+        "tradingsymbol": "IDEA",
+        "exchange": "NSE",
+        "instrument_token": 3677697,
+        "product": "MIS",
+        "segment": "CASH",
+        "quantity": 0,
+        "overnight_quantity": 0,
+        "overnight_price": 0,
+        "overnight_value": 0,
+        "multiplier": 1,
+        "average_price": 0,
+        "close_price": 0,
+        "last_price": 10.84,
+        "value": 0.009999999999999787,
+        "pnl": -0.009999999999999787,
+        "m2m": -0.009999999999999787,
+        "unrealised": -0.009999999999999787,
+        "realised": 0,
+        "buy_quantity": 1,
+        "buy_price": 10.85,
+        "buy_value": 10.85,
+        "buy_m2m": 10.85,
+        "sell_quantity": 1,
+        "sell_price": 10.84,
+        "sell_value": 10.84,
+        "sell_m2m": 10.84,
+        "day_buy_quantity": 1,
+        "day_buy_price": 10.85,
+        "day_buy_value": 10.85,
+        "day_sell_quantity": 1,
+        "day_sell_price": 10.84,
+        "day_sell_value": 10.84,
+        "settlement": false
+      }
+    ]
+  }
+}
+```
+
+---
+
 # Rejected Order Scenarios
 
 This section describes failure responses returned when broker rejects an operation.

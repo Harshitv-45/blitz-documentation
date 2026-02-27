@@ -490,10 +490,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Send Signals">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-one-signal-one-instrument" class="md-nav__link">
     <span class="md-ellipsis">
       1. One Signal - One Instrument
@@ -501,17 +500,17 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#2-one-signal-multiple-instruments" class="md-nav__link">
     <span class="md-ellipsis">
-      2. One Signal- Multiple Instruments
+      2. One Signal - Multiple Instruments
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#3-multiple-signals-one-instrument-each" class="md-nav__link">
     <span class="md-ellipsis">
       3. Multiple Signals – One Instrument Each
@@ -519,17 +518,17 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#4multiple-signals-multiple-instruments" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#4-multiple-signals-multiple-instruments" class="md-nav__link">
     <span class="md-ellipsis">
-      4.Multiple Signals – Multiple Instruments
+      4. Multiple Signals – Multiple Instruments
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#curl" class="md-nav__link">
     <span class="md-ellipsis">
       cURL
@@ -537,18 +536,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#successful-response" class="md-nav__link">
     <span class="md-ellipsis">
       Successful Response
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1049,10 +1043,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Send Signals">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-one-signal-one-instrument" class="md-nav__link">
     <span class="md-ellipsis">
       1. One Signal - One Instrument
@@ -1060,17 +1053,17 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#2-one-signal-multiple-instruments" class="md-nav__link">
     <span class="md-ellipsis">
-      2. One Signal- Multiple Instruments
+      2. One Signal - Multiple Instruments
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#3-multiple-signals-one-instrument-each" class="md-nav__link">
     <span class="md-ellipsis">
       3. Multiple Signals – One Instrument Each
@@ -1078,17 +1071,17 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#4multiple-signals-multiple-instruments" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#4-multiple-signals-multiple-instruments" class="md-nav__link">
     <span class="md-ellipsis">
-      4.Multiple Signals – Multiple Instruments
+      4. Multiple Signals – Multiple Instruments
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#curl" class="md-nav__link">
     <span class="md-ellipsis">
       cURL
@@ -1096,18 +1089,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#successful-response" class="md-nav__link">
     <span class="md-ellipsis">
       Successful Response
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1194,13 +1182,19 @@
 
 
 <h1 id="signals-api-documentation">Signals API Documentation<a class="headerlink" href="#signals-api-documentation" title="Permanent link">&para;</a></h1>
-<p>The <strong>Signals API</strong> allows strategies or external systems to send actionable trading instructions to the Blitz OMS/Strategy.
+<p>The <strong>Signals API</strong> allows strategies or external systems to send actionable trading instructions to the Blitz OMS/Strategy.<br />
 Using this API, you can broadcast <strong>Start / Stop / Buy / Sell / Multi-instrument signals</strong> between strategies or modules in real time.</p>
 <p>This API is useful for monitoring, routing, and executing strategy-level instructions across different modules.</p>
 <hr />
-<blockquote>
-<p>Signals are typically used to automate strategy communication and reduce manual order placement.</p>
-</blockquote>
+<details>
+<summary><b>Tip</b></summary>
+
+<br>
+
+Signals are typically used to automate strategy communication and reduce manual order placement.
+
+</details>
+
 <h2 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1214,22 +1208,35 @@ Using this API, you can broadcast <strong>Start / Stop / Buy / Sell / Multi-inst
 <tr>
 <td>POST</td>
 <td><a href="#post-signal">signals</a></td>
-<td>Send one or more signals to the strategy engine.</td>
+<td>Send one or more signals to the strategy engine</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<blockquote>
-<p>Use the Authorization header with a valid token for authentication, just like other Blitz APIs.</p>
-</blockquote>
+<details>
+<summary><b>Tip</b></summary>
+
+<br>
+
+Use the Authorization header with a valid token for authentication, just like other Blitz APIs.
+
+</details>
+
 <h2 id="post-signal">Send Signals<a class="headerlink" href="#post-signal" title="Permanent link">&para;</a></h2>
-<p>Send an array of trading signals from one strategy or module to another.
-Each signal contains <strong>action</strong>, <strong>instruments</strong>, <strong>time</strong>, and <strong>routing information</strong>.
-Signals are also published to the internal <strong>Redis channel <code>STRATEGYHOSTSERVICE</code></strong>.</p>
-<blockquote>
-<p>Signals are not persisted in a traditional database—they are meant for real-time strategy routing.</p>
-</blockquote>
-<h3 id="1-one-signal-one-instrument">1. One Signal - One Instrument<a class="headerlink" href="#1-one-signal-one-instrument" title="Permanent link">&para;</a></h3>
+<p>Send an array of trading signals from one strategy or module to another.<br />
+Each signal contains <strong>action</strong>, <strong>instruments</strong>, <strong>time</strong>, and <strong>routing information</strong>.</p>
+<p>Signals are also published to the internal <strong>Redis channel <code>STRATEGYHOSTSERVICE</code></strong>.</p>
+<details>
+<summary><b>Note</b></summary>
+
+<br>
+
+Signals are not persisted in a traditional database — they are meant for real-time strategy routing.
+
+</details>
+
+<hr />
+<h2 id="1-one-signal-one-instrument">1. One Signal - One Instrument<a class="headerlink" href="#1-one-signal-one-instrument" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;SourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
@@ -1250,7 +1257,7 @@ Signals are also published to the internal <strong>Redis channel <code>STRATEGYH
 <span class="w">  </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
-<h3 id="2-one-signal-multiple-instruments">2. One Signal- Multiple Instruments<a class="headerlink" href="#2-one-signal-multiple-instruments" title="Permanent link">&para;</a></h3>
+<h2 id="2-one-signal-multiple-instruments">2. One Signal - Multiple Instruments<a class="headerlink" href="#2-one-signal-multiple-instruments" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;SourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
@@ -1279,7 +1286,7 @@ Signals are also published to the internal <strong>Redis channel <code>STRATEGYH
 <span class="w">  </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
-<h3 id="3-multiple-signals-one-instrument-each">3. Multiple Signals – One Instrument Each<a class="headerlink" href="#3-multiple-signals-one-instrument-each" title="Permanent link">&para;</a></h3>
+<h2 id="3-multiple-signals-one-instrument-each">3. Multiple Signals – One Instrument Each<a class="headerlink" href="#3-multiple-signals-one-instrument-each" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;SourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
@@ -1317,7 +1324,7 @@ Signals are also published to the internal <strong>Redis channel <code>STRATEGYH
 <span class="w">  </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
-<h3 id="4multiple-signals-multiple-instruments">4.Multiple Signals – Multiple Instruments<a class="headerlink" href="#4multiple-signals-multiple-instruments" title="Permanent link">&para;</a></h3>
+<h2 id="4-multiple-signals-multiple-instruments">4. Multiple Signals – Multiple Instruments<a class="headerlink" href="#4-multiple-signals-multiple-instruments" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;SourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
@@ -1363,7 +1370,8 @@ Signals are also published to the internal <strong>Redis channel <code>STRATEGYH
 <span class="w">  </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
-<h3 id="curl">cURL<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h3>
+<hr />
+<h2 id="curl">cURL<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s2">&quot;http://api.blitz.com/api/signals&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;accept: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -1371,16 +1379,22 @@ Signals are also published to the internal <strong>Redis channel <code>STRATEGYH
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;&lt;YOUR_SIGNALS_PAYLOAD&gt;&#39;</span>
 </code></pre></div>
-<h3 id="successful-response">Successful Response<a class="headerlink" href="#successful-response" title="Permanent link">&para;</a></h3>
+<hr />
+<h2 id="successful-response">Successful Response<a class="headerlink" href="#successful-response" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Published&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p>If you want to debug, subscribe to SignalChannel in Redis to see incoming signals in real time.</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code>  * Signals are published to Redis channel `STRATEGYHOSTSERVICE`
-</code></pre></div>
+<details>
+<summary><b>Tip</b></summary>
+
+<br>
+
+If you want to debug, subscribe to SignalChannel in Redis to see incoming signals in real time.  
+Signals are published to Redis channel `STRATEGYHOSTSERVICE`.
+
+</details>
+
 <hr />
 <h2 id="field-descriptions">Field Descriptions<a class="headerlink" href="#field-descriptions" title="Permanent link">&para;</a></h2>
 <h3 id="signal-object">Signal Object<a class="headerlink" href="#signal-object" title="Permanent link">&para;</a></h3>
@@ -1416,7 +1430,7 @@ Signals are also published to the internal <strong>Redis channel <code>STRATEGYH
 <tr>
 <td><code>globalAction</code></td>
 <td>string</td>
-<td>High-level instruction: <code>Signal</code>, <code>GoFlat</code>, etc.</td>
+<td>High-level instruction</td>
 </tr>
 <tr>
 <td><code>instruments</code></td>
@@ -1425,11 +1439,17 @@ Signals are also published to the internal <strong>Redis channel <code>STRATEGYH
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-</div>
-<p>_ <code>InstanceRunningMode</code> tells the receiver strategy whether the sending strategy instance is actively running or stopped.
-_ If <code>GlobalAction</code> is <code>GoFlat</code>, the strategy not execute any trading logic other than closing existing positions. No fresh entries are allowed until another GlobalAction (<code>Signal</code>) is received.</p>
+<details>
+<summary><b>Note</b></summary>
+
+<br>
+
+- `InstanceRunningMode` tells the receiver strategy whether the sending strategy instance is actively running or stopped.
+- If `GlobalAction` is `GoFlat`, the strategy should not execute any trading logic other than closing existing positions. No fresh entries are allowed until another `Signal` action is received.
+
+</details>
+
+<hr />
 <h3 id="instrument-object">Instrument Object<a class="headerlink" href="#instrument-object" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1443,7 +1463,7 @@ _ If <code>GlobalAction</code> is <code>GoFlat</code>, the strategy not execute 
 <tr>
 <td><code>exchangeSegment</code></td>
 <td>string</td>
-<td>NSECM /NSEFO /BSECM /BSEFO</td>
+<td>NSECM / NSEFO / BSECM / BSEFO</td>
 </tr>
 <tr>
 <td><code>instrumentName</code></td>
@@ -1453,7 +1473,7 @@ _ If <code>GlobalAction</code> is <code>GoFlat</code>, the strategy not execute 
 <tr>
 <td><code>action</code></td>
 <td>string</td>
-<td><code>EnterLong</code>/ <code>EnterShort</code> / <code>GoFlat</code></td>
+<td><code>EnterLong</code> / <code>EnterShort</code> / <code>GoFlat</code></td>
 </tr>
 <tr>
 <td><code>lot</code></td>
@@ -1480,18 +1500,43 @@ _ If <code>GlobalAction</code> is <code>GoFlat</code>, the strategy not execute 
 <span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;No signals provided&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p>Cause
-Triggered when the payload array is empty ([]).
-Effect
-API rejects the request with a 400 Bad Request.</p>
-<p>Tip
-Always ensure your signals array contains at least one valid signal object before sending.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-</div>
-<p>Requests must include a valid, non-empty payload.</p>
-</blockquote>
+<details>
+<summary><b>Cause</b></summary>
+
+<br>
+
+Triggered when the payload array is empty (`[]`).
+
+</details>
+
+<details>
+<summary><b>Effect</b></summary>
+
+<br>
+
+API rejects the request with a 400 Bad Request.
+
+</details>
+
+<details>
+<summary><b>Tip</b></summary>
+
+<br>
+
+Always ensure your signals array contains at least one valid signal object before sending.
+
+</details>
+
+<details>
+<summary><b>Note</b></summary>
+
+<br>
+
+Requests must include a valid, non-empty payload.
+
+</details>
+
+<hr />
 <h3 id="missing-required-fields-in-signal-object">Missing Required Fields in Signal Object<a class="headerlink" href="#missing-required-fields-in-signal-object" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
@@ -1508,10 +1553,14 @@ Always ensure your signals array contains at least one valid signal object befor
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p>Tip
-Validate each signal object before sending. Ensure all required fields are present.</p>
-</blockquote>
+<details>
+<summary><b>Tip</b></summary>
+
+<br>
+
+Validate each signal object before sending. Ensure all required fields are present.
+
+</details>
 
 
 

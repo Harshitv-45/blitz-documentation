@@ -198,6 +198,65 @@ All order operations use a common request envelope.
 
 ---
 
+# Drop Copy Trade Request
+
+## Action
+
+`DROP_COPY_TRADE`
+
+## Description
+
+Requests real-time or latest trade execution updates from the broker.
+Drop copy trades provide a passive stream of executed trades without placing or modifying orders.
+
+```json
+{
+  "Action": "DROPCOPY_TRADES",
+  "TPOmsName": "BROKER_NAME",
+  "UserId": "USER_ID",
+  "Data": ""
+}
+```
+
+## Request Fields
+
+| Field     | Type   | Description                       |
+| --------- | ------ | --------------------------------- |
+| Action    | string | `DROPCOPY_TRADES`                 |
+| TPOmsName | string | Target broker adapter             |
+| UserId    | string | Unique user identifier            |
+| Data      | string | Reserved field (currently unused) |
+
+---
+
+# Drop Copy Trade Response
+
+## Action
+
+`DROPCOPY_INSTRUMENT_POSITION`
+
+## Structure
+
+```json
+{
+  "Action": "DROPCOPY_INSTRUMENT_POSITION",
+  "TPOmsName": "BROKER_NAME",
+  "UserId": "USER_ID",
+  "Data": ""
+}
+```
+
+## Request Fields
+
+| Field     | Type   | Description                       |
+| --------- | ------ | --------------------------------- |
+| Action    | string | `DROPCOPY_INSTRUMENT_POSITION`    |
+| TPOmsName | string | Target broker adapter             |
+| UserId    | string | Unique user identifier            |
+| Data      | string | Reserved field (currently unused) |
+
+---
+
 # Response Structure
 
 All broker responses must be converted into the Blitz standardized response format.
