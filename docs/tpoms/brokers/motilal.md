@@ -432,3 +432,98 @@ The response is then processed and then converted to blitz format
   "ExecutionID": ""
 }
 ```
+
+## Drop Copy Trade Request
+
+**Blitz Request**
+
+```json
+{
+  "action": "DROPCOPY_TRADES",
+  "tpOmsName": "Zerodha",
+  "user_id": "ABC123",
+  "Data": ""
+}
+```
+
+**Blitz Response**
+
+```json
+{
+  "MessageType": "DROPCOPY_TRADES",
+  "TPOmsName": "MOFL",
+  "UserId": "NEHA",
+  "Data": [
+    {
+      "SequenceNumber": 0,
+      "ExchangeOrderId": 1100000021991735,
+      "BOId": 0,
+      "OrderSide": "Buy",
+      "TransactionId": 202363840,
+      "InstrumentName": "EXCEL EQ",
+      "Ticker": "EXCEL EQ",
+      "Symbol": "EXCEL EQ",
+      "ClientId": "SSFS1207",
+      "CTCLId": "SSFS1207",
+      "Quantity": 1,
+      "Price": 1.14,
+      "TimeStamp": "25-Feb-2026 10:28:15"
+    }
+  ]
+}
+```
+
+# Drop Copy Instrument Position Response
+
+## Description
+
+Represents instrument-wise position updates received from the broker.
+
+This response provides both:
+
+- **Day positions** → intraday activity
+- **Net positions** → overall position state
+
+Each position entry contains quantity, price, PnL, and trade statistics for a specific instrument.
+
+---
+
+## Response Structure
+
+```json
+{
+  "MessageType": "DROPCOPY_INSTRUMENT_POSITION",
+  "TPOmsName": "MOFL",
+  "UserId": "NEHA",
+  "Data": [
+    {
+      "ClientId": "SSFS1207",
+      "InstrumentName": "EXCEL EQ",
+      "ShortPosition": 0,
+      "LongPosition": 1,
+      "NetPosition": 1,
+      "BuyValue": 1.14,
+      "SellValue": 0.0,
+      "NetValue": 1.14,
+      "Turnover": 1.14,
+      "LTP": 1.13,
+      "MTM": -0.010000000000000009,
+      "RealizedMTM": 0.0
+    },
+    {
+      "ClientId": "SSFS1207",
+      "InstrumentName": "HFCL EQ",
+      "ShortPosition": 0,
+      "LongPosition": 1000,
+      "NetPosition": 1000,
+      "BuyValue": 77342.5,
+      "SellValue": 0.0,
+      "NetValue": 77342.5,
+      "Turnover": 77342.5,
+      "LTP": 69.89,
+      "MTM": -7452.5,
+      "RealizedMTM": 0.0
+    }
+  ]
+}
+```

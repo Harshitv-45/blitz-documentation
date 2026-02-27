@@ -897,6 +897,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#drop-copy-trade-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drop Copy Trade Request
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response Fields
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Response Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Root Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trade-object-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trade Object Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1048,6 +1090,48 @@
       Cancel Order
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drop-copy-trade-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drop Copy Trade Request
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response Fields
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Response Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Root Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trade-object-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trade Object Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1660,6 +1744,236 @@
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+<h2 id="drop-copy-trade-request">Drop Copy Trade Request<a class="headerlink" href="#drop-copy-trade-request" title="Permanent link">&para;</a></h2>
+<p><strong>Blitz Request</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DROPCOPY_TRADES&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tpOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Zerodha Response</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;account_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RGZ539&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;trade_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;206513893&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026940545070718976&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tradingsymbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;instrument_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;average_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.85</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchange_order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000067152039&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;transaction_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;fill_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-26 14:10:59&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;order_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-26 14:10:59&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchange_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-26 14:10:59&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="response-fields">Response Fields<a class="headerlink" href="#response-fields" title="Permanent link">&para;</a></h2>
+<h3 id="root-fields">Root Fields<a class="headerlink" href="#root-fields" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Request status (<code>success</code> or <code>error</code>)</td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>List of executed trades</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="trade-object-fields">Trade Object Fields<a class="headerlink" href="#trade-object-fields" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td>string</td>
+<td>Trading account identifier</td>
+</tr>
+<tr>
+<td>trade_id</td>
+<td>string</td>
+<td>Unique trade execution identifier</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>string</td>
+<td>Broker order identifier</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>string</td>
+<td>Exchange name</td>
+</tr>
+<tr>
+<td>tradingsymbol</td>
+<td>string</td>
+<td>Trading symbol</td>
+</tr>
+<tr>
+<td>instrument_token</td>
+<td>number</td>
+<td>Instrument identifier</td>
+</tr>
+<tr>
+<td>product</td>
+<td>string</td>
+<td>Product type (<code>MIS</code>, <code>CNC</code>, etc.)</td>
+</tr>
+<tr>
+<td>average_price</td>
+<td>number</td>
+<td>Average execution price</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>number</td>
+<td>Executed quantity</td>
+</tr>
+<tr>
+<td>exchange_order_id</td>
+<td>string</td>
+<td>Exchange order reference</td>
+</tr>
+<tr>
+<td>transaction_type</td>
+<td>string</td>
+<td><code>BUY</code> or <code>SELL</code></td>
+</tr>
+<tr>
+<td>fill_timestamp</td>
+<td>string</td>
+<td>Trade execution time</td>
+</tr>
+<tr>
+<td>order_timestamp</td>
+<td>string</td>
+<td>Order placement time</td>
+</tr>
+<tr>
+<td>exchange_timestamp</td>
+<td>string</td>
+<td>Exchange processing time</td>
+</tr>
+</tbody>
+</table>
+<h1 id="drop-copy-instrument-position-response">Drop Copy Instrument Position Response<a class="headerlink" href="#drop-copy-instrument-position-response" title="Permanent link">&para;</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>Represents instrument-wise position updates received from the broker.</p>
+<p>This response provides both:</p>
+<ul>
+<li><strong>Day positions</strong> → intraday activity</li>
+<li><strong>Net positions</strong> → overall position state</li>
+</ul>
+<p>Each position entry contains quantity, price, PnL, and trade statistics for a specific instrument.</p>
+<hr />
+<h2 id="response-structure">Response Structure<a class="headerlink" href="#response-structure" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;day&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;tradingsymbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrument_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;segment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CASH&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;overnight_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;overnight_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;overnight_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;multiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;average_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;close_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;last_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.84</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.009999999999999787</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;pnl&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.009999999999999787</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;m2m&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.009999999999999787</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;unrealised&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.009999999999999787</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;realised&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;buy_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;buy_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.85</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;buy_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.85</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;buy_m2m&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.85</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;sell_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;sell_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.84</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;sell_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.84</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;sell_m2m&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.84</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;day_buy_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;day_buy_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.85</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;day_buy_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.85</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;day_sell_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;day_sell_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.84</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;day_sell_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.84</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;settlement&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;net&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;tradingsymbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrument_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;segment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CASH&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;overnight_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;overnight_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;overnight_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;multiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;average_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;close_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;last_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.84</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.009999999999999787</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;pnl&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.009999999999999787</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;m2m&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.009999999999999787</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;unrealised&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.009999999999999787</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;realised&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;buy_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;buy_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.85</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;buy_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.85</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;buy_m2m&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.85</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;sell_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;sell_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.84</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;sell_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.84</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;sell_m2m&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.84</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;day_buy_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;day_buy_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.85</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;day_buy_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.85</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;day_sell_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;day_sell_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.84</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;day_sell_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.84</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;settlement&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
 <h1 id="rejected-order-scenarios">Rejected Order Scenarios<a class="headerlink" href="#rejected-order-scenarios" title="Permanent link">&para;</a></h1>
 <p>This section describes failure responses returned when broker rejects an operation.</p>
 <h2 id="place-order-rejected">Place Order Rejected<a class="headerlink" href="#place-order-rejected" title="Permanent link">&para;</a></h2>

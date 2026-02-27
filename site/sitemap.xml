@@ -2,54 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://your-domain.com/</loc>
-         <lastmod>2026-02-26</lastmod>
+         <lastmod>2026-02-27</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/authentication/</loc>
-         <lastmod>2026-02-26</lastmod>
+         <lastmod>2026-02-27</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/overview/</loc>
-         <lastmod>2026-02-26</lastmod>
+         <lastmod>2026-02-27</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/market-data/instrumentId/</loc>
-         <lastmod>2026-02-26</lastmod>
+         <lastmod>2026-02-27</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/market-data/optionchain/</loc>
-         <lastmod>2026-02-26</lastmod>
+         <lastmod>2026-02-27</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/trading/orders/</loc>
-         <lastmod>2026-02-26</lastmod>
+         <lastmod>2026-02-27</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/trading/signal/</loc>
-         <lastmod>2026-02-26</lastmod>
+         <lastmod>2026-02-27</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/trading/trades/</loc>
-         <lastmod>2026-02-26</lastmod>
+         <lastmod>2026-02-27</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/sdk/sdk/</loc>
-         <lastmod>2026-02-26</lastmod>
+         <lastmod>2026-02-27</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/tpoms/blitz_order_request/</loc>
-         <lastmod>2026-02-26</lastmod>
+         <lastmod>2026-02-27</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/tpoms/overview/</loc>
-         <lastmod>2026-02-26</lastmod>
+         <lastmod>2026-02-27</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/tpoms/brokers/motilal/</loc>
-         <lastmod>2026-02-26</lastmod>
+         <lastmod>2026-02-27</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/tpoms/brokers/zerodha/</loc>
-         <lastmod>2026-02-26</lastmod>
+         <lastmod>2026-02-27</lastmod>
     </url>
 </urlset>

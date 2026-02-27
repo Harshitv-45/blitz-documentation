@@ -517,6 +517,33 @@ The response is then processed and then converted to blitz format
 }
 ```
 
+**Blitz Response**
+
+```json
+{
+  "MessageType": "DROPCOPY_TRADES",
+  "TPOmsName": "Zerodha",
+  "UserId": "ABC123",
+  "Data": [
+    {
+      "SequenceNumber": 0,
+      "ExchangeOrderId": "1100000067152039",
+      "BOId": 0,
+      "OrderSide": "BUY",
+      "TransactionId": "206513893",
+      "InstrumentName": "IDEA",
+      "Ticker": "IDEA",
+      "Symbol": "IDEA",
+      "ClientId": "RGZ539",
+      "CTCLId": "RGZ539",
+      "Quantity": 1,
+      "Price": 10.85,
+      "TimeStamp": "2026-02-26 14:10:59"
+    }
+  ]
+}
+```
+
 ## Response Fields
 
 ### Root Fields
@@ -643,6 +670,32 @@ Each position entry contains quantity, price, PnL, and trade statistics for a sp
       }
     ]
   }
+}
+```
+
+**Blitz Response**
+
+```json
+{
+  "MessageType": "DROPCOPY_INSTRUMENT_POSITION",
+  "TPOmsName": "Zerodha",
+  "UserId": "ABC123",
+  "Data": [
+    {
+      "ClientId": "RGZ539",
+      "InstrumentName": "IDEA",
+      "ShortPosition": 1,
+      "LongPosition": 1,
+      "NetPosition": 0,
+      "BuyValue": 10.85,
+      "SellValue": 10.84,
+      "NetValue": 0.009999999999999787,
+      "Turnover": 21.69,
+      "LTP": 10.84,
+      "MTM": -0.009999999999999787,
+      "RealizedMTM": 0
+    }
+  ]
 }
 ```
 
