@@ -1465,6 +1465,86 @@
 <span class="w">  </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
+<h2 id="drop-copy-trade-request">Drop Copy Trade Request<a class="headerlink" href="#drop-copy-trade-request" title="Permanent link">&para;</a></h2>
+<p><strong>Blitz Request</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DROPCOPY_TRADES&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tpOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Blitz Response</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;MessageType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DROPCOPY_TRADES&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MOFL&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NEHA&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ExchangeOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1100000021991735</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;BOId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Buy&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;TransactionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">202363840</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXCEL EQ&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXCEL EQ&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXCEL EQ&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ClientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;CTCLId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.14</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;TimeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;25-Feb-2026 10:28:15&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h1 id="drop-copy-instrument-position-response">Drop Copy Instrument Position Response<a class="headerlink" href="#drop-copy-instrument-position-response" title="Permanent link">&para;</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>Represents instrument-wise position updates received from the broker.</p>
+<p>This response provides both:</p>
+<ul>
+<li><strong>Day positions</strong> → intraday activity</li>
+<li><strong>Net positions</strong> → overall position state</li>
+</ul>
+<p>Each position entry contains quantity, price, PnL, and trade statistics for a specific instrument.</p>
+<hr />
+<h2 id="response-structure">Response Structure<a class="headerlink" href="#response-structure" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;MessageType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DROPCOPY_INSTRUMENT_POSITION&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MOFL&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NEHA&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;ClientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXCEL EQ&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ShortPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;LongPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;NetPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;BuyValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.14</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;SellValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;NetValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.14</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Turnover&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.14</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;LTP&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.13</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;MTM&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.010000000000000009</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;RealizedMTM&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;ClientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SSFS1207&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HFCL EQ&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ShortPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;LongPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;NetPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;BuyValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">77342.5</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;SellValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;NetValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">77342.5</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Turnover&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">77342.5</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;LTP&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">69.89</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;MTM&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-7452.5</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;RealizedMTM&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 

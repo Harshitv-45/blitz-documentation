@@ -574,7 +574,7 @@ The response is then processed and then converted to blitz format
 | order_timestamp    | string | Order placement time              |
 | exchange_timestamp | string | Exchange processing time          |
 
-# Drop Copy Instrument Position Response
+## Drop Copy Instrument Position Response
 
 ## Description
 
