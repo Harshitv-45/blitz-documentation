@@ -56,19 +56,19 @@ Signals are not persisted in a traditional database — they are meant for real-
 ```json
 [
   {
-    "SourceStrategy": "MLegX2",
-    "DestinationStrategy": "Nifty Ghost",
-    "SourceSID": "Test1",
-    "InstanceRunningMode": "Started",
-    "GlobalAction": "Signal",
-    "Instruments": [
+    "sourceStrategy": "MLegX2",
+    "destinationStrategy": "Nifty Ghost",
+    "sourceSID": "Test1",
+    "instanceRunningMode": "Started",
+    "globalAction": "Signal",
+    "instruments": [
       {
-        "ExchangeSegment": "NSEFO",
-        "InstrumentName": "NIFTY16SEP2524700PE",
-        "Action": "EnterLong",
-        "Lot": "1",
-        "TimeStamp": "24-06-2025 12:57:00",
-        "InfoText": "Entry Signal"
+        "exchangeSegment": "NSEFO",
+        "instrumentName": "NIFTY16SEP2524700PE",
+        "action": "EnterLong",
+        "lot": "1",
+        "timeStamp": "24-06-2025 12:57:00",
+        "infoText": "Entry Signal"
       }
     ]
   }
@@ -80,27 +80,27 @@ Signals are not persisted in a traditional database — they are meant for real-
 ```json
 [
   {
-    "SourceStrategy": "MLegX2",
-    "DestinationStrategy": "Calculus",
-    "SourceSID": "Test1",
-    "InstanceRunningMode": "Started",
-    "GlobalAction": "Signal",
-    "Instruments": [
+    "sourceStrategy": "MLegX2",
+    "destinationStrategy": "Calculus",
+    "sourceSID": "Test1",
+    "instanceRunningMode": "Started",
+    "globalAction": "Signal",
+    "instruments": [
       {
-        "ExchangeSegment": "NSEFO",
-        "InstrumentName": "NIFTY29MAY2524600PE",
-        "Action": "EnterLong",
-        "Lot": "1",
-        "TimeStamp": "24-06-2025 12:57:00",
-        "InfoText": "Leg 1"
+        "exchangeSegment": "NSEFO",
+        "instrumentName": "NIFTY29MAY2524600PE",
+        "action": "EnterLong",
+        "lot": "1",
+        "timeStamp": "24-06-2025 12:57:00",
+        "infoText": "Leg 1"
       },
       {
-        "ExchangeSegment": "NSEFO",
-        "InstrumentName": "NIFTY29MAY2524650PE",
-        "Action": "EnterLong",
-        "Lot": "1",
-        "TimeStamp": "24-06-2025 12:57:05",
-        "InfoText": "Leg 2"
+        "exchangeSegment": "NSEFO",
+        "instrumentName": "NIFTY29MAY2524650PE",
+        "action": "EnterLong",
+        "lot": "1",
+        "timeStamp": "24-06-2025 12:57:05",
+        "infoText": "Leg 2"
       }
     ]
   }
@@ -112,36 +112,36 @@ Signals are not persisted in a traditional database — they are meant for real-
 ```json
 [
   {
-    "SourceStrategy": "MLegX2",
-    "DestinationStrategy": "Calculus",
-    "SourceSID": "Test1",
-    "InstanceRunningMode": "Started",
-    "GlobalAction": "Signal",
-    "Instruments": [
+    "sourceStrategy": "MLegX2",
+    "destinationStrategy": "Calculus",
+    "sourceSID": "Test1",
+    "instanceRunningMode": "Started",
+    "globalAction": "Signal",
+    "instruments": [
       {
-        "ExchangeSegment": "NSEFO",
-        "InstrumentName": "NIFTY29MAY2524600PE",
-        "Action": "EnterLong",
-        "Lot": "1",
-        "TimeStamp": "24-06-2025 12:57:00",
-        "InfoText": "Signal 1"
+        "exchangeSegment": "NSEFO",
+        "instrumentName": "NIFTY29MAY2524600PE",
+        "action": "EnterLong",
+        "lot": "1",
+        "timeStamp": "24-06-2025 12:57:00",
+        "infoText": "Signal 1"
       }
     ]
   },
   {
-    "SourceStrategy": "MLegX2",
-    "DestinationStrategy": "Calculus",
-    "SourceSID": "Test1",
-    "InstanceRunningMode": "Started",
-    "GlobalAction": "Signal",
-    "Instruments": [
+    "sourceStrategy": "MLegX2",
+    "destinationStrategy": "Calculus",
+    "sourceSID": "Test1",
+    "instanceRunningMode": "Started",
+    "globalAction": "Signal",
+    "instruments": [
       {
-        "ExchangeSegment": "NSEFO",
-        "InstrumentName": "NIFTY29MAY2524650PE",
-        "Action": "EnterShort",
-        "Lot": "1",
-        "TimeStamp": "24-06-2025 12:58:00",
-        "InfoText": "Signal 2"
+        "exchangeSegment": "NSEFO",
+        "instrumentName": "NIFTY29MAY2524650PE",
+        "action": "EnterShort",
+        "lot": "1",
+        "timeStamp": "24-06-2025 12:58:00",
+        "infoText": "Signal 2"
       }
     ]
   }
@@ -153,44 +153,44 @@ Signals are not persisted in a traditional database — they are meant for real-
 ```json
 [
   {
-    "SourceStrategy": "MLegX2",
-    "DestinationStrategy": "Calculus",
-    "SourceSID": "Test1",
-    "InstanceRunningMode": "Started",
-    "GlobalAction": "Signal",
-    "Instruments": [
+    "sourceStrategy": "MLegX2",
+    "destinationStrategy": "Calculus",
+    "sourceSID": "Test1",
+    "instanceRunningMode": "Started",
+    "globalAction": "Signal",
+    "instruments": [
       {
-        "ExchangeSegment": "NSEFO",
-        "InstrumentName": "NIFTY29MAY2524600PE",
-        "Action": "EnterLong",
-        "Lot": "1",
-        "TimeStamp": "24-06-2025 12:57:00",
-        "InfoText": "Signal A - Leg 1"
+        "exchangeSegment": "NSEFO",
+        "instrumentName": "NIFTY29MAY2524600PE",
+        "action": "EnterLong",
+        "lot": "1",
+        "timeStamp": "24-06-2025 12:57:00",
+        "infoText": "Signal A - Leg 1"
       },
       {
-        "ExchangeSegment": "NSEFO",
-        "InstrumentName": "NIFTY29MAY2524650PE",
-        "Action": "EnterLong",
-        "Lot": "1",
-        "TimeStamp": "24-06-2025 12:57:05",
-        "InfoText": "Signal A - Leg 2"
+        "exchangeSegment": "NSEFO",
+        "instrumentName": "NIFTY29MAY2524650PE",
+        "action": "EnterLong",
+        "lot": "1",
+        "timeStamp": "24-06-2025 12:57:05",
+        "infoText": "Signal A - Leg 2"
       }
     ]
   },
   {
-    "SourceStrategy": "MLegX2",
-    "DestinationStrategy": "Calculus",
-    "SourceSID": "Test1",
-    "InstanceRunningMode": "Started",
-    "GlobalAction": "Signal",
-    "Instruments": [
+    "sourceStrategy": "MLegX2",
+    "destinationStrategy": "Calculus",
+    "sourceSID": "Test1",
+    "instanceRunningMode": "Started",
+    "globalAction": "Signal",
+    "instruments": [
       {
-        "ExchangeSegment": "NSEFO",
-        "InstrumentName": "NIFTY29MAY2524700PE",
-        "Action": "GoFlat",
-        "Lot": "1",
-        "TimeStamp": "24-06-2025 12:58:00",
-        "InfoText": "Signal B - Exit"
+        "exchangeSegment": "NSEFO",
+        "instrumentName": "NIFTY29MAY2524700PE",
+        "action": "GoFlat",
+        "lot": "1",
+        "timeStamp": "24-06-2025 12:58:00",
+        "infoText": "Signal B - Exit"
       }
     ]
   }
