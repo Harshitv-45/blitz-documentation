@@ -1239,19 +1239,19 @@ Signals are not persisted in a traditional database — they are meant for real-
 <h2 id="1-one-signal-one-instrument">1. One Signal - One Instrument<a class="headerlink" href="#1-one-signal-one-instrument" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;SourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;DestinationStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nifty Ghost&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;SourceSID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstanceRunningMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Started&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;GlobalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Instruments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="nt">&quot;sourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;destinationStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nifty Ghost&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sourceSID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instanceRunningMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Started&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;globalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instruments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY16SEP2524700PE&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnterLong&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;TimeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:57:00&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InfoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Entry Signal&quot;</span>
+<span class="w">        </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY16SEP2524700PE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnterLong&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;timeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:57:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;infoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Entry Signal&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">]</span>
 <span class="w">  </span><span class="p">}</span>
@@ -1260,27 +1260,27 @@ Signals are not persisted in a traditional database — they are meant for real-
 <h2 id="2-one-signal-multiple-instruments">2. One Signal - Multiple Instruments<a class="headerlink" href="#2-one-signal-multiple-instruments" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;SourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;DestinationStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Calculus&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;SourceSID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstanceRunningMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Started&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;GlobalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Instruments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="nt">&quot;sourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;destinationStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Calculus&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sourceSID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instanceRunningMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Started&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;globalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instruments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY29MAY2524600PE&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnterLong&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;TimeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:57:00&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InfoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Leg 1&quot;</span>
+<span class="w">        </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY29MAY2524600PE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnterLong&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;timeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:57:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;infoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Leg 1&quot;</span>
 <span class="w">      </span><span class="p">},</span>
 <span class="w">      </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY29MAY2524650PE&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnterLong&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;TimeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:57:05&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InfoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Leg 2&quot;</span>
+<span class="w">        </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY29MAY2524650PE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnterLong&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;timeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:57:05&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;infoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Leg 2&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">]</span>
 <span class="w">  </span><span class="p">}</span>
@@ -1289,36 +1289,36 @@ Signals are not persisted in a traditional database — they are meant for real-
 <h2 id="3-multiple-signals-one-instrument-each">3. Multiple Signals – One Instrument Each<a class="headerlink" href="#3-multiple-signals-one-instrument-each" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;SourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;DestinationStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Calculus&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;SourceSID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstanceRunningMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Started&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;GlobalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Instruments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="nt">&quot;sourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;destinationStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Calculus&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sourceSID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instanceRunningMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Started&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;globalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instruments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY29MAY2524600PE&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnterLong&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;TimeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:57:00&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InfoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal 1&quot;</span>
+<span class="w">        </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY29MAY2524600PE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnterLong&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;timeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:57:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;infoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal 1&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">]</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;SourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;DestinationStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Calculus&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;SourceSID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstanceRunningMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Started&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;GlobalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Instruments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="nt">&quot;sourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;destinationStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Calculus&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sourceSID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instanceRunningMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Started&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;globalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instruments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY29MAY2524650PE&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnterShort&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;TimeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:58:00&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InfoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal 2&quot;</span>
+<span class="w">        </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY29MAY2524650PE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnterShort&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;timeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:58:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;infoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal 2&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">]</span>
 <span class="w">  </span><span class="p">}</span>
@@ -1327,44 +1327,44 @@ Signals are not persisted in a traditional database — they are meant for real-
 <h2 id="4-multiple-signals-multiple-instruments">4. Multiple Signals – Multiple Instruments<a class="headerlink" href="#4-multiple-signals-multiple-instruments" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;SourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;DestinationStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Calculus&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;SourceSID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstanceRunningMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Started&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;GlobalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Instruments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="nt">&quot;sourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;destinationStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Calculus&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sourceSID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instanceRunningMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Started&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;globalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instruments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY29MAY2524600PE&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnterLong&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;TimeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:57:00&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InfoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal A - Leg 1&quot;</span>
+<span class="w">        </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY29MAY2524600PE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnterLong&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;timeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:57:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;infoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal A - Leg 1&quot;</span>
 <span class="w">      </span><span class="p">},</span>
 <span class="w">      </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY29MAY2524650PE&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnterLong&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;TimeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:57:05&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InfoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal A - Leg 2&quot;</span>
+<span class="w">        </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY29MAY2524650PE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnterLong&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;timeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:57:05&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;infoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal A - Leg 2&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">]</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;SourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;DestinationStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Calculus&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;SourceSID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstanceRunningMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Started&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;GlobalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Instruments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="nt">&quot;sourceStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MLegX2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;destinationStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Calculus&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sourceSID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instanceRunningMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Started&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;globalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instruments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY29MAY2524700PE&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GoFlat&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;Lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;TimeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:58:00&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;InfoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal B - Exit&quot;</span>
+<span class="w">        </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY29MAY2524700PE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GoFlat&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;timeStamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24-06-2025 12:58:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;infoText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal B - Exit&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">]</span>
 <span class="w">  </span><span class="p">}</span>
