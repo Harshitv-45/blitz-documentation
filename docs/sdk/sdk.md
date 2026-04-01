@@ -402,19 +402,15 @@ print("Historical Data Response:", hist_data)
 
 # Example Response:
 # {
-#   "instrument": "NSE|IRFC",
-#   "data": [
-#       {
-#       'open': 115.1, 
-#       'high': 116.7, 
-#       'low': 115.10000000000001, 
-#       'close': 115.6, 
-#       'volume': 8940523,
-#       'oi': 0, 
-#       'timestamp': '10-02-2026 09:15:00'
-#       },
-#       ...
-#   ]
+#       Historical Data Response: [{
+#                                    'open': 115.1, 
+#                                    'high': 116.7, 
+#                                    'low': 115.10000000000001, 
+#                                    'close': 115.6, 
+#                                    'volume': 8940523, 
+#                                    'oi': 0, 
+#                                    'timestamp': '10-02-2026 09:15:00'
+#                                    }]
 # }
 ```
 
