@@ -389,39 +389,30 @@ This method is useful for backtesting, analytics, and visualizing past market tr
 | Parameter    | Type     | Required | Description                                                             |
 | ------------ | -------- | -------- | ----------------------------------------------------------------------- |
 | `instrument` | `string` | Yes      | The instrument ID or symbol for which historical data is to be fetched. |
-| `from_date`  | `string` | Yes      | Start date of the historical data range in `YYYY-MM-DD` format.         |
-| `to_date`    | `string` | Yes      | End date of the historical data range in `YYYY-MM-DD` format.           |
+| `interval `  | `string` | Yes      | Interval of the instrument.                                              |
+
 
 **Example**
 
 ```python
-# Example: Fetch historical data for RELIANCE
-historical_data = client.get_historical_data(
-    instrument="NSECM|RELIANCE",
-    from_date="2025-09-01",
-    to_date="2025-09-15"
-)
+# Example: Fetch historical data for IRFC
+instrument = "IRFC"
+interval = "D"
+hist_data = client.get_historical_data(instrument, interval)
+print("Historical Data Response:", hist_data)
 
-print(historical_data)
 # Example Response:
 # {
-#   "instrument": "NSE|RELIANCE",
+#   "instrument": "NSE|IRFC",
 #   "data": [
 #       {
-#           "date": "2025-09-01",
-#           "open": 2450.0,
-#           "high": 2470.0,
-#           "low": 2435.0,
-#           "close": 2462.5,
-#           "volume": 1250000
-#       },
-#       {
-#           "date": "2025-09-02",
-#           "open": 2463.0,
-#           "high": 2488.0,
-#           "low": 2450.5,
-#           "close": 2475.8,
-#           "volume": 1178000
+#       'open': 115.1, 
+#       'high': 116.7, 
+#       'low': 115.10000000000001, 
+#       'close': 115.6, 
+#       'volume': 8940523,
+#       'oi': 0, 
+#       'timestamp': '10-02-2026 09:15:00'
 #       },
 #       ...
 #   ]
