@@ -375,8 +375,7 @@ def get_historical_data(self, instrument: str, from_date: str, to_date: str)
         """Fetch historical market data for a specific instrument and date range."""
         payload = {
             "instrument": instrument,
-            "from": from_date,
-            "to": to_date
+            "interval": time period of historical data
         }
         return self._send_request("/marketfeed/historicalData", payload)
     ```
@@ -389,7 +388,7 @@ This method is useful for backtesting, analytics, and visualizing past market tr
 | Parameter    | Type     | Required | Description                                                             |
 | ------------ | -------- | -------- | ----------------------------------------------------------------------- |
 | `instrument` | `string` | Yes      | The instrument ID or symbol for which historical data is to be fetched. |
-| `interval `  | `string` | Yes      | Interval of the instrument.                                              |
+| `interval `  | `string` | Yes      | Interval of the instrument. `D`, `1` ,`5`, `15` , `30` ,`60`            |
 
 
 **Example**
