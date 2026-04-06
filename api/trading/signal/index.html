@@ -18,7 +18,7 @@
         <link rel="prev" href="../trades/">
       
       
-        <link rel="next" href="../../market-data/optionchain/">
+        <link rel="next" href="../../market-data/instrumentId/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Signals - Blitz Documentation</title>
+        <title>Signals - Blitz</title>
       
     
     
@@ -98,7 +98,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Blitz Documentation" class="md-header__button md-logo" aria-label="Blitz Documentation" data-md-component="logo">
+    <a href="../../.." title="Blitz" class="md-header__button md-logo" aria-label="Blitz" data-md-component="logo">
       
   <img src="../../../assets/icon.png" alt="logo">
 
@@ -111,7 +111,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Blitz Documentation
+            Blitz
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -209,12 +209,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Blitz Documentation" class="md-nav__button md-logo" aria-label="Blitz Documentation" data-md-component="logo">
+    <a href="../../.." title="Blitz" class="md-nav__button md-logo" aria-label="Blitz" data-md-component="logo">
       
   <img src="../../../assets/icon.png" alt="logo">
 
     </a>
-    Blitz Documentation
+    Blitz
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -307,14 +307,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../../API_Structure/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
+    API Structure
   
 
     
@@ -741,7 +741,7 @@
   <span class="md-ellipsis">
     
   
-    Market Data APIs
+    Market Data
   
 
     
@@ -757,7 +757,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Market Data APIs
+    Market Data
   
 
           </label>
@@ -770,14 +770,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../market-data/optionchain/" class="md-nav__link">
+      <a href="../../market-data/instrumentId/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Option Chain
+    Instruments
   
 
     
@@ -798,14 +798,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../market-data/instrumentId/" class="md-nav__link">
+      <a href="../../market-data/optionchain/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Instruments
+    Option Chain
   
 
     
@@ -887,6 +887,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/about_sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1557,9 +1585,9 @@ Signals are not persisted in a traditional database — they are meant for real-
 <h2 id="curl">cURL<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s2">&quot;http://api.blitz.com/api/signals&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;accept: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;TOKEN&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;&lt;YOUR_SIGNALS_PAYLOAD&gt;&#39;</span>
 </code></pre></div>
 <hr />
