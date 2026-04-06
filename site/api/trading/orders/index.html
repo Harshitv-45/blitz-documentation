@@ -29,7 +29,7 @@
     
     
       
-        <title>Orders - Blitz Documentation</title>
+        <title>Orders - Blitz</title>
       
     
     
@@ -98,7 +98,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Blitz Documentation" class="md-header__button md-logo" aria-label="Blitz Documentation" data-md-component="logo">
+    <a href="../../.." title="Blitz" class="md-header__button md-logo" aria-label="Blitz" data-md-component="logo">
       
   <img src="../../../assets/icon.png" alt="logo">
 
@@ -111,7 +111,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Blitz Documentation
+            Blitz
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -209,12 +209,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Blitz Documentation" class="md-nav__button md-logo" aria-label="Blitz Documentation" data-md-component="logo">
+    <a href="../../.." title="Blitz" class="md-nav__button md-logo" aria-label="Blitz" data-md-component="logo">
       
   <img src="../../../assets/icon.png" alt="logo">
 
     </a>
-    Blitz Documentation
+    Blitz
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -307,14 +307,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../../API_Structure/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
+    API Structure
   
 
     
@@ -626,7 +626,7 @@
   <span class="md-ellipsis">
     
   
-    Market Data APIs
+    Market Data
   
 
     
@@ -642,7 +642,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Market Data APIs
+    Market Data
   
 
           </label>
@@ -655,14 +655,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../market-data/optionchain/" class="md-nav__link">
+      <a href="../../market-data/instrumentId/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Option Chain
+    Instruments
   
 
     
@@ -683,14 +683,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../market-data/instrumentId/" class="md-nav__link">
+      <a href="../../market-data/optionchain/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Instruments
+    Option Chain
   
 
     
@@ -772,6 +772,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/about_sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1486,7 +1514,9 @@
 <p>This endpoint provides a <strong>centralized view of your daily trading activity</strong>, making it easier to manage your portfolio and maintain control over all executed, pending, or cancelled trades.</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/order&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: */*&#39;</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
 </code></pre></div>
 <h4 id="response-structure">Response Structure<a class="headerlink" href="#response-structure" title="Permanent link">&para;</a></h4>
 <details>
@@ -1622,7 +1652,9 @@
 <p>Fetch the details of a specific order in the OMS system using its unique BlitzOrderId. This endpoint returns all order-related information including status, executed trades, and metadata.</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/api/order/orderHistory/blitzOrderId/{blitzOrderId}&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: */*&#39;</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
 </code></pre></div>
 <h4 id="response-structure_1">Response Structure<a class="headerlink" href="#response-structure_1" title="Permanent link">&para;</a></h4>
 <details>
@@ -1821,8 +1853,9 @@ When an order is submitted, the system validates it for trading session availabi
 </blockquote>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/api/order/placeOrder&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: */*&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">  &quot;quantity&quot;: 0,</span>
 <span class="s1">  &quot;product&quot;: &quot;NONE&quot;,</span>
@@ -1985,8 +2018,9 @@ Use this API to adjust open or pending orders before they are executed at the ex
 <hr />
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;PUT&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/api/order/modifyOrder&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: */*&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">  &quot;modifiedOrderQuantity&quot;: 0,</span>
 <span class="s1">  &quot;price&quot;: 0,</span>
@@ -2157,7 +2191,8 @@ Use this API to adjust open or pending orders before they are executed at the ex
 </table>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;DELETE&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/api/order/cancelOrder?InstrumentId=110010000012018&amp;ExchangeOrderId=3204164728325564&amp;StrategyInstanceId=30d04070-4e8f-4a69-8983-14c8ab474599&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: */*&#39;</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
 </code></pre></div>
 <h4 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>

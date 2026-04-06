@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://your-domain.com/api/market-data/instrumentId/">
       
       
-        <link rel="prev" href="../optionchain/">
+        <link rel="prev" href="../../trading/signal/">
       
       
-        <link rel="next" href="../../../sdk/sdk/">
+        <link rel="next" href="../optionchain/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Instruments - Blitz Documentation</title>
+        <title>Instruments - Blitz</title>
       
     
     
@@ -98,7 +98,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Blitz Documentation" class="md-header__button md-logo" aria-label="Blitz Documentation" data-md-component="logo">
+    <a href="../../.." title="Blitz" class="md-header__button md-logo" aria-label="Blitz" data-md-component="logo">
       
   <img src="../../../assets/icon.png" alt="logo">
 
@@ -111,7 +111,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Blitz Documentation
+            Blitz
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -209,12 +209,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Blitz Documentation" class="md-nav__button md-logo" aria-label="Blitz Documentation" data-md-component="logo">
+    <a href="../../.." title="Blitz" class="md-nav__button md-logo" aria-label="Blitz" data-md-component="logo">
       
   <img src="../../../assets/icon.png" alt="logo">
 
     </a>
-    Blitz Documentation
+    Blitz
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -307,14 +307,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../../API_Structure/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
+    API Structure
   
 
     
@@ -528,7 +528,7 @@
   <span class="md-ellipsis">
     
   
-    Market Data APIs
+    Market Data
   
 
     
@@ -544,39 +544,11 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Market Data APIs
+    Market Data
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../optionchain/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Option Chain
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -770,6 +742,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optionchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Option Chain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -838,6 +838,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/about_sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1296,7 +1324,9 @@
 <h3 id="curl-example">cURL Example<a class="headerlink" href="#curl-example" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/api/instruments/{instrumentId}&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: */*&#39;</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
 </code></pre></div>
 <hr />
 <h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h2>

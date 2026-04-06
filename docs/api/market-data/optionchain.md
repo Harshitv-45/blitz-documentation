@@ -1,6 +1,6 @@
-# Option Chain
+# **Option Chain**
 
-## Overview
+## **Overview**
 
 The **Option Chain API** provides the latest option chain data for a given symbol and expiry date. It returns detailed information about call and put options across multiple strike prices, including Greeks, implied volatility, and pricing data.
 

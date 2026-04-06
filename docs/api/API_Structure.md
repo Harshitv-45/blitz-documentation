@@ -1,10 +1,10 @@
-# API Structure
+# **API Structure**
 
 This section describes how to interact with the Blitz API, including request format, authentication, and response structure.
 
 ---
 
-## Base URL
+## **Base URL**
 
 All API requests should be made to:
 
@@ -12,7 +12,7 @@ All API requests should be made to:
 http://uat.quantxpress.com
 ```
 
-## Authentication
+## **Authentication**
 
 All endpoints require authentication using an access token.
 
@@ -24,7 +24,7 @@ Authorization: Bearer {access_Token}
 
 ---
 
-## HTTP Methods
+## **HTTP Methods**
 
 Blitz API uses standard HTTP methods:
 
@@ -36,7 +36,7 @@ Blitz API uses standard HTTP methods:
 |DELETE|	Remove resources|
 
 
-## Request Structure
+## **Request Structure**
 
 Use the following structure to make requests to the Blitz API:
 
@@ -49,7 +49,7 @@ curl -X [API_METHOD] \
   [REQUEST_PAYLOAD]
 ```
 
-## Response Structure
+## **Response Structure**
 All responses are returned in JSON format:
 
 ```json

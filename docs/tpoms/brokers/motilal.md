@@ -1,16 +1,16 @@
-# Motilal Oswal (MOFL) Adapter Documentation
+# **Motilal Oswal (MOFL) Adapter Documentation**
 
 This document explains how to connect **Motilal Oswal (MOFL)** with **Blitz** using the TPOMS MOFL adapter.
 
 ---
 
-## Overview
+## **Overview**
 
 The MOFL adapter allows Blitz to place, modify, cancel orders and receive order updates using Motilal Oswal’s OMS APIs.
 
 ---
 
-## Prerequisites
+## **Prerequisites**
 
 Before you begin, ensure that:
 
@@ -23,7 +23,7 @@ Before you begin, ensure that:
 
 ![Motilal connection Page](../../assets/Motilal/motilal_connect.png)
 
-## TPOMS MOFL Connection
+## **TPOMS MOFL Connection**
 
 ### Connection Details
 
@@ -52,7 +52,7 @@ Before you begin, ensure that:
 
 ---
 
-## Authentication Flow
+## **Authentication Flow**
 
 1. User enters MOFL credentials in TPOMS UI
 2. Blitz sends authentication request to MOFL
@@ -67,13 +67,13 @@ Before you begin, ensure that:
 
 ---
 
-# Blitz → MOFL Conversion
+# **Blitz → MOFL Conversion**
 
 Blitz requests are published to the Redis channel and consumed by the **MOFL adapter**.
 
 ---
 
-## Place Order
+## **Place Order**
 
 ### Blitz Request
 
@@ -169,7 +169,7 @@ After calling the motilal API with the payload motilal send the response in the 
 }
 ```
 
-# Motilal to Blitz Conversion
+# **Motilal to Blitz Conversion**
 
 The response is then processed and then converted to blitz format
 
@@ -207,7 +207,7 @@ The response is then processed and then converted to blitz format
 }
 ```
 
-## Modify Order
+## **Modify Order**
 
 **Blitz Request**
 
@@ -296,7 +296,7 @@ The response is then processed and then converted to blitz format
 }
 ```
 
-# Motilal to Blitz Conversion
+# **Motilal to Blitz Conversion**
 
 **Blitz Response**
 
@@ -332,7 +332,7 @@ The response is then processed and then converted to blitz format
 }
 ```
 
-## Cancel Order
+## **Cancel Order**
 
 **Blitz Request**
 
@@ -433,7 +433,7 @@ The response is then processed and then converted to blitz format
 }
 ```
 
-## Drop Copy Trade Request
+## **Drop Copy Trade Request**
 
 **Blitz Request**
 
@@ -473,9 +473,9 @@ The response is then processed and then converted to blitz format
 }
 ```
 
-# Drop Copy Instrument Position Response
+# **Drop Copy Instrument Position Response**
 
-## Description
+## **Description**
 
 Represents instrument-wise position updates received from the broker.
 
@@ -488,7 +488,7 @@ Each position entry contains quantity, price, PnL, and trade statistics for a sp
 
 ---
 
-## Response Structure
+## **Response Structure**
 
 ```json
 {

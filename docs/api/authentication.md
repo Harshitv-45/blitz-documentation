@@ -1,4 +1,4 @@
-# Authentication API
+# **Authentication API**
 
 The **Authentication API** allows users to securely log in and obtain access to protected trading APIs.  
 Using this API, you can authenticate users and generate a session token for authorized requests.
@@ -11,7 +11,7 @@ These endpoints let you **authenticate users and manage access control** securel
 
 ---
 
-## Authentication {#user-login}
+## **Authentication** {#user-login}
 
 Authenticate a user using valid credentials and generate an access token.
 
@@ -36,7 +36,7 @@ curl -X 'POST' \
 
 ---
 
-## Request Body
+## **Request Body**
 
 ```json
 {
@@ -47,7 +47,7 @@ curl -X 'POST' \
 
 ---
 
-## Request Field Descriptions
+## **Request Field Descriptions**
 
 | Field    | Type   | Description                               |
 | -------- | ------ | ----------------------------------------- |
@@ -56,7 +56,7 @@ curl -X 'POST' \
 
 ---
 
-## Response
+## **Response**
 
 ### Success Response
 
@@ -75,7 +75,7 @@ curl -X 'POST' \
 
 ---
 
-## Response Field Descriptions
+## **Response Field Descriptions**
 
 | Field        | Type    | Description                                         |
 | ------------ | ------- | --------------------------------------------------- |
@@ -89,7 +89,7 @@ curl -X 'POST' \
 
 ---
 
-## Error Response
+## **Error Response**
 
 ### Invalid Credentials
 
@@ -103,7 +103,7 @@ curl -X 'POST' \
 
 ---
 
-## Using the Access Token
+## **Using the Access Token**
 
 After successful authentication, include the token in the header of all protected API requests:
 

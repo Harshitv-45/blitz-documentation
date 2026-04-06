@@ -1,4 +1,4 @@
-# Instrument API
+# **Instrument API**
 
 The **Instrument API** allows you to retrieve detailed information about a trading instrument using its instrument ID.
 
@@ -12,7 +12,7 @@ These endpoints let you **retrieve instrument details and metadata** for trading
 
 ---
 
-## Instrument Details {#fetch-instrument}
+## **Instrument Details** {#fetch-instrument}
 
 Retrieve detailed information for a specific instrument using its instrument ID.
 
@@ -36,7 +36,7 @@ curl -X 'GET' \
 
 ---
 
-## Response
+## **Response**
 
 ### Success Response
 
@@ -90,7 +90,7 @@ curl -X 'GET' \
 
 ---
 
-## Response Field Descriptions
+## **Response Field Descriptions**
 
 ### Root Response Fields
 

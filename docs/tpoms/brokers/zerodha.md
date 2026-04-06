@@ -1,10 +1,10 @@
-# Zerodha Adapter Documentation
+# **Zerodha Adapter Documentation**
 
 This document explains how to connect **Zerodha** with **Blitz** using Zerodha’s Kite Connect APIs.
 
 ---
 
-## Prerequisites
+## **Prerequisites**
 
 Before you begin, ensure that:
 
@@ -13,7 +13,7 @@ Before you begin, ensure that:
 
 ---
 
-## Create a Zerodha Developer Account
+## **Create a Zerodha Developer Account**
 
 1. Visit the Zerodha developer portal: [Zerodha Developer Portal](https://developers.kite.trade/signup)
 
@@ -29,7 +29,7 @@ Before you begin, ensure that:
 
 ---
 
-## Get API Credentials
+## **Get API Credentials**
 
 After creating the app, Zerodha will provide:
 
@@ -41,7 +41,7 @@ After creating the app, Zerodha will provide:
 
 ---
 
-## Generate TOTP Secret
+## **Generate TOTP Secret**
 
 Login to the zerodha dashboard using the link [Zerodha Login](https://kite.zerodha.com/)
 
@@ -56,7 +56,7 @@ Login to the zerodha dashboard using the link [Zerodha Login](https://kite.zerod
 
 ---
 
-## Fill all the credentials in the TPOMS
+## **Fill all the credentials in the TPOMS**
 
 After successfully generating all the credentials like
 
@@ -71,11 +71,11 @@ Click the Connect button and you are connected
 
 ---
 
-## Blitz to Zerodha Conversion
+## **Blitz to Zerodha Conversion**
 
 Blitz request is published to the redis channel
 
-## Place Order
+## **Place Order**
 
 **Blitz Request**
 
@@ -266,7 +266,7 @@ The response is then processed and then converted to blitz format
 | exchange_timestamp        | ExchangeTransactTime    |
 | exchange_update_timestamp | LastUpdateDateTime      |
 
-## Modify Order
+## **Modify Order**
 
 **Blitz Request**
 
@@ -373,7 +373,7 @@ The response is then processed and then converted to blitz format
 }
 ```
 
-## Cancel Order
+## **Cancel Order**
 
 **Blitz Request**
 
@@ -478,7 +478,7 @@ The response is then processed and then converted to blitz format
 }
 ```
 
-## Drop Copy Trade Request
+## **Drop Copy Trade Request**
 
 **Blitz Request**
 
@@ -544,7 +544,7 @@ The response is then processed and then converted to blitz format
 }
 ```
 
-## Response Fields
+## **Response Fields**
 
 ### Root Fields
 
@@ -574,7 +574,7 @@ The response is then processed and then converted to blitz format
 | order_timestamp    | string | Order placement time              |
 | exchange_timestamp | string | Exchange processing time          |
 
-## Drop Copy Instrument Position Response
+## **Drop Copy Instrument Position Response**
 
 ## Description
 
@@ -589,7 +589,7 @@ Each position entry contains quantity, price, PnL, and trade statistics for a sp
 
 ---
 
-## Response Structure
+## **Response Structure**
 
 ```json
 {
@@ -701,11 +701,11 @@ Each position entry contains quantity, price, PnL, and trade statistics for a sp
 
 ---
 
-# Rejected Order Scenarios
+# **Rejected Order Scenarios**
 
 This section describes failure responses returned when broker rejects an operation.
 
-## Place Order Rejected
+## **Place Order Rejected**
 
 Occurs when broker rejects order placement due to validation failure, insufficient margin, invalid price, etc.
 
@@ -745,7 +745,7 @@ Occurs when broker rejects order placement due to validation failure, insufficie
 
 ---
 
-## Modify Order Rejected (Replace Rejected)
+## **Modify Order Rejected (Replace Rejected)**
 
 Occurs when broker rejects an order modification request.
 

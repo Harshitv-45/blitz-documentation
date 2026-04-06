@@ -1,12 +1,12 @@
-# Blitz Broker Adapter Documentation
+# **Blitz Broker Adapter Documentation**
 
 Welcome to the Blitz Broker Adapter documentation.
 
 ---
 
-# Adapter Architecture & Structure
+# **Adapter Architecture & Structure**
 
-## Overview
+## **Overview**
 
 The Adapter acts as a **translation layer** between Blitz and broker systems.
 
@@ -21,7 +21,7 @@ The adapter serves as a bridge between Blitz and external broker systems and ens
 
 ---
 
-## Adapter Responsibilities
+## **Adapter Responsibilities**
 
 The adapter is responsible for:
 
@@ -37,7 +37,7 @@ The adapter must not contain trading or strategy logic.
 
 ---
 
-## Architecture
+## **Architecture**
 
 ```
 Blitz → Redis → Adapter → Broker API
@@ -56,7 +56,7 @@ Broker → Adapter → Redis → Blitz
 
 ---
 
-## Adapter Components
+## **Adapter Components**
 
 ### 1. Request Listener
 
@@ -135,7 +135,7 @@ Publishes standardized responses back to Blitz.
 
 ---
 
-## Order Processing Flow
+## **Order Processing Flow**
 
 ### Place Order Flow
 
@@ -158,7 +158,7 @@ Publishes standardized responses back to Blitz.
 
 ---
 
-## Error Handling
+## **Error Handling**
 
 The adapter must:
 

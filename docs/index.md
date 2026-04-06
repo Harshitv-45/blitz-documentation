@@ -1,4 +1,4 @@
-# Blitz Documentation
+# **Blitz Documentation**
 
 Welcome to **Blitz** — a unified platform for accessing trading APIs, developer SDKs, and broker integrations through a scalable, broker-agnostic architecture.
 
@@ -10,7 +10,7 @@ Blitz enables developers and trading systems to seamlessly:
 
 ---
 
-## Platform Overview
+## **Platform Overview**
 
 Blitz is built around three core components, each designed to handle a specific layer of the trading workflow:
 
@@ -22,7 +22,7 @@ Blitz is built around three core components, each designed to handle a specific 
 
 ---
 
-## Blitz API
+## **Blitz API**
 
 The **Blitz API** provides a comprehensive set of REST endpoints that allow direct interaction with the trading platform.
 
@@ -44,7 +44,7 @@ The **Blitz API** provides a comprehensive set of REST endpoints that allow dire
 
 ---
 
-## Blitz SDK
+## **Blitz SDK**
 
 The **Blitz SDK** offers client libraries that abstract away low-level API complexities, enabling faster and more efficient integration.
 
@@ -62,7 +62,7 @@ This allows developers to focus on building features rather than managing infras
 
 ---
 
-## TPOMS
+## **TPOMS**
 
 **TPOMS (Third-Party Order Management System)** acts as the broker integration layer within Blitz.
 
@@ -79,7 +79,7 @@ This ensures seamless multi-broker support through a unified interface.
 
 ---
 
-## Quickstart
+## **Quickstart**
 
 ### 1. Generate Access Token
 Authenticate with Blitz to obtain your access token.

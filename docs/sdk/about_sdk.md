@@ -1,4 +1,4 @@
-# What is SDK?
+# **What is SDK?**
 
 A Software Development Kit (SDK) is a collection of tools and libraries that allows developers to interact with the Blitz API in a simpler and more efficient way.
 
@@ -6,11 +6,11 @@ Instead of manually handling HTTP requests, headers, and response parsing, the S
 
 ---
 
-## Why use SDK?
+## **Why use SDK?**
 
 Using the SDK simplifies integration and reduces development effort.
 
-### Key Advantages
+### **Key Advantages**
 
 - **Simplified Integration**  
   No need to manually construct API requests or handle low-level details.
@@ -29,7 +29,7 @@ Using the SDK simplifies integration and reduces development effort.
 
 ---
 
-## API vs SDK
+## **API vs SDK**
 
 | Feature | Direct API | SDK |
 |--------|-----------|-----|
@@ -41,7 +41,7 @@ Using the SDK simplifies integration and reduces development effort.
 
 ---
 
-## How SDK Works
+## **How SDK Works**
 
 The SDK internally:
 
@@ -54,7 +54,7 @@ This allows developers to interact with the system using simple function calls i
 
 ---
 
-## When to Use SDK
+## **When to Use SDK**
 
 Use the SDK when:
 
@@ -64,7 +64,7 @@ Use the SDK when:
 
 ---
 
-## When to Use API Directly
+## **When to Use API Directly**
 
 Use the API directly when:
 
@@ -74,7 +74,7 @@ Use the API directly when:
 
 ---
 
-## Summary
+## **Summary**
 
 The Blitz SDK acts as a convenience layer over the API, making it easier to integrate and work with the platform while maintaining full functionality.
 

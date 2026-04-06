@@ -1,4 +1,4 @@
-# Blitz Order Message Structure & Request–Response Specification
+# **Blitz Order Message Structure & Request–Response Specification**
 
 This document defines the **standard broker-independent request and response format** used by Blitz for order communication with broker adapters.
 
@@ -16,13 +16,13 @@ This specification is broker-agnostic and must be followed by all adapter implem
 
 ---
 
-# Overview
+# **Overview**
 
 Blitz uses a standardized message structure to communicate with broker adapters.
 
 All order operations follow a consistent flow:
 
-## Order Flow
+## **Order Flow**
 
 1. Blitz publishes request to adapter.
 2. Adapter converts request to broker format.
@@ -32,11 +32,11 @@ All order operations follow a consistent flow:
 
 ---
 
-# Request Structure
+# **Request Structure**
 
 All order operations use a common request envelope.
 
-## Common Request Format
+## **Common Request Format**
 
 ```json
 {
@@ -48,7 +48,7 @@ All order operations use a common request envelope.
 }
 ```
 
-## Request Fields
+## **Request Fields**
 
 | Field     | Type   | Description                                                  |
 | --------- | ------ | ------------------------------------------------------------ |
@@ -60,9 +60,9 @@ All order operations use a common request envelope.
 
 ---
 
-# Place Order Request
+# **Place Order Request**
 
-## Action
+## **Action**
 
 `PLACE_ORDER`
 
@@ -97,7 +97,7 @@ All order operations use a common request envelope.
 }
 ```
 
-## Place Order Fields
+## **Place Order Fields**
 
 | Field                  | Type    | Description                               |
 | ---------------------- | ------- | ----------------------------------------- |
@@ -122,7 +122,7 @@ All order operations use a common request envelope.
 
 ---
 
-# Modify Order Request
+# **Modify Order Request**
 
 ## Action
 
@@ -170,7 +170,7 @@ All order operations use a common request envelope.
 
 ---
 
-# Cancel Order Request
+# **Cancel Order Request**
 
 ## Action
 
@@ -198,7 +198,7 @@ All order operations use a common request envelope.
 
 ---
 
-# Drop Copy Trade Request
+# **Drop Copy Trade Request**
 
 ## Action
 
@@ -229,7 +229,7 @@ Drop copy trades provide a passive stream of executed trades without placing or 
 
 ---
 
-# Drop Copy Trade Response
+# **Drop Copy Trade Response**
 
 ## Action
 
@@ -283,7 +283,7 @@ All broker responses must be converted into the Blitz standardized response form
 
 ---
 
-# Standard Order Response (OrderLog)
+# **Standard Order Response (OrderLog)**
 
 ## Structure
 
@@ -321,7 +321,7 @@ All broker responses must be converted into the Blitz standardized response form
 
 ---
 
-# Order Status Values
+# **Order Status Values**
 
 | Status           | Meaning            |
 | ---------------- | ------------------ |
@@ -334,7 +334,7 @@ All broker responses must be converted into the Blitz standardized response form
 
 ---
 
-# Adapter Responsibilities
+# **Adapter Responsibilities**
 
 - Convert broker responses into Blitz format
 - Normalize order status values
