@@ -1,4 +1,4 @@
-site_name: Blitz Documentation
+site_name: Blitz
 site_description: Blitz Trading Platform API, SDK and Broker Integration Documentation
 site_author: Blitz
 site_url: https://your-domain.com
@@ -53,7 +53,7 @@ nav:
   # ---------------------------------------------------
 
   - API Reference:
-      - Overview: api/overview.md
+      - API Structure: api/API_Structure.md
       - Authentication: api/authentication.md
 
       - Trading APIs:
@@ -62,11 +62,12 @@ nav:
           - Signals: api/trading/signal.md
           #- Positions: api/trading/positions.md
 
-      - Market Data APIs:
+      - Market Data:
+          - Instruments: api/market-data/instrumentId.md
           #- Last Trading Price: api/market-data/ltp.md
           - Option Chain: api/market-data/optionchain.md
           #- Market Quote: api/market-data/marketquote.md
-          - Instruments: api/market-data/instrumentId.md
+
           #- Historical Data: api/market-data/historicaldata.md
 
   # ---------------------------------------------------
@@ -74,6 +75,7 @@ nav:
   # ---------------------------------------------------
 
   - Blitz SDK:
+      - What is SDK: sdk/about_sdk.md
       - SDK: sdk/sdk.md
 
   # ---------------------------------------------------

@@ -1,91 +1,137 @@
-# **Blitz Documentation**
+# Blitz Documentation
 
-Welcome to **Blitz** — a platform that provides standardized access to trading APIs, developer SDKs, and broker integrations through a scalable and broker-independent architecture.
+Welcome to **Blitz** — a unified platform for accessing trading APIs, developer SDKs, and broker integrations through a scalable, broker-agnostic architecture.
 
-Blitz enables developers and trading systems to place orders, access market data, manage portfolios, and integrate multiple brokers using a single consistent interface.
+Blitz enables developers and trading systems to seamlessly:
+- Place and manage orders
+- Access real-time and historical market data
+- Track portfolios and positions
+- Integrate multiple brokers using a single, consistent interface
 
 ---
 
 ## Platform Overview
 
-Blitz consists of three core components:
+Blitz is built around three core components, each designed to handle a specific layer of the trading workflow:
 
-- **Blitz API** — Direct REST interface for trading operations and market data
-- **Blitz SDK** — Client libraries for simplified integration
-- **TPOMS** — Broker communication and order routing system
-
-Each component serves a different purpose in the trading workflow.
+| Component     | Description |
+|--------------|------------|
+| **Blitz API** | REST-based interface for trading operations and market data |
+| **Blitz SDK** | Developer-friendly libraries for faster and easier integration |
+| **TPOMS**     | Broker communication and order routing layer |
 
 ---
 
-## **Blitz API**
+## Blitz API
 
-The **Blitz API** provides a set of REST endpoints that allow applications to interact directly with the trading platform.
+The **Blitz API** provides a comprehensive set of REST endpoints that allow direct interaction with the trading platform.
 
-Using the API, you can:
+### Key Capabilities
 
 - Place, modify, and cancel orders
-- Retrieve trades and positions
+- Retrieve trades, orders, and positions
 - Access real-time and historical market data
 - Track order execution and status
 - Manage portfolio information
 
-The API uses resource-oriented URLs and returns responses in JSON format using standard HTTP methods and status codes.
+### Highlights
 
-Refer to the **API Reference** section to explore available endpoints.
+- Resource-oriented REST architecture  
+- JSON-based request and response format  
+- Standard HTTP methods and status codes  
 
----
-
-## **Blitz SDK**
-
-The **Blitz SDK** provides developer-friendly client libraries that simplify interaction with Blitz APIs.
-
-The SDK handles:
-
-- Authentication management
-- Request formatting
-- API communication
-- Data parsing
-- Error handling
-
-It allows developers to integrate trading functionality quickly without managing low-level API calls.
-
-Refer to the **SDK Documentation** section to get started.
+➡️ Refer to the **API Reference** section for detailed endpoint documentation.
 
 ---
 
-## **TPOMS**
+## Blitz SDK
 
-**TPOMS (Third-Party Order Management System)** is the broker integration layer of Blitz.
+The **Blitz SDK** offers client libraries that abstract away low-level API complexities, enabling faster and more efficient integration.
 
-It acts as a translation bridge between Blitz and external broker systems by:
+### What the SDK Handles
 
-- Converting Blitz requests into broker-specific formats
-- Normalizing broker responses
-- Managing order lifecycle events
-- Supporting multiple broker integrations through adapters
+- Authentication and session management  
+- Request construction and formatting  
+- API communication  
+- Response parsing  
+- Error handling  
 
-This architecture enables Blitz to work with different brokers using a unified interface.
+This allows developers to focus on building features rather than managing infrastructure.
 
-Refer to the **TPOMS Documentation** section for architecture and adapter details.
-
----
-
-## **Documentation Structure**
-
-This documentation is organized into the following sections:
-
-- **API Reference** — Trading and market data endpoints
-- **SDK** — Client library usage
-- **TPOMS** — Broker integration and adapter architecture
+➡️ Refer to the **SDK Documentation** to get started.
 
 ---
 
-## **Getting Started**
+## TPOMS
 
-To start using Blitz:
+**TPOMS (Third-Party Order Management System)** acts as the broker integration layer within Blitz.
 
-1. Generate an access token
-2. Authenticate API requests
-3. Use the API or SDK to interact with the platform
-4. Integrate brokers using TPOMS if required
+It bridges the gap between Blitz and external broker systems by:
+
+- Translating Blitz requests into broker-specific formats  
+- Normalizing broker responses  
+- Managing the full order lifecycle  
+- Supporting multiple brokers through adapter-based architecture  
+
+This ensures seamless multi-broker support through a unified interface.
+
+➡️ Refer to the **TPOMS Documentation** for architecture and integration details.
+
+---
+
+## Quickstart
+
+### 1. Generate Access Token
+Authenticate with Blitz to obtain your access token.
+```bash
+curl -X 'POST' \
+  'http://uat.quantxpress.com/v1/api/authentication/login' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "userId": "string",
+  "password": "string"
+}'
+```
+
+### 2. Place Your First Order
+
+```bash
+curl -X 'POST' \
+  'http://uat.quantxpress.com/api/order/placeOrder' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: */*' \
+  -H 'Authorization: Bearer {access_token}' \
+  -d '{
+  "quantity": 0,
+  "product": "NONE",
+  "tif": "None",
+  "price": 0,
+  "orderType": "Unknown",
+  "instrumentId": 0,
+  "orderSide": "None",
+  "disclosedQuantity": 0,
+  "stopPrice": 0,
+  "clientId": "string",
+  "tiF_GTD_Date": "string",
+  "positionEffectOrderFlag": true,
+  "exchangeTradingSessionOrderFlag": true,
+  "isFictive": true,
+  "correlationOrderId": "string"
+}'
+
+```
+
+### 3. Check Order Status
+```bash
+curl -X 'GET' \
+  'http://uat.quantxpress.com/v1/api/order' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: */*' \
+  -H 'Authorization: Bearer {access_token}' \
+```
+
+!!! tip
+    New to Blitz? Start with the **API Reference** for direct integration, or use the **SDK** for a faster setup.
+
+---

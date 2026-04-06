@@ -92,7 +92,9 @@ This endpoint provides a **centralized view of your daily trading activity**, ma
 ```bash
 curl -X 'GET' \
   'http://uat.quantxpress.com/v1/api/order' \
-  -H 'accept: */*'
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {access_token}' \
 ```
 
 #### Response Structure
@@ -234,7 +236,9 @@ Fetch the details of a specific order in the OMS system using its unique BlitzOr
 ```bash
 curl -X 'GET' \
   'http://uat.quantxpress.com/api/order/orderHistory/blitzOrderId/{blitzOrderId}' \
-  -H 'accept: */*'
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {access_token}' \
 ```
 
 #### Response Structure
@@ -438,8 +442,9 @@ When an order is submitted, the system validates it for trading session availabi
 ```bash
 curl -X 'POST' \
   'http://uat.quantxpress.com/api/order/placeOrder' \
-  -H 'accept: */*' \
   -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {access_token}' \
   -d '{
   "quantity": 0,
   "product": "NONE",
@@ -539,8 +544,9 @@ Use this API to adjust open or pending orders before they are executed at the ex
 ```bash
 curl -X 'PUT' \
   'http://uat.quantxpress.com/api/order/modifyOrder' \
-  -H 'accept: */*' \
   -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {access_token}' \
   -d '{
   "modifiedOrderQuantity": 0,
   "price": 0,
@@ -634,7 +640,8 @@ The **Cancel Order** endpoint allows you to cancel an existing open or pending o
 ```bash
 curl -X 'DELETE' \
   'http://uat.quantxpress.com/api/order/cancelOrder?InstrumentId=110010000012018&ExchangeOrderId=3204164728325564&StrategyInstanceId=30d04070-4e8f-4a69-8983-14c8ab474599' \
-  -H 'accept: */*'
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {access_token}' \
 ```
 
 #### Response

@@ -204,9 +204,9 @@ Signals are not persisted in a traditional database — they are meant for real-
 ```bash
 curl -X POST \
   "http://api.blitz.com/api/signals" \
-  -H "accept: application/json" \
-  -H "Authorization: Bearer <TOKEN>" \
-  -H "Content-Type: application/json" \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {access_token}' \
   -d '<YOUR_SIGNALS_PAYLOAD>'
 ```
 

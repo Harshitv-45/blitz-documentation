@@ -18,10 +18,11 @@ This API helps traders analyze market sentiment, volatility, and strike-level ac
 
 ## Headers
 
-| Header       | Value            | Required |
-| ------------ | ---------------- | -------- |
-| Content-Type | application/json | Yes      |
-| Accept       | `*/*`            | Yes      |
+| Header        | Value            | Required |
+| ------------  | ---------------- | -------- |
+| Content-Type  | application/json | Yes      |
+| Accept        | `*/*`            | Yes      |
+| Authorization | {acess_token}    | Yes      |
 
 ---
 
@@ -30,7 +31,8 @@ This API helps traders analyze market sentiment, volatility, and strike-level ac
 ```bash
 curl -X GET 'http://uat.quantxpress.com/v1/api/optionChain' \
   -H 'Content-Type: application/json' \
-  -H 'Accept: */*'
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {access_token}' \
 ```
 
 ---

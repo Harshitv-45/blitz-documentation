@@ -29,7 +29,9 @@ GET /api/instruments/{id}
 ```bash
 curl -X 'GET' \
   'http://uat.quantxpress.com/api/instruments/{instrumentId}' \
-  -H 'accept: */*'
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {access_token}' \
 ```
 
 ---
