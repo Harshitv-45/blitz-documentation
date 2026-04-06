@@ -107,11 +107,11 @@ curl -X 'GET' \
 | Field                  | Type         | Description                                          |
 | ---------------------- | ------------ | ---------------------------------------------------- |
 | instrumentId           | integer      | Unique internal identifier of the instrument         |
-| exchange               | string       | Exchange where instrument is traded (e.g., NSE, BSE) |
+| exchange               | string       | Exchange where instrument is traded (e.g., `NSE`, `BSE`) |
 | symbol                 | string       | Trading symbol of the instrument                     |
 | ticker                 | string       | Full company or instrument name                      |
-| exchangeSegment        | string       | Exchange segment (e.g., NSECM, NSEFO)                |
-| instrumentType         | string       | Type of instrument (Equity, Futures, Options, etc.)  |
+| exchangeSegment        | string       | Exchange segment (e.g., `NSECM`, `NSEFO`)                |
+| instrumentType         | string       | Type of instrument (`Equity`, `Futures`, `Options`, etc.)  |
 | instrumentName         | string       | Name of the instrument                               |
 | exchangeInstrumentId   | integer      | Instrument identifier assigned by exchange           |
 | marketInstrumentId     | integer      | Market-wide instrument identifier                    |
@@ -129,7 +129,7 @@ curl -X 'GET' \
 | lotSize                | number       | Minimum tradable quantity                            |
 | expiryDate             | integer/null | Expiry date (for derivatives)                        |
 | strikePrice            | number/null  | Strike price (for options)                           |
-| optionType             | string/null  | Option type (CE/PE)                                  |
+| optionType             | string/null  | Option type (`CE`/`PE`)                                  |
 | assetToken             | string/null  | Asset token reference                                |
 | underlyingInstrumentId | integer/null | Underlying instrument ID (for derivatives)           |
 | open                   | number       | Opening price                                        |

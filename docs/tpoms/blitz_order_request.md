@@ -325,12 +325,12 @@ All broker responses must be converted into the Blitz standardized response form
 
 | Status           | Meaning            |
 | ---------------- | ------------------ |
-| NEW              | Order accepted     |
-| FILLED           | Fully executed     |
-| PARTIALLY_FILLED | Partially executed |
-| REPLACED         | Order modified     |
-| CANCELLED        | Order cancelled    |
-| REJECTED         | Order rejected     |
+| `NEW`              | Order accepted     |
+| `FILLED`           | Fully executed     |
+| `PARTIALLY_FILLED` | Partially executed |
+| `REPLACED`         | Order modified     |
+| `CANCELLED`        | Order cancelled    |
+| `REJECTED`         | Order rejected     |
 
 ---
 

@@ -1170,20 +1170,20 @@
 
 
 
-<h1 id="api-structure">API Structure<a class="headerlink" href="#api-structure" title="Permanent link">&para;</a></h1>
+<h1 id="api-structure"><strong>API Structure</strong><a class="headerlink" href="#api-structure" title="Permanent link">&para;</a></h1>
 <p>This section describes how to interact with the Blitz API, including request format, authentication, and response structure.</p>
 <hr />
-<h2 id="base-url">Base URL<a class="headerlink" href="#base-url" title="Permanent link">&para;</a></h2>
+<h2 id="base-url"><strong>Base URL</strong><a class="headerlink" href="#base-url" title="Permanent link">&para;</a></h2>
 <p>All API requests should be made to:</p>
 <div class="highlight"><pre><span></span><code><span class="err">http://uat.quantxpress.com</span>
 </code></pre></div>
-<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
+<h2 id="authentication"><strong>Authentication</strong><a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
 <p>All endpoints require authentication using an access token.</p>
 <p>Include the token in the request header:</p>
 <div class="highlight"><pre><span></span><code><span class="err">Authorization: Bearer {access_Token}</span>
 </code></pre></div>
 <hr />
-<h2 id="http-methods">HTTP Methods<a class="headerlink" href="#http-methods" title="Permanent link">&para;</a></h2>
+<h2 id="http-methods"><strong>HTTP Methods</strong><a class="headerlink" href="#http-methods" title="Permanent link">&para;</a></h2>
 <p>Blitz API uses standard HTTP methods:</p>
 <table>
 <thead>
@@ -1211,7 +1211,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="request-structure">Request Structure<a class="headerlink" href="#request-structure" title="Permanent link">&para;</a></h2>
+<h2 id="request-structure"><strong>Request Structure</strong><a class="headerlink" href="#request-structure" title="Permanent link">&para;</a></h2>
 <p>Use the following structure to make requests to the Blitz API:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="o">[</span>API_METHOD<span class="o">]</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/[API_ENDPOINT]&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -1220,7 +1220,7 @@
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="o">[</span>REQUEST_PAYLOAD<span class="o">]</span>
 </code></pre></div>
-<h2 id="response-structure">Response Structure<a class="headerlink" href="#response-structure" title="Permanent link">&para;</a></h2>
+<h2 id="response-structure"><strong>Response Structure</strong><a class="headerlink" href="#response-structure" title="Permanent link">&para;</a></h2>
 <p>All responses are returned in JSON format:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>

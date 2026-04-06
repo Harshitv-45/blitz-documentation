@@ -1360,7 +1360,7 @@
 
 
 
-<h1 id="authentication-api">Authentication API<a class="headerlink" href="#authentication-api" title="Permanent link">&para;</a></h1>
+<h1 id="authentication-api"><strong>Authentication API</strong><a class="headerlink" href="#authentication-api" title="Permanent link">&para;</a></h1>
 <p>The <strong>Authentication API</strong> allows users to securely log in and obtain access to protected trading APIs.<br />
 Using this API, you can authenticate users and generate a session token for authorized requests.</p>
 <p>These endpoints let you <strong>authenticate users and manage access control</strong> securely.</p>
@@ -1381,7 +1381,7 @@ Using this API, you can authenticate users and generate a session token for auth
 </tbody>
 </table>
 <hr />
-<h2 id="user-login">Authentication<a class="headerlink" href="#user-login" title="Permanent link">&para;</a></h2>
+<h2 id="user-login"><strong>Authentication</strong><a class="headerlink" href="#user-login" title="Permanent link">&para;</a></h2>
 <p>Authenticate a user using valid credentials and generate an access token.</p>
 <h3 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>POST /v1/api/authentication/login
@@ -1397,14 +1397,14 @@ Using this API, you can authenticate users and generate a session token for auth
 <span class="s1">}&#39;</span>
 </code></pre></div>
 <hr />
-<h2 id="request-body">Request Body<a class="headerlink" href="#request-body" title="Permanent link">&para;</a></h2>
+<h2 id="request-body"><strong>Request Body</strong><a class="headerlink" href="#request-body" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="request-field-descriptions">Request Field Descriptions<a class="headerlink" href="#request-field-descriptions" title="Permanent link">&para;</a></h2>
+<h2 id="request-field-descriptions"><strong>Request Field Descriptions</strong><a class="headerlink" href="#request-field-descriptions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1427,7 +1427,7 @@ Using this API, you can authenticate users and generate a session token for auth
 </tbody>
 </table>
 <hr />
-<h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h2>
+<h2 id="response"><strong>Response</strong><a class="headerlink" href="#response" title="Permanent link">&para;</a></h2>
 <h3 id="success-response">Success Response<a class="headerlink" href="#success-response" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
@@ -1441,7 +1441,7 @@ Using this API, you can authenticate users and generate a session token for auth
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="response-field-descriptions">Response Field Descriptions<a class="headerlink" href="#response-field-descriptions" title="Permanent link">&para;</a></h2>
+<h2 id="response-field-descriptions"><strong>Response Field Descriptions</strong><a class="headerlink" href="#response-field-descriptions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1489,7 +1489,7 @@ Using this API, you can authenticate users and generate a session token for auth
 </tbody>
 </table>
 <hr />
-<h2 id="error-response">Error Response<a class="headerlink" href="#error-response" title="Permanent link">&para;</a></h2>
+<h2 id="error-response"><strong>Error Response</strong><a class="headerlink" href="#error-response" title="Permanent link">&para;</a></h2>
 <h3 id="invalid-credentials">Invalid Credentials<a class="headerlink" href="#invalid-credentials" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
@@ -1498,7 +1498,7 @@ Using this API, you can authenticate users and generate a session token for auth
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="using-the-access-token">Using the Access Token<a class="headerlink" href="#using-the-access-token" title="Permanent link">&para;</a></h2>
+<h2 id="using-the-access-token"><strong>Using the Access Token</strong><a class="headerlink" href="#using-the-access-token" title="Permanent link">&para;</a></h2>
 <p>After successful authentication, include the token in the header of all protected API requests:</p>
 <div class="highlight"><pre><span></span><code>Authorization: Bearer &lt;token&gt;
 </code></pre></div>
