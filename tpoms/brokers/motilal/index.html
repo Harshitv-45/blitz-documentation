@@ -1224,13 +1224,13 @@
 
 
 
-<h1 id="motilal-oswal-mofl-adapter-documentation">Motilal Oswal (MOFL) Adapter Documentation<a class="headerlink" href="#motilal-oswal-mofl-adapter-documentation" title="Permanent link">&para;</a></h1>
+<h1 id="motilal-oswal-mofl-adapter-documentation"><strong>Motilal Oswal (MOFL) Adapter Documentation</strong><a class="headerlink" href="#motilal-oswal-mofl-adapter-documentation" title="Permanent link">&para;</a></h1>
 <p>This document explains how to connect <strong>Motilal Oswal (MOFL)</strong> with <strong>Blitz</strong> using the TPOMS MOFL adapter.</p>
 <hr />
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h2 id="overview"><strong>Overview</strong><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The MOFL adapter allows Blitz to place, modify, cancel orders and receive order updates using Motilal Oswal’s OMS APIs.</p>
 <hr />
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites"><strong>Prerequisites</strong><a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Before you begin, ensure that:</p>
 <ul>
 <li>You have an active <strong>Motilal Oswal trading account</strong></li>
@@ -1240,7 +1240,7 @@
 </ul>
 <hr />
 <p><img alt="Motilal connection Page" src="../../../assets/Motilal/motilal_connect.png" /></p>
-<h2 id="tpoms-mofl-connection">TPOMS MOFL Connection<a class="headerlink" href="#tpoms-mofl-connection" title="Permanent link">&para;</a></h2>
+<h2 id="tpoms-mofl-connection"><strong>TPOMS MOFL Connection</strong><a class="headerlink" href="#tpoms-mofl-connection" title="Permanent link">&para;</a></h2>
 <h3 id="connection-details">Connection Details<a class="headerlink" href="#connection-details" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1312,7 +1312,7 @@
 <li><strong>Connect</strong> — Establishes a session with MOFL OMS.</li>
 </ul>
 <hr />
-<h2 id="authentication-flow">Authentication Flow<a class="headerlink" href="#authentication-flow" title="Permanent link">&para;</a></h2>
+<h2 id="authentication-flow"><strong>Authentication Flow</strong><a class="headerlink" href="#authentication-flow" title="Permanent link">&para;</a></h2>
 <ol>
 <li>User enters MOFL credentials in TPOMS UI</li>
 <li>Blitz sends authentication request to MOFL</li>
@@ -1326,10 +1326,10 @@
 <li>MOFL adapter status becomes <strong>CONNECTED</strong></li>
 </ol>
 <hr />
-<h1 id="blitz-mofl-conversion">Blitz → MOFL Conversion<a class="headerlink" href="#blitz-mofl-conversion" title="Permanent link">&para;</a></h1>
+<h1 id="blitz-mofl-conversion"><strong>Blitz → MOFL Conversion</strong><a class="headerlink" href="#blitz-mofl-conversion" title="Permanent link">&para;</a></h1>
 <p>Blitz requests are published to the Redis channel and consumed by the <strong>MOFL adapter</strong>.</p>
 <hr />
-<h2 id="place-order">Place Order<a class="headerlink" href="#place-order" title="Permanent link">&para;</a></h2>
+<h2 id="place-order"><strong>Place Order</strong><a class="headerlink" href="#place-order" title="Permanent link">&para;</a></h2>
 <h3 id="blitz-request">Blitz Request<a class="headerlink" href="#blitz-request" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PLACE_ORDER&quot;</span><span class="p">,</span>
@@ -1413,7 +1413,7 @@
 <span class="w">  </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3156574845&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h1 id="motilal-to-blitz-conversion">Motilal to Blitz Conversion<a class="headerlink" href="#motilal-to-blitz-conversion" title="Permanent link">&para;</a></h1>
+<h1 id="motilal-to-blitz-conversion"><strong>Motilal to Blitz Conversion</strong><a class="headerlink" href="#motilal-to-blitz-conversion" title="Permanent link">&para;</a></h1>
 <p>The response is then processed and then converted to blitz format</p>
 <p><strong>Blitz Response</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1446,7 +1446,7 @@
 <span class="w">  </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="modify-order">Modify Order<a class="headerlink" href="#modify-order" title="Permanent link">&para;</a></h2>
+<h2 id="modify-order"><strong>Modify Order</strong><a class="headerlink" href="#modify-order" title="Permanent link">&para;</a></h2>
 <p><strong>Blitz Request</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MODIFY_ORDER&quot;</span><span class="p">,</span>
@@ -1525,7 +1525,7 @@
 <span class="w">  </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3156574888&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h1 id="motilal-to-blitz-conversion_1">Motilal to Blitz Conversion<a class="headerlink" href="#motilal-to-blitz-conversion_1" title="Permanent link">&para;</a></h1>
+<h1 id="motilal-to-blitz-conversion_1"><strong>Motilal to Blitz Conversion</strong><a class="headerlink" href="#motilal-to-blitz-conversion_1" title="Permanent link">&para;</a></h1>
 <p><strong>Blitz Response</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
@@ -1557,7 +1557,7 @@
 <span class="w">  </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="cancel-order">Cancel Order<a class="headerlink" href="#cancel-order" title="Permanent link">&para;</a></h2>
+<h2 id="cancel-order"><strong>Cancel Order</strong><a class="headerlink" href="#cancel-order" title="Permanent link">&para;</a></h2>
 <p><strong>Blitz Request</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CANCEL_ORDER&quot;</span><span class="p">,</span>
@@ -1648,7 +1648,7 @@
 <span class="w">  </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="drop-copy-trade-request">Drop Copy Trade Request<a class="headerlink" href="#drop-copy-trade-request" title="Permanent link">&para;</a></h2>
+<h2 id="drop-copy-trade-request"><strong>Drop Copy Trade Request</strong><a class="headerlink" href="#drop-copy-trade-request" title="Permanent link">&para;</a></h2>
 <p><strong>Blitz Request</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DROPCOPY_TRADES&quot;</span><span class="p">,</span>
@@ -1681,8 +1681,8 @@
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
-<h1 id="drop-copy-instrument-position-response">Drop Copy Instrument Position Response<a class="headerlink" href="#drop-copy-instrument-position-response" title="Permanent link">&para;</a></h1>
-<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<h1 id="drop-copy-instrument-position-response"><strong>Drop Copy Instrument Position Response</strong><a class="headerlink" href="#drop-copy-instrument-position-response" title="Permanent link">&para;</a></h1>
+<h2 id="description"><strong>Description</strong><a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>Represents instrument-wise position updates received from the broker.</p>
 <p>This response provides both:</p>
 <ul>
@@ -1691,7 +1691,7 @@
 </ul>
 <p>Each position entry contains quantity, price, PnL, and trade statistics for a specific instrument.</p>
 <hr />
-<h2 id="response-structure">Response Structure<a class="headerlink" href="#response-structure" title="Permanent link">&para;</a></h2>
+<h2 id="response-structure"><strong>Response Structure</strong><a class="headerlink" href="#response-structure" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;MessageType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DROPCOPY_INSTRUMENT_POSITION&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MOFL&quot;</span><span class="p">,</span>

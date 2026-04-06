@@ -1015,11 +1015,11 @@
 
 
 
-<h1 id="blitz-broker-adapter-documentation">Blitz Broker Adapter Documentation<a class="headerlink" href="#blitz-broker-adapter-documentation" title="Permanent link">&para;</a></h1>
+<h1 id="blitz-broker-adapter-documentation"><strong>Blitz Broker Adapter Documentation</strong><a class="headerlink" href="#blitz-broker-adapter-documentation" title="Permanent link">&para;</a></h1>
 <p>Welcome to the Blitz Broker Adapter documentation.</p>
 <hr />
-<h1 id="adapter-architecture-structure">Adapter Architecture &amp; Structure<a class="headerlink" href="#adapter-architecture-structure" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h1 id="adapter-architecture-structure"><strong>Adapter Architecture &amp; Structure</strong><a class="headerlink" href="#adapter-architecture-structure" title="Permanent link">&para;</a></h1>
+<h2 id="overview"><strong>Overview</strong><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The Adapter acts as a <strong>translation layer</strong> between Blitz and broker systems.</p>
 <p>It converts:</p>
 <ul>
@@ -1029,7 +1029,7 @@
 <p>This allows Blitz to work with multiple brokers using a unified interface.</p>
 <p>The adapter serves as a bridge between Blitz and external broker systems and ensures consistent communication.</p>
 <hr />
-<h2 id="adapter-responsibilities">Adapter Responsibilities<a class="headerlink" href="#adapter-responsibilities" title="Permanent link">&para;</a></h2>
+<h2 id="adapter-responsibilities"><strong>Adapter Responsibilities</strong><a class="headerlink" href="#adapter-responsibilities" title="Permanent link">&para;</a></h2>
 <p>The adapter is responsible for:</p>
 <ul>
 <li>Request validation</li>
@@ -1042,7 +1042,7 @@
 </ul>
 <p>The adapter must not contain trading or strategy logic.</p>
 <hr />
-<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<h2 id="architecture"><strong>Architecture</strong><a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>Blitz → Redis → Adapter → Broker API
 Broker → Adapter → Redis → Blitz
 </code></pre></div>
@@ -1057,7 +1057,7 @@ Broker → Adapter → Redis → Blitz
 <li>Adapter publishes standardized response.</li>
 </ol>
 <hr />
-<h2 id="adapter-components">Adapter Components<a class="headerlink" href="#adapter-components" title="Permanent link">&para;</a></h2>
+<h2 id="adapter-components"><strong>Adapter Components</strong><a class="headerlink" href="#adapter-components" title="Permanent link">&para;</a></h2>
 <h3 id="1-request-listener">1. Request Listener<a class="headerlink" href="#1-request-listener" title="Permanent link">&para;</a></h3>
 <p>Subscribes to Redis channels and receives Blitz requests.</p>
 <p><strong>Responsibilities</strong></p>
@@ -1117,7 +1117,7 @@ Broker → Adapter → Redis → Blitz
 <li>Deliver events to Redis channel</li>
 </ul>
 <hr />
-<h2 id="order-processing-flow">Order Processing Flow<a class="headerlink" href="#order-processing-flow" title="Permanent link">&para;</a></h2>
+<h2 id="order-processing-flow"><strong>Order Processing Flow</strong><a class="headerlink" href="#order-processing-flow" title="Permanent link">&para;</a></h2>
 <h3 id="place-order-flow">Place Order Flow<a class="headerlink" href="#place-order-flow" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Blitz publishes <code>PLACE_ORDER</code> request.</li>
@@ -1137,7 +1137,7 @@ Broker → Adapter → Redis → Blitz
 <li>Adapter publishes standardized response.</li>
 </ol>
 <hr />
-<h2 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h2>
+<h2 id="error-handling"><strong>Error Handling</strong><a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h2>
 <p>The adapter must:</p>
 <ul>
 <li>Capture broker errors</li>

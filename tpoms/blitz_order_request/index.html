@@ -1015,7 +1015,7 @@
 
 
 
-<h1 id="blitz-order-message-structure-requestresponse-specification">Blitz Order Message Structure &amp; Request–Response Specification<a class="headerlink" href="#blitz-order-message-structure-requestresponse-specification" title="Permanent link">&para;</a></h1>
+<h1 id="blitz-order-message-structure-requestresponse-specification"><strong>Blitz Order Message Structure &amp; Request–Response Specification</strong><a class="headerlink" href="#blitz-order-message-structure-requestresponse-specification" title="Permanent link">&para;</a></h1>
 <p>This document defines the <strong>standard broker-independent request and response format</strong> used by Blitz for order communication with broker adapters.</p>
 <p>It provides:</p>
 <ul>
@@ -1029,10 +1029,10 @@
 </ul>
 <p>This specification is broker-agnostic and must be followed by all adapter implementations.</p>
 <hr />
-<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
+<h1 id="overview"><strong>Overview</strong><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
 <p>Blitz uses a standardized message structure to communicate with broker adapters.</p>
 <p>All order operations follow a consistent flow:</p>
-<h2 id="order-flow">Order Flow<a class="headerlink" href="#order-flow" title="Permanent link">&para;</a></h2>
+<h2 id="order-flow"><strong>Order Flow</strong><a class="headerlink" href="#order-flow" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Blitz publishes request to adapter.</li>
 <li>Adapter converts request to broker format.</li>
@@ -1041,9 +1041,9 @@
 <li>Blitz consumes standardized response.</li>
 </ol>
 <hr />
-<h1 id="request-structure">Request Structure<a class="headerlink" href="#request-structure" title="Permanent link">&para;</a></h1>
+<h1 id="request-structure"><strong>Request Structure</strong><a class="headerlink" href="#request-structure" title="Permanent link">&para;</a></h1>
 <p>All order operations use a common request envelope.</p>
-<h2 id="common-request-format">Common Request Format<a class="headerlink" href="#common-request-format" title="Permanent link">&para;</a></h2>
+<h2 id="common-request-format"><strong>Common Request Format</strong><a class="headerlink" href="#common-request-format" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACTION_NAME&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BROKER_NAME&quot;</span><span class="p">,</span>
@@ -1052,7 +1052,7 @@
 <span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="request-fields">Request Fields<a class="headerlink" href="#request-fields" title="Permanent link">&para;</a></h2>
+<h2 id="request-fields"><strong>Request Fields</strong><a class="headerlink" href="#request-fields" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1090,8 +1090,8 @@
 </tbody>
 </table>
 <hr />
-<h1 id="place-order-request">Place Order Request<a class="headerlink" href="#place-order-request" title="Permanent link">&para;</a></h1>
-<h2 id="action">Action<a class="headerlink" href="#action" title="Permanent link">&para;</a></h2>
+<h1 id="place-order-request"><strong>Place Order Request</strong><a class="headerlink" href="#place-order-request" title="Permanent link">&para;</a></h1>
+<h2 id="action"><strong>Action</strong><a class="headerlink" href="#action" title="Permanent link">&para;</a></h2>
 <p><code>PLACE_ORDER</code></p>
 <h2 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1121,7 +1121,7 @@
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="place-order-fields">Place Order Fields<a class="headerlink" href="#place-order-fields" title="Permanent link">&para;</a></h2>
+<h2 id="place-order-fields"><strong>Place Order Fields</strong><a class="headerlink" href="#place-order-fields" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1224,7 +1224,7 @@
 </tbody>
 </table>
 <hr />
-<h1 id="modify-order-request">Modify Order Request<a class="headerlink" href="#modify-order-request" title="Permanent link">&para;</a></h1>
+<h1 id="modify-order-request"><strong>Modify Order Request</strong><a class="headerlink" href="#modify-order-request" title="Permanent link">&para;</a></h1>
 <h2 id="action_1">Action<a class="headerlink" href="#action_1" title="Permanent link">&para;</a></h2>
 <p><code>MODIFY_ORDER</code></p>
 <h2 id="structure_1">Structure<a class="headerlink" href="#structure_1" title="Permanent link">&para;</a></h2>
@@ -1304,7 +1304,7 @@
 </tbody>
 </table>
 <hr />
-<h1 id="cancel-order-request">Cancel Order Request<a class="headerlink" href="#cancel-order-request" title="Permanent link">&para;</a></h1>
+<h1 id="cancel-order-request"><strong>Cancel Order Request</strong><a class="headerlink" href="#cancel-order-request" title="Permanent link">&para;</a></h1>
 <h2 id="action_2">Action<a class="headerlink" href="#action_2" title="Permanent link">&para;</a></h2>
 <p><code>CANCEL_ORDER</code></p>
 <h2 id="structure_2">Structure<a class="headerlink" href="#structure_2" title="Permanent link">&para;</a></h2>
@@ -1325,7 +1325,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h1 id="drop-copy-trade-request">Drop Copy Trade Request<a class="headerlink" href="#drop-copy-trade-request" title="Permanent link">&para;</a></h1>
+<h1 id="drop-copy-trade-request"><strong>Drop Copy Trade Request</strong><a class="headerlink" href="#drop-copy-trade-request" title="Permanent link">&para;</a></h1>
 <h2 id="action_3">Action<a class="headerlink" href="#action_3" title="Permanent link">&para;</a></h2>
 <p><code>DROP_COPY_TRADE</code></p>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
@@ -1371,7 +1371,7 @@ Drop copy trades provide a passive stream of executed trades without placing or 
 </tbody>
 </table>
 <hr />
-<h1 id="drop-copy-trade-response">Drop Copy Trade Response<a class="headerlink" href="#drop-copy-trade-response" title="Permanent link">&para;</a></h1>
+<h1 id="drop-copy-trade-response"><strong>Drop Copy Trade Response</strong><a class="headerlink" href="#drop-copy-trade-response" title="Permanent link">&para;</a></h1>
 <h2 id="action_4">Action<a class="headerlink" href="#action_4" title="Permanent link">&para;</a></h2>
 <p><code>DROPCOPY_INSTRUMENT_POSITION</code></p>
 <h2 id="structure_3">Structure<a class="headerlink" href="#structure_3" title="Permanent link">&para;</a></h2>
@@ -1458,7 +1458,7 @@ Drop copy trades provide a passive stream of executed trades without placing or 
 </tbody>
 </table>
 <hr />
-<h1 id="standard-order-response-orderlog">Standard Order Response (OrderLog)<a class="headerlink" href="#standard-order-response-orderlog" title="Permanent link">&para;</a></h1>
+<h1 id="standard-order-response-orderlog"><strong>Standard Order Response (OrderLog)</strong><a class="headerlink" href="#standard-order-response-orderlog" title="Permanent link">&para;</a></h1>
 <h2 id="structure_4">Structure<a class="headerlink" href="#structure_4" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
@@ -1491,7 +1491,7 @@ Drop copy trades provide a passive stream of executed trades without placing or 
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h1 id="order-status-values">Order Status Values<a class="headerlink" href="#order-status-values" title="Permanent link">&para;</a></h1>
+<h1 id="order-status-values"><strong>Order Status Values</strong><a class="headerlink" href="#order-status-values" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
 <tr>
@@ -1527,7 +1527,7 @@ Drop copy trades provide a passive stream of executed trades without placing or 
 </tbody>
 </table>
 <hr />
-<h1 id="adapter-responsibilities">Adapter Responsibilities<a class="headerlink" href="#adapter-responsibilities" title="Permanent link">&para;</a></h1>
+<h1 id="adapter-responsibilities"><strong>Adapter Responsibilities</strong><a class="headerlink" href="#adapter-responsibilities" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Convert broker responses into Blitz format</li>
 <li>Normalize order status values</li>
