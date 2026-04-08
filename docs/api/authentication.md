@@ -18,19 +18,19 @@ Authenticate a user using valid credentials and generate an access token.
 ### Endpoint
 
 ```
-POST /v1/api/authentication/login
+POST /v1/api/app_login
 ```
 
 ### cURL Example
 
 ```bash
 curl -X 'POST' \
-  'http://uat.quantxpress.com/v1/api/authentication/login' \
+  'http://uat.quantxpress.com/api_gateway/v1/api/app_login' \
   -H 'accept: */*' \
   -H 'Content-Type: application/json' \
   -d '{
-  "userId": "string",
-  "password": "string"
+  "appKey": "CPXotUwWdlIpgJbYrguSnVyu05IZawswKaXKNQ",
+  "userId": "Algo123"
 }'
 ```
 
@@ -40,8 +40,8 @@ curl -X 'POST' \
 
 ```json
 {
-  "userId": "string",
-  "password": "string"
+  "appKey": "CPXotUwWdlIpgJbYrguSnVyu05IZawswKaXKNQ",
+  "userId": "Algo123"
 }
 ```
 
@@ -52,7 +52,7 @@ curl -X 'POST' \
 | Field    | Type   | Description                               |
 | -------- | ------ | ----------------------------------------- |
 | userId   | string | Unique user identifier used for login     |
-| password | string | Password associated with the user account |
+| appKey   | string | AppKey associated with the user account   |
 
 ---
 
@@ -62,14 +62,11 @@ curl -X 'POST' \
 
 ```json
 {
-  "status": "success",
-  "message": "Request processed successfully",
-  "data": {
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbnRpdHlJZCI6IjliNGY5YSIsInVzZXJJZCI6IlBSQVNIQU5UIiwiaXBBZGRyZXNzIjoiMTcyLjE4LjAuMSIsInNlc3Npb25JZCI6ImI4YjA1ZjE2LWQ0MmMtNDM1NS05MWNiLTY1MTI0NWFiOWEyZiIsImRldmljZVR5cGUiOiJTREsiLCJodHRwOi8vc2NoZgvMDYvaWRlbnRpdHI",
-    "refreshToken": "9B1ja8YwHPZ8W8zZ5MAgRFeal1S39mI2V7KzsacLMrmmRp2NQhiiknsDQe3nMgR9po6QHkOH8pM53RSfKRUS3SoNRoy5wrYJHeZPMclRIJzDvtjyVqzUlR3blfitF3Qnuq0c0ceztxAJKoODLrCzLlJVMkz5ckGPPH0nG3HqYttvyPID6eWGs4yZKjHFVI1gUMjnzx97IcGmpJsxfoBQniU15MzLBr1cU0zeZw",
-    "requiresOtp": false,
-    "requireTotp": false
-  }
+    "status": "success",
+    "message": "request processed successfully.",
+    "data": {
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcmVmZXJyZWRfdXNlcm5hbWUiOiJBbGdvMTIzIiwiYXBwTmFtZSI6IkFsZ29UZXN0IiwiaXBBZGRyZXNzIjoiMTcyLjE3LjAuMSIsImVudGl0eUlkIjoiODVhYmJlZWItMmU3Zi00NGE1LWI2NjgtODQ3MjBkMjljZWVkIiwidXNlcklkIjoiQWxnbzEyMyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFwcCIsImF1ZCI6WyJHYXRld2F5U2VydmVyIiwiQVBJU2VydmVyIl0sImV4cCI6MTc3NTYzMjgzOCwiaXNzIjoiQXV0aFNlcnZlciJ9.GmGFg_Noqw1XhTJ5UDJ1XRcUi6gGwP-HJF3TQsfAJl0"
+    }
 }
 ```
 
@@ -83,9 +80,6 @@ curl -X 'POST' \
 | message      | string  | Informational message about the login result        |
 | data         | object  | Contains authentication details                     |
 | accessToken  | string  | JWT or access token used for authenticated requests |
-| refreshToken | string  | Token used to refresh access token                  |
-| requiresOtp  | boolean | Indicates if OTP verification is required           |
-| requireTotp  | boolean | Indicates if TOTP verification is required          |
 
 ---
 
@@ -96,7 +90,7 @@ curl -X 'POST' \
 ```json
 {
   "status": "error",
-  "message": "invalid userId or password",
+  "message": "invalid userId or appKey",
   "data": null
 }
 ```
