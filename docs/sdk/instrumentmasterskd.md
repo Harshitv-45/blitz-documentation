@@ -117,4 +117,5 @@ instrument_id = instrument_master.get_instrument_id("RELIANCE")
 print("Instrument ID:", instrument_id)
 
 # Example Response:
-```
+# Instrument ID: 1010010000002885
+```

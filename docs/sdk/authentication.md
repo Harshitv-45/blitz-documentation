@@ -54,4 +54,15 @@ def get_access_token(self):
 
 Return the access token of the client
 
+**Example:**
+
+```python
+auth = AuthClient(app_key="abc123xyz", user_id="U12345")
+token = auth.get_access_token()
+print("Access Token:", token)
+
+# Example Response:
+# Access Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcmVmZXJyZWRfdXNlcm5hbWUiOiJBbGdvMTIzIiwiYXBwTmFtZSI6IkFsZ29UZXN0IiwidXNlcklkIjoiQWxnbzEyMyIsImV4cCI6MTc3NTYzMjgzOCwiaXNzIjoiQXV0aFNlcnZlciJ9.GmGFg_Noqw1XhTJ5UDJ1XRcUi6gGwP-HJF3TQsfAJl0
+```
+
 ---

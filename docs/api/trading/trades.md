@@ -1,3 +1,5 @@
+# **Trades API**
+
 The **Trades API** lets you retrieve all trade details executed under a given entity, strategy, or client.
 Using this API, you can monitor executed orders, pending trades, and their execution details in real time.
 

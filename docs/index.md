@@ -40,7 +40,7 @@ The **Blitz API** provides a comprehensive set of REST endpoints that allow dire
 - JSON-based request and response format  
 - Standard HTTP methods and status codes  
 
-➡️ Refer to the **API Refrence** for detailed endpoint documentation.
+➡️ Refer to the **API Reference** for detailed endpoint documentation.
 
 ---
 

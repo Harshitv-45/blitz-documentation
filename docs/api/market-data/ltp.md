@@ -24,7 +24,7 @@ POST /marketfeed/ltp
 | Header        | Value            | Required |
 | ------------  | ---------------- | -------- |
 | Content-Type  | application/json | Yes      |
-| Authorization | {acess_token}    | Yes      |
+| Authorization | Bearer {access_token} | Yes      |
 | Accept        | `*/*`              | Yes      |
 
 ---
@@ -40,9 +40,9 @@ POST /marketfeed/ltp
 ---
 
 ## Parameters
-|Parameter	|Type	|Required	|Description|
-|-----------|-------|-----------|-----------|
-InstrumentIds|list / array|Yes|List of instrument identifiers (symbols or numeric instrument IDs).
+| Parameter      | Type         | Required | Description |
+|----------------|--------------|----------|--------------|
+| InstrumentIds  | list / array | Yes      | List of instrument identifiers (symbols or numeric instrument IDs). |
 
 ---
 
@@ -53,7 +53,7 @@ curl -X 'POST' \
   'http://uat.quantxpress.com/marketfeed/ltp' \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {access_token}' \
-  -H 'Accept": "*/*' \
+  -H 'Accept: */*' \
   -d '{
     "InstrumentIds": ["NSE|TCS", "NSE|RELIANCE", 1010010002000001]
   }'

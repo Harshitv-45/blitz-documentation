@@ -21,10 +21,10 @@ Before you begin, ensure that:
 
 2. Sign up or log in to create the account.
 
-3. You will redirected to the App creation page of zerodha.
+3. You will be redirected to the App creation page of Zerodha.
    ![Zerodha App Creation](../../assets/zerodha/app_creation.png)
 
-4. Click on the Create new App button and choose Personal and fill the mandatory detials
+4. Click on the Create new App button and choose Personal and fill the mandatory details
    ![App Credentials](../../assets/zerodha/app_credentials.png)
 
 ---
@@ -45,8 +45,8 @@ After creating the app, Zerodha will provide:
 
 Login to the zerodha dashboard using the link [Zerodha Login](https://kite.zerodha.com/)
 
-- Go to Password & Security at the top right corner of of your dashboard
-  ![Password and securtiy](../../assets/zerodha/password%20and%20security.png)
+- Go to Password & Security at the top right corner of your dashboard
+  ![Password and Security](../../assets/zerodha/password%20and%20security.png)
 
 - Enable 2FA TOTP
   ![External 2FA TOTP enable](../../assets/zerodha/external%202FA%20TOTP%201.png)
@@ -150,7 +150,7 @@ The request is then processed with the `to_zerodha` function which convert it to
 
 **Blitz <-> Zerodha Mapping**
 
-| Blitz Field.      | Zerodha Field      |
+| Blitz Field       | Zerodha Field      |
 | ----------------- | ------------------ |
 | ExchangeSegment   | exchange           |
 | SymbolName        | tradingsymbol      |
@@ -243,7 +243,7 @@ The response is then processed and then converted to blitz format
 }
 ```
 
-**Mapping of zerdha to blitz**
+**Mapping of Zerodha to Blitz**
 
 | Zerodha Field             | Blitz Field             |
 | ------------------------- | ----------------------- |

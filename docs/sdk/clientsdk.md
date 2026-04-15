@@ -39,7 +39,7 @@ def __init__(self, app_key: str, user_id: str)
     ```
 
 
-Initializes the client SDK with authentication amd WebSocket connection.
+Initializes the client SDK with authentication and WebSocket connection.
 
 
 **Parameters**
@@ -85,6 +85,38 @@ orders = client.get_orders()
 print(orders)
 
 # Example Response:
+# {
+#   'status': 'success',
+#   'message': 'request processed successfully',
+#   'data': [
+#     {
+#       'id': 136,
+#       'entityId': '9b4f9a76-f619-41a0-85bf-0d9ecff213c9',
+#       'strategyId': '36250ee3-ad08-4e09-862f-83deee8cdef9',
+#       'strategyInstanceId': '498cc797-3908-452a-91be-48157ebb9e71',
+#       'strategyInstanceName': 'NSECM|IDEA',
+#       'strategyName': 'Manual Trading',
+#       'ivObjectName': 'IDEA',
+#       'instrumentId': 110010000014366,
+#       'exchangeSegment': 'NSECM',
+#       'exchangeInstrumentId': 110010000014366,
+#       'instrumentName': 'IDEA',
+#       'instrumentType': 1,
+#       'blitzOrderId': 225121947920000006,
+#       'exchangeOrderId': '',
+#       'clientId': 'PRASHANT',
+#       'orderType': 'Limit',
+#       'orderSide': 'Buy',
+#       'orderStatus': 'PendingNew',
+#       'orderQuantity': 1,
+#       'orderPrice': 11.51,
+#       'tif': 'GFD',
+#       'productType': 'MIS',
+#       'isFictiveOrder': False,
+#       ...
+#     }
+#   ]
+# }
 ```
 
 
@@ -113,6 +145,30 @@ open_orders = client.get_open_orders()
 print(open_orders)
 
 # Example Response:
+# {
+#   'status': 'success',
+#   'message': 'request processed successfully',
+#   'data': [
+#     {
+#       'id': 136,
+#       'entityId': '9b4f9a76-f619-41a0-85bf-0d9ecff213c9',
+#       'strategyInstanceName': 'NSECM|IDEA',
+#       'instrumentName': 'IDEA',
+#       'blitzOrderId': 225121947920000006,
+#       'exchangeOrderId': '',
+#       'clientId': 'PRASHANT',
+#       'orderType': 'Limit',
+#       'orderSide': 'Buy',
+#       'orderStatus': 'PendingNew',
+#       'orderQuantity': 1,
+#       'orderPrice': 11.51,
+#       'leavesQuantity': 1,
+#       'tif': 'GFD',
+#       'productType': 'MIS',
+#       ...
+#     }
+#   ]
+# }
 ```
 
 
@@ -143,10 +199,40 @@ Fetch details of a specific order using its Blitz Order ID.
 **Example**
 
 ```python
-order = client.get_order_by_blitz_id(12345)
+order = client.get_order_by_blitz_id(225121947920000011)
 print(order)
 
 # Example Response:
+# {
+#   'status': 'success',
+#   'message': 'request processed successfully',
+#   'data': [
+#     {
+#       'id': 157,
+#       'entityId': '9b4f9a76-f619-41a0-85bf-0d9ecff213c9',
+#       'strategyInstanceName': 'NSECM|IDEA',
+#       'instrumentName': 'IDEA',
+#       'blitzOrderId': 225121947920000011,
+#       'exchangeOrderId': '3204124724133908',
+#       'executionId': '3204124724134090',
+#       'clientId': 'PRASHANT',
+#       'orderType': 'Limit',
+#       'orderSide': 'Buy',
+#       'orderStatus': 'Filled',
+#       'orderQuantity': 1,
+#       'orderPrice': 11.2,
+#       'lastTradedQuantity': 1,
+#       'lastTradedPrice': 11.2,
+#       'cumulativeQuantity': 1,
+#       'leavesQuantity': 0,
+#       'averageTradedPrice': 11.2,
+#       'isOrderCompleted': True,
+#       'executionType': 'Fill',
+#       'productType': 'MIS',
+#       ...
+#     }
+#   ]
+# }
 ```
 
 
@@ -210,6 +296,14 @@ order_data = {
 response = client.place_order(order_data)
 
 # Example Response:
+# {
+#   'status': 'success',
+#   'message': 'request processed successfully',
+#   'data': {
+#     'blitzOrderId': 225121947920000028,
+#     'correlationOrderId': '225121947920000028'
+#   }
+# }
 ```
 
 
@@ -258,9 +352,14 @@ modify_data = {
   #"strategyInstanceId": "656abb03-eec9-4cd0-a226-025090b3ff27",
   "tiF_GTD_Date": "2025-10-10"
 }
-response = client.modify_order(order_data)
+response = client.modify_order(modify_data)
 
 # Example Response:
+# {
+#   'status': 'success',
+#   'message': 'request processed successfully',
+#   'data': 'successfully send modify order request to blitz server'
+# }
 ```
 
 ### **`cancel_order`**
@@ -286,6 +385,11 @@ Cancel an existing order.
 response = client.cancel_order("NSE|RELIANCE", 12345)
 
 # Example Response:
+# {
+#   'status': 'success',
+#   'message': 'request processed successfully',
+#   'data': 'successfully send cancel order request to blitz server'
+# }
 ```
 
 
@@ -306,13 +410,32 @@ Fetch all current positions held by the client.
 positions = client.get_positions()
 
 # Example Response:
+# {
+#   'status': 'success',
+#   'message': 'request processed successfully',
+#   'data': [
+#     {
+#       'instrumentName': 'IDEA',
+#       'exchangeSegment': 'NSECM',
+#       'productType': 'MIS',
+#       'netQuantity': 1,
+#       'buyQuantity': 1,
+#       'sellQuantity': 0,
+#       'buyValue': 11.51,
+#       'sellValue': 0.0,
+#       'ltp': 11.2,
+#       'pnl': -0.31,
+#       ...
+#     }
+#   ]
+# }
 ```
 
 
 ## Statistics Management
 
 
-### **`get_statistics`##
+### **`get_statistics`**
 
 ```
 def get_statistics(self)
@@ -327,13 +450,27 @@ Fetch strategy statistics and performance metrics.
 stats = client.get_statistics()
 
 # Example Response:
+# {
+#   'status': 'success',
+#   'message': 'request processed successfully',
+#   'data': {
+#     'totalTrades': 12,
+#     'profitableTrades': 7,
+#     'lossTrades': 5,
+#     'winRate': 58.33,
+#     'totalPnl': 1250.75,
+#     'realizedPnl': 980.50,
+#     'unrealizedPnl': 270.25,
+#     'totalTurnover': 125000.0
+#   }
+# }
 ```
 
 
 ## Trade Management
 
 
-### **`get_trades`##
+### **`get_trades`**
 
 ```
 def get_trades(self)
@@ -349,6 +486,33 @@ Fetch all executed trades.
 trades = client.get_trades()
 
 # Example Response:
+# {
+#   'status': 'success',
+#   'message': 'request processed successfully',
+#   'data': [
+#     {
+#       'id': 27,
+#       'entityId': '9b4f9a76-f619-41a0-85bf-0d9ecff213c9',
+#       'instrumentName': 'IDEA',
+#       'exchangeSegment': 'NSECM',
+#       'blitzOrderId': 225121947920000011,
+#       'exchangeOrderId': '3204124724133908',
+#       'executionId': '3204124724134090',
+#       'clientId': 'PRASHANT',
+#       'orderType': 'Limit',
+#       'orderSide': 'Buy',
+#       'orderStatus': 'Filled',
+#       'orderQuantity': 1,
+#       'orderPrice': 11.2,
+#       'lastTradedQuantity': 1,
+#       'lastTradedPrice': 11.2,
+#       'averageTradedPrice': 11.2,
+#       'executionType': 'Fill',
+#       'productType': 'MIS',
+#       ...
+#     }
+#   ]
+# }
 ```
 
 
@@ -393,6 +557,9 @@ signals = [
 response = client.send_signals(signals)
 
 # Example Response:
+# {
+#   'status': 'Published'
+# }
 ```
 
 
@@ -416,7 +583,7 @@ def on_close(self, close_status_code, close_msg)
 
 Callback triggered when WebSocket connection is closed.
 
-### **`on_message`##
+### **`on_message`**
 
 ```
 @property def on_message(self)

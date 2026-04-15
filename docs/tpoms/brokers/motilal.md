@@ -106,7 +106,7 @@ Blitz requests are published to the Redis channel and consumed by the **MOFL ada
 }
 ```
 
-The request is then processed with the to_motilal function which convert it to the motilal payload
+The request is then processed with the `to_motilal` function which converts it to the Motilal payload.
 
 **Motilal Payload** -> Place Order
 
@@ -440,7 +440,7 @@ The response is then processed and then converted to blitz format
 ```json
 {
   "action": "DROPCOPY_TRADES",
-  "tpOmsName": "Zerodha",
+  "tpOmsName": "MOFL",
   "user_id": "ABC123",
   "Data": ""
 }

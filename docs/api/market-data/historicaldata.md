@@ -5,6 +5,7 @@ The Historical Data API allows you to retrieve past market data for a specific i
 Using this API, you can fetch OHLC (Open, High, Low, Close) data along with volume and timestamp information, which is essential for backtesting, technical analysis, and charting applications.
 
 These endpoints let you analyze historical price movements and build data-driven trading strategies.
+
 ---
 
 ## Endpoint
@@ -20,7 +21,7 @@ These endpoints let you analyze historical price movements and build data-driven
 | Header        | Value            | Required |
 | ------------  | ---------------- | -------- |
 | Content-Type  | application/json | Yes      |
-| Authorization | {acess_token}    | Yes      |
+| Authorization | Bearer {access_token} | Yes      |
 | Accept        | `*/*`              | Yes      |
 
 ---
@@ -36,18 +37,17 @@ These endpoints let you analyze historical price movements and build data-driven
 
 ---
 
-## Parameters
-|Parameter	|Type	|Required	|Description|
-|-----------|-------|-----------|-----------|
-|instrument	|string	|Yes	|Instrument symbol or ID (e.g., IRFC, `NSE)|
-|interval	|string	|Yes	|Time interval of data. Supported values: `D`, `1`, `5`, `15`, `30`, `60`|
+| Parameter  | Type   | Required | Description |
+|------------|--------|----------|--------------|
+| instrument | string | Yes      | Instrument symbol or ID (e.g., `IRFC`, `NSE`) |
+| interval   | string | Yes      | Time interval of data. Supported values: `D`, `1`, `5`, `15`, `30`, `60` |
 
 
-**Notes**
-Returns time-series OHLC data.
-Interval defines candle size:
-    -`D` → Daily
-    -`1`, `5`, `15`, `30`, `60` → Minutes
+> **Notes:**
+> Returns time-series OHLC data.
+> Interval defines candle size:
+>   - `D` → Daily
+>   - `1`, `5`, `15`, `30`, `60` → Minutes
 
 ---
 
@@ -57,7 +57,7 @@ Interval defines candle size:
 curl -X POST 'http://uat.quantxpress.com/marketfeed/historicalData' \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {access_token}' \
-  -H 'Accept": "*/*' \
+  -H 'Accept: */*' \
   -d '{
     "instrument": "IRFC",
     "interval": "D"

@@ -473,7 +473,7 @@ Once unsubscribed, the client will **stop receiving tick updates** for the speci
 **Example**
 
 ```python
-# Example: Unubscribe to live market data
+# Example: Unsubscribe from live market data
 client.unsubscribe_market_data(["NSE|RELIANCE"])
 
 # Response:
@@ -646,7 +646,7 @@ Parameters : `instrument_ids` (list | str): One or more instrument IDs to subscr
 def unsubscribe(instrument_ids)
 ```
 
-Unubscribes to live market data updates for the specified instruments.<br>
+Unsubscribes from live market data updates for the specified instruments.<br>
 
 Parameters : `instrument_ids` (list | str): One or more instrument IDs to unsubscribe to.
 
@@ -753,7 +753,9 @@ Initializes and starts the WebSocket connection in a background thread.
 
 ### `stop`
 
-` def stop(self)`
+```
+def stop(self)
+```
 
 Stops the active WebSocket connection and disables automatic reconnection.
 

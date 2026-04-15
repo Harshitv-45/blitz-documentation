@@ -18,7 +18,7 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
 | Header        | Value            | Required |
 | ------------  | ---------------- | -------- |
 | Content-Type  | application/json | Yes      |
-| Authorization | {acess_token}    | Yes      |
+| Authorization | Bearer {access_token} | Yes      |
 | Accept        | `*/*`              | Yes      |
 
 ## Example
@@ -113,7 +113,7 @@ curl -X 'GET' \
 | marketInstrumentId     | integer      | Market-wide instrument identifier                    |
 | series                 | string       | Instrument series (e.g., EQ for equity)              |
 | tickSize               | float       | Minimum price movement allowed                       |
-| isin                   | string       | International Securities Identification float       |
+| isin                   | string       | International Securities Identification Number       |
 | priceBandHigh          | float       | Upper price band limit                               |
 | priceBandLow           | float       | Lower price band limit                               |
 | multiplier             | float       | Contract multiplier                                  |

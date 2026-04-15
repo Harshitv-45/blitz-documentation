@@ -21,7 +21,7 @@ This API is essential for building trading dashboards, order books, and real-tim
 | Header        | Value            | Required |
 | ------------  | ---------------- | -------- |
 | Content-Type  | application/json | Yes      |
-| Authorization | {acess_token}    | Yes      |
+| Authorization | Bearer {access_token} | Yes      |
 | Accept        | `*/*`              | Yes      |
 
 ---
@@ -37,9 +37,9 @@ This API is essential for building trading dashboards, order books, and real-tim
 ---
 
 ## Parameters
-|Parameter	|Type	|Required	|Description|
-|-----------|-------|-----------|-----------|
-InstrumentIds|list / array|Yes|List of instrument identifiers (symbols or numeric instrument IDs).
+| Parameter      | Type         | Required | Description |
+|----------------|--------------|----------|--------------|
+| InstrumentIds  | list / array | Yes      | List of instrument identifiers (symbols or numeric instrument IDs). |
 
 ---
 
@@ -49,7 +49,7 @@ InstrumentIds|list / array|Yes|List of instrument identifiers (symbols or numeri
 curl -X POST 'http://uat.quantxpress.com/marketfeed/quote' \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {access_token}' \
-  -H 'Accept": "*/*' \
+  -H 'Accept: */*' \
   -d '{
     "InstrumentIds": ["NSECM|RELIANCE", "NSECM|TCS", 1010010002000001]
   }'
@@ -138,7 +138,7 @@ curl -X POST 'http://uat.quantxpress.com/marketfeed/quote' \
 | ------ | ------ | ------------------------------- |
 | Qty    | float | Quantity available              |
 | Price  | float | Bid price                       |
-| Orders | float | float of orders at that level  |
+| Orders | integer | Number of orders at that level  |
 
 ---
 
@@ -148,4 +148,4 @@ curl -X POST 'http://uat.quantxpress.com/marketfeed/quote' \
 | ------ | ------ | ------------------------------- |
 | Qty    | float | Quantity available              |
 | Price  | float | Ask price                       |
-| Orders | float | float of orders at that level  |
+| Orders | integer | Number of orders at that level  |

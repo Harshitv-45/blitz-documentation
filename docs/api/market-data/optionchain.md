@@ -21,7 +21,7 @@ This API helps traders analyze market sentiment, volatility, and strike-level ac
 | Header        | Value            | Required |
 | ------------  | ---------------- | -------- |
 | Content-Type  | application/json | Yes      |
-| Authorization | {acess_token}    | Yes      |
+| Authorization | Bearer {access_token} | Yes      |
 | Accept        | `*/*`              | Yes      |
 
 ---
@@ -41,13 +41,15 @@ This API helps traders analyze market sentiment, volatility, and strike-level ac
 |symbol	|string	|Yes	|Underlying asset symbol (e.g., NIFTY, BANKNIFTY, or equity symbol).|
 |expiryDate	|string	|Yes	|Expiry date in YYYY-MM-DD format.|
 
+---
+
 ## Example
 
 ```bash
 curl -X POST 'http://uat.quantxpress.com/marketfeed/optionChain' \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {access_token}' \
-  -H 'Accept": "*/*' \
+  -H 'Accept: */*' \
   -d '{
     "symbol": "NIFTY",
     "expiryDate": "2025-05-29"

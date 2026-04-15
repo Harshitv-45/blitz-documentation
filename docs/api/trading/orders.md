@@ -1,4 +1,6 @@
-The order APIs let you place orders of various types, modify or cancel pending orders, and retrieve daily order history. With OMS(Order Management System.), you can manage your trades efficiently, execute orders in real time, track their status, and maintain full control over your portfolio .
+# **Orders API**
+
+The order APIs let you place orders of various types, modify or cancel pending orders, and retrieve daily order history. With OMS (Order Management System), you can manage your trades efficiently, execute orders in real time, track their status, and maintain full control over your portfolio.
 
 These endpoints let you place, modify, cancel, and retrieve orders efficiently.
 
@@ -86,7 +88,7 @@ This endpoint allows you to submit a new order to the OMS trading system.
 Orders can be placed across supported instruments and exchanges, with full control over price, quantity, type, and validity.
 When an order is submitted, the system validates it for trading session availability, risk checks, and sufficient margin before routing it for execution.
 
-> Note:Successful API submission does not guarantee execution at the exchange. The response only confirms that the order has been registered with the OMS system.
+> **Note:** Successful API submission does not guarantee execution at the exchange. The response only confirms that the order has been registered with the OMS system.
 
 ```bash
 curl -X 'POST' \
@@ -182,11 +184,9 @@ curl -X 'POST' \
 The **Modify Order** endpoint allows you to update an existing order’s parameters such as **quantity**, **price**, **stop price**, or **validity**.
 Use this API to adjust open or pending orders before they are executed at the exchange.
 
-> Note
-
-    Only orders in *open* or *pending* states can be modified.
-    > Once an order is executed or cancelled, modification requests will be rejected.
-    - After modification, query the [orders](#fetching-orders) to confirm that the changes were successfully applied.
+> **Note:** Only orders in *open* or *pending* states can be modified.
+> Once an order is executed or cancelled, modification requests will be rejected.
+> After modification, query the [orders](#fetching-orders) to confirm that the changes were successfully applied.
 
 ---
 
