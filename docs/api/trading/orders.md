@@ -2,13 +2,14 @@ The order APIs let you place orders of various types, modify or cancel pending o
 
 These endpoints let you place, modify, cancel, and retrieve orders efficiently.
 
-| **Type** | **Endpoint**                                           | **Description**                                                  |
-| -------- | ------------------------------------------------------ | ---------------------------------------------------------------- |
-| POST     | [orders/placeOrder](#place-order)                      | Place an order of a particular variety.                          |
-| PUT      | [orders/modifyOrder](#modify-order)                    | Modify an open or pending order.                                 |
-| DELETE   | [order/cancelOrder](#cancel-order)                     | Cancel an open or pending order.                                 |
-| GET      | [orders](#fetching-orders)                             | Retrieve the list of all orders (open and executed) for the day. |
-| GET      | [orders/blitzOrderId/{blitzOrderId}](#get-order-by-id) | Get all states of a specific order by its BlitzOrderId.          |
+| **Type** | **Endpoint**                                                       | **Description**                                                  |
+| -------- | ------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| POST     | [orders/placeOrder](#place-order)                                  | Place an order of a particular variety.                          |
+| PUT      | [orders/modifyOrder](#modify-order)                                | Modify an open or pending order.                                 |
+| DELETE   | [orders/cancelOrder](#cancel-order)                                | Cancel an open or pending order.                                 |
+| GET      | [orders](#fetching-orders)                                         | Retrieve the list of all orders (open and executed) for the day. |
+| GET      | [orders/openOrders](#fetch-open-orders)                            | Retrieve all open or pending orders.                             |
+| GET      | [orders/orderHistory/blitzOrderId/{blitzOrderId}](#get-order-by-id) | Get all states of a specific order by its BlitzOrderId.         |
 
 #### Field Descriptions
 
@@ -73,363 +74,11 @@ These endpoints let you place, modify, cancel, and retrieve orders efficiently.
 
 #### Glossary / Notes { .no-toc }
 
-- `orders` → Refers to all orders for the day.
 - `placeOrder` → Endpoint to create a new order.
 - `modifyOrder` → Endpoint to update an existing order.
 - `cancelOrder` → Endpoint to delete/cancel an order.
 
-## Fetching Orders {#fetching-orders}
 
-Retrieve a complete list of all orders placed by a user for the current trading day. This includes:
-
-- **Open orders:** Orders that have been placed but not yet executed.
-- **Pending orders:** Orders waiting for certain conditions (like trigger price) before execution.
-- **Executed orders:** Orders that have been fully or partially filled.
-- **Cancelled orders:** Orders that were cancelled either by the user or the system.
-
-This endpoint provides a **centralized view of your daily trading activity**, making it easier to manage your portfolio and maintain control over all executed, pending, or cancelled trades.
-
-```bash
-curl -X 'GET' \
-  'http://uat.quantxpress.com/v1/api/order' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access_token}' \
-```
-
-#### Response Structure
-
-<details>
-<summary>Click to view Order List JSON Body</summary>
-
-```json
-{
-  "status": "success",
-  "message": "request processed successfully",
-  "data": [
-    {
-      "id": 136,
-      "entityId": "9b4f9a76-f619-41a0-85bf-0d9ecff213c9",
-      "strategyId": "36250ee3-ad08-4e09-862f-83deee8cdef9",
-      "strategyInstanceId": "498cc797-3908-452a-91be-48157ebb9e71",
-      "strategyInstanceName": "NSECM|IDEA",
-      "strategyName": "Manual Trading",
-      "ivObjectName": "IDEA",
-      "instrumentId": 110010000014366,
-      "exchangeSegment": "NSECM",
-      "exchangeInstrumentId": 110010000014366,
-      "instrumentName": "IDEA",
-      "instrumentType": 1,
-      "blitzOrderId": 225121947920000006,
-      "exchangeOrderId": "",
-      "executionId": "",
-      "account": "",
-      "clientId": "PRASHANT",
-      "orderType": "Limit",
-      "orderSide": "Buy",
-      "orderStatus": "PendingNew",
-      "orderQuantity": 1,
-      "orderPrice": 11.51,
-      "orderStopPrice": 0,
-      "orderTriggerPrice": 0,
-      "lastTradedQuantity": 0,
-      "lastTradedPrice": 0,
-      "cumulativeQuantity": 0,
-      "leavesQuantity": 1,
-      "tif": "GFD",
-      "orderExpiryDate": 1772002430146,
-      "orderDisclosedQuantity": 0,
-      "minimumQuantity": 0,
-      "orderGeneratedDateTime": 1772002430146,
-      "lastRequestDateTime": 1772002430146,
-      "exchangeTransactTime": 1772002430146,
-      "orderModificationCount": 0,
-      "orderTradeCount": 0,
-      "averageTradedPrice": 0,
-      "averageTradedValue": 0,
-      "isFictiveOrder": false,
-      "rejectType": "None",
-      "rejectTypeReason": "",
-      "orderTag": "NormalOrder",
-      "ctclId": "123456781234567",
-      "algoId": "12345",
-      "algoCategoryId": "5",
-      "clearingFirmId": "",
-      "panId": "AAAAC1234A",
-      "isOrderCompleted": false,
-      "userText": "",
-      "executionType": "None",
-      "strategyTag": "General",
-      "sequenceNumber": 63,
-      "correlationOrderId": "225121947920000006",
-      "productType": "MIS",
-      "sourceResponse": null
-    },
-    {
-      "id": 137,
-      "entityId": "9b4f9a76-f619-41a0-85bf-0d9ecff213c9",
-      "strategyId": "36250ee3-ad08-4e09-862f-83deee8cdef9",
-      "strategyInstanceId": "498cc797-3908-452a-91be-48157ebb9e71",
-      "strategyInstanceName": "NSECM|IDEA",
-      "strategyName": "Manual Trading",
-      "ivObjectName": "IDEA",
-      "instrumentId": 110010000014366,
-      "exchangeSegment": "NSECM",
-      "exchangeInstrumentId": 110010000014366,
-      "instrumentName": "IDEA",
-      "instrumentType": 1,
-      "blitzOrderId": 225121947920000007,
-      "exchangeOrderId": "",
-      "executionId": "",
-      "account": "",
-      "clientId": "PRASHANT",
-      "orderType": "Limit",
-      "orderSide": "Buy",
-      "orderStatus": "New",
-      "orderQuantity": 1,
-      "orderPrice": 11.51,
-      "orderStopPrice": 0,
-      "orderTriggerPrice": 0,
-      "lastTradedQuantity": 0,
-      "lastTradedPrice": 0,
-      "cumulativeQuantity": 0,
-      "leavesQuantity": 1,
-      "tif": "GFD",
-      "orderExpiryDate": 1772002430146,
-      "orderDisclosedQuantity": 0,
-      "minimumQuantity": 0,
-      "orderGeneratedDateTime": 1772002430146,
-      "lastRequestDateTime": 1772002430146,
-      "exchangeTransactTime": 1772002430146,
-      "orderModificationCount": 0,
-      "orderTradeCount": 0,
-      "averageTradedPrice": 0,
-      "averageTradedValue": 0,
-      "isFictiveOrder": false,
-      "rejectType": "None",
-      "rejectTypeReason": "",
-      "orderTag": "NormalOrder",
-      "ctclId": "123456781234567",
-      "algoId": "12345",
-      "algoCategoryId": "5",
-      "clearingFirmId": "",
-      "panId": "AAAAC1234A",
-      "isOrderCompleted": false,
-      "userText": "",
-      "executionType": "New",
-      "strategyTag": "General",
-      "sequenceNumber": 64,
-      "correlationOrderId": "225121947920000007",
-      "productType": "MIS",
-      "sourceResponse": null
-    }
-  ]
-}
-```
-
-</details>
-
-## Retrieve Order by BlitzOrderID {#get-order-by-id}
-
-Fetch the details of a specific order in the OMS system using its unique BlitzOrderId. This endpoint returns all order-related information including status, executed trades, and metadata.
-
-```bash
-curl -X 'GET' \
-  'http://uat.quantxpress.com/api/order/orderHistory/blitzOrderId/{blitzOrderId}' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access_token}' \
-```
-
-#### Response Structure
-
-<details>
-<summary>Click to view Order by BlitzOrderID JSON Body</summary>
-
-```json
-{
-  "status": "success",
-  "message": "request processed successfully",
-  "data": [
-    {
-      "id": 157,
-      "entityId": "9b4f9a76-f619-41a0-85bf-0d9ecff213c9",
-      "strategyId": "36250ee3-ad08-4e09-862f-83deee8cdef9",
-      "strategyInstanceId": "498cc797-3908-452a-91be-48157ebb9e71",
-      "strategyInstanceName": "NSECM|IDEA",
-      "strategyName": "Manual Trading",
-      "ivObjectName": "IDEA",
-      "instrumentId": 110010000014366,
-      "exchangeSegment": "NSECM",
-      "exchangeInstrumentId": 110010000014366,
-      "instrumentName": "IDEA",
-      "instrumentType": 1,
-      "blitzOrderId": 225121947920000011,
-      "exchangeOrderId": "3204124724133908",
-      "executionId": "3204124724134090",
-      "account": "",
-      "clientId": "PRASHANT",
-      "orderType": "Limit",
-      "orderSide": "Buy",
-      "orderStatus": "Filled",
-      "orderQuantity": 1,
-      "orderPrice": 11.2,
-      "orderStopPrice": 0,
-      "orderTriggerPrice": 0,
-      "lastTradedQuantity": 1,
-      "lastTradedPrice": 11.2,
-      "cumulativeQuantity": 1,
-      "leavesQuantity": 0,
-      "tif": "GFD",
-      "orderExpiryDate": 1772002820466,
-      "orderDisclosedQuantity": 0,
-      "minimumQuantity": 0,
-      "orderGeneratedDateTime": 1772002820466,
-      "lastRequestDateTime": 1772002820466,
-      "exchangeTransactTime": 1772002820000,
-      "orderModificationCount": 0,
-      "orderTradeCount": 0,
-      "averageTradedPrice": 11.2,
-      "averageTradedValue": 0,
-      "isFictiveOrder": false,
-      "rejectType": "None",
-      "rejectTypeReason": "",
-      "orderTag": "NormalOrder",
-      "ctclId": "123456781234567",
-      "algoId": "12345",
-      "algoCategoryId": "5",
-      "clearingFirmId": "",
-      "panId": "AAAAC1234A",
-      "isOrderCompleted": true,
-      "userText": "",
-      "executionType": "Fill",
-      "strategyTag": "General",
-      "sequenceNumber": 84,
-      "correlationOrderId": "225121947920000011",
-      "productType": "MIS",
-      "sourceResponse": null
-    },
-    {
-      "id": 156,
-      "entityId": "9b4f9a76-f619-41a0-85bf-0d9ecff213c9",
-      "strategyId": "36250ee3-ad08-4e09-862f-83deee8cdef9",
-      "strategyInstanceId": "498cc797-3908-452a-91be-48157ebb9e71",
-      "strategyInstanceName": "NSECM|IDEA",
-      "strategyName": "Manual Trading",
-      "ivObjectName": "IDEA",
-      "instrumentId": 110010000014366,
-      "exchangeSegment": "NSECM",
-      "exchangeInstrumentId": 110010000014366,
-      "instrumentName": "IDEA",
-      "instrumentType": 1,
-      "blitzOrderId": 225121947920000011,
-      "exchangeOrderId": "3204124724133908",
-      "executionId": "3204124724134089",
-      "account": "",
-      "clientId": "PRASHANT",
-      "orderType": "Limit",
-      "orderSide": "Buy",
-      "orderStatus": "New",
-      "orderQuantity": 1,
-      "orderPrice": 11.2,
-      "orderStopPrice": 0,
-      "orderTriggerPrice": 0,
-      "lastTradedQuantity": 0,
-      "lastTradedPrice": 0,
-      "cumulativeQuantity": 0,
-      "leavesQuantity": 1,
-      "tif": "GFD",
-      "orderExpiryDate": 1772002820466,
-      "orderDisclosedQuantity": 0,
-      "minimumQuantity": 0,
-      "orderGeneratedDateTime": 1772002820466,
-      "lastRequestDateTime": 1772002820466,
-      "exchangeTransactTime": 1772002820000,
-      "orderModificationCount": 0,
-      "orderTradeCount": 0,
-      "averageTradedPrice": 0,
-      "averageTradedValue": 0,
-      "isFictiveOrder": false,
-      "rejectType": "None",
-      "rejectTypeReason": "",
-      "orderTag": "NormalOrder",
-      "ctclId": "123456781234567",
-      "algoId": "12345",
-      "algoCategoryId": "5",
-      "clearingFirmId": "",
-      "panId": "AAAAC1234A",
-      "isOrderCompleted": false,
-      "userText": "",
-      "executionType": "New",
-      "strategyTag": "General",
-      "sequenceNumber": 83,
-      "correlationOrderId": "225121947920000011",
-      "productType": "MIS",
-      "sourceResponse": null
-    },
-    {
-      "id": 155,
-      "entityId": "9b4f9a76-f619-41a0-85bf-0d9ecff213c9",
-      "strategyId": "36250ee3-ad08-4e09-862f-83deee8cdef9",
-      "strategyInstanceId": "498cc797-3908-452a-91be-48157ebb9e71",
-      "strategyInstanceName": "NSECM|IDEA",
-      "strategyName": "Manual Trading",
-      "ivObjectName": "IDEA",
-      "instrumentId": 110010000014366,
-      "exchangeSegment": "NSECM",
-      "exchangeInstrumentId": 110010000014366,
-      "instrumentName": "IDEA",
-      "instrumentType": 1,
-      "blitzOrderId": 225121947920000011,
-      "exchangeOrderId": "",
-      "executionId": "",
-      "account": "",
-      "clientId": "PRASHANT",
-      "orderType": "Limit",
-      "orderSide": "Buy",
-      "orderStatus": "PendingNew",
-      "orderQuantity": 1,
-      "orderPrice": 11.2,
-      "orderStopPrice": 0,
-      "orderTriggerPrice": 0,
-      "lastTradedQuantity": 0,
-      "lastTradedPrice": 0,
-      "cumulativeQuantity": 0,
-      "leavesQuantity": 1,
-      "tif": "GFD",
-      "orderExpiryDate": 1772002820466,
-      "orderDisclosedQuantity": 0,
-      "minimumQuantity": 0,
-      "orderGeneratedDateTime": 1772002820466,
-      "lastRequestDateTime": 1772002820466,
-      "exchangeTransactTime": 1772002820466,
-      "orderModificationCount": 0,
-      "orderTradeCount": 0,
-      "averageTradedPrice": 0,
-      "averageTradedValue": 0,
-      "isFictiveOrder": false,
-      "rejectType": "None",
-      "rejectTypeReason": "",
-      "orderTag": "NormalOrder",
-      "ctclId": "123456781234567",
-      "algoId": "12345",
-      "algoCategoryId": "5",
-      "clearingFirmId": "",
-      "panId": "AAAAC1234A",
-      "isOrderCompleted": false,
-      "userText": "",
-      "executionType": "None",
-      "strategyTag": "General",
-      "sequenceNumber": 82,
-      "correlationOrderId": "225121947920000011",
-      "productType": "MIS",
-      "sourceResponse": null
-    }
-  ]
-}
-```
-
-</details>
 
 ## Place an Order {#place-order}
 
@@ -670,5 +319,383 @@ curl -X 'DELETE' \
 - Use the correct combination of **InstrumentId** and **ExchangeOrderId** to ensure the intended order is cancelled.
 - Always verify the **cancellation status** using the order status or history endpoint after sending the request.
 - Avoid sending multiple cancellation requests for the same order to prevent duplicate or conflicting actions.
+
+
+## Fetching Orders {#fetching-orders}
+
+Retrieve a complete list of all orders placed by a user for the current trading day. This includes:
+
+- **Open orders:** Orders that have been placed but not yet executed.
+- **Pending orders:** Orders waiting for certain conditions (like trigger price) before execution.
+- **Executed orders:** Orders that have been fully or partially filled.
+- **Cancelled orders:** Orders that were cancelled either by the user or the system.
+
+This endpoint provides a **centralized view of your daily trading activity**, making it easier to manage your portfolio and maintain control over all executed, pending, or cancelled trades.
+
+```bash
+curl -X 'GET' \
+  'http://uat.quantxpress.com/v1/api/order' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {access_token}' \
+```
+
+#### Response Structure
+
+<details>
+<summary>Click to view Order List JSON Body</summary>
+
+```json
+{
+  "status": "success",
+  "message": "request processed successfully",
+  "data": [
+    {
+      "id": 136,
+      "entityId": "9b4f9a76-f619-41a0-85bf-0d9ecff213c9",
+      "strategyId": "36250ee3-ad08-4e09-862f-83deee8cdef9",
+      "strategyInstanceId": "498cc797-3908-452a-91be-48157ebb9e71",
+      "strategyInstanceName": "NSECM|IDEA",
+      "strategyName": "Manual Trading",
+      "ivObjectName": "IDEA",
+      "instrumentId": 110010000014366,
+      "exchangeSegment": "NSECM",
+      "exchangeInstrumentId": 110010000014366,
+      "instrumentName": "IDEA",
+      "instrumentType": 1,
+      "blitzOrderId": 225121947920000006,
+      "exchangeOrderId": "",
+      "executionId": "",
+      "account": "",
+      "clientId": "PRASHANT",
+      "orderType": "Limit",
+      "orderSide": "Buy",
+      "orderStatus": "PendingNew",
+      "orderQuantity": 1,
+      "orderPrice": 11.51,
+      "orderStopPrice": 0,
+      "orderTriggerPrice": 0,
+      "lastTradedQuantity": 0,
+      "lastTradedPrice": 0,
+      "cumulativeQuantity": 0,
+      "leavesQuantity": 1,
+      "tif": "GFD",
+      "orderExpiryDate": 1772002430146,
+      "orderDisclosedQuantity": 0,
+      "minimumQuantity": 0,
+      "orderGeneratedDateTime": 1772002430146,
+      "lastRequestDateTime": 1772002430146,
+      "exchangeTransactTime": 1772002430146,
+      "orderModificationCount": 0,
+      "orderTradeCount": 0,
+      "averageTradedPrice": 0,
+      "averageTradedValue": 0,
+      "isFictiveOrder": false,
+      "rejectType": "None",
+      "rejectTypeReason": "",
+      "orderTag": "NormalOrder",
+      "ctclId": "123456781234567",
+      "algoId": "12345",
+      "algoCategoryId": "5",
+      "clearingFirmId": "",
+      "panId": "AAAAC1234A",
+      "isOrderCompleted": false,
+      "userText": "",
+      "executionType": "None",
+      "strategyTag": "General",
+      "sequenceNumber": 63,
+      "correlationOrderId": "225121947920000006",
+      "productType": "MIS",
+      "sourceResponse": null
+    },
+    {
+      "id": 137,
+      "entityId": "9b4f9a76-f619-41a0-85bf-0d9ecff213c9",
+      "strategyId": "36250ee3-ad08-4e09-862f-83deee8cdef9",
+      "strategyInstanceId": "498cc797-3908-452a-91be-48157ebb9e71",
+      "strategyInstanceName": "NSECM|IDEA",
+      "strategyName": "Manual Trading",
+      "ivObjectName": "IDEA",
+      "instrumentId": 110010000014366,
+      "exchangeSegment": "NSECM",
+      "exchangeInstrumentId": 110010000014366,
+      "instrumentName": "IDEA",
+      "instrumentType": 1,
+      "blitzOrderId": 225121947920000007,
+      "exchangeOrderId": "",
+      "executionId": "",
+      "account": "",
+      "clientId": "PRASHANT",
+      "orderType": "Limit",
+      "orderSide": "Buy",
+      "orderStatus": "New",
+      "orderQuantity": 1,
+      "orderPrice": 11.51,
+      "orderStopPrice": 0,
+      "orderTriggerPrice": 0,
+      "lastTradedQuantity": 0,
+      "lastTradedPrice": 0,
+      "cumulativeQuantity": 0,
+      "leavesQuantity": 1,
+      "tif": "GFD",
+      "orderExpiryDate": 1772002430146,
+      "orderDisclosedQuantity": 0,
+      "minimumQuantity": 0,
+      "orderGeneratedDateTime": 1772002430146,
+      "lastRequestDateTime": 1772002430146,
+      "exchangeTransactTime": 1772002430146,
+      "orderModificationCount": 0,
+      "orderTradeCount": 0,
+      "averageTradedPrice": 0,
+      "averageTradedValue": 0,
+      "isFictiveOrder": false,
+      "rejectType": "None",
+      "rejectTypeReason": "",
+      "orderTag": "NormalOrder",
+      "ctclId": "123456781234567",
+      "algoId": "12345",
+      "algoCategoryId": "5",
+      "clearingFirmId": "",
+      "panId": "AAAAC1234A",
+      "isOrderCompleted": false,
+      "userText": "",
+      "executionType": "New",
+      "strategyTag": "General",
+      "sequenceNumber": 64,
+      "correlationOrderId": "225121947920000007",
+      "productType": "MIS",
+      "sourceResponse": null
+    }
+  ]
+}
+```
+
+</details>
+
+## Fetch Open Orders {#fetch-open-orders}
+
+Retrieve all currently open or pending orders.
+
+```bash
+curl -X 'GET' \
+  'http://uat.quantxpress.com/api/order/openOrders' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {access_token}'
+```
+
+
+#### Response
+```json
+{
+  "status": "success",
+  "message": "request processed successfully",
+  "data": []
+}
+```
+
+
+## Retrieve Order by BlitzOrderID {#get-order-by-id}
+
+Fetch the details of a specific order in the OMS system using its unique BlitzOrderId. This endpoint returns all order-related information including status, executed trades, and metadata.
+
+```bash
+curl -X 'GET' \
+  'http://uat.quantxpress.com/api/order/orderHistory/blitzOrderId/{blitzOrderId}' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {access_token}' \
+```
+
+#### Response Structure
+
+<details>
+<summary>Click to view Order by BlitzOrderID JSON Body</summary>
+
+```json
+{
+  "status": "success",
+  "message": "request processed successfully",
+  "data": [
+    {
+      "id": 157,
+      "entityId": "9b4f9a76-f619-41a0-85bf-0d9ecff213c9",
+      "strategyId": "36250ee3-ad08-4e09-862f-83deee8cdef9",
+      "strategyInstanceId": "498cc797-3908-452a-91be-48157ebb9e71",
+      "strategyInstanceName": "NSECM|IDEA",
+      "strategyName": "Manual Trading",
+      "ivObjectName": "IDEA",
+      "instrumentId": 110010000014366,
+      "exchangeSegment": "NSECM",
+      "exchangeInstrumentId": 110010000014366,
+      "instrumentName": "IDEA",
+      "instrumentType": 1,
+      "blitzOrderId": 225121947920000011,
+      "exchangeOrderId": "3204124724133908",
+      "executionId": "3204124724134090",
+      "account": "",
+      "clientId": "PRASHANT",
+      "orderType": "Limit",
+      "orderSide": "Buy",
+      "orderStatus": "Filled",
+      "orderQuantity": 1,
+      "orderPrice": 11.2,
+      "orderStopPrice": 0,
+      "orderTriggerPrice": 0,
+      "lastTradedQuantity": 1,
+      "lastTradedPrice": 11.2,
+      "cumulativeQuantity": 1,
+      "leavesQuantity": 0,
+      "tif": "GFD",
+      "orderExpiryDate": 1772002820466,
+      "orderDisclosedQuantity": 0,
+      "minimumQuantity": 0,
+      "orderGeneratedDateTime": 1772002820466,
+      "lastRequestDateTime": 1772002820466,
+      "exchangeTransactTime": 1772002820000,
+      "orderModificationCount": 0,
+      "orderTradeCount": 0,
+      "averageTradedPrice": 11.2,
+      "averageTradedValue": 0,
+      "isFictiveOrder": false,
+      "rejectType": "None",
+      "rejectTypeReason": "",
+      "orderTag": "NormalOrder",
+      "ctclId": "123456781234567",
+      "algoId": "12345",
+      "algoCategoryId": "5",
+      "clearingFirmId": "",
+      "panId": "AAAAC1234A",
+      "isOrderCompleted": true,
+      "userText": "",
+      "executionType": "Fill",
+      "strategyTag": "General",
+      "sequenceNumber": 84,
+      "correlationOrderId": "225121947920000011",
+      "productType": "MIS",
+      "sourceResponse": null
+    },
+    {
+      "id": 156,
+      "entityId": "9b4f9a76-f619-41a0-85bf-0d9ecff213c9",
+      "strategyId": "36250ee3-ad08-4e09-862f-83deee8cdef9",
+      "strategyInstanceId": "498cc797-3908-452a-91be-48157ebb9e71",
+      "strategyInstanceName": "NSECM|IDEA",
+      "strategyName": "Manual Trading",
+      "ivObjectName": "IDEA",
+      "instrumentId": 110010000014366,
+      "exchangeSegment": "NSECM",
+      "exchangeInstrumentId": 110010000014366,
+      "instrumentName": "IDEA",
+      "instrumentType": 1,
+      "blitzOrderId": 225121947920000011,
+      "exchangeOrderId": "3204124724133908",
+      "executionId": "3204124724134089",
+      "account": "",
+      "clientId": "PRASHANT",
+      "orderType": "Limit",
+      "orderSide": "Buy",
+      "orderStatus": "New",
+      "orderQuantity": 1,
+      "orderPrice": 11.2,
+      "orderStopPrice": 0,
+      "orderTriggerPrice": 0,
+      "lastTradedQuantity": 0,
+      "lastTradedPrice": 0,
+      "cumulativeQuantity": 0,
+      "leavesQuantity": 1,
+      "tif": "GFD",
+      "orderExpiryDate": 1772002820466,
+      "orderDisclosedQuantity": 0,
+      "minimumQuantity": 0,
+      "orderGeneratedDateTime": 1772002820466,
+      "lastRequestDateTime": 1772002820466,
+      "exchangeTransactTime": 1772002820000,
+      "orderModificationCount": 0,
+      "orderTradeCount": 0,
+      "averageTradedPrice": 0,
+      "averageTradedValue": 0,
+      "isFictiveOrder": false,
+      "rejectType": "None",
+      "rejectTypeReason": "",
+      "orderTag": "NormalOrder",
+      "ctclId": "123456781234567",
+      "algoId": "12345",
+      "algoCategoryId": "5",
+      "clearingFirmId": "",
+      "panId": "AAAAC1234A",
+      "isOrderCompleted": false,
+      "userText": "",
+      "executionType": "New",
+      "strategyTag": "General",
+      "sequenceNumber": 83,
+      "correlationOrderId": "225121947920000011",
+      "productType": "MIS",
+      "sourceResponse": null
+    },
+    {
+      "id": 155,
+      "entityId": "9b4f9a76-f619-41a0-85bf-0d9ecff213c9",
+      "strategyId": "36250ee3-ad08-4e09-862f-83deee8cdef9",
+      "strategyInstanceId": "498cc797-3908-452a-91be-48157ebb9e71",
+      "strategyInstanceName": "NSECM|IDEA",
+      "strategyName": "Manual Trading",
+      "ivObjectName": "IDEA",
+      "instrumentId": 110010000014366,
+      "exchangeSegment": "NSECM",
+      "exchangeInstrumentId": 110010000014366,
+      "instrumentName": "IDEA",
+      "instrumentType": 1,
+      "blitzOrderId": 225121947920000011,
+      "exchangeOrderId": "",
+      "executionId": "",
+      "account": "",
+      "clientId": "PRASHANT",
+      "orderType": "Limit",
+      "orderSide": "Buy",
+      "orderStatus": "PendingNew",
+      "orderQuantity": 1,
+      "orderPrice": 11.2,
+      "orderStopPrice": 0,
+      "orderTriggerPrice": 0,
+      "lastTradedQuantity": 0,
+      "lastTradedPrice": 0,
+      "cumulativeQuantity": 0,
+      "leavesQuantity": 1,
+      "tif": "GFD",
+      "orderExpiryDate": 1772002820466,
+      "orderDisclosedQuantity": 0,
+      "minimumQuantity": 0,
+      "orderGeneratedDateTime": 1772002820466,
+      "lastRequestDateTime": 1772002820466,
+      "exchangeTransactTime": 1772002820466,
+      "orderModificationCount": 0,
+      "orderTradeCount": 0,
+      "averageTradedPrice": 0,
+      "averageTradedValue": 0,
+      "isFictiveOrder": false,
+      "rejectType": "None",
+      "rejectTypeReason": "",
+      "orderTag": "NormalOrder",
+      "ctclId": "123456781234567",
+      "algoId": "12345",
+      "algoCategoryId": "5",
+      "clearingFirmId": "",
+      "panId": "AAAAC1234A",
+      "isOrderCompleted": false,
+      "userText": "",
+      "executionType": "None",
+      "strategyTag": "General",
+      "sequenceNumber": 82,
+      "correlationOrderId": "225121947920000011",
+      "productType": "MIS",
+      "sourceResponse": null
+    }
+  ]
+}
+```
+
+</details>
+
 
 > **Note:** Ensure the JWT token is valid and included in the `Authorization` header. Without it, the server will respond with `401 Unauthorized`.

@@ -1,0 +1,2362 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Blitz Trading Platform API, SDK and Broker Integration Documentation">
+      
+      
+        <meta name="author" content="Blitz">
+      
+      
+        <link rel="canonical" href="https://your-domain.com/sdk/clientsdk/">
+      
+      
+        <link rel="prev" href="../sdk/">
+      
+      
+        <link rel="next" href="../marketdatasdk/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Client SDK - Blitz</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#client-sdk" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Blitz" class="md-header__button md-logo" aria-label="Blitz" data-md-component="logo">
+      
+  <img src="../../assets/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blitz
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Client SDK
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Blitz" class="md-nav__button md-logo" aria-label="Blitz" data-md-component="logo">
+      
+  <img src="../../assets/icon.png" alt="logo">
+
+    </a>
+    Blitz
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/API_Structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trading APIs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Trading APIs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/trading/orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/trading/trades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trades History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/trading/signal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Signals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Market Data
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Market Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/market-data/instrumentId/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instruments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/market-data/ltp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Last Trading Price
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/market-data/optionchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Option Chain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/market-data/marketquote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Market Quote
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/market-data/historicaldata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historical Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blitz SDK
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blitz SDK
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Started with SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client SDK
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#blitzapiclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BlitzAPIClient
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BlitzAPIClient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Order Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_orders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_open_orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_open_orders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_order_by_blitz_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_order_by_blitz_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#place_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        place_order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        modify_order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cancel_order
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#position-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Position Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_positions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistics-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistics Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statistics Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        **get_statistics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trade-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trade Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trade Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_trades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        **get_trades
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send_signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        send_signals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signals-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        signals Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#websocket-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSocket Callbacks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WebSocket Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on_connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on_close" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_close
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on_message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        **on_message
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marketdatasdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Market Data SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instrumentmasterskd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instrument Master
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TPOMS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TPOMS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tpoms/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tpoms/blitz_order_request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Order Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broker Integrations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Broker Integrations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tpoms/brokers/zerodha/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zerodha
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tpoms/brokers/motilal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motilal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#blitzapiclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BlitzAPIClient
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BlitzAPIClient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Order Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_orders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_open_orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_open_orders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_order_by_blitz_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_order_by_blitz_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#place_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        place_order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        modify_order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cancel_order
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#position-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Position Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_positions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistics-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistics Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statistics Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        **get_statistics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trade-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trade Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trade Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_trades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        **get_trades
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send_signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        send_signals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signals-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        signals Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#websocket-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSocket Callbacks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WebSocket Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on_connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on_close" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_close
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on_message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        **on_message
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="client-sdk">Client SDK<a class="headerlink" href="#client-sdk" title="Permanent link">&para;</a></h1>
+<h2 id="blitzapiclient"><strong>BlitzAPIClient</strong><a class="headerlink" href="#blitzapiclient" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>class BlitzAPIClient
+</code></pre></div>
+<p>The <code>BlitzAPIClient</code> class provides access to order management, positions, trades, and strategy operations along with integrated authentication and WebSocket handling.</p>
+<hr />
+<h3 id="__init__"><strong><code>__init__</code></strong><a class="headerlink" href="#__init__" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>def __init__(self, app_key: str, user_id: str)
+</code></pre></div>
+<details class="info">
+<summary>Source Code</summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">app_key</span> <span class="o">=</span> <span class="n">app_key</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">user_id</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">api_base_url</span> <span class="o">=</span> <span class="n">API_BASE_URL</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">api_hist_base_url</span> <span class="o">=</span> <span class="n">API_BASE_URL</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">auth_base_url</span> <span class="o">=</span> <span class="n">AUTH_BASE_URL</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">token</span> <span class="o">=</span> <span class="kc">None</span> 
+    <span class="bp">self</span><span class="o">.</span><span class="n">auth_client</span> <span class="o">=</span> <span class="n">AuthClient</span><span class="p">(</span><span class="n">app_key</span><span class="p">,</span> <span class="n">user_id</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">access_token</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_logged_in</span><span class="p">()</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">ws_client</span> <span class="o">=</span> <span class="n">MarketDataWebSocketClient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">access_token</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ws_client</span><span class="o">.</span><span class="n">set_on_connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_connect</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ws_client</span><span class="o">.</span><span class="n">set_on_close</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_close</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">Redis</span><span class="o">.</span><span class="n">from_url</span><span class="p">(</span><span class="n">REDIS_URL</span><span class="p">,</span> <span class="n">decode_responses</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<p>Initializes the client SDK with authentication amd WebSocket connection.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app_key</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>API key provided for authentication</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique user/client identifier</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">client</span> <span class="o">=</span> <span class="n">BlitzAPIClient</span><span class="p">(</span><span class="n">app_key</span><span class="o">=</span><span class="s2">&quot;abc123xyz&quot;</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;U12345&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="order-management">Order Management<a class="headerlink" href="#order-management" title="Permanent link">&para;</a></h2>
+<h3 id="get_orders"><strong><code>get_orders</code></strong><a class="headerlink" href="#get_orders" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>def get_orders(self)
+</code></pre></div>
+<details class="info">
+<summary>Source Code</summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_orders</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch all orders.&quot;&quot;&quot;</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Fetching all orders&quot;</span><span class="p">)</span>
+    <span class="n">endpoint</span> <span class="o">=</span> <span class="s2">&quot;orders&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GET&quot;</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<p>Fetch all orders placed by the client.</p>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">orders</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_orders</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">orders</span><span class="p">)</span>
+
+<span class="c1"># Example Response:</span>
+</code></pre></div>
+<h3 id="get_open_orders"><strong><code>get_open_orders</code></strong><a class="headerlink" href="#get_open_orders" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>def get_open_orders(self)
+</code></pre></div>
+<details class="info">
+<summary>Source Code</summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_open_orders</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch all Open Orders&quot;&quot;&quot;</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Fetching all Open Orders&quot;</span><span class="p">)</span>
+    <span class="n">endpoint</span> <span class="o">=</span> <span class="s2">&quot;orders/openOrders&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GET&quot;</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<p>Fetch all currently open (active) orders.</p>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">open_orders</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_open_orders</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">open_orders</span><span class="p">)</span>
+
+<span class="c1"># Example Response:</span>
+</code></pre></div>
+<h3 id="get_order_by_blitz_id"><strong><code>get_order_by_blitz_id</code></strong><a class="headerlink" href="#get_order_by_blitz_id" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>def get_order_by_blitz_id(self, blitz_order_id: int)
+</code></pre></div>
+<details class="info">
+<summary>Source Code</summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_order_by_blitz_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">blitz_order_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch a single order by BlitzOrderId.&quot;&quot;&quot;</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fetching order for BlitzOrderId=</span><span class="si">{</span><span class="n">blitz_order_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;orders/</span><span class="si">{</span><span class="n">blitz_order_id</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GET&quot;</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<p>Fetch details of a specific order using its Blitz Order ID.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blitz_order_id</td>
+<td>integer</td>
+<td>Yes</td>
+<td>Unique Blitz order ID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">order</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_order_by_blitz_id</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+
+<span class="c1"># Example Response:</span>
+</code></pre></div>
+<h3 id="place_order"><strong><code>place_order</code></strong><a class="headerlink" href="#place_order" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>def place_order(self, order_data: dict)
+</code></pre></div>
+<details class="info">
+<summary>Source Code</summary>
+<p><code>python
+def place_order(self, order_data: dict):
+    """Place a new order."""
+    logging.info(f"Placing order: {order_data}")
+    endpoint = "orders/placeOrder"
+    return self._send_request(endpoint, payload=order_data, method="POST")</code></p>
+</details>
+<p>Place a new order in the market.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order_data</td>
+<td>dict</td>
+<td>Yes</td>
+<td>Order payload containing instrument details, quantity, price, and order configuration.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>order_data Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrumentId</td>
+<td>integer</td>
+<td>No*</td>
+<td>Unique instrument identifier. Either <code>instrumentId</code> or <code>symbol</code> is required</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>No*</td>
+<td>Trading symbol e.g., NSE</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>integer</td>
+<td>Yes</td>
+<td>Number of units to trade</td>
+</tr>
+<tr>
+<td>price</td>
+<td>number</td>
+<td>No</td>
+<td>Price for limit orders</td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>string</td>
+<td>Yes</td>
+<td>Type of order (<code>MARKET</code>, <code>LIMIT</code>)</td>
+</tr>
+<tr>
+<td>transactionType</td>
+<td>string</td>
+<td>Yes</td>
+<td>Buy or Sell (<code>BUY</code>, <code>SELL</code>)</td>
+</tr>
+<tr>
+<td>productType</td>
+<td>string</td>
+<td>Yes</td>
+<td>Product type (<code>CNC</code>, <code>MIS</code>, etc.)</td>
+</tr>
+<tr>
+<td>validity</td>
+<td>string</td>
+<td>Yes</td>
+<td>Order validity (<code>DAY</code>, <code>IOC</code>)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> Either <code>instrumentId</code> or <code>symbol</code> must be provided.</p>
+</blockquote>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">order_data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;correlationOrderId&quot;</span><span class="p">:</span> <span class="s2">&quot;corr_123&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;product&quot;</span><span class="p">:</span> <span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;tif&quot;</span><span class="p">:</span> <span class="s2">&quot;GTD&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mf">10.1</span><span class="p">,</span>
+  <span class="s2">&quot;orderType&quot;</span><span class="p">:</span> <span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+  <span class="c1">#&quot;instrumentId&quot;: 1010010000010666,</span>
+  <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;NSECM|IDEA&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;orderSide&quot;</span><span class="p">:</span> <span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;disclosedQuantity&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">&quot;stopPrice&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">&quot;clientId&quot;</span><span class="p">:</span> <span class="s2">&quot;ABC&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;tiF_GTD_Date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-10-10&quot;</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">place_order</span><span class="p">(</span><span class="n">order_data</span><span class="p">)</span>
+
+<span class="c1"># Example Response:</span>
+</code></pre></div>
+<h3 id="modify_order"><strong><code>modify_order</code></strong><a class="headerlink" href="#modify_order" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>def modify_order(self, order_data: dict)
+</code></pre></div>
+<p>Modify an existing order.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order_data</td>
+<td>dict</td>
+<td>Yes</td>
+<td>Payload containing updated order details.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>order_data Fields</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blitzOrderId</td>
+<td>integer</td>
+<td>Yes</td>
+<td>Unique Blitz order ID</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>integer</td>
+<td>No</td>
+<td>Updated quantity</td>
+</tr>
+<tr>
+<td>price</td>
+<td>number</td>
+<td>No</td>
+<td>Updated price</td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>string</td>
+<td>No</td>
+<td>Updated order type (<code>LIMIT</code>, <code>MARKET</code>)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Only fields to be modified need to be passed.</p>
+</blockquote>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">modify_data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;modifiedOrderQuantity&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mf">10.8</span><span class="p">,</span>
+  <span class="s2">&quot;blitzOrderId&quot;</span><span class="p">:</span> <span class="mi">29104141260000005</span><span class="p">,</span>
+  <span class="s2">&quot;orderType&quot;</span><span class="p">:</span> <span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+  <span class="c1">#&quot;instrumentId&quot;: 1010010000010666,</span>
+  <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;NSECM|IDEA&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;disclosedQuantity&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">&quot;stopPrice&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">&quot;tif&quot;</span><span class="p">:</span> <span class="s2">&quot;GFD&quot;</span><span class="p">,</span>
+  <span class="c1">#&quot;strategyInstanceId&quot;: &quot;656abb03-eec9-4cd0-a226-025090b3ff27&quot;,</span>
+  <span class="s2">&quot;tiF_GTD_Date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-10-10&quot;</span>
+<span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">modify_order</span><span class="p">(</span><span class="n">order_data</span><span class="p">)</span>
+
+<span class="c1"># Example Response:</span>
+</code></pre></div>
+<h3 id="cancel_order"><strong><code>cancel_order</code></strong><a class="headerlink" href="#cancel_order" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>def cancel_order(self, instrument: str, blitzOrderId: int)
+</code></pre></div>
+<p>Cancel an existing order.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrument</td>
+<td>string</td>
+<td>Yes</td>
+<td>Instrument identifier. Can be either <code>instrumentId</code> (numeric) or <code>symbol</code></td>
+</tr>
+<tr>
+<td>blitzOrderId</td>
+<td>integer</td>
+<td>Yes</td>
+<td>Unique Blitz Order ID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">cancel_order</span><span class="p">(</span><span class="s2">&quot;NSE|RELIANCE&quot;</span><span class="p">,</span> <span class="mi">12345</span><span class="p">)</span>
+
+<span class="c1"># Example Response:</span>
+</code></pre></div>
+<h2 id="position-management">Position Management<a class="headerlink" href="#position-management" title="Permanent link">&para;</a></h2>
+<h3 id="get_positions"><strong><code>get_positions</code></strong><a class="headerlink" href="#get_positions" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>def get_positions(self)
+</code></pre></div>
+<p>Fetch all current positions held by the client.</p>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">positions</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_positions</span><span class="p">()</span>
+
+<span class="c1"># Example Response:</span>
+</code></pre></div>
+<h2 id="statistics-management">Statistics Management<a class="headerlink" href="#statistics-management" title="Permanent link">&para;</a></h2>
+<h3 id="get_statistics">**<code>get_statistics</code><a class="headerlink" href="#get_statistics" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>def get_statistics(self)
+</code></pre></div>
+<p>Fetch strategy statistics and performance metrics.</p>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">stats</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_statistics</span><span class="p">()</span>
+
+<span class="c1"># Example Response:</span>
+</code></pre></div>
+<h2 id="trade-management">Trade Management<a class="headerlink" href="#trade-management" title="Permanent link">&para;</a></h2>
+<h3 id="get_trades">**<code>get_trades</code><a class="headerlink" href="#get_trades" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>def get_trades(self)
+</code></pre></div>
+<p>Fetch all executed trades.</p>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">trades</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_trades</span><span class="p">()</span>
+
+<span class="c1"># Example Response:</span>
+</code></pre></div>
+<h2 id="signals">Signals<a class="headerlink" href="#signals" title="Permanent link">&para;</a></h2>
+<h3 id="send_signals"><strong><code>send_signals</code></strong><a class="headerlink" href="#send_signals" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>def send_signals(self, signals: list)
+</code></pre></div>
+<p>Send trading signals and optionally publish them to Redis.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signals</td>
+<td>list</td>
+<td>Yes</td>
+<td>List of signal objects containing trading instructions.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="signals-fields">signals Fields<a class="headerlink" href="#signals-fields" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrumentId</td>
+<td>int</td>
+<td>No*</td>
+<td>Instrument ID</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>No*</td>
+<td>Trading symbol</td>
+</tr>
+<tr>
+<td>action</td>
+<td>string</td>
+<td>Yes</td>
+<td>Signal action (<code>BUY</code>, <code>SELL</code>)</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>int</td>
+<td>Yes</td>
+<td>Quantity to trade</td>
+</tr>
+<tr>
+<td>price</td>
+<td>number</td>
+<td>No</td>
+<td>Price (if applicable)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Either <code>instrumentId</code> or <code>symbol</code> must be provided.</p>
+</blockquote>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">signals</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;NSE|RELIANCE&quot;</span><span class="p">,</span> <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;BUY&quot;</span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">send_signals</span><span class="p">(</span><span class="n">signals</span><span class="p">)</span>
+
+<span class="c1"># Example Response:</span>
+</code></pre></div>
+<h2 id="websocket-callbacks">WebSocket Callbacks<a class="headerlink" href="#websocket-callbacks" title="Permanent link">&para;</a></h2>
+<h3 id="on_connect"><strong><code>on_connect</code></strong><a class="headerlink" href="#on_connect" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>def on_connect(self)
+</code></pre></div>
+<p>Callback triggered when WebSocket connection is established.</p>
+<h3 id="on_close"><strong><code>on_close</code></strong><a class="headerlink" href="#on_close" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>def on_close(self, close_status_code, close_msg)
+</code></pre></div>
+<p>Callback triggered when WebSocket connection is closed.</p>
+<h3 id="on_message">**<code>on_message</code><a class="headerlink" href="#on_message" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>@property def on_message(self)
+</code></pre></div>
+<p>Setter to register callback for receiving real-time tick data.</p>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">handle_tick</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">client</span><span class="o">.</span><span class="n">on_message</span> <span class="o">=</span> <span class="n">handle_tick</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © Blitz
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.tracking", "navigation.top", "navigation.instant", "toc.follow", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

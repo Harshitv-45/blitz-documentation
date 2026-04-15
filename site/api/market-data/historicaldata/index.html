@@ -823,17 +823,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -954,7 +943,91 @@
   <span class="md-ellipsis">
     
   
-    SDK
+    Get Started with SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/clientsdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/marketdatasdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Market Data SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/instrumentmasterskd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instrument Master
   
 
     
@@ -1330,17 +1403,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1435,11 +1497,16 @@
 <tr>
 <td>interval</td>
 <td>string</td>
-<td>Yes    Time interval of data. Supported values: <code>D</code>, <code>1</code>, <code>5</code>, <code>15</code>, <code>30</code>, <code>60</code></td>
-<td></td>
+<td>Yes</td>
+<td>Time interval of data. Supported values: <code>D</code>, <code>1</code>, <code>5</code>, <code>15</code>, <code>30</code>, <code>60</code></td>
 </tr>
 </tbody>
 </table>
+<p><strong>Notes</strong>
+Returns time-series OHLC data.
+Interval defines candle size:
+    -<code>D</code> → Daily
+    -<code>1</code>, <code>5</code>, <code>15</code>, <code>30</code>, <code>60</code> → Minutes</p>
 <hr />
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/marketfeed/historicalData&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -1514,11 +1581,6 @@
 </tbody>
 </table>
 <hr />
-<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
-<p>Returns time-series OHLC data.
-Interval defines candle size:
-    -<code>D</code> → Daily
-    -<code>1</code>, <code>5</code>, <code>15</code>, <code>30</code>, <code>60</code> → Minutes</p>
 
 
 

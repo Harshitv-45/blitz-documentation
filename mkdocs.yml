@@ -59,7 +59,7 @@ nav:
       - Trading APIs:
           - Orders: api/trading/orders.md
           - Trades History: api/trading/trades.md
-          - Signals: api/trading/signal.md
+          - Signals: api/trading/signals.md
           #- Positions: api/trading/positions.md
 
       - Market Data:
@@ -75,7 +75,10 @@ nav:
 
   - Blitz SDK:
       - What is SDK: sdk/about_sdk.md
-      - SDK: sdk/sdk.md
+      - Get Started with SDK: sdk/sdk.md
+      - Client SDK: sdk/clientsdk.md
+      - Market Data SDK: sdk/marketdatasdk.md
+      - Instrument Master: sdk/instrumentmasterskd.md
 
   # ---------------------------------------------------
   # TPOMS
