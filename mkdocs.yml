@@ -58,9 +58,11 @@ nav:
 
       - Trading APIs:
           - Orders: api/trading/orders.md
+          - Positions: api/trading/position.md
+          - Statostics: api/trading/statistics.md
           - Trades History: api/trading/trades.md
           - Signals: api/trading/signals.md
-          #- Positions: api/trading/positions.md
+          
 
       - Market Data:
           - Instruments: api/market-data/instrumentId.md
@@ -76,6 +78,7 @@ nav:
   - Blitz SDK:
       - What is SDK: sdk/about_sdk.md
       - Get Started with SDK: sdk/sdk.md
+      - Authentication: sdk/authentication.md
       - Client SDK: sdk/clientsdk.md
       - Market Data SDK: sdk/marketdatasdk.md
       - Instrument Master: sdk/instrumentmasterskd.md

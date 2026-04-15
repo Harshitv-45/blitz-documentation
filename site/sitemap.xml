@@ -37,7 +37,15 @@
          <lastmod>2026-04-15</lastmod>
     </url>
     <url>
-         <loc>https://your-domain.com/api/trading/signal/</loc>
+         <loc>https://your-domain.com/api/trading/position/</loc>
+         <lastmod>2026-04-15</lastmod>
+    </url>
+    <url>
+         <loc>https://your-domain.com/api/trading/signals/</loc>
+         <lastmod>2026-04-15</lastmod>
+    </url>
+    <url>
+         <loc>https://your-domain.com/api/trading/statistics/</loc>
          <lastmod>2026-04-15</lastmod>
     </url>
     <url>

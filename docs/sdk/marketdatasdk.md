@@ -764,4 +764,3 @@ Stops the active WebSocket connection and disables automatic reconnection.
             self.reconnect = False
             self.ws.close()
     ```
-```

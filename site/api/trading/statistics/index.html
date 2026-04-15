@@ -12,13 +12,13 @@
         <meta name="author" content="Blitz">
       
       
-        <link rel="canonical" href="https://your-domain.com/api/market-data/marketquote/">
+        <link rel="canonical" href="https://your-domain.com/api/trading/statistics/">
       
       
-        <link rel="prev" href="../optionchain/">
+        <link rel="prev" href="../position/">
       
       
-        <link rel="next" href="../historicaldata/">
+        <link rel="next" href="../trades/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Market Quote - Blitz</title>
+        <title>Statostocs - Blitz</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#market-quote" class="md-skip">
+        <a href="#statistics-api" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Market Quote
+              Statostocs
             
           </span>
         </div>
@@ -360,6 +360,8 @@
                 
   
   
+    
+  
   
   
     
@@ -369,13 +371,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -396,7 +396,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -414,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trading/orders/" class="md-nav__link">
+      <a href="../orders/" class="md-nav__link">
         
   
   
@@ -442,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trading/position/" class="md-nav__link">
+      <a href="../position/" class="md-nav__link">
         
   
   
@@ -467,10 +467,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../trading/statistics/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statostocs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -486,6 +513,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base URL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get Statistics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Statistics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curl-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cURL Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#root-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -498,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trading/trades/" class="md-nav__link">
+      <a href="../trades/" class="md-nav__link">
         
   
   
@@ -526,7 +645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trading/signals/" class="md-nav__link">
+      <a href="../signals/" class="md-nav__link">
         
   
   
@@ -559,8 +678,6 @@
                 
   
   
-    
-  
   
   
     
@@ -570,11 +687,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -595,7 +714,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -613,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../instrumentId/" class="md-nav__link">
+      <a href="../../market-data/instrumentId/" class="md-nav__link">
         
   
   
@@ -641,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ltp/" class="md-nav__link">
+      <a href="../../market-data/ltp/" class="md-nav__link">
         
   
   
@@ -669,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../optionchain/" class="md-nav__link">
+      <a href="../../market-data/optionchain/" class="md-nav__link">
         
   
   
@@ -694,35 +813,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Market Quote
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../market-data/marketquote/" class="md-nav__link">
         
   
   
@@ -738,151 +832,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#market-quote" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Market Quote
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#endpoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Endpoint
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#headers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Headers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-payload" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request Payload
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#successful-response-200-ok" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Successful Response (200 OK)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-field-descriptions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response Field Descriptions
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Response Field Descriptions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#root-fields" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Root Fields
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quote-fields" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quote Fields
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#market-depth-fields" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Market Depth Fields
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -895,7 +844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../historicaldata/" class="md-nav__link">
+      <a href="../../market-data/historicaldata/" class="md-nav__link">
         
   
   
@@ -1409,6 +1358,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1417,21 +1368,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#market-quote" class="md-nav__link">
+  <a href="#base-url" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Market Quote
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#endpoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Endpoint
+        Base URL
       
     </span>
   </a>
@@ -1450,10 +1390,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-payload" class="md-nav__link">
+  <a href="#endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Request Payload
+        Endpoint
       
     </span>
   </a>
@@ -1461,77 +1401,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
+  <a href="#get-statistics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parameters
+        Get Statistics
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#successful-response-200-ok" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Successful Response (200 OK)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-field-descriptions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response Field Descriptions
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Response Field Descriptions">
+    <nav class="md-nav" aria-label="Get Statistics">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curl-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cURL Example
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#root-fields" class="md-nav__link">
     <span class="md-ellipsis">
       
         Root Fields
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quote-fields" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quote Fields
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#market-depth-fields" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Market Depth Fields
       
     </span>
   </a>
@@ -1560,28 +1456,13 @@
 
 
 
-  <h1>Market Quote</h1>
-
-<h2 id="market-quote"><strong>Market Quote</strong><a class="headerlink" href="#market-quote" title="Permanent link">&para;</a></h2>
-<p>The Market Quote API allows you to retrieve detailed real-time market data for one or more instruments.</p>
-<p>Using this API, you can fetch comprehensive quote information including last traded price (LTP), last traded quantity (LTQ), volume, OHLC data, open interest, and market depth (bid/ask levels).</p>
-<p>This API is essential for building trading dashboards, order books, and real-time analytics systems.</p>
+<h1 id="statistics-api"><strong>Statistics API</strong><a class="headerlink" href="#statistics-api" title="Permanent link">&para;</a></h1>
+<p>The <strong>Statistics API</strong> allows you to retrieve performance metrics and analytics related to your trading strategies.</p>
+<p>Using this API, you can monitor <strong>profit/loss, trade performance, win/loss ratios, and overall strategy effectiveness</strong>, helping you make data-driven trading decisions.</p>
+<p>These endpoints let you <strong>analyze trading performance and optimize strategies</strong>.</p>
 <hr />
-<h2 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>URL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>POST</td>
-<td><code>http://uat.quantxpress.com/marketfeed/quote</code></td>
-</tr>
-</tbody>
-</table>
+<h2 id="base-url">Base URL<a class="headerlink" href="#base-url" title="Permanent link">&para;</a></h2>
+<p><code>http://uat.quantxpress.com/api/strategy</code></p>
 <hr />
 <h2 id="headers">Headers<a class="headerlink" href="#headers" title="Permanent link">&para;</a></h2>
 <table>
@@ -1599,90 +1480,51 @@
 <td>Yes</td>
 </tr>
 <tr>
-<td>Authorization</td>
-<td>{acess_token}</td>
+<td>Accept</td>
+<td>application/json</td>
 <td>Yes</td>
 </tr>
 <tr>
-<td>Accept</td>
-<td><code>*/*</code></td>
+<td>Authorization</td>
+<td access_token="access_token">Bearer</td>
 <td>Yes</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="request-payload">Request Payload<a class="headerlink" href="#request-payload" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;InstrumentIds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;NSECM|RELIANCE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;NSECM|TCS&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1010010002000001</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-<hr />
-<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<h2 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
+<th><strong>Type</strong></th>
+<th><strong>Endpoint</strong></th>
+<th><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>InstrumentIds</td>
-<td>list / array</td>
-<td>Yes</td>
-<td>List of instrument identifiers (symbols or numeric instrument IDs).</td>
+<td>GET</td>
+<td><code>/strategy/statistics</code></td>
+<td>Retrieve strategy performance statistics</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/marketfeed/quote&#39;</span><span class="w"> </span><span class="se">\</span>
+<h2 id="get-statistics">Get Statistics<a class="headerlink" href="#get-statistics" title="Permanent link">&para;</a></h2>
+<p>Retrieve performance statistics for trading strategies.</p>
+<p>This endpoint provides insights into:
+- Overall performance<br />
+- Profit and loss<br />
+- Trade count and success ratio<br />
+- Strategy efficiency  </p>
+<hr />
+<h3 id="curl-example">cURL Example<a class="headerlink" href="#curl-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/api/strategy/statistics&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept&quot;: &quot;*/*&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">    &quot;InstrumentIds&quot;: [&quot;NSECM|RELIANCE&quot;, &quot;NSECM|TCS&quot;, 1010010002000001]</span>
-<span class="s1">  }&#39;</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span>
 </code></pre></div>
-<hr />
-<h2 id="successful-response-200-ok">Successful Response (200 OK)<a class="headerlink" href="#successful-response-200-ok" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;1010010000002885&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;InstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1010010000002885</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2885</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RELIANCE&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;Timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1748339153</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;LTP&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1419.4</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;LTQ&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;LTT&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1748339153</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;ATP&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1422.41</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;VTT&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1651139</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;TBQ&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;TSQ&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;OI&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;Open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1426.1</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;High&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1429.7</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;Low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1418.1</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;Close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1434.8</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;BidLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Qty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1419.3</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Orders&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Qty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1419.2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Orders&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">}</span>
-<span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;AskLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Qty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1419.4</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Orders&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Qty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1419.5</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Orders&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">}</span>
-<span class="w">      </span><span class="p">]</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<hr />
-<h2 id="response-field-descriptions">Response Field Descriptions<a class="headerlink" href="#response-field-descriptions" title="Permanent link">&para;</a></h2>
 <h3 id="root-fields">Root Fields<a class="headerlink" href="#root-fields" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1696,167 +1538,17 @@
 <tr>
 <td>status</td>
 <td>string</td>
-<td>Status of the request (success or error)</td>
+<td>Status of the request (<code>success</code> or <code>error</code>)</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>Response message</td>
 </tr>
 <tr>
 <td>data</td>
 <td>object</td>
-<td>Contains quote data mapped by instrument ID</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="quote-fields">Quote Fields<a class="headerlink" href="#quote-fields" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>InstrumentID</td>
-<td>integer</td>
-<td>Unique instrument identifier</td>
-</tr>
-<tr>
-<td>InstrumentName</td>
-<td>string</td>
-<td>Name of the instrument</td>
-</tr>
-<tr>
-<td>ExchangeSegment</td>
-<td>integer</td>
-<td>Exchange segment identifier</td>
-</tr>
-<tr>
-<td>ExchangeInstrumentID</td>
-<td>integer</td>
-<td>Exchange-specific instrument ID</td>
-</tr>
-<tr>
-<td>Timestamp</td>
-<td>integer</td>
-<td>Last update timestamp (epoch)</td>
-</tr>
-<tr>
-<td>LTP</td>
-<td>float</td>
-<td>Last traded price</td>
-</tr>
-<tr>
-<td>LTQ</td>
-<td>float</td>
-<td>Last traded quantity</td>
-</tr>
-<tr>
-<td>LTT</td>
-<td>integer</td>
-<td>Last traded time (epoch)</td>
-</tr>
-<tr>
-<td>ATP</td>
-<td>float</td>
-<td>Average traded price</td>
-</tr>
-<tr>
-<td>VTT</td>
-<td>float</td>
-<td>Volume traded today</td>
-</tr>
-<tr>
-<td>TBQ</td>
-<td>float</td>
-<td>Total buy quantity</td>
-</tr>
-<tr>
-<td>TSQ</td>
-<td>float</td>
-<td>Total sell quantity</td>
-</tr>
-<tr>
-<td>OI</td>
-<td>float</td>
-<td>Open interest</td>
-</tr>
-<tr>
-<td>Open</td>
-<td>float</td>
-<td>Opening price</td>
-</tr>
-<tr>
-<td>High</td>
-<td>float</td>
-<td>Highest price</td>
-</tr>
-<tr>
-<td>Low</td>
-<td>float</td>
-<td>Lowest price</td>
-</tr>
-<tr>
-<td>Close</td>
-<td>float</td>
-<td>Previous closing price</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="market-depth-fields">Market Depth Fields<a class="headerlink" href="#market-depth-fields" title="Permanent link">&para;</a></h3>
-<h4 id="bidlevel-buy-orders">BidLevel (Buy Orders)<a class="headerlink" href="#bidlevel-buy-orders" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Qty</td>
-<td>float</td>
-<td>Quantity available</td>
-</tr>
-<tr>
-<td>Price</td>
-<td>float</td>
-<td>Bid price</td>
-</tr>
-<tr>
-<td>Orders</td>
-<td>float</td>
-<td>float of orders at that level</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h4 id="asklevel-sell-orders">AskLevel (Sell Orders)<a class="headerlink" href="#asklevel-sell-orders" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Qty</td>
-<td>float</td>
-<td>Quantity available</td>
-</tr>
-<tr>
-<td>Price</td>
-<td>float</td>
-<td>Ask price</td>
-</tr>
-<tr>
-<td>Orders</td>
-<td>float</td>
-<td>float of orders at that level</td>
+<td>Contains strategy statistics</td>
 </tr>
 </tbody>
 </table>
