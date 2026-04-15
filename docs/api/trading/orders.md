@@ -78,7 +78,7 @@ These endpoints let you place, modify, cancel, and retrieve orders efficiently.
 - `modifyOrder` → Endpoint to update an existing order.
 - `cancelOrder` → Endpoint to delete/cancel an order.
 
-## 1. Fetching Orders {#fetching-orders}
+## Fetching Orders {#fetching-orders}
 
 Retrieve a complete list of all orders placed by a user for the current trading day. This includes:
 
@@ -229,7 +229,7 @@ curl -X 'GET' \
 
 </details>
 
-## 2. Retrieve Order by BlitzOrderID {#get-order-by-id}
+## Retrieve Order by BlitzOrderID {#get-order-by-id}
 
 Fetch the details of a specific order in the OMS system using its unique BlitzOrderId. This endpoint returns all order-related information including status, executed trades, and metadata.
 
@@ -431,7 +431,7 @@ curl -X 'GET' \
 
 </details>
 
-## 3. Place an Order {#place-order}
+## Place an Order {#place-order}
 
 This endpoint allows you to submit a new order to the OMS trading system.
 Orders can be placed across supported instruments and exchanges, with full control over price, quantity, type, and validity.
@@ -528,7 +528,7 @@ curl -X 'POST' \
 > - Ensure **sufficient margin/funds** are available before placing the order to prevent rejections.
 > - Place orders **only during active market hours** for faster acknowledgment and execution.
 
-## 4. Modify Order {#modify-order}
+## Modify Order {#modify-order}
 
 The **Modify Order** endpoint allows you to update an existing order’s parameters such as **quantity**, **price**, **stop price**, or **validity**.
 Use this API to adjust open or pending orders before they are executed at the exchange.
@@ -621,7 +621,7 @@ curl -X 'PUT' \
 - Avoid frequent or large modifications in short intervals to prevent exchange-level throttling or rejection.
 - Confirm the **modified parameters** (price, quantity, stop price) meet exchange and instrument-specific limits.
 
-## 5. Cancel Order {#cancel-order}
+## Cancel Order {#cancel-order}
 
 The **Cancel Order** endpoint allows you to cancel an existing open or pending order using its unique `InstrumentId` and `ExchangeOrderId`.
 

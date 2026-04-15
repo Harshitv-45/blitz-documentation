@@ -4,27 +4,24 @@ The **Instrument API** allows you to retrieve detailed information about a tradi
 
 Using this API, you can fetch instrument metadata such as symbol details, exchange information, price bands, tick size, lot size, and other trading parameters.
 
-These endpoints let you **retrieve instrument details and metadata** for trading and market analysis.
+---
 
-| **Type** | **Endpoint**                            | **Description**                   |
-| -------- | --------------------------------------- | --------------------------------- |
-| GET      | [`instruments/{id}`](#fetch-instrument) | Retrieve instrument details by ID |
+## Endpoint
+| Method | URL                                             |
+| ------ | ----------------------------------------------- |
+| GET    | `http://uat.quantxpress.com/api/instruments/{id}` |
 
 ---
 
-## **Instrument Details** {#fetch-instrument}
+## Headers
 
-Retrieve detailed information for a specific instrument using its instrument ID.
+| Header        | Value            | Required |
+| ------------  | ---------------- | -------- |
+| Content-Type  | application/json | Yes      |
+| Authorization | {acess_token}    | Yes      |
+| Accept        | applictaion/json | Yes      |
 
-### Endpoint
-
-```
-GET /api/instruments/{id}
-```
-
----
-
-### cURL Example
+## Example
 
 ```bash
 curl -X 'GET' \
@@ -38,7 +35,6 @@ curl -X 'GET' \
 
 ## **Response**
 
-### Success Response
 
 ```json
 {

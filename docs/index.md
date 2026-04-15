@@ -40,7 +40,7 @@ The **Blitz API** provides a comprehensive set of REST endpoints that allow dire
 - JSON-based request and response format  
 - Standard HTTP methods and status codes  
 
-➡️ Refer to the **API Reference** section for detailed endpoint documentation.
+➡️ Refer to the **API Refrence** for detailed endpoint documentation.
 
 ---
 
@@ -58,7 +58,7 @@ The **Blitz SDK** offers client libraries that abstract away low-level API compl
 
 This allows developers to focus on building features rather than managing infrastructure.
 
-➡️ Refer to the **SDK Documentation** to get started.
+➡️ Refer to the **Blitz SDK** to get started.
 
 ---
 
@@ -75,7 +75,7 @@ It bridges the gap between Blitz and external broker systems by:
 
 This ensures seamless multi-broker support through a unified interface.
 
-➡️ Refer to the **TPOMS Documentation** for architecture and integration details.
+➡️ Refer to the **TPOMS** for architecture and integration details.
 
 ---
 

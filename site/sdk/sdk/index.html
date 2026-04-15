@@ -449,7 +449,7 @@
   <span class="md-ellipsis">
     
   
-    Trades
+    Trades History
   
 
     
@@ -585,6 +585,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/market-data/ltp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Last Trading Price
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/market-data/optionchain/" class="md-nav__link">
         
   
@@ -593,6 +621,62 @@
     
   
     Option Chain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/market-data/marketquote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Market Quote
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/market-data/historicaldata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historical Data
   
 
     
@@ -1672,11 +1756,11 @@ This method provides complete quote information — including last traded price,
 </code></pre></div>
 <hr />
 <h4 id="get_historical_data"><strong><code>get_historical_data</code></strong><a class="headerlink" href="#get_historical_data" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>def get_historical_data(self, instrument: str, from_date: str, to_date: str)
+<div class="highlight"><pre><span></span><code>def get_historical_data(self, instrument: str, interval: str)
 </code></pre></div>
 <details class="info">
 <summary>Source Code</summary>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_historical_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instrument</span><span class="p">,</span> <span class="n">from_date</span><span class="p">,</span> <span class="n">to_date</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_historical_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instrument</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch historical market data for a specific instrument and date range.&quot;&quot;&quot;</span>
     <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;instrument&quot;</span><span class="p">:</span> <span class="n">instrument</span><span class="p">,</span>

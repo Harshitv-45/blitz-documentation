@@ -97,7 +97,7 @@ curl -X 'POST' \
 
 ---
 
-## **Using the Access Token**
+### **Using the Access Token**
 
 After successful authentication, include the token in the header of all protected API requests:
 

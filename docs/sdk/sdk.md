@@ -45,15 +45,14 @@ LTP Response: {'data': {
 
 ---
 
-## **Class: AuthClient**
+## **AuthClient**
 
 ```
 class AuthClient
 ```
 
-### **Methods**
 
-#### **`__init__`**
+### **`__init__`**
 
 ```
 def __init__(self, app_key: str, user_id: str)
@@ -85,7 +84,7 @@ auth = AuthClient(app_key="abc123xyz", user_id="U12345")
 
 ---
 
-#### **`get_access_token`**
+### **`get_access_token`**
 
 ```
 def get_access_token(self):
@@ -104,7 +103,7 @@ Return the access token of the client
 
 ---
 
-## **Class: MarketDataClient**
+## **MarketDataClient**
 
 ```
 class MarketDataClient
@@ -115,9 +114,8 @@ It manages authentication, connection setup, and streaming of real-time tick dat
 
 ---
 
-### **Methods**
 
-#### **`__init__`**
+### **`__init__`**
 
 ```
 def __init__(self, app_key: str, user_id: str)
@@ -156,7 +154,7 @@ auth = MarketDataClient(app_key="abc123xyz", user_id="U12345")
 
 ---
 
-#### **`get_ltp`**
+### **`get_ltp`**
 
 ```
 def get_ltp(self, instrument_ids)
@@ -194,7 +192,7 @@ print(ltp_data)
 
 ---
 
-#### **`get_option_chain`**
+### **`get_option_chain`**
 
 ```
 def get_option_chain(self, symbol, expiry_date)
@@ -295,7 +293,7 @@ print(option_chain)
 
 ---
 
-#### **`get_quote`**
+### **`get_quote`**
 
 ```
 def get_quote(self, instrument_ids)
@@ -363,15 +361,15 @@ print("Quote Response:", quote_data)
 
 ---
 
-#### **`get_historical_data`**
+### **`get_historical_data`**
 
 ```
-def get_historical_data(self, instrument: str, from_date: str, to_date: str)
+def get_historical_data(self, instrument: str, interval: str)
 ```
 
 ??? info "Source Code"
     ```python
-    def get_historical_data(self, instrument, from_date, to_date):
+    def get_historical_data(self, instrument, interval):
         """Fetch historical market data for a specific instrument and date range."""
         payload = {
             "instrument": instrument,
@@ -416,7 +414,7 @@ print("Historical Data Response:", hist_data)
 
 ---
 
-#### **`subscribe_market_data`**
+### **`subscribe_market_data`**
 
 ```
 def subscribe_market_data(self, instrument_ids)
@@ -549,7 +547,7 @@ client.subscribe_market_data(["NSECM|RELIANCE", "NSECM|TCS", 1010010002000001])
 
 ---
 
-#### **`unsubscribe_market_data`**
+### **`unsubscribe_market_data`**
 
 ```
 def unsubscribe_market_data(self, instrument_ids)
@@ -587,7 +585,7 @@ client.unsubscribe_market_data(["NSE|RELIANCE"])
 
 ---
 
-#### **`on_connect`**
+### **`on_connect`**
 
 ```
 def on_connect(self)
@@ -605,7 +603,7 @@ Confirmation when the websocket is connected.
 
 ---
 
-#### **`on_close`**
+### **`on_close`**
 
 ```
 def on_close(self)
@@ -622,7 +620,7 @@ Callback when websocket closes
 
 ---
 
-#### **`connect_ws`**
+### **`connect_ws`**
 
 ```
 def connect_ws(self)
@@ -643,7 +641,7 @@ def connect_ws(self)
 
 ---
 
-#### **`stop_websocket`**
+### **`stop_websocket`**
 
 ```
 def stop_websocket(self)
@@ -666,9 +664,8 @@ def stop_websocket(self)
 
 ### **MarketDataWebSocketClient**
 
-### Methods
 
-#### **`__init__`**
+### **`__init__`**
 
 ```
 def __init__(self, app_key: str, user_id: str)
@@ -698,12 +695,10 @@ Initializes the WebSocket client with authentication and default configurations.
 
 ---
 
-#### **`set_on_message`**
+### **`set_on_message`**
 
-````
-
+```
 def set_on_message(self, callback)
-
 ```
 
 Registers a custom function to handle incoming WebSocket messages.<br>
@@ -712,12 +707,10 @@ Registers a custom function to handle incoming WebSocket messages.<br>
 
 ---
 
-#### **`set_on_connect(callback)`**
+### **`set_on_connect(callback)`**
 
 ```
-
 def set_on_connect(self, callback)
-
 ```
 
 Registers a custom function to execute when the WebSocket connection is successfully established.<br>
@@ -726,12 +719,10 @@ Registers a custom function to execute when the WebSocket connection is successf
 
 ---
 
-#### **`set_on_close`**
+### **`set_on_close`**
 
 ```
-
 def set_on_close(callback)
-
 ```
 
 Registers a custom function to execute when the WebSocket connection closes.<br>
@@ -740,12 +731,10 @@ Registers a custom function to execute when the WebSocket connection closes.<br>
 
 ---
 
-#### **`subscribe`**
+### **`subscribe`**
 
 ```
-
 def subscribe(instrument_ids)
-
 ```
 
 Subscribes to live market data updates for the specified instruments.<br>
@@ -754,12 +743,10 @@ Parameters : `instrument_ids` (list | str): One or more instrument IDs to subscr
 
 ---
 
-#### **`unsubscribe`**
+### **`unsubscribe`**
 
 ```
-
 def unsubscribe(instrument_ids)
-
 ```
 
 Unubscribes to live market data updates for the specified instruments.<br>
@@ -768,13 +755,11 @@ Parameters : `instrument_ids` (list | str): One or more instrument IDs to unsubs
 
 ---
 
-#### **`on_message`**
+### **`on_message`**
 
 ```
-
 def on_message(self, ws, message)
-
-````
+```
 
 Handles incoming WebSocket messages from the market data stream.
 
@@ -785,9 +770,11 @@ Handles incoming WebSocket messages from the market data stream.
 | `ws`      | `WebSocket` | The active WebSocket connection instance.                        |
 | `message` | `str`       | The base64-encoded market data message received from the server. |
 
+
 **Description:**
 Decodes the incoming message from Base64, parses it into a `MarketDataMessageBase` Protobuf object, and invokes the user-defined `on_message_callback` (if set).
 If message parsing fails, an error is logged for debugging purposes.
+
 
 ??? info "Source Code"
     ```python
@@ -807,13 +794,11 @@ md_message.ParseFromString(decoded)
 
 ---
 
-#### `on_close`
+### `on_close`
 
-````
-
+```
 def on_close(ws, close_status_code, close_msg)
-
-````
+```
 
 Handles WebSocket connection closure events and manages reconnection logic.
 
@@ -845,12 +830,10 @@ logging.warning(f"WebSocket closed: {close_status_code}, {close_msg}")
 
 ---
 
-#### `start`
+### `start`
 
-````
-
+```
 def start(self)
-
 ```
 
 Initializes and starts the WebSocket connection in a background thread.
@@ -871,7 +854,7 @@ Initializes and starts the WebSocket connection in a background thread.
 
 ---
 
-#### `stop`
+### `stop`
 
 ` def stop(self)`
 

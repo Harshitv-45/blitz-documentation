@@ -12,31 +12,31 @@
         <meta name="author" content="Blitz">
       
       
-        <link rel="canonical" href="https://your-domain.com/api/authentication/">
+        <link rel="canonical" href="https://your-domain.com/api/market-data/historicaldata/">
       
       
-        <link rel="prev" href="../API_Structure/">
+        <link rel="prev" href="../marketquote/">
       
       
-        <link rel="next" href="../trading/orders/">
+        <link rel="next" href="../../../sdk/about_sdk/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/favicon.ico">
+      <link rel="icon" href="../../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Authentication - Blitz</title>
+        <title>Historical Data - Blitz</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,9 +55,9 @@
       
     
     
-      <link rel="stylesheet" href="../../css/custom.css">
+      <link rel="stylesheet" href="../../../css/custom.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#authentication-api" class="md-skip">
+        <a href="#historical-data" class="md-skip">
           Skip to content
         </a>
       
@@ -98,9 +98,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Blitz" class="md-header__button md-logo" aria-label="Blitz" data-md-component="logo">
+    <a href="../../.." title="Blitz" class="md-header__button md-logo" aria-label="Blitz" data-md-component="logo">
       
-  <img src="../../assets/icon.png" alt="logo">
+  <img src="../../../assets/icon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Authentication
+              Historical Data
             
           </span>
         </div>
@@ -209,9 +209,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Blitz" class="md-nav__button md-logo" aria-label="Blitz" data-md-component="logo">
+    <a href="../../.." title="Blitz" class="md-nav__button md-logo" aria-label="Blitz" data-md-component="logo">
       
-  <img src="../../assets/icon.png" alt="logo">
+  <img src="../../../assets/icon.png" alt="logo">
 
     </a>
     Blitz
@@ -226,7 +226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -307,7 +307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../API_Structure/" class="md-nav__link">
+      <a href="../../API_Structure/" class="md-nav__link">
         
   
   
@@ -332,37 +332,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Authentication
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../authentication/" class="md-nav__link">
         
   
   
@@ -378,176 +351,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#user-login" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Authentication
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Authentication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#endpoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Endpoint
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#curl-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cURL Example
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-body" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request Body
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-field-descriptions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request Field Descriptions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Response">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#success-response" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Response
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-field-descriptions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response Field Descriptions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#error-response" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Error Response
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Error Response">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#invalid-credentials" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Invalid Credentials
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-access-token" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using the Access Token
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -611,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trading/orders/" class="md-nav__link">
+      <a href="../../trading/orders/" class="md-nav__link">
         
   
   
@@ -639,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trading/trades/" class="md-nav__link">
+      <a href="../../trading/trades/" class="md-nav__link">
         
   
   
@@ -667,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trading/signal/" class="md-nav__link">
+      <a href="../../trading/signal/" class="md-nav__link">
         
   
   
@@ -700,6 +503,8 @@
                 
   
   
+    
+  
   
   
     
@@ -709,13 +514,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -736,7 +539,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -754,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../market-data/instrumentId/" class="md-nav__link">
+      <a href="../instrumentId/" class="md-nav__link">
         
   
   
@@ -782,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../market-data/ltp/" class="md-nav__link">
+      <a href="../ltp/" class="md-nav__link">
         
   
   
@@ -810,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../market-data/optionchain/" class="md-nav__link">
+      <a href="../optionchain/" class="md-nav__link">
         
   
   
@@ -838,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../market-data/marketquote/" class="md-nav__link">
+      <a href="../marketquote/" class="md-nav__link">
         
   
   
@@ -863,10 +666,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../market-data/historicaldata/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historical Data
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -882,6 +710,156 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#historical-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Historical Data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#these-endpoints-let-you-analyze-historical-price-movements-and-build-data-driven-trading-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        These endpoints let you analyze historical price movements and build data-driven trading strategies.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Payload
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symbol-irfc-interval-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        { &quot;symbol&quot;: &quot;IRFC&quot;, &quot;interval&quot;: &quot;D&quot; }
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#successful-response-200-ok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Successful Response (200 OK)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-1151-high-1167-low-1151-close-1156-volume-8940523-oi-0-timestamp-10-02-2026-091500" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [ { &quot;open&quot;: 115.1, &quot;high&quot;: 116.7, &quot;low&quot;: 115.1, &quot;close&quot;: 115.6, &quot;volume&quot;: 8940523, &quot;oi&quot;: 0, &quot;timestamp&quot;: &quot;10-02-2026 09:15:00&quot; } ]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-field-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response Field Descriptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -963,7 +941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sdk/about_sdk/" class="md-nav__link">
+      <a href="../../../sdk/about_sdk/" class="md-nav__link">
         
   
   
@@ -991,7 +969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sdk/sdk/" class="md-nav__link">
+      <a href="../../../sdk/sdk/" class="md-nav__link">
         
   
   
@@ -1080,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tpoms/overview/" class="md-nav__link">
+      <a href="../../../tpoms/overview/" class="md-nav__link">
         
   
   
@@ -1108,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tpoms/blitz_order_request/" class="md-nav__link">
+      <a href="../../../tpoms/blitz_order_request/" class="md-nav__link">
         
   
   
@@ -1187,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tpoms/brokers/zerodha/" class="md-nav__link">
+      <a href="../../../tpoms/brokers/zerodha/" class="md-nav__link">
         
   
   
@@ -1215,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tpoms/brokers/motilal/" class="md-nav__link">
+      <a href="../../../tpoms/brokers/motilal/" class="md-nav__link">
         
   
   
@@ -1268,8 +1246,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1278,18 +1254,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#user-login" class="md-nav__link">
+  <a href="#historical-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Authentication
+        Historical Data
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Authentication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#these-endpoints-let-you-analyze-historical-price-movements-and-build-data-driven-trading-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        These endpoints let you analyze historical price movements and build data-driven trading strategies.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1299,28 +1285,12 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#curl-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cURL Example
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#request-body" class="md-nav__link">
+  <a href="#headers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Request Body
+        Headers
       
     </span>
   </a>
@@ -1328,10 +1298,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-field-descriptions" class="md-nav__link">
+  <a href="#request-payload" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Request Field Descriptions
+        Request Payload
       
     </span>
   </a>
@@ -1339,30 +1309,57 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#response" class="md-nav__link">
+  <a href="#symbol-irfc-interval-d" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Response
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Response">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#success-response" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Response
+        { &quot;symbol&quot;: &quot;IRFC&quot;, &quot;interval&quot;: &quot;D&quot; }
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#successful-response-200-ok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Successful Response (200 OK)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-1151-high-1167-low-1151-close-1156-volume-8940523-oi-0-timestamp-10-02-2026-091500" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [ { &quot;open&quot;: 115.1, &quot;high&quot;: 116.7, &quot;low&quot;: 115.1, &quot;close&quot;: 115.6, &quot;volume&quot;: 8940523, &quot;oi&quot;: 0, &quot;timestamp&quot;: &quot;10-02-2026 09:15:00&quot; } ]
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1371,45 +1368,6 @@
     <span class="md-ellipsis">
       
         Response Field Descriptions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#error-response" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Error Response
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Error Response">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#invalid-credentials" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Invalid Credentials
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-access-token" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using the Access Token
       
     </span>
   </a>
@@ -1444,51 +1402,107 @@
 
 
 
-<h1 id="authentication-api"><strong>Authentication API</strong><a class="headerlink" href="#authentication-api" title="Permanent link">&para;</a></h1>
-<p>The <strong>Authentication API</strong> allows users to securely log in and obtain access to protected trading APIs.<br />
-Using this API, you can authenticate users and generate a session token for authorized requests.</p>
-<p>These endpoints let you <strong>authenticate users and manage access control</strong> securely.</p>
+  <h1>Historical Data</h1>
+
+<h2 id="historical-data"><strong>Historical Data</strong><a class="headerlink" href="#historical-data" title="Permanent link">&para;</a></h2>
+<p>The Historical Data API allows you to retrieve past market data for a specific instrument over a defined time interval.</p>
+<p>Using this API, you can fetch OHLC (Open, High, Low, Close) data along with volume and timestamp information, which is essential for backtesting, technical analysis, and charting applications.</p>
+<h2 id="these-endpoints-let-you-analyze-historical-price-movements-and-build-data-driven-trading-strategies">These endpoints let you analyze historical price movements and build data-driven trading strategies.<a class="headerlink" href="#these-endpoints-let-you-analyze-historical-price-movements-and-build-data-driven-trading-strategies" title="Permanent link">&para;</a></h2>
+<h2 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th><strong>Type</strong></th>
-<th><strong>Endpoint</strong></th>
-<th><strong>Description</strong></th>
+<th>Method</th>
+<th>URL</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>POST</td>
-<td><a href="#user-login"><code>authentication/login</code></a></td>
-<td>Authenticate user and generate access token</td>
+<td><code>http://uat.quantxpress.com/marketfeed/historicalData</code></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="user-login"><strong>Authentication</strong><a class="headerlink" href="#user-login" title="Permanent link">&para;</a></h2>
-<p>Authenticate a user using valid credentials and generate an access token.</p>
-<h3 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>POST /v1/api/app_login
-</code></pre></div>
-<h3 id="curl-example">cURL Example<a class="headerlink" href="#curl-example" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/api_gateway/v1/api/app_login&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: */*&#39;</span><span class="w"> </span><span class="se">\</span>
+<h2 id="headers">Headers<a class="headerlink" href="#headers" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>{acess_token}</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="request-payload">Request Payload<a class="headerlink" href="#request-payload" title="Permanent link">&para;</a></h2>
+<h2 id="symbol-irfc-interval-d"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRFC&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;interval&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;D&quot;</span>
+<span class="p">}</span>
+</code></pre></div><a class="headerlink" href="#symbol-irfc-interval-d" title="Permanent link">&para;</a></h2>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrument</td>
+<td>string</td>
+<td>Yes</td>
+<td>Instrument symbol or ID (e.g., IRFC, `NSE)</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>string</td>
+<td>Yes    Time interval of data. Supported values: <code>D</code>, <code>1</code>, <code>5</code>, <code>15</code>, <code>30</code>, <code>60</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/marketfeed/historicalData&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">  &quot;appKey&quot;: &quot;CPXotUwWdlIpgJbYrguSnVyu05IZawswKaXKNQ&quot;,</span>
-<span class="s1">  &quot;userId&quot;: &quot;Algo123&quot;</span>
-<span class="s1">}&#39;</span>
+<span class="s1">    &quot;instrument&quot;: &quot;IRFC&quot;,</span>
+<span class="s1">    &quot;interval&quot;: &quot;D&quot;</span>
+<span class="s1">  }&#39;</span>
 </code></pre></div>
 <hr />
-<h2 id="request-body"><strong>Request Body</strong><a class="headerlink" href="#request-body" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;appKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CPXotUwWdlIpgJbYrguSnVyu05IZawswKaXKNQ&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Algo123&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-<hr />
-<h2 id="request-field-descriptions"><strong>Request Field Descriptions</strong><a class="headerlink" href="#request-field-descriptions" title="Permanent link">&para;</a></h2>
+<h2 id="successful-response-200-ok">Successful Response (200 OK)<a class="headerlink" href="#successful-response-200-ok" title="Permanent link">&para;</a></h2>
+<h2 id="open-1151-high-1167-low-1151-close-1156-volume-8940523-oi-0-timestamp-10-02-2026-091500"><div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">115.1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">116.7</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">115.1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">115.6</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;volume&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8940523</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;oi&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10-02-2026 09:15:00&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div><a class="headerlink" href="#open-1151-high-1167-low-1151-close-1156-volume-8940523-oi-0-timestamp-10-02-2026-091500" title="Permanent link">&para;</a></h2>
+<h2 id="response-field-descriptions">Response Field Descriptions<a class="headerlink" href="#response-field-descriptions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1499,89 +1513,48 @@ Using this API, you can authenticate users and generate a session token for auth
 </thead>
 <tbody>
 <tr>
-<td>userId</td>
-<td>string</td>
-<td>Unique user identifier used for login</td>
+<td>open</td>
+<td>number</td>
+<td>Opening price of the interval</td>
 </tr>
 <tr>
-<td>appKey</td>
+<td>high</td>
+<td>number</td>
+<td>Highest price during the interval</td>
+</tr>
+<tr>
+<td>low</td>
+<td>number</td>
+<td>Lowest price during the interval</td>
+</tr>
+<tr>
+<td>close</td>
+<td>number</td>
+<td>Closing price of the interval</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>number</td>
+<td>Total traded volume</td>
+</tr>
+<tr>
+<td>oi</td>
+<td>number</td>
+<td>Open interest (applicable for derivatives)</td>
+</tr>
+<tr>
+<td>timestamp</td>
 <td>string</td>
-<td>AppKey associated with the user account</td>
+<td>Date and time of the data point</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="response"><strong>Response</strong><a class="headerlink" href="#response" title="Permanent link">&para;</a></h2>
-<h3 id="success-response">Success Response<a class="headerlink" href="#success-response" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;request processed successfully.&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;accessToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcmVmZXJyZWRfdXNlcm5hbWUiOiJBbGdvMTIzIiwiYXBwTmFtZSI6IkFsZ29UZXN0IiwiaXBBZGRyZXNzIjoiMTcyLjE3LjAuMSIsImVudGl0eUlkIjoiODVhYmJlZWItMmU3Zi00NGE1LWI2NjgtODQ3MjBkMjljZWVkIiwidXNlcklkIjoiQWxnbzEyMyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFwcCIsImF1ZCI6WyJHYXRld2F5U2VydmVyIiwiQVBJU2VydmVyIl0sImV4cCI6MTc3NTYzMjgzOCwiaXNzIjoiQXV0aFNlcnZlciJ9.GmGFg_Noqw1XhTJ5UDJ1XRcUi6gGwP-HJF3TQsfAJl0&quot;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<hr />
-<h2 id="response-field-descriptions"><strong>Response Field Descriptions</strong><a class="headerlink" href="#response-field-descriptions" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>status</td>
-<td>string</td>
-<td>Status of the request (<code>success</code> or <code>error</code>)</td>
-</tr>
-<tr>
-<td>message</td>
-<td>string</td>
-<td>Informational message about the login result</td>
-</tr>
-<tr>
-<td>data</td>
-<td>object</td>
-<td>Contains authentication details</td>
-</tr>
-<tr>
-<td>accessToken</td>
-<td>string</td>
-<td>JWT or access token used for authenticated requests</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="error-response"><strong>Error Response</strong><a class="headerlink" href="#error-response" title="Permanent link">&para;</a></h2>
-<h3 id="invalid-credentials">Invalid Credentials<a class="headerlink" href="#invalid-credentials" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;invalid userId or appKey&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
-<span class="p">}</span>
-</code></pre></div>
-<hr />
-<h2 id="using-the-access-token"><strong>Using the Access Token</strong><a class="headerlink" href="#using-the-access-token" title="Permanent link">&para;</a></h2>
-<p>After successful authentication, include the token in the header of all protected API requests:</p>
-<div class="highlight"><pre><span></span><code>Authorization: Bearer &lt;token&gt;
-</code></pre></div>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/order/trades&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer &lt;token&gt;&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: */*&#39;</span>
-</code></pre></div>
 <hr />
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
-<ul>
-<li>The token must be included in all secured endpoints.</li>
-<li>Tokens expire after the specified duration (<code>expiresIn</code>).</li>
-<li>Re-authentication is required once the token expires.</li>
-<li>Ensure credentials are transmitted securely over HTTPS in production environments.</li>
-</ul>
+<p>Returns time-series OHLC data.
+Interval defines candle size:
+    -D → Daily
+    -1, 5, 15, 30, 60 → Minutes</p>
 
 
 
@@ -1641,10 +1614,10 @@ Using this API, you can authenticate users and generate a session token for auth
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.tracking", "navigation.top", "navigation.instant", "toc.follow", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.tracking", "navigation.top", "navigation.instant", "toc.follow", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

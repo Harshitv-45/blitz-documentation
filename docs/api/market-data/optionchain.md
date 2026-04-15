@@ -21,18 +21,35 @@ This API helps traders analyze market sentiment, volatility, and strike-level ac
 | Header        | Value            | Required |
 | ------------  | ---------------- | -------- |
 | Content-Type  | application/json | Yes      |
-| Accept        | `*/*`            | Yes      |
 | Authorization | {acess_token}    | Yes      |
 
 ---
 
+## Request Payload
+
+```json
+{
+  "symbol": "NIFTY",
+  "expiryDate": "2025-05-29"
+}
+```
+
+## Parameters
+|Parameter|	Type	|Required|	Description|
+|---------|--------|-------|-------------|
+|symbol	|string	|Yes	|Underlying asset symbol (e.g., NIFTY, BANKNIFTY, or equity symbol).|
+|expiryDate	|string	|Yes	|Expiry date in YYYY-MM-DD format.|
+
 ## Example
 
 ```bash
-curl -X GET 'http://uat.quantxpress.com/v1/api/optionChain' \
+curl -X POST 'http://uat.quantxpress.com/marketfeed/optionChain' \
   -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access_token}' \
+  -d '{
+    "symbol": "NIFTY",
+    "expiryDate": "2025-05-29"
+  }'
 ```
 
 ---
@@ -42,24 +59,39 @@ curl -X GET 'http://uat.quantxpress.com/v1/api/optionChain' \
 ```json
 {
   "status": "success",
-  "message": "request processed successfully",
-  "data": [
-    {
-      "symbol": "NIFTY",
-      "instrumentId": 1010010002000001
-    },
-    {
-      "symbol": "BANKNIFTY",
-      "instrumentId": 1010010002000002
-    },
-    {
-      "symbol": "FINNIFTY",
-      "instrumentId": 1010010002000030
-    },
-    {
-      "symbol": "MIDCPNIFTY",
-      "instrumentId": 1010010002000008
-    }
-  ]
+  "data": {
+    "spotPrice": 24813.5,
+    "expiryDate": "2025-05-29",
+    "atm": 24800,
+    "chains": [
+      {
+        "strikePrice": 23800,
+        "callOption": {
+          "gamma": 0,
+          "vega": 0,
+          "theta": 0,
+          "delta": 1,
+          "oiPercentage": 0,
+          "oi": 0,
+          "ltp": 1042.8,
+          "iv": 0.2,
+          "price": 1013.5,
+          "rho": 0
+        },
+        "putOption": {
+          "gamma": 0,
+          "vega": 0,
+          "theta": 0,
+          "delta": 0,
+          "oiPercentage": 0,
+          "oi": 0,
+          "ltp": 8.85,
+          "iv": 0.2,
+          "price": 0,
+          "rho": 0
+        }
+      }
+    ]
+  }
 }
 ```

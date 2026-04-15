@@ -58,17 +58,16 @@ nav:
 
       - Trading APIs:
           - Orders: api/trading/orders.md
-          - Trades: api/trading/trades.md
+          - Trades History: api/trading/trades.md
           - Signals: api/trading/signal.md
           #- Positions: api/trading/positions.md
 
       - Market Data:
           - Instruments: api/market-data/instrumentId.md
-          #- Last Trading Price: api/market-data/ltp.md
+          - Last Trading Price: api/market-data/ltp.md
           - Option Chain: api/market-data/optionchain.md
-          #- Market Quote: api/market-data/marketquote.md
-
-          #- Historical Data: api/market-data/historicaldata.md
+          - Market Quote: api/market-data/marketquote.md
+          - Historical Data: api/market-data/historicaldata.md
 
   # ---------------------------------------------------
   # SDK

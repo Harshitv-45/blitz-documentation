@@ -18,7 +18,7 @@
         <link rel="prev" href="../../trading/signal/">
       
       
-        <link rel="next" href="../optionchain/">
+        <link rel="next" href="../ltp/">
       
       
         
@@ -449,7 +449,7 @@
   <span class="md-ellipsis">
     
   
-    Trades
+    Trades History
   
 
     
@@ -617,18 +617,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fetch-instrument" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Instrument Details
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instrument Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -638,6 +626,18 @@
   </a>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Headers">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#curl-example" class="md-nav__link">
@@ -663,23 +663,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Response">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#success-response" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Response
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -749,6 +732,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../ltp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Last Trading Price
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../optionchain/" class="md-nav__link">
         
   
@@ -757,6 +768,62 @@
     
   
     Option Chain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marketquote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Market Quote
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../historicaldata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historical Data
   
 
     
@@ -1161,18 +1228,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fetch-instrument" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Instrument Details
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instrument Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1182,6 +1237,18 @@
   </a>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Headers">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#curl-example" class="md-nav__link">
@@ -1207,23 +1274,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Response">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#success-response" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Response
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1297,30 +1347,50 @@
 <h1 id="instrument-api"><strong>Instrument API</strong><a class="headerlink" href="#instrument-api" title="Permanent link">&para;</a></h1>
 <p>The <strong>Instrument API</strong> allows you to retrieve detailed information about a trading instrument using its instrument ID.</p>
 <p>Using this API, you can fetch instrument metadata such as symbol details, exchange information, price bands, tick size, lot size, and other trading parameters.</p>
-<p>These endpoints let you <strong>retrieve instrument details and metadata</strong> for trading and market analysis.</p>
+<hr />
+<h2 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th><strong>Type</strong></th>
-<th><strong>Endpoint</strong></th>
-<th><strong>Description</strong></th>
+<th>Method</th>
+<th>URL</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>GET</td>
-<td><a href="#fetch-instrument"><code>instruments/{id}</code></a></td>
-<td>Retrieve instrument details by ID</td>
+<td><code>http://uat.quantxpress.com/api/instruments/{id}</code></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="fetch-instrument"><strong>Instrument Details</strong><a class="headerlink" href="#fetch-instrument" title="Permanent link">&para;</a></h2>
-<p>Retrieve detailed information for a specific instrument using its instrument ID.</p>
-<h3 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>GET /api/instruments/{id}
-</code></pre></div>
-<hr />
+<h2 id="headers">Headers<a class="headerlink" href="#headers" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>{acess_token}</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Accept</td>
+<td>applictaion/json</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
 <h3 id="curl-example">cURL Example<a class="headerlink" href="#curl-example" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/api/instruments/{instrumentId}&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -1330,7 +1400,6 @@
 </code></pre></div>
 <hr />
 <h2 id="response"><strong>Response</strong><a class="headerlink" href="#response" title="Permanent link">&para;</a></h2>
-<h3 id="success-response">Success Response<a class="headerlink" href="#success-response" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;request processed successfully&quot;</span><span class="p">,</span>
