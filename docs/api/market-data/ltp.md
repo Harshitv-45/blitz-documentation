@@ -11,10 +11,6 @@ These endpoints let you retrieve LTP data for trading, analytics, and monitoring
 | POST     | [`/marketfeed/ltp`](#get-ltp)    | Retrieve last traded price for instruments   |
 
 
-## **Last Traded Price (LTP)**
-
-Retrieve the latest traded price (LTP) for one or more instruments using their instrument identifiers.
-
 ## Endpoint
 
 ```
