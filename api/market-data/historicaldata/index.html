@@ -477,7 +477,7 @@
   <span class="md-ellipsis">
     
   
-    Statostics
+    Statistics
   
 
     
@@ -792,17 +792,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#these-endpoints-let-you-analyze-historical-price-movements-and-build-data-driven-trading-strategies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        These endpoints let you analyze historical price movements and build data-driven trading strategies.
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -829,17 +818,6 @@
     <span class="md-ellipsis">
       
         Request Payload
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters
       
     </span>
   </a>
@@ -1400,17 +1378,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#these-endpoints-let-you-analyze-historical-price-movements-and-build-data-driven-trading-strategies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        These endpoints let you analyze historical price movements and build data-driven trading strategies.
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1437,17 +1404,6 @@
     <span class="md-ellipsis">
       
         Request Payload
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters
       
     </span>
   </a>
@@ -1509,7 +1465,8 @@
 <h2 id="historical-data"><strong>Historical Data</strong><a class="headerlink" href="#historical-data" title="Permanent link">&para;</a></h2>
 <p>The Historical Data API allows you to retrieve past market data for a specific instrument over a defined time interval.</p>
 <p>Using this API, you can fetch OHLC (Open, High, Low, Close) data along with volume and timestamp information, which is essential for backtesting, technical analysis, and charting applications.</p>
-<h2 id="these-endpoints-let-you-analyze-historical-price-movements-and-build-data-driven-trading-strategies">These endpoints let you analyze historical price movements and build data-driven trading strategies.<a class="headerlink" href="#these-endpoints-let-you-analyze-historical-price-movements-and-build-data-driven-trading-strategies" title="Permanent link">&para;</a></h2>
+<p>These endpoints let you analyze historical price movements and build data-driven trading strategies.</p>
+<hr />
 <h2 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1543,7 +1500,7 @@
 </tr>
 <tr>
 <td>Authorization</td>
-<td>{acess_token}</td>
+<td access_token="access_token">Bearer</td>
 <td>Yes</td>
 </tr>
 <tr>
@@ -1561,7 +1518,6 @@
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1576,7 +1532,7 @@
 <td>instrument</td>
 <td>string</td>
 <td>Yes</td>
-<td>Instrument symbol or ID (e.g., IRFC, `NSE)</td>
+<td>Instrument symbol or ID (e.g., <code>IRFC</code>, <code>NSE</code>)</td>
 </tr>
 <tr>
 <td>interval</td>
@@ -1586,17 +1542,19 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Notes</strong>
+<blockquote>
+<p><strong>Notes:</strong>
 Returns time-series OHLC data.
 Interval defines candle size:
-    -<code>D</code> → Daily
-    -<code>1</code>, <code>5</code>, <code>15</code>, <code>30</code>, <code>60</code> → Minutes</p>
+  - <code>D</code> → Daily
+  - <code>1</code>, <code>5</code>, <code>15</code>, <code>30</code>, <code>60</code> → Minutes</p>
+</blockquote>
 <hr />
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/marketfeed/historicalData&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept&quot;: &quot;*/*&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: */*&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">    &quot;instrument&quot;: &quot;IRFC&quot;,</span>
 <span class="s1">    &quot;interval&quot;: &quot;D&quot;</span>

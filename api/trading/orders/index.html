@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#place-order" class="md-skip">
+        <a href="#orders-api" class="md-skip">
           Skip to content
         </a>
       
@@ -420,6 +420,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -461,6 +463,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -586,7 +590,7 @@
   <span class="md-ellipsis">
     
   
-    Statostics
+    Statistics
   
 
     
@@ -1348,6 +1352,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1438,9 +1444,8 @@
 
 
 
-  <h1>Orders</h1>
-
-<p>The order APIs let you place orders of various types, modify or cancel pending orders, and retrieve daily order history. With OMS(Order Management System.), you can manage your trades efficiently, execute orders in real time, track their status, and maintain full control over your portfolio .</p>
+<h1 id="orders-api"><strong>Orders API</strong><a class="headerlink" href="#orders-api" title="Permanent link">&para;</a></h1>
+<p>The order APIs let you place orders of various types, modify or cancel pending orders, and retrieve daily order history. With OMS (Order Management System), you can manage your trades efficiently, execute orders in real time, track their status, and maintain full control over your portfolio.</p>
 <p>These endpoints let you place, modify, cancel, and retrieve orders efficiently.</p>
 <table>
 <thead>
@@ -1786,7 +1791,7 @@
 Orders can be placed across supported instruments and exchanges, with full control over price, quantity, type, and validity.
 When an order is submitted, the system validates it for trading session availability, risk checks, and sufficient margin before routing it for execution.</p>
 <blockquote>
-<p>Note:Successful API submission does not guarantee execution at the exchange. The response only confirms that the order has been registered with the OMS system.</p>
+<p><strong>Note:</strong> Successful API submission does not guarantee execution at the exchange. The response only confirms that the order has been registered with the OMS system.</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/api/order/placeOrder&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -1946,12 +1951,10 @@ When an order is submitted, the system validates it for trading session availabi
 <p>The <strong>Modify Order</strong> endpoint allows you to update an existing order’s parameters such as <strong>quantity</strong>, <strong>price</strong>, <strong>stop price</strong>, or <strong>validity</strong>.
 Use this API to adjust open or pending orders before they are executed at the exchange.</p>
 <blockquote>
-<p>Note</p>
+<p><strong>Note:</strong> Only orders in <em>open</em> or <em>pending</em> states can be modified.
+Once an order is executed or cancelled, modification requests will be rejected.
+After modification, query the <a href="#fetching-orders">orders</a> to confirm that the changes were successfully applied.</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>Only orders in *open* or *pending* states can be modified.
-&gt; Once an order is executed or cancelled, modification requests will be rejected.
-- After modification, query the [orders](#fetching-orders) to confirm that the changes were successfully applied.
-</code></pre></div>
 <hr />
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;PUT&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/api/order/modifyOrder&#39;</span><span class="w"> </span><span class="se">\</span>

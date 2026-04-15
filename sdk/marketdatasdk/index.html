@@ -477,7 +477,7 @@
   <span class="md-ellipsis">
     
   
-    Statostics
+    Statistics
   
 
     
@@ -2380,7 +2380,7 @@ Once unsubscribed, the client will <strong>stop receiving tick updates</strong> 
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Example: Unubscribe to live market data</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example: Unsubscribe from live market data</span>
 <span class="n">client</span><span class="o">.</span><span class="n">unsubscribe_market_data</span><span class="p">([</span><span class="s2">&quot;NSE|RELIANCE&quot;</span><span class="p">])</span>
 
 <span class="c1"># Response:</span>
@@ -2506,7 +2506,7 @@ self.web_base_url = f"{Web_Base_URL}{self.access_token}"</p>
 <h3 id="unsubscribe"><strong><code>unsubscribe</code></strong><a class="headerlink" href="#unsubscribe" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>def unsubscribe(instrument_ids)
 </code></pre></div>
-<p>Unubscribes to live market data updates for the specified instruments.<br></p>
+<p>Unsubscribes from live market data updates for the specified instruments.<br></p>
 <p>Parameters : <code>instrument_ids</code> (list | str): One or more instrument IDs to unsubscribe to.</p>
 <hr />
 <h3 id="on_message"><strong><code>on_message</code></strong><a class="headerlink" href="#on_message" title="Permanent link">&para;</a></h3>
@@ -2626,7 +2626,8 @@ logging.warning(f"WebSocket closed: {close_status_code}, {close_msg}")</p>
 </details>
 <hr />
 <h3 id="stop"><code>stop</code><a class="headerlink" href="#stop" title="Permanent link">&para;</a></h3>
-<p><code>def stop(self)</code></p>
+<div class="highlight"><pre><span></span><code>def stop(self)
+</code></pre></div>
 <p>Stops the active WebSocket connection and disables automatic reconnection.</p>
 <details class="info">
 <summary>Source Code</summary>

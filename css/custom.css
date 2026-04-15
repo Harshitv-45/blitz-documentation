@@ -5,3 +5,51 @@ h4 {
   font-weight: 600;
   font-size: 22px;
 }
+
+/* ── Table Header Styling (matches indigo top bar) ─────────────────────── */
+.md-typeset table:not([class]) th {
+  background-color: #3f51b5;
+  /* MkDocs Material indigo primary */
+  color: #ffffff;
+  /* white text for contrast          */
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-bottom: 3px solid #003063;
+  /* dark navy accent line            */
+  padding: 10px 14px;
+}
+
+/* Round the corners of the first and last header cells */
+.md-typeset table:not([class]) th:first-child {
+  border-radius: 6px 0 0 0;
+}
+
+.md-typeset table:not([class]) th:last-child {
+  border-radius: 0 6px 0 0;
+}
+
+/* Subtle zebra striping on body rows */
+.md-typeset table:not([class]) tr:nth-child(even) td {
+  background-color: rgba(63, 81, 181, 0.05);
+  /* very light indigo tint */
+}
+
+/* Hover highlight on rows */
+.md-typeset table:not([class]) tbody tr:hover td {
+  background-color: rgba(63, 81, 181, 0.10);
+  transition: background-color 0.15s ease;
+}
+
+/* General table polish */
+.md-typeset table:not([class]) {
+  border-radius: 6px;
+  overflow: hidden;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.md-typeset table:not([class]) td {
+  padding: 9px 14px;
+  border-bottom: 1px solid rgba(63, 81, 181, 0.15);
+}

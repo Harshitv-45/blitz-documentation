@@ -477,7 +477,7 @@
   <span class="md-ellipsis">
     
   
-    Statostics
+    Statistics
   
 
     
@@ -1120,7 +1120,7 @@
   <a href="#get_statistics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        **get_statistics
+        get_statistics
       
     </span>
   </a>
@@ -1148,7 +1148,7 @@
   <a href="#get_trades" class="md-nav__link">
     <span class="md-ellipsis">
       
-        **get_trades
+        get_trades
       
     </span>
   </a>
@@ -1237,7 +1237,7 @@
   <a href="#on_message" class="md-nav__link">
     <span class="md-ellipsis">
       
-        **on_message
+        on_message
       
     </span>
   </a>
@@ -1734,7 +1734,7 @@
   <a href="#get_statistics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        **get_statistics
+        get_statistics
       
     </span>
   </a>
@@ -1762,7 +1762,7 @@
   <a href="#get_trades" class="md-nav__link">
     <span class="md-ellipsis">
       
-        **get_trades
+        get_trades
       
     </span>
   </a>
@@ -1851,7 +1851,7 @@
   <a href="#on_message" class="md-nav__link">
     <span class="md-ellipsis">
       
-        **on_message
+        on_message
       
     </span>
   </a>
@@ -1910,7 +1910,7 @@
     <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">Redis</span><span class="o">.</span><span class="n">from_url</span><span class="p">(</span><span class="n">REDIS_URL</span><span class="p">,</span> <span class="n">decode_responses</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 </details>
-<p>Initializes the client SDK with authentication amd WebSocket connection.</p>
+<p>Initializes the client SDK with authentication and WebSocket connection.</p>
 <p><strong>Parameters</strong></p>
 <table>
 <thead>
@@ -1959,6 +1959,38 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">orders</span><span class="p">)</span>
 
 <span class="c1"># Example Response:</span>
+<span class="c1"># {</span>
+<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
+<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
+<span class="c1">#   &#39;data&#39;: [</span>
+<span class="c1">#     {</span>
+<span class="c1">#       &#39;id&#39;: 136,</span>
+<span class="c1">#       &#39;entityId&#39;: &#39;9b4f9a76-f619-41a0-85bf-0d9ecff213c9&#39;,</span>
+<span class="c1">#       &#39;strategyId&#39;: &#39;36250ee3-ad08-4e09-862f-83deee8cdef9&#39;,</span>
+<span class="c1">#       &#39;strategyInstanceId&#39;: &#39;498cc797-3908-452a-91be-48157ebb9e71&#39;,</span>
+<span class="c1">#       &#39;strategyInstanceName&#39;: &#39;NSECM|IDEA&#39;,</span>
+<span class="c1">#       &#39;strategyName&#39;: &#39;Manual Trading&#39;,</span>
+<span class="c1">#       &#39;ivObjectName&#39;: &#39;IDEA&#39;,</span>
+<span class="c1">#       &#39;instrumentId&#39;: 110010000014366,</span>
+<span class="c1">#       &#39;exchangeSegment&#39;: &#39;NSECM&#39;,</span>
+<span class="c1">#       &#39;exchangeInstrumentId&#39;: 110010000014366,</span>
+<span class="c1">#       &#39;instrumentName&#39;: &#39;IDEA&#39;,</span>
+<span class="c1">#       &#39;instrumentType&#39;: 1,</span>
+<span class="c1">#       &#39;blitzOrderId&#39;: 225121947920000006,</span>
+<span class="c1">#       &#39;exchangeOrderId&#39;: &#39;&#39;,</span>
+<span class="c1">#       &#39;clientId&#39;: &#39;PRASHANT&#39;,</span>
+<span class="c1">#       &#39;orderType&#39;: &#39;Limit&#39;,</span>
+<span class="c1">#       &#39;orderSide&#39;: &#39;Buy&#39;,</span>
+<span class="c1">#       &#39;orderStatus&#39;: &#39;PendingNew&#39;,</span>
+<span class="c1">#       &#39;orderQuantity&#39;: 1,</span>
+<span class="c1">#       &#39;orderPrice&#39;: 11.51,</span>
+<span class="c1">#       &#39;tif&#39;: &#39;GFD&#39;,</span>
+<span class="c1">#       &#39;productType&#39;: &#39;MIS&#39;,</span>
+<span class="c1">#       &#39;isFictiveOrder&#39;: False,</span>
+<span class="c1">#       ...</span>
+<span class="c1">#     }</span>
+<span class="c1">#   ]</span>
+<span class="c1"># }</span>
 </code></pre></div>
 <h3 id="get_open_orders"><strong><code>get_open_orders</code></strong><a class="headerlink" href="#get_open_orders" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>def get_open_orders(self)
@@ -1978,6 +2010,30 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">open_orders</span><span class="p">)</span>
 
 <span class="c1"># Example Response:</span>
+<span class="c1"># {</span>
+<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
+<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
+<span class="c1">#   &#39;data&#39;: [</span>
+<span class="c1">#     {</span>
+<span class="c1">#       &#39;id&#39;: 136,</span>
+<span class="c1">#       &#39;entityId&#39;: &#39;9b4f9a76-f619-41a0-85bf-0d9ecff213c9&#39;,</span>
+<span class="c1">#       &#39;strategyInstanceName&#39;: &#39;NSECM|IDEA&#39;,</span>
+<span class="c1">#       &#39;instrumentName&#39;: &#39;IDEA&#39;,</span>
+<span class="c1">#       &#39;blitzOrderId&#39;: 225121947920000006,</span>
+<span class="c1">#       &#39;exchangeOrderId&#39;: &#39;&#39;,</span>
+<span class="c1">#       &#39;clientId&#39;: &#39;PRASHANT&#39;,</span>
+<span class="c1">#       &#39;orderType&#39;: &#39;Limit&#39;,</span>
+<span class="c1">#       &#39;orderSide&#39;: &#39;Buy&#39;,</span>
+<span class="c1">#       &#39;orderStatus&#39;: &#39;PendingNew&#39;,</span>
+<span class="c1">#       &#39;orderQuantity&#39;: 1,</span>
+<span class="c1">#       &#39;orderPrice&#39;: 11.51,</span>
+<span class="c1">#       &#39;leavesQuantity&#39;: 1,</span>
+<span class="c1">#       &#39;tif&#39;: &#39;GFD&#39;,</span>
+<span class="c1">#       &#39;productType&#39;: &#39;MIS&#39;,</span>
+<span class="c1">#       ...</span>
+<span class="c1">#     }</span>
+<span class="c1">#   ]</span>
+<span class="c1"># }</span>
 </code></pre></div>
 <h3 id="get_order_by_blitz_id"><strong><code>get_order_by_blitz_id</code></strong><a class="headerlink" href="#get_order_by_blitz_id" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>def get_order_by_blitz_id(self, blitz_order_id: int)
@@ -2012,10 +2068,40 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="highlight"><pre><span></span><code><span class="n">order</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_order_by_blitz_id</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">order</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_order_by_blitz_id</span><span class="p">(</span><span class="mi">225121947920000011</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
 
 <span class="c1"># Example Response:</span>
+<span class="c1"># {</span>
+<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
+<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
+<span class="c1">#   &#39;data&#39;: [</span>
+<span class="c1">#     {</span>
+<span class="c1">#       &#39;id&#39;: 157,</span>
+<span class="c1">#       &#39;entityId&#39;: &#39;9b4f9a76-f619-41a0-85bf-0d9ecff213c9&#39;,</span>
+<span class="c1">#       &#39;strategyInstanceName&#39;: &#39;NSECM|IDEA&#39;,</span>
+<span class="c1">#       &#39;instrumentName&#39;: &#39;IDEA&#39;,</span>
+<span class="c1">#       &#39;blitzOrderId&#39;: 225121947920000011,</span>
+<span class="c1">#       &#39;exchangeOrderId&#39;: &#39;3204124724133908&#39;,</span>
+<span class="c1">#       &#39;executionId&#39;: &#39;3204124724134090&#39;,</span>
+<span class="c1">#       &#39;clientId&#39;: &#39;PRASHANT&#39;,</span>
+<span class="c1">#       &#39;orderType&#39;: &#39;Limit&#39;,</span>
+<span class="c1">#       &#39;orderSide&#39;: &#39;Buy&#39;,</span>
+<span class="c1">#       &#39;orderStatus&#39;: &#39;Filled&#39;,</span>
+<span class="c1">#       &#39;orderQuantity&#39;: 1,</span>
+<span class="c1">#       &#39;orderPrice&#39;: 11.2,</span>
+<span class="c1">#       &#39;lastTradedQuantity&#39;: 1,</span>
+<span class="c1">#       &#39;lastTradedPrice&#39;: 11.2,</span>
+<span class="c1">#       &#39;cumulativeQuantity&#39;: 1,</span>
+<span class="c1">#       &#39;leavesQuantity&#39;: 0,</span>
+<span class="c1">#       &#39;averageTradedPrice&#39;: 11.2,</span>
+<span class="c1">#       &#39;isOrderCompleted&#39;: True,</span>
+<span class="c1">#       &#39;executionType&#39;: &#39;Fill&#39;,</span>
+<span class="c1">#       &#39;productType&#39;: &#39;MIS&#39;,</span>
+<span class="c1">#       ...</span>
+<span class="c1">#     }</span>
+<span class="c1">#   ]</span>
+<span class="c1"># }</span>
 </code></pre></div>
 <h3 id="place_order"><strong><code>place_order</code></strong><a class="headerlink" href="#place_order" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>def place_order(self, order_data: dict)
@@ -2133,6 +2219,14 @@ def place_order(self, order_data: dict):
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">place_order</span><span class="p">(</span><span class="n">order_data</span><span class="p">)</span>
 
 <span class="c1"># Example Response:</span>
+<span class="c1"># {</span>
+<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
+<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
+<span class="c1">#   &#39;data&#39;: {</span>
+<span class="c1">#     &#39;blitzOrderId&#39;: 225121947920000028,</span>
+<span class="c1">#     &#39;correlationOrderId&#39;: &#39;225121947920000028&#39;</span>
+<span class="c1">#   }</span>
+<span class="c1"># }</span>
 </code></pre></div>
 <h3 id="modify_order"><strong><code>modify_order</code></strong><a class="headerlink" href="#modify_order" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>def modify_order(self, order_data: dict)
@@ -2211,9 +2305,14 @@ def place_order(self, order_data: dict):
   <span class="c1">#&quot;strategyInstanceId&quot;: &quot;656abb03-eec9-4cd0-a226-025090b3ff27&quot;,</span>
   <span class="s2">&quot;tiF_GTD_Date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-10-10&quot;</span>
 <span class="p">}</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">modify_order</span><span class="p">(</span><span class="n">order_data</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">modify_order</span><span class="p">(</span><span class="n">modify_data</span><span class="p">)</span>
 
 <span class="c1"># Example Response:</span>
+<span class="c1"># {</span>
+<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
+<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
+<span class="c1">#   &#39;data&#39;: &#39;successfully send modify order request to blitz server&#39;</span>
+<span class="c1"># }</span>
 </code></pre></div>
 <h3 id="cancel_order"><strong><code>cancel_order</code></strong><a class="headerlink" href="#cancel_order" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>def cancel_order(self, instrument: str, blitzOrderId: int)
@@ -2248,6 +2347,11 @@ def place_order(self, order_data: dict):
 <div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">cancel_order</span><span class="p">(</span><span class="s2">&quot;NSE|RELIANCE&quot;</span><span class="p">,</span> <span class="mi">12345</span><span class="p">)</span>
 
 <span class="c1"># Example Response:</span>
+<span class="c1"># {</span>
+<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
+<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
+<span class="c1">#   &#39;data&#39;: &#39;successfully send cancel order request to blitz server&#39;</span>
+<span class="c1"># }</span>
 </code></pre></div>
 <h2 id="position-management">Position Management<a class="headerlink" href="#position-management" title="Permanent link">&para;</a></h2>
 <h3 id="get_positions"><strong><code>get_positions</code></strong><a class="headerlink" href="#get_positions" title="Permanent link">&para;</a></h3>
@@ -2258,9 +2362,28 @@ def place_order(self, order_data: dict):
 <div class="highlight"><pre><span></span><code><span class="n">positions</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_positions</span><span class="p">()</span>
 
 <span class="c1"># Example Response:</span>
+<span class="c1"># {</span>
+<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
+<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
+<span class="c1">#   &#39;data&#39;: [</span>
+<span class="c1">#     {</span>
+<span class="c1">#       &#39;instrumentName&#39;: &#39;IDEA&#39;,</span>
+<span class="c1">#       &#39;exchangeSegment&#39;: &#39;NSECM&#39;,</span>
+<span class="c1">#       &#39;productType&#39;: &#39;MIS&#39;,</span>
+<span class="c1">#       &#39;netQuantity&#39;: 1,</span>
+<span class="c1">#       &#39;buyQuantity&#39;: 1,</span>
+<span class="c1">#       &#39;sellQuantity&#39;: 0,</span>
+<span class="c1">#       &#39;buyValue&#39;: 11.51,</span>
+<span class="c1">#       &#39;sellValue&#39;: 0.0,</span>
+<span class="c1">#       &#39;ltp&#39;: 11.2,</span>
+<span class="c1">#       &#39;pnl&#39;: -0.31,</span>
+<span class="c1">#       ...</span>
+<span class="c1">#     }</span>
+<span class="c1">#   ]</span>
+<span class="c1"># }</span>
 </code></pre></div>
 <h2 id="statistics-management">Statistics Management<a class="headerlink" href="#statistics-management" title="Permanent link">&para;</a></h2>
-<h3 id="get_statistics">**<code>get_statistics</code><a class="headerlink" href="#get_statistics" title="Permanent link">&para;</a></h3>
+<h3 id="get_statistics"><strong><code>get_statistics</code></strong><a class="headerlink" href="#get_statistics" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>def get_statistics(self)
 </code></pre></div>
 <p>Fetch strategy statistics and performance metrics.</p>
@@ -2268,9 +2391,23 @@ def place_order(self, order_data: dict):
 <div class="highlight"><pre><span></span><code><span class="n">stats</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_statistics</span><span class="p">()</span>
 
 <span class="c1"># Example Response:</span>
+<span class="c1"># {</span>
+<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
+<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
+<span class="c1">#   &#39;data&#39;: {</span>
+<span class="c1">#     &#39;totalTrades&#39;: 12,</span>
+<span class="c1">#     &#39;profitableTrades&#39;: 7,</span>
+<span class="c1">#     &#39;lossTrades&#39;: 5,</span>
+<span class="c1">#     &#39;winRate&#39;: 58.33,</span>
+<span class="c1">#     &#39;totalPnl&#39;: 1250.75,</span>
+<span class="c1">#     &#39;realizedPnl&#39;: 980.50,</span>
+<span class="c1">#     &#39;unrealizedPnl&#39;: 270.25,</span>
+<span class="c1">#     &#39;totalTurnover&#39;: 125000.0</span>
+<span class="c1">#   }</span>
+<span class="c1"># }</span>
 </code></pre></div>
 <h2 id="trade-management">Trade Management<a class="headerlink" href="#trade-management" title="Permanent link">&para;</a></h2>
-<h3 id="get_trades">**<code>get_trades</code><a class="headerlink" href="#get_trades" title="Permanent link">&para;</a></h3>
+<h3 id="get_trades"><strong><code>get_trades</code></strong><a class="headerlink" href="#get_trades" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>def get_trades(self)
 </code></pre></div>
 <p>Fetch all executed trades.</p>
@@ -2278,6 +2415,33 @@ def place_order(self, order_data: dict):
 <div class="highlight"><pre><span></span><code><span class="n">trades</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_trades</span><span class="p">()</span>
 
 <span class="c1"># Example Response:</span>
+<span class="c1"># {</span>
+<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
+<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
+<span class="c1">#   &#39;data&#39;: [</span>
+<span class="c1">#     {</span>
+<span class="c1">#       &#39;id&#39;: 27,</span>
+<span class="c1">#       &#39;entityId&#39;: &#39;9b4f9a76-f619-41a0-85bf-0d9ecff213c9&#39;,</span>
+<span class="c1">#       &#39;instrumentName&#39;: &#39;IDEA&#39;,</span>
+<span class="c1">#       &#39;exchangeSegment&#39;: &#39;NSECM&#39;,</span>
+<span class="c1">#       &#39;blitzOrderId&#39;: 225121947920000011,</span>
+<span class="c1">#       &#39;exchangeOrderId&#39;: &#39;3204124724133908&#39;,</span>
+<span class="c1">#       &#39;executionId&#39;: &#39;3204124724134090&#39;,</span>
+<span class="c1">#       &#39;clientId&#39;: &#39;PRASHANT&#39;,</span>
+<span class="c1">#       &#39;orderType&#39;: &#39;Limit&#39;,</span>
+<span class="c1">#       &#39;orderSide&#39;: &#39;Buy&#39;,</span>
+<span class="c1">#       &#39;orderStatus&#39;: &#39;Filled&#39;,</span>
+<span class="c1">#       &#39;orderQuantity&#39;: 1,</span>
+<span class="c1">#       &#39;orderPrice&#39;: 11.2,</span>
+<span class="c1">#       &#39;lastTradedQuantity&#39;: 1,</span>
+<span class="c1">#       &#39;lastTradedPrice&#39;: 11.2,</span>
+<span class="c1">#       &#39;averageTradedPrice&#39;: 11.2,</span>
+<span class="c1">#       &#39;executionType&#39;: &#39;Fill&#39;,</span>
+<span class="c1">#       &#39;productType&#39;: &#39;MIS&#39;,</span>
+<span class="c1">#       ...</span>
+<span class="c1">#     }</span>
+<span class="c1">#   ]</span>
+<span class="c1"># }</span>
 </code></pre></div>
 <h2 id="signals">Signals<a class="headerlink" href="#signals" title="Permanent link">&para;</a></h2>
 <h3 id="send_signals"><strong><code>send_signals</code></strong><a class="headerlink" href="#send_signals" title="Permanent link">&para;</a></h3>
@@ -2357,6 +2521,9 @@ def place_order(self, order_data: dict):
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">send_signals</span><span class="p">(</span><span class="n">signals</span><span class="p">)</span>
 
 <span class="c1"># Example Response:</span>
+<span class="c1"># {</span>
+<span class="c1">#   &#39;status&#39;: &#39;Published&#39;</span>
+<span class="c1"># }</span>
 </code></pre></div>
 <h2 id="websocket-callbacks">WebSocket Callbacks<a class="headerlink" href="#websocket-callbacks" title="Permanent link">&para;</a></h2>
 <h3 id="on_connect"><strong><code>on_connect</code></strong><a class="headerlink" href="#on_connect" title="Permanent link">&para;</a></h3>
@@ -2367,7 +2534,7 @@ def place_order(self, order_data: dict):
 <div class="highlight"><pre><span></span><code>def on_close(self, close_status_code, close_msg)
 </code></pre></div>
 <p>Callback triggered when WebSocket connection is closed.</p>
-<h3 id="on_message">**<code>on_message</code><a class="headerlink" href="#on_message" title="Permanent link">&para;</a></h3>
+<h3 id="on_message"><strong><code>on_message</code></strong><a class="headerlink" href="#on_message" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>@property def on_message(self)
 </code></pre></div>
 <p>Setter to register callback for receiving real-time tick data.</p>

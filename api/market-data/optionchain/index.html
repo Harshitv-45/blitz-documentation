@@ -477,7 +477,7 @@
   <span class="md-ellipsis">
     
   
-    Statostics
+    Statistics
   
 
     
@@ -1648,7 +1648,7 @@
 </tr>
 <tr>
 <td>Authorization</td>
-<td>{acess_token}</td>
+<td access_token="access_token">Bearer</td>
 <td>Yes</td>
 </tr>
 <tr>
@@ -1690,11 +1690,12 @@
 </tr>
 </tbody>
 </table>
+<hr />
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/marketfeed/optionChain&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept&quot;: &quot;*/*&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: */*&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">    &quot;symbol&quot;: &quot;NIFTY&quot;,</span>
 <span class="s1">    &quot;expiryDate&quot;: &quot;2025-05-29&quot;</span>
