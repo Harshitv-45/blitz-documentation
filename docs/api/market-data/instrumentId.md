@@ -112,27 +112,27 @@ curl -X 'GET' \
 | exchangeInstrumentId   | integer      | Instrument identifier assigned by exchange           |
 | marketInstrumentId     | integer      | Market-wide instrument identifier                    |
 | series                 | string       | Instrument series (e.g., EQ for equity)              |
-| tickSize               | number       | Minimum price movement allowed                       |
-| isin                   | string       | International Securities Identification Number       |
-| priceBandHigh          | number       | Upper price band limit                               |
-| priceBandLow           | number       | Lower price band limit                               |
-| multiplier             | number       | Contract multiplier                                  |
-| bvp                    | number       | Base value point                                     |
+| tickSize               | float       | Minimum price movement allowed                       |
+| isin                   | string       | International Securities Identification float       |
+| priceBandHigh          | float       | Upper price band limit                               |
+| priceBandLow           | float       | Lower price band limit                               |
+| multiplier             | float       | Contract multiplier                                  |
+| bvp                    | float       | Base value point                                     |
 | priceType              | string       | Price type configuration                             |
-| priceNumerator         | number       | Price calculation numerator                          |
-| priceDenominator       | number       | Price calculation denominator                        |
-| freezeQty              | number       | Maximum quantity allowed per order                   |
-| lotSize                | number       | Minimum tradable quantity                            |
+| priceNumerator         | float       | Price calculation numerator                          |
+| priceDenominator       | float       | Price calculation denominator                        |
+| freezeQty              | float       | Maximum quantity allowed per order                   |
+| lotSize                | float       | Minimum tradable quantity                            |
 | expiryDate             | integer/null | Expiry date (for derivatives)                        |
-| strikePrice            | number/null  | Strike price (for options)                           |
+| strikePrice            | float/null  | Strike price (for options)                           |
 | optionType             | string/null  | Option type (`CE`/`PE`)                                  |
 | assetToken             | string/null  | Asset token reference                                |
 | underlyingInstrumentId | integer/null | Underlying instrument ID (for derivatives)           |
-| open                   | number       | Opening price                                        |
-| high                   | number       | Highest traded price                                 |
-| low                    | number       | Lowest traded price                                  |
-| close                  | number       | Closing price                                        |
-| ltp                    | number       | Last traded price                                    |
+| open                   | float       | Opening price                                        |
+| high                   | float       | Highest traded price                                 |
+| low                    | float       | Lowest traded price                                  |
+| close                  | float       | Closing price                                        |
+| ltp                    | float       | Last traded price                                    |
 | reserve1–reserve8      | string       | Reserved fields for future use                       |
 
 ---

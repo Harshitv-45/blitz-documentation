@@ -780,17 +780,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#symbol-irfc-interval-d" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        { &quot;symbol&quot;: &quot;IRFC&quot;, &quot;interval&quot;: &quot;D&quot; }
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -817,17 +806,6 @@
     <span class="md-ellipsis">
       
         Successful Response (200 OK)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-1151-high-1167-low-1151-close-1156-volume-8940523-oi-0-timestamp-10-02-2026-091500" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        [ { &quot;open&quot;: 115.1, &quot;high&quot;: 116.7, &quot;low&quot;: 115.1, &quot;close&quot;: 115.6, &quot;volume&quot;: 8940523, &quot;oi&quot;: 0, &quot;timestamp&quot;: &quot;10-02-2026 09:15:00&quot; } ]
       
     </span>
   </a>
@@ -1309,17 +1287,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#symbol-irfc-interval-d" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        { &quot;symbol&quot;: &quot;IRFC&quot;, &quot;interval&quot;: &quot;D&quot; }
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1346,17 +1313,6 @@
     <span class="md-ellipsis">
       
         Successful Response (200 OK)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-1151-high-1167-low-1151-close-1156-volume-8940523-oi-0-timestamp-10-02-2026-091500" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        [ { &quot;open&quot;: 115.1, &quot;high&quot;: 116.7, &quot;low&quot;: 115.1, &quot;close&quot;: 115.6, &quot;volume&quot;: 8940523, &quot;oi&quot;: 0, &quot;timestamp&quot;: &quot;10-02-2026 09:15:00&quot; } ]
       
     </span>
   </a>
@@ -1444,15 +1400,21 @@
 <td>{acess_token}</td>
 <td>Yes</td>
 </tr>
+<tr>
+<td>Accept</td>
+<td><code>*/*</code></td>
+<td>Yes</td>
+</tr>
 </tbody>
 </table>
 <hr />
 <h2 id="request-payload">Request Payload<a class="headerlink" href="#request-payload" title="Permanent link">&para;</a></h2>
-<h2 id="symbol-irfc-interval-d"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRFC&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;interval&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;D&quot;</span>
 <span class="p">}</span>
-</code></pre></div><a class="headerlink" href="#symbol-irfc-interval-d" title="Permanent link">&para;</a></h2>
+</code></pre></div>
+<hr />
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1483,6 +1445,7 @@
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/marketfeed/historicalData&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept&quot;: &quot;*/*&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">    &quot;instrument&quot;: &quot;IRFC&quot;,</span>
 <span class="s1">    &quot;interval&quot;: &quot;D&quot;</span>
@@ -1490,7 +1453,7 @@
 </code></pre></div>
 <hr />
 <h2 id="successful-response-200-ok">Successful Response (200 OK)<a class="headerlink" href="#successful-response-200-ok" title="Permanent link">&para;</a></h2>
-<h2 id="open-1151-high-1167-low-1151-close-1156-volume-8940523-oi-0-timestamp-10-02-2026-091500"><div class="highlight"><pre><span></span><code><span class="p">[</span>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">115.1</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">116.7</span><span class="p">,</span>
@@ -1501,7 +1464,8 @@
 <span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10-02-2026 09:15:00&quot;</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">]</span>
-</code></pre></div><a class="headerlink" href="#open-1151-high-1167-low-1151-close-1156-volume-8940523-oi-0-timestamp-10-02-2026-091500" title="Permanent link">&para;</a></h2>
+</code></pre></div>
+<hr />
 <h2 id="response-field-descriptions">Response Field Descriptions<a class="headerlink" href="#response-field-descriptions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1553,8 +1517,8 @@
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <p>Returns time-series OHLC data.
 Interval defines candle size:
-    -D → Daily
-    -1, 5, 15, 30, 60 → Minutes</p>
+    -<code>D</code> → Daily
+    -<code>1</code>, <code>5</code>, <code>15</code>, <code>30</code>, <code>60</code> → Minutes</p>
 
 
 

@@ -115,18 +115,18 @@ curl -X POST 'http://uat.quantxpress.com/marketfeed/quote' \
 | ExchangeSegment      | integer | Exchange segment identifier          |
 | ExchangeInstrumentID | integer | Exchange-specific instrument ID      |
 | Timestamp            | integer | Last update timestamp (epoch)        |
-| LTP                  | number  | Last traded price                    |
-| LTQ                  | number  | Last traded quantity                 |
+| LTP                  | float  | Last traded price                    |
+| LTQ                  | float  | Last traded quantity                 |
 | LTT                  | integer | Last traded time (epoch)             |
-| ATP                  | number  | Average traded price                 |
-| VTT                  | number  | Volume traded today                  |
-| TBQ                  | number  | Total buy quantity                   |
-| TSQ                  | number  | Total sell quantity                  |
-| OI                   | number  | Open interest                        |
-| Open                 | number  | Opening price                        |
-| High                 | number  | Highest price                        |
-| Low                  | number  | Lowest price                         |
-| Close                | number  | Previous closing price               |
+| ATP                  | float  | Average traded price                 |
+| VTT                  | float  | Volume traded today                  |
+| TBQ                  | float  | Total buy quantity                   |
+| TSQ                  | float  | Total sell quantity                  |
+| OI                   | float  | Open interest                        |
+| Open                 | float  | Opening price                        |
+| High                 | float  | Highest price                        |
+| Low                  | float  | Lowest price                         |
+| Close                | float  | Previous closing price               |
 
 ---
 
@@ -136,9 +136,9 @@ curl -X POST 'http://uat.quantxpress.com/marketfeed/quote' \
 
 | Field  | Type   | Description                     |
 | ------ | ------ | ------------------------------- |
-| Qty    | number | Quantity available              |
-| Price  | number | Bid price                       |
-| Orders | number | Number of orders at that level  |
+| Qty    | float | Quantity available              |
+| Price  | float | Bid price                       |
+| Orders | float | float of orders at that level  |
 
 ---
 
@@ -146,6 +146,6 @@ curl -X POST 'http://uat.quantxpress.com/marketfeed/quote' \
 
 | Field  | Type   | Description                     |
 | ------ | ------ | ------------------------------- |
-| Qty    | number | Quantity available              |
-| Price  | number | Ask price                       |
-| Orders | number | Number of orders at that level  |
+| Qty    | float | Quantity available              |
+| Price  | float | Ask price                       |
+| Orders | float | float of orders at that level  |
