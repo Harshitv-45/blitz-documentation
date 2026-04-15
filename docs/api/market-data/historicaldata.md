@@ -40,7 +40,14 @@ These endpoints let you analyze historical price movements and build data-driven
 |Parameter	|Type	|Required	|Description|
 |-----------|-------|-----------|-----------|
 |instrument	|string	|Yes	|Instrument symbol or ID (e.g., IRFC, `NSE)|
-|interval	|string	|Yes	Time interval of data. Supported values: `D`, `1`, `5`, `15`, `30`, `60`|
+|interval	|string	|Yes	|Time interval of data. Supported values: `D`, `1`, `5`, `15`, `30`, `60`|
+
+
+**Notes**
+Returns time-series OHLC data.
+Interval defines candle size:
+    -`D` → Daily
+    -`1`, `5`, `15`, `30`, `60` → Minutes
 
 ---
 
@@ -91,8 +98,4 @@ curl -X POST 'http://uat.quantxpress.com/marketfeed/historicalData' \
 
 ---
 
-## Notes
-Returns time-series OHLC data.
-Interval defines candle size:
-    -`D` → Daily
-    -`1`, `5`, `15`, `30`, `60` → Minutes
+
