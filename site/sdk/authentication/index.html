@@ -477,7 +477,7 @@
   <span class="md-ellipsis">
     
   
-    Statostics
+    Statistics
   
 
     
@@ -1444,6 +1444,14 @@
 </code></pre></div>
 </details>
 <p>Return the access token of the client</p>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">auth</span> <span class="o">=</span> <span class="n">AuthClient</span><span class="p">(</span><span class="n">app_key</span><span class="o">=</span><span class="s2">&quot;abc123xyz&quot;</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;U12345&quot;</span><span class="p">)</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">auth</span><span class="o">.</span><span class="n">get_access_token</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Access Token:&quot;</span><span class="p">,</span> <span class="n">token</span><span class="p">)</span>
+
+<span class="c1"># Example Response:</span>
+<span class="c1"># Access Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcmVmZXJyZWRfdXNlcm5hbWUiOiJBbGdvMTIzIiwiYXBwTmFtZSI6IkFsZ29UZXN0IiwidXNlcklkIjoiQWxnbzEyMyIsImV4cCI6MTc3NTYzMjgzOCwiaXNzIjoiQXV0aFNlcnZlciJ9.GmGFg_Noqw1XhTJ5UDJ1XRcUi6gGwP-HJF3TQsfAJl0</span>
+</code></pre></div>
 <hr />
 
 
