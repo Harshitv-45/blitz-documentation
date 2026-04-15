@@ -749,6 +749,78 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#response-field-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response Field Descriptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Response Field Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chain-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chain Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-put-option-fields-ce-pe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Call / Put Option Fields (CE &amp; PE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note:
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1281,6 +1353,78 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#response-field-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response Field Descriptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Response Field Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chain-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chain Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-put-option-fields-ce-pe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Call / Put Option Fields (CE &amp; PE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note:
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1313,7 +1457,7 @@
 </thead>
 <tbody>
 <tr>
-<td>GET</td>
+<td>POST</td>
 <td><code>http://uat.quantxpress.com/v1/api/optionChain</code></td>
 </tr>
 </tbody>
@@ -1337,6 +1481,11 @@
 <tr>
 <td>Authorization</td>
 <td>{acess_token}</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Accept</td>
+<td><code>*/*</code></td>
 <td>Yes</td>
 </tr>
 </tbody>
@@ -1377,6 +1526,7 @@
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/marketfeed/optionChain&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept&quot;: &quot;*/*&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">    &quot;symbol&quot;: &quot;NIFTY&quot;,</span>
 <span class="s1">    &quot;expiryDate&quot;: &quot;2025-05-29&quot;</span>
@@ -1422,6 +1572,157 @@
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+<hr />
+<h2 id="response-field-descriptions">Response Field Descriptions<a class="headerlink" href="#response-field-descriptions" title="Permanent link">&para;</a></h2>
+<h3 id="root-fields">Root Fields<a class="headerlink" href="#root-fields" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Status of the request (success or error)</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Contains quote data mapped by instrument ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-fields">Data Fields<a class="headerlink" href="#data-fields" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spotPrice</td>
+<td>number</td>
+<td>Current market price of the underlying asset</td>
+</tr>
+<tr>
+<td>expiryDate</td>
+<td>string</td>
+<td>Expiry date of the options contract (<code>YYYY-MM-DD</code>)</td>
+</tr>
+<tr>
+<td>atm</td>
+<td>number</td>
+<td>At-the-money strike price (closest to spot price)</td>
+</tr>
+<tr>
+<td>chains</td>
+<td>array</td>
+<td>List of option data for different strike prices</td>
+</tr>
+</tbody>
+</table>
+<h3 id="chain-fields">Chain Fields<a class="headerlink" href="#chain-fields" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>strikePrice</td>
+<td>number</td>
+<td>Strike price of the option contract</td>
+</tr>
+<tr>
+<td>callOption</td>
+<td>object</td>
+<td>Call option (CE) data for the strike</td>
+</tr>
+<tr>
+<td>putOption</td>
+<td>object</td>
+<td>Put option (PE) data for the strike</td>
+</tr>
+</tbody>
+</table>
+<h3 id="call-put-option-fields-ce-pe">Call / Put Option Fields (CE &amp; PE)<a class="headerlink" href="#call-put-option-fields-ce-pe" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ltp</td>
+<td>number</td>
+<td>Last traded price of the option</td>
+</tr>
+<tr>
+<td>price</td>
+<td>number</td>
+<td>Last traded or closing price</td>
+</tr>
+<tr>
+<td>iv</td>
+<td>number</td>
+<td>Implied volatility of the option</td>
+</tr>
+<tr>
+<td>delta</td>
+<td>number</td>
+<td>Sensitivity of option price to underlying price</td>
+</tr>
+<tr>
+<td>gamma</td>
+<td>number</td>
+<td>Rate of change of delta</td>
+</tr>
+<tr>
+<td>theta</td>
+<td>number</td>
+<td>Time decay of the option</td>
+</tr>
+<tr>
+<td>vega</td>
+<td>number</td>
+<td>Sensitivity to volatility changes</td>
+</tr>
+<tr>
+<td>rho</td>
+<td>number</td>
+<td>Sensitivity to interest rate changes</td>
+</tr>
+<tr>
+<td>oi</td>
+<td>number</td>
+<td>Open interest (total outstanding contracts)</td>
+</tr>
+<tr>
+<td>oiPercentage</td>
+<td>number</td>
+<td>Change in open interest (percentage)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="note"><strong>Note:</strong><a class="headerlink" href="#note" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>callOption</code> represents <strong>CE (Call Option)</strong>  </li>
+<li><code>putOption</code> represents <strong>PE (Put Option)</strong>  </li>
+<li>Greeks (<code>delta</code>, <code>gamma</code>, <code>theta</code>, <code>vega</code>, <code>rho</code>) are key indicators for options trading analysis.</li>
+</ul>
 
 
 
