@@ -16,9 +16,38 @@ These endpoints let you retrieve LTP data for trading, analytics, and monitoring
 Retrieve the latest traded price (LTP) for one or more instruments using their instrument identifiers.
 
 ## Endpoint
+
 ```
 POST /marketfeed/ltp
 ```
+
+---
+
+## Headers
+
+| Header        | Value            | Required |
+| ------------  | ---------------- | -------- |
+| Content-Type  | application/json | Yes      |
+| Authorization | {acess_token}    | Yes      |
+| Accept        | `*/*`              | Yes      |
+
+---
+
+## Request Payload
+
+```json
+{
+  "InstrumentIds": ["NSECM|RELIANCE", "NSECM|TCS", 1010010002000001]
+}
+```
+
+---
+
+## Parameters
+|Parameter	|Type	|Required	|Description|
+|-----------|-------|-----------|-----------|
+InstrumentIds|list / array|Yes|List of instrument identifiers (symbols or numeric instrument IDs).
+
 ---
 
 ## Example
@@ -28,6 +57,7 @@ curl -X 'POST' \
   'http://uat.quantxpress.com/marketfeed/ltp' \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept": "*/*' \
   -d '{
     "InstrumentIds": ["NSE|TCS", "NSE|RELIANCE", 1010010002000001]
   }'
@@ -62,7 +92,7 @@ curl -X 'POST' \
 
 ---
 
-## **Response Field Descriptions**
+### **Response Field Descriptions**
 
 ### Root Response Fields
 | Field   | Type   | Description                                  |

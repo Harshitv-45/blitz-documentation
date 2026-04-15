@@ -19,7 +19,7 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
 | ------------  | ---------------- | -------- |
 | Content-Type  | application/json | Yes      |
 | Authorization | {acess_token}    | Yes      |
-| Accept        | applictaion/json | Yes      |
+| Accept        | `*/*`              | Yes      |
 
 ## Example
 

@@ -22,6 +22,7 @@ This API is essential for building trading dashboards, order books, and real-tim
 | ------------  | ---------------- | -------- |
 | Content-Type  | application/json | Yes      |
 | Authorization | {acess_token}    | Yes      |
+| Accept        | `*/*`              | Yes      |
 
 ---
 
@@ -48,6 +49,7 @@ InstrumentIds|list / array|Yes|List of instrument identifiers (symbols or numeri
 curl -X POST 'http://uat.quantxpress.com/marketfeed/quote' \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept": "*/*' \
   -d '{
     "InstrumentIds": ["NSECM|RELIANCE", "NSECM|TCS", 1010010002000001]
   }'

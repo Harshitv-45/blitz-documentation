@@ -21,6 +21,7 @@ These endpoints let you analyze historical price movements and build data-driven
 | ------------  | ---------------- | -------- |
 | Content-Type  | application/json | Yes      |
 | Authorization | {acess_token}    | Yes      |
+| Accept        | `*/*`              | Yes      |
 
 ---
 
@@ -32,6 +33,7 @@ These endpoints let you analyze historical price movements and build data-driven
   "interval": "D"
 }
 ```
+
 ---
 
 ## Parameters
@@ -48,6 +50,7 @@ These endpoints let you analyze historical price movements and build data-driven
 curl -X POST 'http://uat.quantxpress.com/marketfeed/historicalData' \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept": "*/*' \
   -d '{
     "instrument": "IRFC",
     "interval": "D"
@@ -71,6 +74,7 @@ curl -X POST 'http://uat.quantxpress.com/marketfeed/historicalData' \
   }
 ]
 ```
+
 ---
 
 ## Response Field Descriptions
@@ -90,5 +94,5 @@ curl -X POST 'http://uat.quantxpress.com/marketfeed/historicalData' \
 ## Notes
 Returns time-series OHLC data.
 Interval defines candle size:
-    -D → Daily
-    -1, 5, 15, 30, 60 → Minutes
+    -`D` → Daily
+    -`1`, `5`, `15`, `30`, `60` → Minutes

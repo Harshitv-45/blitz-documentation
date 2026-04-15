@@ -12,7 +12,7 @@ This API helps traders analyze market sentiment, volatility, and strike-level ac
 
 | Method | URL                                             |
 | ------ | ----------------------------------------------- |
-| GET    | `http://uat.quantxpress.com/v1/api/optionChain` |
+| POST    | `http://uat.quantxpress.com/v1/api/optionChain` |
 
 ---
 
@@ -22,6 +22,7 @@ This API helps traders analyze market sentiment, volatility, and strike-level ac
 | ------------  | ---------------- | -------- |
 | Content-Type  | application/json | Yes      |
 | Authorization | {acess_token}    | Yes      |
+| Accept        | `*/*`              | Yes      |
 
 ---
 
@@ -46,6 +47,7 @@ This API helps traders analyze market sentiment, volatility, and strike-level ac
 curl -X POST 'http://uat.quantxpress.com/marketfeed/optionChain' \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept": "*/*' \
   -d '{
     "symbol": "NIFTY",
     "expiryDate": "2025-05-29"
@@ -95,3 +97,47 @@ curl -X POST 'http://uat.quantxpress.com/marketfeed/optionChain' \
   }
 }
 ```
+
+---
+
+## Response Field Descriptions
+
+### Root Fields
+|Field	|Type	|Description|
+|-------|-------|-----------|
+|status	|string	|Status of the request (success or error)|
+|data	|object	|Contains quote data mapped by instrument ID|
+
+### Data Fields
+| Field      | Type   | Description                                               |
+| ---------- | ------ | --------------------------------------------------------- |
+| spotPrice  | number | Current market price of the underlying asset              |
+| expiryDate | string | Expiry date of the options contract (`YYYY-MM-DD`)        |
+| atm        | number | At-the-money strike price (closest to spot price)         |
+| chains     | array  | List of option data for different strike prices           |
+
+### Chain Fields
+| Field        | Type   | Description                                   |
+| ------------ | ------ | --------------------------------------------- |
+| strikePrice  | number | Strike price of the option contract           |
+| callOption   | object | Call option (CE) data for the strike          |
+| putOption    | object | Put option (PE) data for the strike           |
+
+### Call / Put Option Fields (CE & PE)
+| Field         | Type   | Description                                      |
+| ------------- | ------ | ------------------------------------------------ |
+| ltp           | number | Last traded price of the option                  |
+| price         | number | Last traded or closing price                     |
+| iv            | number | Implied volatility of the option                 |
+| delta         | number | Sensitivity of option price to underlying price  |
+| gamma         | number | Rate of change of delta                          |
+| theta         | number | Time decay of the option                         |
+| vega          | number | Sensitivity to volatility changes                |
+| rho           | number | Sensitivity to interest rate changes            |
+| oi            | number | Open interest (total outstanding contracts)      |
+| oiPercentage  | number | Change in open interest (percentage)             |
+
+## **Note:**  
+ - `callOption` represents **CE (Call Option)**  
+ - `putOption` represents **PE (Put Option)**  
+ - Greeks (`delta`, `gamma`, `theta`, `vega`, `rho`) are key indicators for options trading analysis.

@@ -473,7 +473,7 @@
   <a href="#fetching-orders" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Fetching Orders
+        Fetching Orders
       
     </span>
   </a>
@@ -484,7 +484,7 @@
   <a href="#get-order-by-id" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Retrieve Order by BlitzOrderID
+        Retrieve Order by BlitzOrderID
       
     </span>
   </a>
@@ -495,7 +495,7 @@
   <a href="#place-order" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Place an Order
+        Place an Order
       
     </span>
   </a>
@@ -506,7 +506,7 @@
   <a href="#modify-order" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Modify Order
+        Modify Order
       
     </span>
   </a>
@@ -517,7 +517,7 @@
   <a href="#cancel-order" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Cancel Order
+        Cancel Order
       
     </span>
   </a>
@@ -1180,7 +1180,7 @@
   <a href="#fetching-orders" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Fetching Orders
+        Fetching Orders
       
     </span>
   </a>
@@ -1191,7 +1191,7 @@
   <a href="#get-order-by-id" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Retrieve Order by BlitzOrderID
+        Retrieve Order by BlitzOrderID
       
     </span>
   </a>
@@ -1202,7 +1202,7 @@
   <a href="#place-order" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Place an Order
+        Place an Order
       
     </span>
   </a>
@@ -1213,7 +1213,7 @@
   <a href="#modify-order" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Modify Order
+        Modify Order
       
     </span>
   </a>
@@ -1224,7 +1224,7 @@
   <a href="#cancel-order" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Cancel Order
+        Cancel Order
       
     </span>
   </a>
@@ -1587,7 +1587,7 @@
 <li><code>modifyOrder</code> → Endpoint to update an existing order.</li>
 <li><code>cancelOrder</code> → Endpoint to delete/cancel an order.</li>
 </ul>
-<h2 id="fetching-orders">1. Fetching Orders<a class="headerlink" href="#fetching-orders" title="Permanent link">&para;</a></h2>
+<h2 id="fetching-orders">Fetching Orders<a class="headerlink" href="#fetching-orders" title="Permanent link">&para;</a></h2>
 <p>Retrieve a complete list of all orders placed by a user for the current trading day. This includes:</p>
 <ul>
 <li><strong>Open orders:</strong> Orders that have been placed but not yet executed.</li>
@@ -1732,7 +1732,7 @@
 
 </details>
 
-<h2 id="get-order-by-id">2. Retrieve Order by BlitzOrderID<a class="headerlink" href="#get-order-by-id" title="Permanent link">&para;</a></h2>
+<h2 id="get-order-by-id">Retrieve Order by BlitzOrderID<a class="headerlink" href="#get-order-by-id" title="Permanent link">&para;</a></h2>
 <p>Fetch the details of a specific order in the OMS system using its unique BlitzOrderId. This endpoint returns all order-related information including status, executed trades, and metadata.</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/api/order/orderHistory/blitzOrderId/{blitzOrderId}&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -1928,7 +1928,7 @@
 
 </details>
 
-<h2 id="place-order">3. Place an Order<a class="headerlink" href="#place-order" title="Permanent link">&para;</a></h2>
+<h2 id="place-order">Place an Order<a class="headerlink" href="#place-order" title="Permanent link">&para;</a></h2>
 <p>This endpoint allows you to submit a new order to the OMS trading system.
 Orders can be placed across supported instruments and exchanges, with full control over price, quantity, type, and validity.
 When an order is submitted, the system validates it for trading session availability, risk checks, and sufficient margin before routing it for execution.</p>
@@ -2089,7 +2089,7 @@ When an order is submitted, the system validates it for trading session availabi
 <li>Place orders <strong>only during active market hours</strong> for faster acknowledgment and execution.</li>
 </ul>
 </blockquote>
-<h2 id="modify-order">4. Modify Order<a class="headerlink" href="#modify-order" title="Permanent link">&para;</a></h2>
+<h2 id="modify-order">Modify Order<a class="headerlink" href="#modify-order" title="Permanent link">&para;</a></h2>
 <p>The <strong>Modify Order</strong> endpoint allows you to update an existing order’s parameters such as <strong>quantity</strong>, <strong>price</strong>, <strong>stop price</strong>, or <strong>validity</strong>.
 Use this API to adjust open or pending orders before they are executed at the exchange.</p>
 <blockquote>
@@ -2242,7 +2242,7 @@ Use this API to adjust open or pending orders before they are executed at the ex
 <li>Avoid frequent or large modifications in short intervals to prevent exchange-level throttling or rejection.</li>
 <li>Confirm the <strong>modified parameters</strong> (price, quantity, stop price) meet exchange and instrument-specific limits.</li>
 </ul>
-<h2 id="cancel-order">5. Cancel Order<a class="headerlink" href="#cancel-order" title="Permanent link">&para;</a></h2>
+<h2 id="cancel-order">Cancel Order<a class="headerlink" href="#cancel-order" title="Permanent link">&para;</a></h2>
 <p>The <strong>Cancel Order</strong> endpoint allows you to cancel an existing open or pending order using its unique <code>InstrumentId</code> and <code>ExchangeOrderId</code>.</p>
 <blockquote>
 <p>Note</p>
