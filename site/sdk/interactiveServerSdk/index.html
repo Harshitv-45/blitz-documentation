@@ -12,7 +12,7 @@
         <meta name="author" content="Blitz">
       
       
-        <link rel="canonical" href="https://your-domain.com/sdk/clientsdk/">
+        <link rel="canonical" href="https://your-domain.com/sdk/interactiveServerSdk/">
       
       
         <link rel="prev" href="../authentication/">
@@ -29,7 +29,7 @@
     
     
       
-        <title>Client SDK - Blitz</title>
+        <title>Interactive Server SDK - Blitz</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Client SDK
+              Interactive Server SDK
             
           </span>
         </div>
@@ -894,7 +894,7 @@
   <span class="md-ellipsis">
     
   
-    Client SDK
+    Interactive Server SDK
   
 
     
@@ -912,7 +912,7 @@
   <span class="md-ellipsis">
     
   
-    Client SDK
+    Interactive Server SDK
   
 
     
@@ -1071,11 +1071,28 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#get_statistics" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trade-management" class="md-nav__link">
     <span class="md-ellipsis">
       
-        get_statistics
+        Trade Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trade Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_trades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_trades
       
     </span>
   </a>
@@ -1640,11 +1657,28 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#get_statistics" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trade-management" class="md-nav__link">
     <span class="md-ellipsis">
       
-        get_statistics
+        Trade Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trade Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_trades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_trades
       
     </span>
   </a>
@@ -2264,13 +2298,20 @@ def place_order(self, order_data: dict):
 <span class="c1">#   ]</span>
 <span class="c1"># }</span>
 </code></pre></div>
-<p>&lt;!-- ## Statistics Management</p>
-<h3 id="get_statistics"><strong><code>get_statistics</code></strong><a class="headerlink" href="#get_statistics" title="Permanent link">&para;</a></h3>
+<!-- ## Statistics Management
+
+
+### **`get_statistics`**
+
 <div class="highlight"><pre><span></span><code>def get_statistics(self)
 </code></pre></div>
-<p>Fetch strategy statistics and performance metrics.</p>
-<p><strong>Example</strong></p>
-<p><div class="highlight"><pre><span></span><code><span class="n">stats</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_statistics</span><span class="p">()</span>
+
+Fetch strategy statistics and performance metrics.
+
+
+**Example**
+
+<div class="highlight"><pre><span></span><code><span class="n">stats</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_statistics</span><span class="p">()</span>
 
 <span class="c1"># Example Response:</span>
 <span class="c1"># {</span>
@@ -2287,53 +2328,46 @@ def place_order(self, order_data: dict):
 <span class="c1">#     &#39;totalTurnover&#39;: 125000.0</span>
 <span class="c1">#   }</span>
 <span class="c1"># }</span>
-<span class="err">```</span> <span class="o">--&gt;</span>
-
-
-<span class="c1">## Trade Management</span>
-
-
-<span class="c1">### **`get_trades`**</span>
 </code></pre></div>
-def get_trades(self)
-<div class="highlight"><pre><span></span><code>Fetch all executed trades.
+ -->
 
+<h2 id="trade-management">Trade Management<a class="headerlink" href="#trade-management" title="Permanent link">&para;</a></h2>
+<h3 id="get_trades"><strong><code>get_trades</code></strong><a class="headerlink" href="#get_trades" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>def get_trades(self)
+</code></pre></div>
+<p>Fetch all executed trades.</p>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">trades</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_trades</span><span class="p">()</span>
 
-**Example**
-
-```python
-
-trades = client.get_trades()
-
-# Example Response:
-# {
-#   &#39;status&#39;: &#39;success&#39;,
-#   &#39;message&#39;: &#39;request processed successfully&#39;,
-#   &#39;data&#39;: [
-#     {
-#       &#39;id&#39;: 27,
-#       &#39;entityId&#39;: &#39;9b4f9a76-f619-41a0-85bf-0d9ecff213c9&#39;,
-#       &#39;instrumentName&#39;: &#39;IDEA&#39;,
-#       &#39;exchangeSegment&#39;: &#39;NSECM&#39;,
-#       &#39;blitzOrderId&#39;: 225121947920000011,
-#       &#39;exchangeOrderId&#39;: &#39;3204124724133908&#39;,
-#       &#39;executionId&#39;: &#39;3204124724134090&#39;,
-#       &#39;clientId&#39;: &#39;PRASHANT&#39;,
-#       &#39;orderType&#39;: &#39;Limit&#39;,
-#       &#39;orderSide&#39;: &#39;Buy&#39;,
-#       &#39;orderStatus&#39;: &#39;Filled&#39;,
-#       &#39;orderQuantity&#39;: 1,
-#       &#39;orderPrice&#39;: 11.2,
-#       &#39;lastTradedQuantity&#39;: 1,
-#       &#39;lastTradedPrice&#39;: 11.2,
-#       &#39;averageTradedPrice&#39;: 11.2,
-#       &#39;executionType&#39;: &#39;Fill&#39;,
-#       &#39;productType&#39;: &#39;MIS&#39;,
-#       ...
-#     }
-#   ]
-# }
-</code></pre></div></p>
+<span class="c1"># Example Response:</span>
+<span class="c1"># {</span>
+<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
+<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
+<span class="c1">#   &#39;data&#39;: [</span>
+<span class="c1">#     {</span>
+<span class="c1">#       &#39;id&#39;: 27,</span>
+<span class="c1">#       &#39;entityId&#39;: &#39;9b4f9a76-f619-41a0-85bf-0d9ecff213c9&#39;,</span>
+<span class="c1">#       &#39;instrumentName&#39;: &#39;IDEA&#39;,</span>
+<span class="c1">#       &#39;exchangeSegment&#39;: &#39;NSECM&#39;,</span>
+<span class="c1">#       &#39;blitzOrderId&#39;: 225121947920000011,</span>
+<span class="c1">#       &#39;exchangeOrderId&#39;: &#39;3204124724133908&#39;,</span>
+<span class="c1">#       &#39;executionId&#39;: &#39;3204124724134090&#39;,</span>
+<span class="c1">#       &#39;clientId&#39;: &#39;PRASHANT&#39;,</span>
+<span class="c1">#       &#39;orderType&#39;: &#39;Limit&#39;,</span>
+<span class="c1">#       &#39;orderSide&#39;: &#39;Buy&#39;,</span>
+<span class="c1">#       &#39;orderStatus&#39;: &#39;Filled&#39;,</span>
+<span class="c1">#       &#39;orderQuantity&#39;: 1,</span>
+<span class="c1">#       &#39;orderPrice&#39;: 11.2,</span>
+<span class="c1">#       &#39;lastTradedQuantity&#39;: 1,</span>
+<span class="c1">#       &#39;lastTradedPrice&#39;: 11.2,</span>
+<span class="c1">#       &#39;averageTradedPrice&#39;: 11.2,</span>
+<span class="c1">#       &#39;executionType&#39;: &#39;Fill&#39;,</span>
+<span class="c1">#       &#39;productType&#39;: &#39;MIS&#39;,</span>
+<span class="c1">#       ...</span>
+<span class="c1">#     }</span>
+<span class="c1">#   ]</span>
+<span class="c1"># }</span>
+</code></pre></div>
 <h2 id="signals">Signals<a class="headerlink" href="#signals" title="Permanent link">&para;</a></h2>
 <h3 id="send_signals"><strong><code>send_signals</code></strong><a class="headerlink" href="#send_signals" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>def send_signals(self, signals: list)

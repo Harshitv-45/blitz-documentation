@@ -79,7 +79,7 @@ nav:
       - What is SDK: sdk/about_sdk.md
       - Get Started with SDK: sdk/sdk.md
       - Authentication: sdk/authentication.md
-      - Client SDK: sdk/clientsdk.md
+      - Interactive Server SDK: sdk/interactiveServerSdk.md
       - Market Data SDK: sdk/marketdatasdk.md
       - Instrument Master: sdk/instrumentmasterskd.md
 
