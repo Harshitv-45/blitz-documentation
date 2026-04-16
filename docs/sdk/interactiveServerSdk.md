@@ -1,4 +1,4 @@
-# Client SDK
+# Interactive Server SDK
 
 ## **BlitzAPIClient**
 
