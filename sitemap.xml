@@ -2,94 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://your-domain.com/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/API_Structure/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/authentication/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/market-data/historicaldata/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/market-data/instrumentId/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/market-data/ltp/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/market-data/marketquote/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/market-data/optionchain/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/trading/orders/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/trading/position/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/trading/signals/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/trading/statistics/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/api/trading/trades/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/sdk/about_sdk/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/sdk/authentication/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/sdk/clientsdk/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/sdk/instrumentmasterskd/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/sdk/marketdatasdk/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/sdk/sdk/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/tpoms/blitz_order_request/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/tpoms/overview/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/tpoms/brokers/motilal/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://your-domain.com/tpoms/brokers/zerodha/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
 </urlset>

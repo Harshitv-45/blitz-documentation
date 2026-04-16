@@ -470,34 +470,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/trading/statistics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Statistics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../api/trading/trades/" class="md-nav__link">
         
   
@@ -1105,34 +1077,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#statistics-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Statistics Management
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Statistics Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_statistics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_statistics
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#trade-management" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1707,34 +1651,6 @@
     <span class="md-ellipsis">
       
         get_positions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#statistics-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Statistics Management
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Statistics Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_statistics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_statistics
       
     </span>
   </a>
@@ -2382,12 +2298,19 @@ def place_order(self, order_data: dict):
 <span class="c1">#   ]</span>
 <span class="c1"># }</span>
 </code></pre></div>
-<h2 id="statistics-management">Statistics Management<a class="headerlink" href="#statistics-management" title="Permanent link">&para;</a></h2>
-<h3 id="get_statistics"><strong><code>get_statistics</code></strong><a class="headerlink" href="#get_statistics" title="Permanent link">&para;</a></h3>
+<!-- ## Statistics Management
+
+
+### **`get_statistics`**
+
 <div class="highlight"><pre><span></span><code>def get_statistics(self)
 </code></pre></div>
-<p>Fetch strategy statistics and performance metrics.</p>
-<p><strong>Example</strong></p>
+
+Fetch strategy statistics and performance metrics.
+
+
+**Example**
+
 <div class="highlight"><pre><span></span><code><span class="n">stats</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_statistics</span><span class="p">()</span>
 
 <span class="c1"># Example Response:</span>
@@ -2406,6 +2329,8 @@ def place_order(self, order_data: dict):
 <span class="c1">#   }</span>
 <span class="c1"># }</span>
 </code></pre></div>
+ -->
+
 <h2 id="trade-management">Trade Management<a class="headerlink" href="#trade-management" title="Permanent link">&para;</a></h2>
 <h3 id="get_trades"><strong><code>get_trades</code></strong><a class="headerlink" href="#get_trades" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>def get_trades(self)
@@ -2522,8 +2447,10 @@ def place_order(self, order_data: dict):
 
 <span class="c1"># Example Response:</span>
 <span class="c1"># {</span>
-<span class="c1">#   &#39;status&#39;: &#39;Published&#39;</span>
-<span class="c1"># }</span>
+<span class="c1">#    &quot;status&quot;:&quot;success&quot;,</span>
+<span class="c1">#    &quot;message&quot;:&quot;request processed successfully.&quot;,</span>
+<span class="c1">#    &quot;data&quot;:</span>
+<span class="c1">#        {&quot;message&quot;:&quot;Signal received successfully.&quot;}}&#39;</span>
 </code></pre></div>
 <h2 id="websocket-callbacks">WebSocket Callbacks<a class="headerlink" href="#websocket-callbacks" title="Permanent link">&para;</a></h2>
 <h3 id="on_connect"><strong><code>on_connect</code></strong><a class="headerlink" href="#on_connect" title="Permanent link">&para;</a></h3>
