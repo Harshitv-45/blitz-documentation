@@ -432,7 +432,7 @@ positions = client.get_positions()
 ```
 
 
-## Statistics Management
+<!-- ## Statistics Management
 
 
 ### **`get_statistics`**
@@ -465,6 +465,7 @@ stats = client.get_statistics()
 #   }
 # }
 ```
+ -->
 
 
 ## Trade Management
@@ -558,8 +559,10 @@ response = client.send_signals(signals)
 
 # Example Response:
 # {
-#   'status': 'Published'
-# }
+#    "status":"success",
+#    "message":"request processed successfully.",
+#    "data":
+#        {"message":"Signal received successfully."}}'
 ```
 
 
