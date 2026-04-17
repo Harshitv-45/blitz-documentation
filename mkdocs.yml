@@ -1,9 +1,9 @@
-site_name: Blitz
+site_name: Blitz Trader
 site_description: Blitz Trading Platform API, SDK and Broker Integration Documentation
-site_author: Blitz
+site_author: Blitz Trader
 site_url: https://your-domain.com
 
-repo_name: Blitz
+repo_name: Blitz Trader
 #repo_url: https://github.com/your-org/blitz-docs
 
 theme:
@@ -47,7 +47,14 @@ copyright: "© Blitz"
 
 nav:
   - Introduction: index.md
+  - Quick Start: overview.md
 
+  # User setup
+
+  - User Setup:
+    - Create Account: userSetup/createAccount.md
+    - Forgot Password: userSetup/forgotPassword.md
+    - Generate API Key: userSetup/generateKey.md
   # ---------------------------------------------------
   # API REFERENCE
   # ---------------------------------------------------
@@ -65,6 +72,7 @@ nav:
           
 
       - Market Data:
+          - Download Instruments: api/market-data/downloadInstrument.md
           - Instruments: api/market-data/instrumentId.md
           - Last Trading Price: api/market-data/ltp.md
           - Option Chain: api/market-data/optionchain.md

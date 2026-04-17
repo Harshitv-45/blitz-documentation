@@ -6,10 +6,13 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
 
 ---
 
+`BASE URL: http://uat.quantxpress.com/md-api`
+
+
 ## Endpoint
 | Method | URL                                             |
 | ------ | ----------------------------------------------- |
-| GET    | `http://uat.quantxpress.com/api/instruments/{id}` |
+| GET    | `/api/instruments/{id}`                         |
 
 ---
 
@@ -25,7 +28,7 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
 
 ```bash
 curl -X 'GET' \
-  'http://uat.quantxpress.com/api/instruments/{instrumentId}' \
+  'http://uat.quantxpress.com/md-api/api/instruments/{instrumentId}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access_token}' \

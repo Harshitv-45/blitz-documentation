@@ -6,9 +6,11 @@ Using this API, you can fetch real-time price data for instruments across exchan
 
 These endpoints let you retrieve LTP data for trading, analytics, and monitoring purposes.
 
+`BASE URL: http://uat.quantxpress.com/md-api`
+
 | **Type** | **Endpoint**                      | **Description**                              |
 | -------- | -------------------------------- | -------------------------------------------- |
-| POST     | [`/marketfeed/ltp`](#get-ltp)    | Retrieve last traded price for instruments   |
+| POST     | `/marketfeed/ltp`    | Retrieve last traded price for instruments   |
 
 
 ## Endpoint
@@ -33,7 +35,7 @@ POST /marketfeed/ltp
 
 ```json
 {
-  "InstrumentIds": ["NSECM|RELIANCE", "NSECM|TCS", 1010010002000001]
+  "InstrumentIds": [1010010002000001, 1010010002000003]
 }
 ```
 
@@ -50,12 +52,12 @@ POST /marketfeed/ltp
 
 ```bash
 curl -X 'POST' \
-  'http://uat.quantxpress.com/marketfeed/ltp' \
+  'http://uat.quantxpress.com/md-api/marketfeed/ltp' \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {access_token}' \
   -H 'Accept: */*' \
   -d '{
-    "InstrumentIds": ["NSE|TCS", "NSE|RELIANCE", 1010010002000001]
+    "InstrumentIds": [1010010002000001]
   }'
 ```
 

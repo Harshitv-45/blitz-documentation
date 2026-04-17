@@ -7,8 +7,7 @@ Using this API, you can track your **net positions, quantities, average prices, 
 ---
 
 ## Base URL
-`http://uat.quantxpress.com/api/positions`
-
+`http://uat.quantxpress.com/interactive/v1/api/v1`
 
 ---
 
@@ -47,7 +46,7 @@ This endpoint provides a **complete view of your portfolio exposure**.
 
 ```bash
 curl -X 'GET' \
-  'http://uat.quantxpress.com/api/positions' \
+  'http://uat.quantxpress.com/interactive/v1/api/v1/positions' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access_token}'

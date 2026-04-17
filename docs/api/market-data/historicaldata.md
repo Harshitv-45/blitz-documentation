@@ -8,11 +8,14 @@ These endpoints let you analyze historical price movements and build data-driven
 
 ---
 
+`BASE URL: http://uat.quantxpress.com/md-api`
+
+
 ## Endpoint
 
 | Method | URL                                             |
 | ------ | ----------------------------------------------- |
-| POST    | `http://uat.quantxpress.com/marketfeed/historicalData` |
+| POST    | `/marketfeed/historicalData` |
 
 ---
 
@@ -54,7 +57,7 @@ These endpoints let you analyze historical price movements and build data-driven
 ## Example
 
 ```bash
-curl -X POST 'http://uat.quantxpress.com/marketfeed/historicalData' \
+curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/historicalData' \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {access_token}' \
   -H 'Accept: */*' \

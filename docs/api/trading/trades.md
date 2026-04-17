@@ -17,7 +17,7 @@ Retrieve all trades currently recorded for a given client, entity, or strategy i
 
 ```bash
 curl -X 'GET' \
-  'http://uat.quantxpress.com/api/order/trades' \
+  'http://uat.quantxpress.com/interactive/v1/api/v1/order/trades' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access_token}' \

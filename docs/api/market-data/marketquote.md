@@ -8,11 +8,14 @@ This API is essential for building trading dashboards, order books, and real-tim
 
 ---
 
+`BASE URL: http://uat.quantxpress.com/md-api`
+
+
 ## Endpoint
 
 | Method | URL                                             |
 | ------ | ----------------------------------------------- |
-| POST    | `http://uat.quantxpress.com/marketfeed/quote` |
+| POST    | `/marketfeed/quote` |
 
 ---
 
@@ -30,7 +33,7 @@ This API is essential for building trading dashboards, order books, and real-tim
 
 ```json
 {
-  "InstrumentIds": ["NSECM|RELIANCE", "NSECM|TCS", 1010010002000001]
+  "InstrumentIds": [1010010002000001]
 }
 ```
 
@@ -46,12 +49,12 @@ This API is essential for building trading dashboards, order books, and real-tim
 ## Example
 
 ```bash
-curl -X POST 'http://uat.quantxpress.com/marketfeed/quote' \
+curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/quote' \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {access_token}' \
   -H 'Accept: */*' \
   -d '{
-    "InstrumentIds": ["NSECM|RELIANCE", "NSECM|TCS", 1010010002000001]
+    "InstrumentIds": [1010010002000001]
   }'
 ```
 

@@ -1,137 +1,73 @@
-# **Blitz Documentation**
+# **BlitzTrader**
 
 Welcome to **Blitz** — a unified platform for accessing trading APIs, developer SDKs, and broker integrations through a scalable, broker-agnostic architecture.
 
-Blitz enables developers and trading systems to seamlessly:
-- Place and manage orders
-- Access real-time and historical market data
-- Track portfolios and positions
-- Integrate multiple brokers using a single, consistent interface
+The BlitzTrader API Developer Portal is your gateway to securely integrating your application with the BlitzTrader ecosystem. It allows you to generate and manage API keys, access API documentation, and test your integration in a secure environment. It's an essential tool for developers who want to create apps that interact with BlitzTrader's powerful trading and market data API.
+
+This quickstart guide will walk you through:
+
+-  Logging into the developer portal  
+-  Where to create your account  
+-  Generating your API key  
+-  Authenticating your API requests
 
 ---
 
-## **Platform Overview**
+##  Login Page
 
-Blitz is built around three core components, each designed to handle a specific layer of the trading workflow:
+When you access the BlitzTrader Portal, you'll see a login screen like this:
 
-| Component     | Description |
-|--------------|------------|
-| **Blitz API** | REST-based interface for trading operations and market data |
-| **Blitz SDK** | Developer-friendly libraries for faster and easier integration |
-| **TPOMS**     | Broker communication and order routing layer |
+![Login Screen](../assets/login-screen.png)
+
+### Fields on the Login Screen
+
+- **Email** – Enter the email address you used while registering.
+- **Password** – Your login password.
+
+You will also see:
+
+- **Forgot Password?** – Use this if you've forgotten your credentials.
+- **Create Account** – New to BlitzTrader? Click here to register.
+---
+
+
+!!! tip "Can't Login?"
+    Ensure your email is correct and password is case-sensitive.
+    If you're stuck, try the Forgot Password link to reset your password.
+
 
 ---
 
-## **Blitz API**
+##  Don’t Have an Account?
 
-The **Blitz API** provides a comprehensive set of REST endpoints that allow direct interaction with the trading platform.
+If you're a new user, click on **Create Account** at the bottom of the login screen.  
+You’ll be guided to the [Account Creation page](userSetup/createAccount.md) where you can sign up with:
 
-### Key Capabilities
+- Your full name and contact details  
+- A secure password  
+- Acceptance of our terms and conditions
 
-- Place, modify, and cancel orders
-- Retrieve trades, orders, and positions
-- Access real-time and historical market data
-- Track order execution and status
-- Manage portfolio information
+!!! info "What Happens Next?"
+    After creating your account, you'll be able to log in and generate your API key for using BlitzTrader programmatically.
 
-### Highlights
-
-- Resource-oriented REST architecture  
-- JSON-based request and response format  
-- Standard HTTP methods and status codes  
-
-➡️ Refer to the **API Reference** for detailed endpoint documentation.
 
 ---
 
-## **Blitz SDK**
 
-The **Blitz SDK** offers client libraries that abstract away low-level API complexities, enabling faster and more efficient integration.
+## BlitzTrader Dashboard
 
-### What the SDK Handles
-
-- Authentication and session management  
-- Request construction and formatting  
-- API communication  
-- Response parsing  
-- Error handling  
-
-This allows developers to focus on building features rather than managing infrastructure.
-
-➡️ Refer to the **Blitz SDK** to get started.
+After logging in, you'll be directed to your **My Apps** dashboard, where you can manage your applications and API keys.
 
 ---
 
-## **TPOMS**
+### My Apps
 
-**TPOMS (Third-Party Order Management System)** acts as the broker integration layer within Blitz.
+If you see **"No Apps Available"**, it means you haven't created any applications yet.
 
-It bridges the gap between Blitz and external broker systems by:
+![No Apps Available](assets/no-data-png.png)
 
-- Translating Blitz requests into broker-specific formats  
-- Normalizing broker responses  
-- Managing the full order lifecycle  
-- Supporting multiple brokers through adapter-based architecture  
-
-This ensures seamless multi-broker support through a unified interface.
-
-➡️ Refer to the **TPOMS** for architecture and integration details.
-
----
-
-## **Quickstart**
-
-### 1. Generate Access Token
-Authenticate with Blitz to obtain your access token.
-```bash
-curl -X 'POST' \
-  'http://uat.quantxpress.com/v1/api/authentication/login' \
-  -H 'accept: */*' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "userId": "string",
-  "password": "string"
-}'
-```
-
-### 2. Place Your First Order
-
-```bash
-curl -X 'POST' \
-  'http://uat.quantxpress.com/api/order/placeOrder' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: */*' \
-  -H 'Authorization: Bearer {access_token}' \
-  -d '{
-  "quantity": 0,
-  "product": "NONE",
-  "tif": "None",
-  "price": 0,
-  "orderType": "Unknown",
-  "instrumentId": 0,
-  "orderSide": "None",
-  "disclosedQuantity": 0,
-  "stopPrice": 0,
-  "clientId": "string",
-  "tiF_GTD_Date": "string",
-  "positionEffectOrderFlag": true,
-  "exchangeTradingSessionOrderFlag": true,
-  "isFictive": true,
-  "correlationOrderId": "string"
-}'
-
-```
-
-### 3. Check Order Status
-```bash
-curl -X 'GET' \
-  'http://uat.quantxpress.com/v1/api/order' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: */*' \
-  -H 'Authorization: Bearer {access_token}' \
-```
-
-!!! tip
-    New to Blitz? Start with the **API Reference** for direct integration, or use the **SDK** for a faster setup.
-
----
+!!! tip "Getting Started"
+    To start using the dashboard:
+    - Click **Create New App** to register your first application.
+    - Once created, you can generate API keys for that app.
+    - Manage or delete keys as needed.

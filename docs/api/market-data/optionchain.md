@@ -8,11 +8,13 @@ This API helps traders analyze market sentiment, volatility, and strike-level ac
 
 ---
 
+`BASE URL: http://uat.quantxpress.com/md-api`
+
 ## Endpoint
 
 | Method | URL                                             |
 | ------ | ----------------------------------------------- |
-| POST    | `http://uat.quantxpress.com/v1/api/optionChain` |
+| POST    | `/marketfeed/optionChain` |
 
 ---
 
@@ -46,7 +48,7 @@ This API helps traders analyze market sentiment, volatility, and strike-level ac
 ## Example
 
 ```bash
-curl -X POST 'http://uat.quantxpress.com/marketfeed/optionChain' \
+curl -X POST http://uat.quantxpress.com/md-api/marketfeed/optionChain' \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {access_token}' \
   -H 'Accept: */*' \

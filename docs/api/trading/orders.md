@@ -4,6 +4,10 @@ The order APIs let you place orders of various types, modify or cancel pending o
 
 These endpoints let you place, modify, cancel, and retrieve orders efficiently.
 
+```
+BASE URL : http://uat.quantxpress.com/interactive/v1/api/v1
+```
+
 | **Type** | **Endpoint**                                                       | **Description**                                                  |
 | -------- | ------------------------------------------------------------------ | ---------------------------------------------------------------- |
 | POST     | [orders/placeOrder](#place-order)                                  | Place an order of a particular variety.                          |
@@ -92,7 +96,7 @@ When an order is submitted, the system validates it for trading session availabi
 
 ```bash
 curl -X 'POST' \
-  'http://uat.quantxpress.com/api/order/placeOrder' \
+  'http://uat.quantxpress.com/interactive/v1/api/v1/order/placeOrder' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access_token}' \
@@ -192,7 +196,7 @@ Use this API to adjust open or pending orders before they are executed at the ex
 
 ```bash
 curl -X 'PUT' \
-  'http://uat.quantxpress.com/api/order/modifyOrder' \
+  'http://uat.quantxpress.com/interactive/v1/api/v1/order/modifyOrder' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access_token}' \
@@ -288,7 +292,7 @@ The **Cancel Order** endpoint allows you to cancel an existing open or pending o
 
 ```bash
 curl -X 'DELETE' \
-  'http://uat.quantxpress.com/api/order/cancelOrder?InstrumentId=110010000012018&ExchangeOrderId=3204164728325564&StrategyInstanceId=30d04070-4e8f-4a69-8983-14c8ab474599' \
+  'http://uat.quantxpress.com/interactive/v1/api/v1/order/cancelOrder?InstrumentId=110010000012018&ExchangeOrderId=3204164728325564&StrategyInstanceId=30d04070-4e8f-4a69-8983-14c8ab474599' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access_token}' \
 ```
@@ -334,7 +338,7 @@ This endpoint provides a **centralized view of your daily trading activity**, ma
 
 ```bash
 curl -X 'GET' \
-  'http://uat.quantxpress.com/v1/api/order' \
+  'http://uat.quantxpress.com/interactive/v1/api/v1/order' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access_token}' \
@@ -478,7 +482,7 @@ Retrieve all currently open or pending orders.
 
 ```bash
 curl -X 'GET' \
-  'http://uat.quantxpress.com/api/order/openOrders' \
+  'http://uat.quantxpress.com/interactive/v1/api/v1/order/openOrders' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access_token}'
@@ -501,7 +505,7 @@ Fetch the details of a specific order in the OMS system using its unique BlitzOr
 
 ```bash
 curl -X 'GET' \
-  'http://uat.quantxpress.com/api/order/orderHistory/blitzOrderId/{blitzOrderId}' \
+  'http://uat.quantxpress.com/interactive/v1/api/v1/order/orderHistory/blitzOrderId/{blitzOrderId}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access_token}' \

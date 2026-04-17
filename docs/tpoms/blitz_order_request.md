@@ -1,4 +1,4 @@
-# **Blitz Order Message Structure & Request–Response Specification**
+## **Blitz Order Message Structure & Request–Response Specification**
 
 This document defines the **standard broker-independent request and response format** used by Blitz for order communication with broker adapters.
 

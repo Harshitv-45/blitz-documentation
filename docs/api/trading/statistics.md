@@ -9,7 +9,7 @@ These endpoints let you **analyze trading performance and optimize strategies**.
 ---
 
 ## Base URL
-`http://uat.quantxpress.com/api/strategy`
+`http://uat.quantxpress.com/interactive/v1/api/v1`
 
 
 ---
@@ -48,7 +48,7 @@ This endpoint provides insights into:
 
 ```bash
 curl -X 'GET' \
-  'http://uat.quantxpress.com/api/strategy/statistics' \
+  'http://uat.quantxpress.com/interactive/v1/api/v1/strategy/statistics' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access_token}'
