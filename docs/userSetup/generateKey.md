@@ -47,9 +47,13 @@ After logging in, navigate to the **API Management** section. You'll find an opt
 
 API Key Management Interface
 
-![API Key Management Interface](../assets/api-key-management.png)
+![API Key Management Interface](../assets/createAPIkey.png)
 
 ### Fields Discriptions
+
+- **API Key** - Create API Key for `MarketData` and `InteractiveServer`
+
+![API Key Interface](../assets/APIKEY_type.png)
 
 - **App Name** – Enter a name for the app you're integrating.  
 - **Client ID** – Provide a unique client identifier.  

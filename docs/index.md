@@ -60,9 +60,9 @@ After logging in, you'll be directed to your **My Apps** dashboard, where you ca
 
 ---
 
-### My Apps
+### Create first App
 
-If you see **"No Apps Available"**, it means you haven't created any applications yet.
+If you see "No Apps Available", it means you haven't created any applications yet.
 
 ![No Apps Available](assets/no-data-png.png)
 
