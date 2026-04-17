@@ -17,7 +17,7 @@ This quickstart guide will walk you through:
 
 When you access the BlitzTrader Portal, you'll see a login screen like this:
 
-![Login Screen](../assets/login-screen.png)
+![Login Screen](assets/login-screen.png)
 
 ### Fields on the Login Screen
 
