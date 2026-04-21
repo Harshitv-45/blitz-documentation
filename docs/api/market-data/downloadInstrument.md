@@ -6,7 +6,7 @@ The **Download Instruments (GZ) API** allows users to download a compressed `.gz
 
 ---
 
-`BASE URL: http://uat.quantxpress.com/md-api`
+`BASE URL: http://uat.quantxpress.com/v1`
 
 
 ## Endpoint
