@@ -1676,7 +1676,7 @@
 <p>The <strong>Instrument API</strong> allows you to retrieve detailed information about a trading instrument using its instrument ID.</p>
 <p>Using this API, you can fetch instrument metadata such as symbol details, exchange information, price bands, tick size, lot size, and other trading parameters.</p>
 <hr />
-<p><code>BASE URL: http://uat.quantxpress.com/md-api</code></p>
+<p><code>BASE URL: http://uat.quantxpress.com/v1</code></p>
 <h2 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1722,7 +1722,7 @@
 </table>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/md-api/api/instruments/{instrumentId}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/instruments/{instrumentId}&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
