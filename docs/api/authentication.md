@@ -7,7 +7,7 @@ These endpoints let you **authenticate users and manage access control** securel
 
 | **Type** | **Endpoint**                          | **Description**                             |
 | -------- | ------------------------------------- | ------------------------------------------- |
-| POST     | [`api/app_login`]                     | Authenticate user and generate access token |
+| POST     | `api/app_login`                     | Authenticate user and generate access token |
 
 ---
 
