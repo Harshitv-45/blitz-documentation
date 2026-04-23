@@ -64,36 +64,31 @@ curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/quote' \
 
 ```json
 {
-  "status": "success",
+
   "data": {
     "1010010000002885": {
-      "InstrumentID": 1010010000002885,
-      "ExchangeSegment": 1,
-      "ExchangeInstrumentID": 2885,
-      "InstrumentName": "RELIANCE",
-      "Timestamp": 1748339153,
-      "LTP": 1419.4,
-      "LTQ": 74,
-      "LTT": 1748339153,
-      "ATP": 1422.41,
-      "VTT": 1651139,
-      "TBQ": 0,
-      "TSQ": 0,
-      "OI": 0,
-      "Open": 1426.1,
-      "High": 1429.7,
-      "Low": 1418.1,
-      "Close": 1434.8,
-      "BidLevel": [
-        { "Qty": 1, "Price": 1419.3, "Orders": 1 },
-        { "Qty": 7, "Price": 1419.2, "Orders": 7 }
-      ],
-      "AskLevel": [
-        { "Qty": 1, "Price": 1419.4, "Orders": 1 },
-        { "Qty": 4, "Price": 1419.5, "Orders": 4 }
-      ]
+      "instrumentID": 1010010000002885,
+      "exchangeSegment": 1,
+      "exchangeInstrumentID": 2885,
+      "instrumentName": "RELIANCE",
+      "timestamp": 1748339153,
+      "ltp": 1419.4,
+      "ltq": 74,
+      "ltt": 1748339153,
+      "atp": 1422.41,
+      "vtt": 1651139,
+      "tbq": 0,
+      "tsq": 0,
+      "oi": 0,
+      "open": 1426.1,
+      "high": 1429.7,
+      "low": 1418.1,
+      "close": 1434.8,
+      "bidLevel": null,
+      "askLevel": null
     }
-  }
+  },
+  "status": "success"
 }
 ```
 
@@ -113,23 +108,23 @@ curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/quote' \
 
 | Field                | Type    | Description                          |
 | -------------------- | ------- | ------------------------------------ |
-| InstrumentID         | integer | Unique instrument identifier         |
-| InstrumentName       | string  | Name of the instrument               |
-| ExchangeSegment      | integer | Exchange segment identifier          |
-| ExchangeInstrumentID | integer | Exchange-specific instrument ID      |
-| Timestamp            | integer | Last update timestamp (epoch)        |
-| LTP                  | float  | Last traded price                    |
-| LTQ                  | float  | Last traded quantity                 |
-| LTT                  | integer | Last traded time (epoch)             |
-| ATP                  | float  | Average traded price                 |
-| VTT                  | float  | Volume traded today                  |
-| TBQ                  | float  | Total buy quantity                   |
-| TSQ                  | float  | Total sell quantity                  |
-| OI                   | float  | Open interest                        |
-| Open                 | float  | Opening price                        |
-| High                 | float  | Highest price                        |
-| Low                  | float  | Lowest price                         |
-| Close                | float  | Previous closing price               |
+| instrumentID         | integer | Unique instrument identifier         |
+| instrumentName       | string  | Name of the instrument               |
+| exchangeSegment      | integer | Exchange segment identifier          |
+| exchangeInstrumentID | integer | Exchange-specific instrument ID      |
+| timestamp            | integer | Last update timestamp (epoch)        |
+| ltp                  | float  | Last traded price                    |
+| ltq                  | float  | Last traded quantity                 |
+| ltt                  | integer | Last traded time (epoch)             |
+| atp                  | float  | Average traded price                 |
+| vtt                  | float  | Volume traded today                  |
+| tbq                  | float  | Total buy quantity                   |
+| tsq                  | float  | Total sell quantity                  |
+| oi                   | float  | Open interest                        |
+| open                 | float  | Opening price                        |
+| high                 | float  | Highest price                        |
+| low                  | float  | Lowest price                         |
+| close                | float  | Previous closing price               |
 
 ---
 
@@ -137,18 +132,21 @@ curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/quote' \
 
 #### BidLevel (Buy Orders)
 
-| Field  | Type   | Description                     |
+A bid level represents a specific price at which buyers are willing to purchase an asset, along with the quantity they want to buy at that price.
+
+<!-- | Field  | Type   | Description                     |
 | ------ | ------ | ------------------------------- |
-| Qty    | float | Quantity available              |
-| Price  | float | Bid price                       |
-| Orders | integer | Number of orders at that level  |
+| qty    | float | Quantity available              |
+| price  | float | Bid price                       |
+| orders | integer | Number of orders at that level  | -->
 
 ---
 
 #### AskLevel (Sell Orders)
 
-| Field  | Type   | Description                     |
+An ask level (also called an offer level) represents a specific price at which sellers are willing to sell an asset, along with the quantity they want to sell at that price.
+<!-- | Field  | Type   | Description                     |
 | ------ | ------ | ------------------------------- |
-| Qty    | float | Quantity available              |
-| Price  | float | Ask price                       |
-| Orders | integer | Number of orders at that level  |
+| qty    | float | Quantity available              |
+| price  | float | Ask price                       |
+| orders | integer | Number of orders at that level  | -->

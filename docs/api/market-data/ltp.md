@@ -57,7 +57,7 @@ curl -X 'POST' \
   -H 'Authorization: Bearer {access_token}' \
   -H 'Accept: */*' \
   -d '{
-    "InstrumentIds": [1010010002000001]
+    "InstrumentIds": [110010002000001, 110010002000002]
   }'
 ```
 
@@ -67,24 +67,17 @@ curl -X 'POST' \
 
 ```json
 {
-  "status": "success",
-  "data": {
-    "1010010000002885": {
-      "InstrumentID": 1010010000002885,
-      "InstrumentName": "RELIANCE",
-      "LTP": 1420.2
+    "data": {
+        "110010002000001": {
+            "instrumentId": 110010002000001,
+            "ltp": 24188.100000000002
+        },
+        "110010002000002": {
+            "instrumentId": 110010002000002,
+            "ltp": 56308.3
+        }
     },
-    "1010010000011536": {
-      "InstrumentID": 1010010000011536,
-      "InstrumentName": "TCS",
-      "LTP": 3500.3
-    },
-    "1010010002000001": {
-      "InstrumentID": 1010010002000001,
-      "InstrumentName": "NIFTY 50",
-      "LTP": 24834.3
-    }
-  }
+    "status": "success"
 }
 ```
 
