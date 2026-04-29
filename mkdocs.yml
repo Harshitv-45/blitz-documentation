@@ -10,6 +10,9 @@ theme:
   name: material
   logo: assets/icon.png
   favicon: assets/favicon.ico
+  font:
+    text: Outfit
+    code: Fira Code
 
   features:
     - navigation.sections

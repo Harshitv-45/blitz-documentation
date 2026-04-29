@@ -31,7 +31,7 @@ You will also see:
 ---
 
 
-!!! tip "Can't Login?"
+!!! info "Can't Login?"
     Ensure your email is correct and password is case-sensitive.
     If you're stuck, try the Forgot Password link to reset your password.
 

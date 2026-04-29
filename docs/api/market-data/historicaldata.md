@@ -15,7 +15,7 @@ These endpoints let you analyze historical price movements and build data-driven
 
 | Method | URL                                             |
 | ------ | ----------------------------------------------- |
-| POST    | `/marketfeed/historicalData` |
+| POST    | `/marketfeed/historicalData`                   |
 
 ---
 

@@ -14,7 +14,7 @@ This API helps traders analyze market sentiment, volatility, and strike-level ac
 
 | Method | URL                                             |
 | ------ | ----------------------------------------------- |
-| POST    | `/marketfeed/optionChain` |
+| POST   | `/marketfeed/optionChain`                       |
 
 ---
 
