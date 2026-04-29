@@ -838,17 +838,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#headers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Headers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#how-to-download-and-extract" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -884,17 +873,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-questions-faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common Questions (FAQ)
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1555,17 +1533,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#headers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Headers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#how-to-download-and-extract" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1604,17 +1571,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#common-questions-faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common Questions (FAQ)
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1634,10 +1590,10 @@
 
 <h1 id="download-instruments-gz-api">Download Instruments (GZ) API<a class="headerlink" href="#download-instruments-gz-api" title="Permanent link">&para;</a></h1>
 <p>The <strong>Download Instruments API</strong> allows you to retrieve the <em>entire master list</em> of tradable instruments across all exchanges in one single request. </p>
-<p>Because this list is massive (containing hundreds of thousands of instruments), the response is compressed into a <code>.gz</code> (GZIP) file to save bandwidth and reduce download time.</p>
+<p>Because this list is massive (containing hundreds of thousands of instruments), the response is compressed into a <code>.gz</code> (GZIP) file.</p>
 <div class="admonition tip">
 <p class="admonition-title">Best Practice: Fetch Once Daily</p>
-<p>You should only call this endpoint <strong>once per day</strong> (ideally early in the morning before market open) and cache the results locally in your database or memory. Do not call this endpoint repeatedly during live trading, as downloading and decompressing large files is resource-intensive.</p>
+<p>You should only call this endpoint <strong>once per day</strong> (ideally early in the morning before market open).</p>
 </div>
 <hr />
 <p><code>BASE URL: http://uat.quantxpress.com/v1</code></p>
@@ -1656,23 +1612,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="headers">Headers<a class="headerlink" href="#headers" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Header</th>
-<th>Value</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Authorization</td>
-<td access_token="access_token">Bearer</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
 <hr />
 <h2 id="how-to-download-and-extract">How to Download and Extract<a class="headerlink" href="#how-to-download-and-extract" title="Permanent link">&para;</a></h2>
 <p>The downloaded file is a compressed GZIP file containing a massive JSON array. If you try to open the raw response directly as text, it will look like gibberish. You must decompress it first.</p>
@@ -1681,7 +1620,6 @@
 <p>To download the file directly to your computer using your terminal:</p>
 <p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/instruments/gz/download&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--output<span class="w"> </span>instruments.json.gz
 </code></pre></div>
 <em>After downloading, you can extract it using terminal commands like <code>gunzip instruments.json.gz</code> or using GUI extraction tools like WinRAR or 7-Zip.</em></p>
@@ -1694,11 +1632,8 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://uat.quantxpress.com/v1/api/instruments/gz/download&quot;</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer YOUR_ACCESS_TOKEN&quot;</span>
-<span class="p">}</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
     <span class="c1"># Decompress directly from bytes</span>
@@ -1720,7 +1655,6 @@
 <span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/instruments/gz/download&#39;</span><span class="p">;</span>
 
 <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Authorization&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bearer YOUR_ACCESS_TOKEN&#39;</span><span class="w"> </span><span class="p">},</span>
 <span class="w">  </span><span class="nx">responseType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;arraybuffer&#39;</span><span class="w"> </span><span class="c1">// Crucial for downloading binary gzip data</span>
 <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="c1">// Decompress the binary data</span>
@@ -1737,22 +1671,57 @@
 </div>
 <hr />
 <h2 id="understanding-the-response">Understanding the Response<a class="headerlink" href="#understanding-the-response" title="Permanent link">&para;</a></h2>
-<p>Once decompressed, the file will contain a JSON array of objects. Below is a sample object representing a single <strong>Options Instrument</strong>.</p>
+<p>Once decompressed, the file will contain a JSON array of objects. Below is a sample object representing  <strong>Options Instrument</strong>.</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;InstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2042700000155916</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ZYDUSLIFE26SEP241520PE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExpiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-26T00:00:00&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Options&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OptionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;PriceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">346.95</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;PriceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">454.75</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;StrikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1520</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ZYDUSLIFE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;TickSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span>
+<span class="w">    </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000011536</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">11536</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TCS&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;expiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0001-01-01T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Equity&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;lotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;optionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2636.5</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2157.3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;strikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TCS&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tickSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;freezeQty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TATA CONSULTANCY SERV LT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;multiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;isin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INE467B01029&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000002885</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2885</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RELIANCE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;expiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0001-01-01T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Equity&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;lotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;optionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1460.5</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1195.1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;strikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RELIANCE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tickSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;freezeQty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RELIANCE INDUSTRIES LTD&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;multiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;isin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INE002A01018&quot;</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
@@ -1766,41 +1735,99 @@
 </thead>
 <tbody>
 <tr>
-<td><code>InstrumentId</code></td>
-<td>The unique numeric ID used for placing orders and fetching Live Market Data.</td>
+<td><code>instrumentId</code></td>
+<td>The unique numeric ID across the entire system. Use this for placing orders and fetching Live Market Data.</td>
 </tr>
 <tr>
-<td><code>InstrumentName</code></td>
-<td>The exact string name used as an alternative identifier (<code>ExchangeSegment:Symbol...</code>).</td>
+<td><code>exchangeInstrumentId</code></td>
+<td>The internal numeric ID assigned to the instrument by the exchange itself.</td>
 </tr>
 <tr>
-<td><code>ExchangeSegment</code></td>
-<td>Identifies the market (e.g., <code>NSECM</code> for Cash Equity, <code>NSEFO</code> for Futures &amp; Options).</td>
+<td><code>instrumentName</code></td>
+<td>The exact string name used as an alternative identifier (<code>ExchangeSegment:Symbol</code> or similar format).</td>
 </tr>
 <tr>
-<td><code>InstrumentType</code></td>
-<td>Determines if the instrument is <code>Equity</code>, <code>Futures</code>, or <code>Options</code>.</td>
+<td><code>exchangeSegment</code></td>
+<td>Identifies the market segment (e.g., <code>NSECM</code> for Cash Equity, <code>NSEFO</code> for Futures &amp; Options).</td>
 </tr>
 <tr>
-<td><code>LotSize</code></td>
-<td>The minimum quantity you can buy/sell. Your order quantity must be a multiple of this number.</td>
+<td><code>exchange</code></td>
+<td>The exchange code (e.g., <code>NSE</code>, <code>BSE</code>, <code>MCX</code>).</td>
 </tr>
 <tr>
-<td><code>TickSize</code></td>
+<td><code>expiryDate</code></td>
+<td>Expiration date of the contract. Returns <code>0001-01-01T00:00:00</code> for Equities without an expiry.</td>
+</tr>
+<tr>
+<td><code>instrumentType</code></td>
+<td>The asset class. Can be <code>Equity</code>, <code>Futures</code>, or <code>Options</code>.</td>
+</tr>
+<tr>
+<td><code>lotSize</code></td>
+<td>The minimum quantity you can buy/sell. Order quantities must be a multiple of this number.</td>
+</tr>
+<tr>
+<td><code>optionType</code></td>
+<td>The option type (<code>CE</code> for Call, <code>PE</code> for Put). Empty for Equities and Futures.</td>
+</tr>
+<tr>
+<td><code>priceBandHigh</code></td>
+<td>The upper circuit limit. Orders placed above this price will be rejected by the exchange.</td>
+</tr>
+<tr>
+<td><code>priceBandLow</code></td>
+<td>The lower circuit limit. Orders placed below this price will be rejected by the exchange.</td>
+</tr>
+<tr>
+<td><code>strikePrice</code></td>
+<td>The strike price for options contracts. Returns <code>0</code> for Equities and Futures.</td>
+</tr>
+<tr>
+<td><code>symbol</code></td>
+<td>The base symbol of the underlying asset (e.g., <code>TCS</code>, <code>RELIANCE</code>).</td>
+</tr>
+<tr>
+<td><code>tickSize</code></td>
 <td>The minimum price movement allowed for this instrument. Your order price must be a multiple of this value.</td>
+</tr>
+<tr>
+<td><code>freezeQty</code></td>
+<td>Maximum quantity allowed in a single order by the exchange. Orders exceeding this will be frozen/rejected.</td>
+</tr>
+<tr>
+<td><code>ticker</code></td>
+<td>Full company name or descriptive ticker name (e.g., <code>TATA CONSULTANCY SERV LT</code>).</td>
+</tr>
+<tr>
+<td><code>multiplier</code></td>
+<td>The value multiplier for calculating total contract value.</td>
+</tr>
+<tr>
+<td><code>open</code></td>
+<td>Opening price of the day (often <code>0</code> before the market opens or if illiquid).</td>
+</tr>
+<tr>
+<td><code>high</code></td>
+<td>Highest traded price of the day.</td>
+</tr>
+<tr>
+<td><code>low</code></td>
+<td>Lowest traded price of the day.</td>
+</tr>
+<tr>
+<td><code>close</code></td>
+<td>The previous day's closing price.</td>
+</tr>
+<tr>
+<td><code>ltp</code></td>
+<td>Last traded price from the master snapshot.</td>
+</tr>
+<tr>
+<td><code>isin</code></td>
+<td>International Securities Identification Number (ISIN) for the instrument.</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="common-questions-faq">Common Questions (FAQ)<a class="headerlink" href="#common-questions-faq" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Why am I getting weird gibberish characters when I print the response?</p>
-<p>You are trying to read the raw binary response as a standard text string. Because the file is GZIP compressed, you <strong>must</strong> use a GZIP library (like <code>gzip</code> in Python or <code>zlib</code> in Node.js) to decompress the response bytes first before trying to parse the JSON.</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Do I need to download this every single day?</p>
-<p><strong>Yes.</strong> Instruments (especially options and futures contracts) expire, and new ones are added daily. Furthermore, trading parameters like <code>PriceBandHigh</code> and <code>PriceBandLow</code> change every single day based on the previous day's closing prices. It is highly recommended to run an automated script to fetch this file every morning before the market opens.</p>
-</div>
 
 
 

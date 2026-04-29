@@ -1032,17 +1032,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#common-questions-faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common Questions (FAQ)
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1726,17 +1715,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#common-questions-faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common Questions (FAQ)
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2060,7 +2038,7 @@
 <tr>
 <td><code>oi</code></td>
 <td>float</td>
-<td>Open interest (total outstanding active contracts).</td>
+<td>Open interest.</td>
 </tr>
 <tr>
 <td><code>oiPercentage</code></td>
@@ -2069,16 +2047,6 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="common-questions-faq">Common Questions (FAQ)<a class="headerlink" href="#common-questions-faq" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Why are some of the Greeks returning as <code>0</code>?</p>
-<p>If you query strike prices that are extremely deep Out-Of-The-Money (OTM) or highly illiquid, the system may not have enough valid market data or implied volatility to accurately calculate the Greeks, resulting in a value of <code>0</code>.</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">How many strikes are returned?</p>
-<p>Typically, the API returns a balanced set of strikes both In-The-Money (ITM) and Out-Of-The-Money (OTM) around the ATM spot price.</p>
-</div>
 
 
 
