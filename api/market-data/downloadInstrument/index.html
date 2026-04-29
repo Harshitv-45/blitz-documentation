@@ -18,7 +18,7 @@
         <link rel="prev" href="../../trading/signals/">
       
       
-        <link rel="next" href="../instrumentId/">
+        <link rel="next" href="../instrumentDetail/">
       
       
         
@@ -73,7 +73,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -130,7 +130,21 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
     
   
 </form>
@@ -293,9 +307,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -545,9 +557,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -728,7 +738,7 @@
   <span class="md-ellipsis">
     
   
-    Market Data
+    Market Data APIs
   
 
     
@@ -744,7 +754,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Market Data
+    Market Data APIs
   
 
           </label>
@@ -817,17 +827,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -836,14 +835,47 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Endpoint">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-download-and-extract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Download and Extract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-the-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding the Response
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding the Response">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#extracting-the-gz-file" class="md-nav__link">
+  <a href="#key-fields-explained" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extracting the .gz File
+        Key Fields Explained
       
     </span>
   </a>
@@ -852,6 +884,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-questions-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Questions (FAQ)
+      
+    </span>
+  </a>
   
 </li>
       
@@ -871,14 +914,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../instrumentId/" class="md-nav__link">
+      <a href="../instrumentDetail/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Instruments
+    Instrument Detail
   
 
     
@@ -1039,9 +1082,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1268,9 +1309,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
@@ -1375,9 +1414,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
         
           
           <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
@@ -1507,17 +1544,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1526,14 +1552,47 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Endpoint">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-download-and-extract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Download and Extract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-the-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding the Response
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding the Response">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#extracting-the-gz-file" class="md-nav__link">
+  <a href="#key-fields-explained" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extracting the .gz File
+        Key Fields Explained
       
     </span>
   </a>
@@ -1542,6 +1601,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-questions-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Questions (FAQ)
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1563,8 +1633,12 @@
 
 
 <h1 id="download-instruments-gz-api">Download Instruments (GZ) API<a class="headerlink" href="#download-instruments-gz-api" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The <strong>Download Instruments (GZ) API</strong> allows users to download a compressed <code>.gz</code> file containing instrument data in JSON format. This can be used to retrieve a bulk set of instruments for offline processing or further analysis.</p>
+<p>The <strong>Download Instruments API</strong> allows you to retrieve the <em>entire master list</em> of tradable instruments across all exchanges in one single request. </p>
+<p>Because this list is massive (containing hundreds of thousands of instruments), the response is compressed into a <code>.gz</code> (GZIP) file to save bandwidth and reduce download time.</p>
+<div class="admonition tip">
+<p class="admonition-title">Best Practice: Fetch Once Daily</p>
+<p>You should only call this endpoint <strong>once per day</strong> (ideally early in the morning before market open) and cache the results locally in your database or memory. Do not call this endpoint repeatedly during live trading, as downloading and decompressing large files is resource-intensive.</p>
+</div>
 <hr />
 <p><code>BASE URL: http://uat.quantxpress.com/v1</code></p>
 <h2 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h2>
@@ -1582,40 +1656,88 @@
 </tr>
 </tbody>
 </table>
+<h2 id="headers">Headers<a class="headerlink" href="#headers" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td access_token="access_token">Bearer</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h3 id="extracting-the-gz-file">Extracting the <code>.gz</code> File<a class="headerlink" href="#extracting-the-gz-file" title="Permanent link">&para;</a></h3>
-<p>The downloaded file <code>instruments.json.gz</code> is compressed using GZIP format. You will need to extract it before consuming the data.</p>
-<p>You can use any tool or language that supports GZIP decompression. Below is an example using <strong>Python</strong>.</p>
-<blockquote>
-<p>Note: Python is just one of many ways to extract the file. You can use other methods such as shell commands (<code>gunzip</code>), programming languages (Node.js, Java, C#), or GUI tools like 7-Zip and WinRAR.</p>
-</blockquote>
-<hr />
-<h4 id="example-extract-using-python">Example: Extract Using Python<a class="headerlink" href="#example-extract-using-python" title="Permanent link">&para;</a></h4>
+<h2 id="how-to-download-and-extract">How to Download and Extract<a class="headerlink" href="#how-to-download-and-extract" title="Permanent link">&para;</a></h2>
+<p>The downloaded file is a compressed GZIP file containing a massive JSON array. If you try to open the raw response directly as text, it will look like gibberish. You must decompress it first.</p>
+<p>Here are a few ways to download and read the file programmatically:</p>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">cURL (Command Line)</label><div class="tabbed-content">
+<p>To download the file directly to your computer using your terminal:</p>
+<p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/instruments/gz/download&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output<span class="w"> </span>instruments.json.gz
+</code></pre></div>
+<em>After downloading, you can extract it using terminal commands like <code>gunzip instruments.json.gz</code> or using GUI extraction tools like WinRAR or 7-Zip.</em></p>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Python</label><div class="tabbed-content">
+<p>This script downloads the file, unzips it in memory, and parses the JSON seamlessly without needing to save it to your hard drive.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">gzip</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 
-<span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;{{baseUrl}}&quot;</span>
-<span class="n">endpoint</span> <span class="o">=</span> <span class="s2">&quot;/api/instruments/gz/download&quot;</span>
-<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}{</span><span class="n">endpoint</span><span class="si">}</span><span class="s2">&quot;</span>
-
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://uat.quantxpress.com/v1/api/instruments/gz/download&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer YOUR_ACCESS_TOKEN&quot;</span>
+<span class="p">}</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
-    <span class="c1"># Decompress directly from bytes using io.BytesIO and gzip</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="c1"># Decompress directly from bytes</span>
     <span class="n">compressed_data</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
     <span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">compressed_data</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Uncompressed content:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Successfully loaded </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2"> instruments!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First instrument:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to download file: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>Responses :
-Here is a sample response for an <strong>Options Instrument</strong> from the Instrument Master API:</p>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Node.js</label><div class="tabbed-content">
+<p>Node.js provides a built-in <code>zlib</code> module to handle gzip extraction easily. Ensure you set <code>responseType: 'arraybuffer'</code> so axios doesn't corrupt the binary data!</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">zlib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;zlib&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/instruments/gz/download&#39;</span><span class="p">;</span>
+
+<span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Authorization&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bearer YOUR_ACCESS_TOKEN&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">responseType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;arraybuffer&#39;</span><span class="w"> </span><span class="c1">// Crucial for downloading binary gzip data</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Decompress the binary data</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">unzipped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">zlib</span><span class="p">.</span><span class="nx">gunzipSync</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">instruments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">unzipped</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Successfully loaded </span><span class="si">${</span><span class="nx">instruments</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> instruments!`</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;First instrument:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">instruments</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+<span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error fetching instruments:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+</div>
+<hr />
+<h2 id="understanding-the-response">Understanding the Response<a class="headerlink" href="#understanding-the-response" title="Permanent link">&para;</a></h2>
+<p>Once decompressed, the file will contain a JSON array of objects. Below is a sample object representing a single <strong>Options Instrument</strong>.</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;InstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2042700000155916</span><span class="p">,</span>
@@ -1634,6 +1756,51 @@ Here is a sample response for an <strong>Options Instrument</strong> from the In
 <span class="w">  </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
+<h3 id="key-fields-explained">Key Fields Explained<a class="headerlink" href="#key-fields-explained" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>InstrumentId</code></td>
+<td>The unique numeric ID used for placing orders and fetching Live Market Data.</td>
+</tr>
+<tr>
+<td><code>InstrumentName</code></td>
+<td>The exact string name used as an alternative identifier (<code>ExchangeSegment:Symbol...</code>).</td>
+</tr>
+<tr>
+<td><code>ExchangeSegment</code></td>
+<td>Identifies the market (e.g., <code>NSECM</code> for Cash Equity, <code>NSEFO</code> for Futures &amp; Options).</td>
+</tr>
+<tr>
+<td><code>InstrumentType</code></td>
+<td>Determines if the instrument is <code>Equity</code>, <code>Futures</code>, or <code>Options</code>.</td>
+</tr>
+<tr>
+<td><code>LotSize</code></td>
+<td>The minimum quantity you can buy/sell. Your order quantity must be a multiple of this number.</td>
+</tr>
+<tr>
+<td><code>TickSize</code></td>
+<td>The minimum price movement allowed for this instrument. Your order price must be a multiple of this value.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="common-questions-faq">Common Questions (FAQ)<a class="headerlink" href="#common-questions-faq" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Why am I getting weird gibberish characters when I print the response?</p>
+<p>You are trying to read the raw binary response as a standard text string. Because the file is GZIP compressed, you <strong>must</strong> use a GZIP library (like <code>gzip</code> in Python or <code>zlib</code> in Node.js) to decompress the response bytes first before trying to parse the JSON.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Do I need to download this every single day?</p>
+<p><strong>Yes.</strong> Instruments (especially options and futures contracts) expire, and new ones are added daily. Furthermore, trading parameters like <code>PriceBandHigh</code> and <code>PriceBandLow</code> change every single day based on the previous day's closing prices. It is highly recommended to run an automated script to fetch this file every morning before the market opens.</p>
+</div>
 
 
 
@@ -1693,7 +1860,7 @@ Here is a sample response for an <strong>Options Instrument</strong> from the In
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.tracking", "navigation.top", "navigation.instant", "toc.follow", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.tracking", "navigation.top", "navigation.instant", "toc.follow", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>

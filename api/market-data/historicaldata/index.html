@@ -73,7 +73,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#historical-data" class="md-skip">
+        <a href="#historical-data-api" class="md-skip">
           Skip to content
         </a>
       
@@ -130,7 +130,21 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
     
   
 </form>
@@ -293,9 +307,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -545,9 +557,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -728,7 +738,7 @@
   <span class="md-ellipsis">
     
   
-    Market Data
+    Market Data APIs
   
 
     
@@ -744,7 +754,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Market Data
+    Market Data APIs
   
 
           </label>
@@ -785,14 +795,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../instrumentId/" class="md-nav__link">
+      <a href="../instrumentDetail/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Instruments
+    Instrument Detail
   
 
     
@@ -903,6 +913,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -945,23 +957,14 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#historical-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Historical Data
-      
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#endpoint" class="md-nav__link">
@@ -994,13 +997,41 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Request Payload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-intervals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Intervals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example
+        Examples
       
     </span>
   </a>
@@ -1008,21 +1039,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#successful-response-200-ok" class="md-nav__link">
+  <a href="#understanding-the-response" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Successful Response (200 OK)
+        Understanding the Response
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Understanding the Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#response-field-descriptions" class="md-nav__link">
     <span class="md-ellipsis">
       
         Response Field Descriptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-questions-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Questions (FAQ)
       
     </span>
   </a>
@@ -1073,9 +1121,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1302,9 +1348,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
@@ -1409,9 +1453,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
         
           
           <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
@@ -1531,23 +1573,14 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#historical-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Historical Data
-      
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#endpoint" class="md-nav__link">
@@ -1580,13 +1613,41 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Request Payload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-intervals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Intervals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example
+        Examples
       
     </span>
   </a>
@@ -1594,21 +1655,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#successful-response-200-ok" class="md-nav__link">
+  <a href="#understanding-the-response" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Successful Response (200 OK)
+        Understanding the Response
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Understanding the Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#response-field-descriptions" class="md-nav__link">
     <span class="md-ellipsis">
       
         Response Field Descriptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-questions-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Questions (FAQ)
       
     </span>
   </a>
@@ -1632,12 +1710,13 @@
 
 
 
-  <h1>Historical Data</h1>
-
-<h2 id="historical-data"><strong>Historical Data</strong><a class="headerlink" href="#historical-data" title="Permanent link">&para;</a></h2>
-<p>The Historical Data API allows you to retrieve past market data for a specific instrument over a defined time interval.</p>
-<p>Using this API, you can fetch OHLC (Open, High, Low, Close) data along with volume and timestamp information, which is essential for backtesting, technical analysis, and charting applications.</p>
-<p>These endpoints let you analyze historical price movements and build data-driven trading strategies.</p>
+<h1 id="historical-data-api">Historical Data API<a class="headerlink" href="#historical-data-api" title="Permanent link">&para;</a></h1>
+<p>The <strong>Historical Data API</strong> allows you to retrieve past market data for a specific instrument over a defined time interval.</p>
+<p>Using this API, you can fetch OHLC (Open, High, Low, Close) data along with volume and timestamp information, which is essential for backtesting, technical analysis, and building charting applications.</p>
+<div class="admonition tip">
+<p class="admonition-title">Common Use Case</p>
+<p>Use this endpoint to generate historical candlestick charts or run quantitative backtests before executing live trading strategies.</p>
+</div>
 <hr />
 <p><code>BASE URL: http://uat.quantxpress.com/md-api</code></p>
 <h2 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h2>
@@ -1655,7 +1734,6 @@
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="headers">Headers<a class="headerlink" href="#headers" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1676,21 +1754,17 @@
 <td access_token="access_token">Bearer</td>
 <td>Yes</td>
 </tr>
-<tr>
-<td>Accept</td>
-<td><code>*/*</code></td>
-<td>Yes</td>
-</tr>
 </tbody>
 </table>
 <hr />
 <h2 id="request-payload">Request Payload<a class="headerlink" href="#request-payload" title="Permanent link">&para;</a></h2>
+<p>You must provide the instrument identifier and the desired time interval for the candles.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRFC&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;instrument&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM:IRFC&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;interval&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;D&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<hr />
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1702,39 +1776,113 @@
 </thead>
 <tbody>
 <tr>
-<td>instrument</td>
+<td><code>instrument</code></td>
 <td>string</td>
 <td>Yes</td>
-<td>Instrument symbol or ID (e.g., <code>IRFC</code>, <code>NSE</code>)</td>
+<td>The exact instrument name or numeric ID (e.g., <code>NSECM:IRFC</code>, <code>NSEFO:NIFTY28042026FUT</code>, or <code>1010010002000001</code>).</td>
 </tr>
 <tr>
-<td>interval</td>
+<td><code>interval</code></td>
 <td>string</td>
 <td>Yes</td>
-<td>Time interval of data. Supported values: <code>D</code>, <code>1</code>, <code>5</code>, <code>15</code>, <code>30</code>, <code>60</code></td>
+<td>Time interval of the candle data.</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p><strong>Notes:</strong>
-Returns time-series OHLC data.
-Interval defines candle size:
-  - <code>D</code> → Daily
-  - <code>1</code>, <code>5</code>, <code>15</code>, <code>30</code>, <code>60</code> → Minutes</p>
-</blockquote>
+<h3 id="supported-intervals">Supported Intervals<a class="headerlink" href="#supported-intervals" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Interval Code</th>
+<th>Represents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1</code></td>
+<td>1 Minute</td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td>5 Minutes</td>
+</tr>
+<tr>
+<td><code>15</code></td>
+<td>15 Minutes</td>
+</tr>
+<tr>
+<td><code>30</code></td>
+<td>30 Minutes</td>
+</tr>
+<tr>
+<td><code>60</code></td>
+<td>60 Minutes (1 Hour)</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>Daily (1 Day)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Instrument Naming Convention</p>
+<p>When fetching by Instrument Name, the string follows a specific pattern:
+* <strong>Cash Market (Equity)</strong>: <code>[ExchangeSegment]:[Symbol]</code> (e.g., <code>NSECM:RELIANCE</code>)
+* <strong>Futures &amp; Options</strong>: <code>[ExchangeSegment]:[Symbol][Date][Strike][OptionType]</code> (e.g., <code>NSEFO:NIFTY2804202625000CE</code>)</p>
+</div>
 <hr />
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/md-api/marketfeed/historicalData&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: */*&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">    &quot;instrument&quot;: &quot;IRFC&quot;,</span>
+<span class="s1">    &quot;instrument&quot;: &quot;NSECM:IRFC&quot;,</span>
 <span class="s1">    &quot;interval&quot;: &quot;D&quot;</span>
 <span class="s1">  }&#39;</span>
 </code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://uat.quantxpress.com/md-api/marketfeed/historicalData&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer YOUR_ACCESS_TOKEN&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
+<span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;instrument&quot;</span><span class="p">:</span> <span class="s2">&quot;NSECM:IRFC&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;interval&quot;</span><span class="p">:</span> <span class="s2">&quot;D&quot;</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">fetchHistory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;http://uat.quantxpress.com/md-api/marketfeed/historicalData&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">instrument</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;NSECM:IRFC&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">interval</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;D&quot;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Authorization&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bearer YOUR_ACCESS_TOKEN&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">fetchHistory</span><span class="p">();</span>
+</code></pre></div>
+</div>
+</div>
 <hr />
-<h2 id="successful-response-200-ok">Successful Response (200 OK)<a class="headerlink" href="#successful-response-200-ok" title="Permanent link">&para;</a></h2>
+<h2 id="understanding-the-response">Understanding the Response<a class="headerlink" href="#understanding-the-response" title="Permanent link">&para;</a></h2>
+<p>A successful request returns an array of OHLC candle objects sorted chronologically.</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">115.1</span><span class="p">,</span>
@@ -1747,8 +1895,7 @@ Interval defines candle size:
 <span class="w">  </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
-<hr />
-<h2 id="response-field-descriptions">Response Field Descriptions<a class="headerlink" href="#response-field-descriptions" title="Permanent link">&para;</a></h2>
+<h3 id="response-field-descriptions">Response Field Descriptions<a class="headerlink" href="#response-field-descriptions" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1759,43 +1906,52 @@ Interval defines candle size:
 </thead>
 <tbody>
 <tr>
-<td>open</td>
+<td><code>open</code></td>
 <td>number</td>
 <td>Opening price of the interval</td>
 </tr>
 <tr>
-<td>high</td>
+<td><code>high</code></td>
 <td>number</td>
-<td>Highest price during the interval</td>
+<td>Highest price traded during the interval</td>
 </tr>
 <tr>
-<td>low</td>
+<td><code>low</code></td>
 <td>number</td>
-<td>Lowest price during the interval</td>
+<td>Lowest price traded during the interval</td>
 </tr>
 <tr>
-<td>close</td>
+<td><code>close</code></td>
 <td>number</td>
 <td>Closing price of the interval</td>
 </tr>
 <tr>
-<td>volume</td>
+<td><code>volume</code></td>
 <td>number</td>
-<td>Total traded volume</td>
+<td>Total number of shares or contracts traded during this period</td>
 </tr>
 <tr>
-<td>oi</td>
+<td><code>oi</code></td>
 <td>number</td>
-<td>Open interest (applicable for derivatives)</td>
+<td>Open interest (Only applicable and populated for derivative instruments)</td>
 </tr>
 <tr>
-<td>timestamp</td>
+<td><code>timestamp</code></td>
 <td>string</td>
-<td>Date and time of the data point</td>
+<td>Date and start time of the candle (<code>DD-MM-YYYY HH:mm:ss</code>)</td>
 </tr>
 </tbody>
 </table>
 <hr />
+<h2 id="common-questions-faq">Common Questions (FAQ)<a class="headerlink" href="#common-questions-faq" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">What timezone are the timestamps in?</p>
+<p>Typically, market data timestamps are returned in <strong>IST (Indian Standard Time)</strong>. Make sure your local charting libraries parse this correctly.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Why is Open Interest (<code>oi</code>) returning as <code>0</code>?</p>
+<p>The <code>oi</code> field represents Open Interest, which is only applicable for Futures and Options contracts. If you query a Cash Market (Equity) instrument like <code>IRFC</code>, the <code>oi</code> will always be <code>0</code>.</p>
+</div>
 
 
 
@@ -1855,7 +2011,7 @@ Interval defines candle size:
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.tracking", "navigation.top", "navigation.instant", "toc.follow", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.tracking", "navigation.top", "navigation.instant", "toc.follow", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
