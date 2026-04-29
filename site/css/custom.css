@@ -53,3 +53,133 @@ h4 {
   padding: 9px 14px;
   border-bottom: 1px solid rgba(63, 81, 181, 0.15);
 }
+
+/* ── Typography Enhancements ────────────────────────────── */
+.md-typeset {
+  line-height: 1.65;
+  font-size: 0.75rem; /* Decreased font size (default is 0.8rem) */
+}
+
+.md-typeset p {
+  margin-bottom: 1.2em;
+}
+
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+/* Headings: Black */
+.md-typeset h1, .md-typeset h2 {
+  color: #000000;
+}
+
+/* Subheadings: Dark Grey */
+.md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
+  color: #4a4a4a;
+}
+
+/* Optional: Dark mode compatibility */
+[data-md-color-scheme="slate"] .md-typeset h1, 
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  color: #ffffff;
+}
+[data-md-color-scheme="slate"] .md-typeset h3, 
+[data-md-color-scheme="slate"] .md-typeset h4, 
+[data-md-color-scheme="slate"] .md-typeset h5, 
+[data-md-color-scheme="slate"] .md-typeset h6 {
+  color: #b0b0b0;
+}
+
+/* ── Content Right Separator Line ────────────────────────────── */
+@media screen and (min-width: 1220px) {
+  .md-content {
+    /* Made line thicker (3px) and colored it a subtle indigo */
+    border-right: 3px solid rgba(63, 81, 181, 0.2); 
+    padding-right: 2rem;
+  }
+}
+
+/* ── Section Separators ────────────────────────────── */
+.md-typeset h2 {
+  border-bottom: 1px solid rgba(63, 81, 181, 0.15);
+  padding-bottom: 0.4em;
+  margin-bottom: 1em;
+  margin-top: 1.5em;
+}
+
+.md-typeset h3 {
+  border-bottom: 1px dashed rgba(63, 81, 181, 0.1);
+  padding-bottom: 0.3em;
+}
+
+/* ── Consistent Note & Information Boxes ────────────────────────────── */
+/* ── Consistent Note & Information Boxes ────────────────────────────── */
+.md-typeset .admonition,
+.md-typeset details,
+.md-typeset blockquote {
+  border: 1px solid rgba(63, 81, 181, 0.15) !important;
+  border-left: 4px solid #3f51b5 !important; /* Uniform brand indigo */
+  border-radius: 8px !important;
+  background-color: rgba(63, 81, 181, 0.03) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+  margin: 1.5em 0 !important;
+  overflow: hidden;
+  
+  /* Force all boxes to use the clean 'info' circle icon instead of the confusing pencil/fire icon */
+  --md-admonition-icon: var(--md-admonition-icon--info) !important;
+}
+
+/* Ensure blockquotes have proper padding since they lack titles */
+.md-typeset blockquote {
+  padding: 0.75rem 1rem;
+}
+
+/* Unify the title bar for admonitions and remove icons entirely */
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background-color: rgba(63, 81, 181, 0.04) !important;
+  border-bottom: 1px solid rgba(63, 81, 181, 0.08) !important;
+  color: #003063 !important;
+  font-weight: 700 !important;
+  padding: 0.75rem 1rem !important; /* Restored normal padding */
+}
+
+/* Remove the icon symbol */
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  display: none !important;
+}
+
+/* Content spacing inside the boxes */
+.md-typeset .admonition > p,
+.md-typeset .admonition > ul,
+.md-typeset .admonition > ol {
+  padding: 0.75rem 1rem !important;
+  margin: 0 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition,
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition-title {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ── Curved Search Bar ────────────────────────────── */
+.md-search__input,
+.md-search__form,
+.md-search__inner {
+  border-radius: 24px !important;
+}
+
+/* ── Fix Left Sidebar Scroll ────────────────────────────── */
+.md-sidebar--primary .md-sidebar__scrollwrap {
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+}

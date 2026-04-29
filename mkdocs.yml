@@ -16,7 +16,6 @@ theme:
 
   features:
     - navigation.sections
-    - navigation.expand
     - navigation.tracking
     - navigation.top
     - navigation.instant
@@ -26,9 +25,23 @@ theme:
     - search.suggest
 
   palette:
-    - scheme: default
+    # Dark Mode (Default)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: indigo
       accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+    # Light Mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
 
 markdown_extensions:
   - admonition
@@ -74,9 +87,9 @@ nav:
           - Signals: api/trading/signals.md
           
 
-      - Market Data:
+      - Market Data APIs:
           - Download Instruments: api/market-data/downloadInstrument.md
-          - Instruments: api/market-data/instrumentId.md
+          - Instrument Detail: api/market-data/instrumentDetail.md
           - Last Trading Price: api/market-data/ltp.md
           - Option Chain: api/market-data/optionchain.md
           - Market Quote: api/market-data/marketquote.md

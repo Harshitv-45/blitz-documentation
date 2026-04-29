@@ -31,32 +31,118 @@ This API is essential for building trading dashboards, order books, and real-tim
 
 ## Request Payload
 
-```json
-{
-  "InstrumentIds": [1010010002000001]
-}
-```
+You can request market quotes by providing either a list of **Instrument IDs** or a list of **Instrument Names**.
+
+=== "Using Instrument IDs"
+
+    ```json
+    {
+      "InstrumentIds": [1010010002000001]
+    }
+    ```
+
+=== "Using Instrument Names"
+
+    ```json
+    {
+      "InstrumentNames": ["NSECM:RELIANCE", "NSEFO:NIFTY28042026FUT"]
+    }
+    ```
 
 ---
 
 ## Parameters
-| Parameter      | Type         | Required | Description |
-|----------------|--------------|----------|--------------|
-| InstrumentIds  | list / array | Yes      | List of instrument identifiers (symbols or numeric instrument IDs). |
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `InstrumentIds` | array of Long | No* | List of numeric instrument identifiers. (*Required if `InstrumentNames` is not provided). |
+| `InstrumentNames` | array of String | No* | List of exact instrument names. (*Required if `InstrumentIds` is not provided). |
+
+!!! info "Instrument Naming Convention"
+    When fetching by Instrument Name, the string follows a specific pattern based on the segment:
+    
+    * **Cash Market (Equity)**: `[ExchangeSegment]:[Symbol]`
+        - *Example*: `NSECM:RELIANCE`
+        
+    * **Futures & Options**: `[ExchangeSegment]:[Symbol][Date][Strike][OptionType]`
+        - **Date Format**: `DDMMYYYY` (e.g., `28042026` represents **28 April 2026**).
+        - **Future Example**: `NSEFO:NIFTY28042026FUT` (NIFTY Future, expiring 28-Apr-2026).
+        - **Option Example**: `NSEFO:NIFTY2804202625000CE` (NIFTY Option, expiring 28-Apr-2026, 25000 Strike Price, Call Option. Similarly for PUT options use 'PE').
 
 ---
 
-## Example
+## Examples
 
-```bash
-curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/quote' \
-  -H 'Content-Type: application/json' \
-  -H 'Authorization: Bearer {access_token}' \
-  -H 'Accept: */*' \
-  -d '{
-    "InstrumentIds": [1010010002000001]
-  }'
-```
+Here is how you can retrieve detailed Market Quotes programmatically.
+
+=== "cURL"
+
+    ```bash
+    curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/quote' \
+      -H 'Content-Type: application/json' \
+      -H 'Authorization: Bearer {access_token}' \
+      -H 'Accept: */*' \
+      -d '{
+        "InstrumentNames": ["NSEFO:NIFTY28042026FUT"]
+      }'
+    ```
+
+=== "Python"
+
+    ```python
+    import requests
+
+    url = "http://uat.quantxpress.com/md-api/marketfeed/quote"
+    headers = {
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN",
+        "Content-Type": "application/json"
+    }
+    payload = {
+        "InstrumentNames": ["NSECM:RELIANCE", "NSEFO:NIFTY28042026FUT"]
+    }
+
+    response = requests.post(url, json=payload, headers=headers)
+    
+    if response.status_code == 200:
+        data = response.json().get("data", {})
+        for key, quote in data.items():
+            print(f"--- Quote for {key} ---")
+            print(f"LTP: {quote.get('ltp')}")
+            print(f"Volume: {quote.get('volume')}")
+            print(f"Total Buy Qty: {quote.get('totalBuyQty')}")
+            print(f"Total Sell Qty: {quote.get('totalSellQty')}")
+    else:
+        print("Error fetching Market Quote")
+    ```
+
+=== "Node.js"
+
+    ```javascript
+    const axios = require('axios');
+
+    const fetchQuote = async () => {
+      try {
+        const response = await axios.post('http://uat.quantxpress.com/md-api/marketfeed/quote', {
+          InstrumentNames: ["NSECM:RELIANCE"]
+        }, {
+          headers: { 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' }
+        });
+        
+        const data = response.data.data;
+        Object.keys(data).forEach(id => {
+            const quote = data[id];
+            console.log(`\n--- Quote for ${id} ---`);
+            console.log(`LTP: ${quote.ltp}`);
+            console.log(`Volume: ${quote.volume}`);
+            console.log(`Best Bid: ${quote.bidPrice} (${quote.bidQty})`);
+            console.log(`Best Ask: ${quote.askPrice} (${quote.askQty})`);
+        });
+      } catch (error) {
+        console.error("Error:", error.message);
+      }
+    };
+    fetchQuote();
+    ```
 
 ---
 

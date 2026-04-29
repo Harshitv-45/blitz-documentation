@@ -50,8 +50,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Outfit:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Outfit";--md-code-font:"Fira Code"}</style>
       
     
     
@@ -73,7 +73,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#option-chain" class="md-skip">
+        <a href="#option-chain-api" class="md-skip">
           Skip to content
         </a>
       
@@ -130,7 +130,21 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
     
   
 </form>
@@ -293,9 +307,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -545,9 +557,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -728,7 +738,7 @@
   <span class="md-ellipsis">
     
   
-    Market Data
+    Market Data APIs
   
 
     
@@ -744,7 +754,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Market Data
+    Market Data APIs
   
 
           </label>
@@ -785,14 +795,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../instrumentId/" class="md-nav__link">
+      <a href="../instrumentDetail/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Instruments
+    Instrument Detail
   
 
     
@@ -901,17 +911,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -942,9 +941,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Request Payload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -954,12 +954,17 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example
+        Examples
       
     </span>
   </a>
@@ -967,26 +972,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#successful-response-200-ok" class="md-nav__link">
+  <a href="#understanding-the-response" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Successful Response (200 OK)
+        Understanding the Response
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-field-descriptions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response Field Descriptions
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Response Field Descriptions">
+    <nav class="md-nav" aria-label="Understanding the Response">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1039,10 +1033,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
+  <a href="#common-questions-faq" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Note:
+        Common Questions (FAQ)
       
     </span>
   </a>
@@ -1149,9 +1143,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1378,9 +1370,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
@@ -1485,9 +1475,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
         
           
           <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
@@ -1617,17 +1605,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1658,9 +1635,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Request Payload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1670,12 +1648,17 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example
+        Examples
       
     </span>
   </a>
@@ -1683,26 +1666,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#successful-response-200-ok" class="md-nav__link">
+  <a href="#understanding-the-response" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Successful Response (200 OK)
+        Understanding the Response
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-field-descriptions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response Field Descriptions
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Response Field Descriptions">
+    <nav class="md-nav" aria-label="Understanding the Response">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1755,10 +1727,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
+  <a href="#common-questions-faq" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Note:
+        Common Questions (FAQ)
       
     </span>
   </a>
@@ -1782,10 +1754,12 @@
 
 
 
-<h1 id="option-chain"><strong>Option Chain</strong><a class="headerlink" href="#option-chain" title="Permanent link">&para;</a></h1>
-<h2 id="overview"><strong>Overview</strong><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The <strong>Option Chain API</strong> provides the latest option chain data for a given symbol and expiry date. It returns detailed information about call and put options across multiple strike prices, including Greeks, implied volatility, and pricing data.</p>
-<p>This API helps traders analyze market sentiment, volatility, and strike-level activity.</p>
+<h1 id="option-chain-api">Option Chain API<a class="headerlink" href="#option-chain-api" title="Permanent link">&para;</a></h1>
+<p>The <strong>Option Chain API</strong> provides the latest option chain data for a given symbol and expiry date. It returns detailed information about call and put options across multiple strike prices, including Live Market Prices, Open Interest, Implied Volatility, and the Option Greeks.</p>
+<div class="admonition tip">
+<p class="admonition-title">Common Use Case</p>
+<p>This API helps traders analyze market sentiment, volatility, and strike-level activity. It is crucial for building option strategy dashboards, finding liquid strikes, or calculating risk metrics.</p>
+</div>
 <hr />
 <p><code>BASE URL: http://uat.quantxpress.com/md-api</code></p>
 <h2 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h2>
@@ -1803,7 +1777,6 @@
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="headers">Headers<a class="headerlink" href="#headers" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1824,21 +1797,17 @@
 <td access_token="access_token">Bearer</td>
 <td>Yes</td>
 </tr>
-<tr>
-<td>Accept</td>
-<td><code>*/*</code></td>
-<td>Yes</td>
-</tr>
 </tbody>
 </table>
 <hr />
 <h2 id="request-payload">Request Payload<a class="headerlink" href="#request-payload" title="Permanent link">&para;</a></h2>
+<p>You must provide the underlying asset symbol and the specific expiration date you want to query.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;expiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-05-29&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1850,32 +1819,71 @@
 </thead>
 <tbody>
 <tr>
-<td>symbol</td>
+<td><code>symbol</code></td>
 <td>string</td>
 <td>Yes</td>
-<td>Underlying asset symbol (e.g., NIFTY, BANKNIFTY, or equity symbol).</td>
+<td>The underlying asset symbol (e.g., <code>NIFTY</code>, <code>BANKNIFTY</code>, or an equity symbol like <code>RELIANCE</code>).</td>
 </tr>
 <tr>
-<td>expiryDate</td>
+<td><code>expiryDate</code></td>
 <td>string</td>
 <td>Yes</td>
-<td>Expiry date in YYYY-MM-DD format.</td>
+<td>The exact expiry date formatted as <code>YYYY-MM-DD</code>.</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://uat.quantxpress.com/md-api/marketfeed/optionChain<span class="s1">&#39; \</span>
-<span class="s1">  -H &#39;</span>Content-Type:<span class="w"> </span>application/json<span class="s1">&#39; \</span>
-<span class="s1">  -H &#39;</span>Authorization:<span class="w"> </span>Bearer<span class="w"> </span><span class="o">{</span>access_token<span class="o">}</span><span class="s1">&#39; \</span>
-<span class="s1">  -H &#39;</span>Accept:<span class="w"> </span>*/*<span class="s1">&#39; \</span>
-<span class="s1">  -d &#39;</span><span class="o">{</span>
-<span class="w">    </span><span class="s2">&quot;symbol&quot;</span>:<span class="w"> </span><span class="s2">&quot;NIFTY&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;expiryDate&quot;</span>:<span class="w"> </span><span class="s2">&quot;2025-05-29&quot;</span>
-<span class="w">  </span><span class="o">}</span><span class="err">&#39;</span>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">cURL</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/md-api/marketfeed/optionChain&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;symbol&quot;: &quot;NIFTY&quot;,</span>
+<span class="s1">    &quot;expiryDate&quot;: &quot;2025-05-29&quot;</span>
+<span class="s1">  }&#39;</span>
 </code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://uat.quantxpress.com/md-api/marketfeed/optionChain&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer YOUR_ACCESS_TOKEN&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
+<span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;NIFTY&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;expiryDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-05-29&quot;</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">fetchOptionChain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;http://uat.quantxpress.com/md-api/marketfeed/optionChain&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">symbol</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;NIFTY&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">expiryDate</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2025-05-29&quot;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Authorization&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bearer YOUR_ACCESS_TOKEN&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">fetchOptionChain</span><span class="p">();</span>
+</code></pre></div>
+</div>
+</div>
 <hr />
-<h2 id="successful-response-200-ok">Successful Response (200 OK)<a class="headerlink" href="#successful-response-200-ok" title="Permanent link">&para;</a></h2>
+<h2 id="understanding-the-response">Understanding the Response<a class="headerlink" href="#understanding-the-response" title="Permanent link">&para;</a></h2>
+<p>A successful request returns the spot price of the underlying asset, the At-The-Money (ATM) strike, and an array of <code>chains</code> containing Call (CE) and Put (PE) data for each available strike price.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -1886,36 +1894,34 @@
 <span class="w">      </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;strikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">23800</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;callOption&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;gamma&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;vega&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;theta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;delta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;oiPercentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;oi&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;gamma&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;vega&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">12.5</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;theta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-5.2</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;delta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.85</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;oiPercentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;oi&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span>
 <span class="w">          </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1042.8</span><span class="p">,</span>
 <span class="w">          </span><span class="nt">&quot;iv&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span>
 <span class="w">          </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1013.5</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;rho&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">          </span><span class="nt">&quot;rho&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span>
 <span class="w">        </span><span class="p">},</span>
 <span class="w">        </span><span class="nt">&quot;putOption&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;gamma&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;vega&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;theta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;delta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;oiPercentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;oi&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;gamma&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;vega&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.2</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;theta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-4.8</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;delta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.15</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;oiPercentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-1.2</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;oi&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span>
 <span class="w">          </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">8.85</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;iv&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;rho&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">          </span><span class="nt">&quot;iv&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.22</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">9.1</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;rho&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.05</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">]</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<hr />
-<h2 id="response-field-descriptions">Response Field Descriptions<a class="headerlink" href="#response-field-descriptions" title="Permanent link">&para;</a></h2>
 <h3 id="root-fields">Root Fields<a class="headerlink" href="#root-fields" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1927,14 +1933,14 @@
 </thead>
 <tbody>
 <tr>
-<td>status</td>
+<td><code>status</code></td>
 <td>string</td>
-<td>Status of the request (success or error)</td>
+<td>Status of the request (<code>success</code> or <code>error</code>).</td>
 </tr>
 <tr>
-<td>data</td>
+<td><code>data</code></td>
 <td>object</td>
-<td>Contains quote data mapped by instrument ID</td>
+<td>Contains the spot price and the option chain array.</td>
 </tr>
 </tbody>
 </table>
@@ -1949,24 +1955,24 @@
 </thead>
 <tbody>
 <tr>
-<td>spotPrice</td>
+<td><code>spotPrice</code></td>
 <td>float</td>
-<td>Current market price of the underlying asset</td>
+<td>Current Live Market Price (LTP) of the underlying asset.</td>
 </tr>
 <tr>
-<td>expiryDate</td>
+<td><code>expiryDate</code></td>
 <td>string</td>
-<td>Expiry date of the options contract (<code>YYYY-MM-DD</code>)</td>
+<td>Expiry date of the requested options contract (<code>YYYY-MM-DD</code>).</td>
 </tr>
 <tr>
-<td>atm</td>
+<td><code>atm</code></td>
 <td>float</td>
-<td>At-the-money strike price (closest to spot price)</td>
+<td>At-The-Money strike price (the strike closest to the <code>spotPrice</code>).</td>
 </tr>
 <tr>
-<td>chains</td>
+<td><code>chains</code></td>
 <td>array</td>
-<td>List of option data for different strike prices</td>
+<td>List of option data mapped by different strike prices.</td>
 </tr>
 </tbody>
 </table>
@@ -1981,23 +1987,27 @@
 </thead>
 <tbody>
 <tr>
-<td>strikePrice</td>
+<td><code>strikePrice</code></td>
 <td>float</td>
-<td>Strike price of the option contract</td>
+<td>Strike price of the option contract.</td>
 </tr>
 <tr>
-<td>callOption</td>
+<td><code>callOption</code></td>
 <td>object</td>
-<td>Call option (CE) data for the strike</td>
+<td>Call option (<strong>CE</strong>) data for this specific strike.</td>
 </tr>
 <tr>
-<td>putOption</td>
+<td><code>putOption</code></td>
 <td>object</td>
-<td>Put option (PE) data for the strike</td>
+<td>Put option (<strong>PE</strong>) data for this specific strike.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="call-put-option-fields-ce-pe">Call / Put Option Fields (CE &amp; PE)<a class="headerlink" href="#call-put-option-fields-ce-pe" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Understanding Greeks</p>
+<p>Greeks (<code>delta</code>, <code>gamma</code>, <code>theta</code>, <code>vega</code>, <code>rho</code>) are calculated dynamically based on live market conditions and are key indicators for analyzing risk and price sensitivity in options trading.</p>
+</div>
 <table>
 <thead>
 <tr>
@@ -2008,63 +2018,67 @@
 </thead>
 <tbody>
 <tr>
-<td>ltp</td>
+<td><code>ltp</code></td>
 <td>float</td>
-<td>Last traded price of the option</td>
+<td>Last traded price of the option.</td>
 </tr>
 <tr>
-<td>price</td>
+<td><code>price</code></td>
 <td>float</td>
-<td>Last traded or closing price</td>
+<td>Last traded or closing price.</td>
 </tr>
 <tr>
-<td>iv</td>
+<td><code>iv</code></td>
 <td>float</td>
-<td>Implied volatility of the option</td>
+<td>Implied volatility of the option.</td>
 </tr>
 <tr>
-<td>delta</td>
+<td><code>delta</code></td>
 <td>float</td>
-<td>Sensitivity of option price to underlying price</td>
+<td>Sensitivity of option price to underlying price changes.</td>
 </tr>
 <tr>
-<td>gamma</td>
+<td><code>gamma</code></td>
 <td>float</td>
-<td>Rate of change of delta</td>
+<td>Rate of change of delta.</td>
 </tr>
 <tr>
-<td>theta</td>
+<td><code>theta</code></td>
 <td>float</td>
-<td>Time decay of the option</td>
+<td>Time decay of the option per day.</td>
 </tr>
 <tr>
-<td>vega</td>
+<td><code>vega</code></td>
 <td>float</td>
-<td>Sensitivity to volatility changes</td>
+<td>Sensitivity to volatility changes (1% change in IV).</td>
 </tr>
 <tr>
-<td>rho</td>
+<td><code>rho</code></td>
 <td>float</td>
-<td>Sensitivity to interest rate changes</td>
+<td>Sensitivity to interest rate changes.</td>
 </tr>
 <tr>
-<td>oi</td>
+<td><code>oi</code></td>
 <td>float</td>
-<td>Open interest (total outstanding contracts)</td>
+<td>Open interest (total outstanding active contracts).</td>
 </tr>
 <tr>
-<td>oiPercentage</td>
+<td><code>oiPercentage</code></td>
 <td>float</td>
-<td>Change in open interest (percentage)</td>
+<td>Percentage change in open interest.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="note"><strong>Note:</strong><a class="headerlink" href="#note" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>callOption</code> represents <strong>CE (Call Option)</strong>  </li>
-<li><code>putOption</code> represents <strong>PE (Put Option)</strong>  </li>
-<li>Greeks (<code>delta</code>, <code>gamma</code>, <code>theta</code>, <code>vega</code>, <code>rho</code>) are key indicators for options trading analysis.</li>
-</ul>
+<hr />
+<h2 id="common-questions-faq">Common Questions (FAQ)<a class="headerlink" href="#common-questions-faq" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Why are some of the Greeks returning as <code>0</code>?</p>
+<p>If you query strike prices that are extremely deep Out-Of-The-Money (OTM) or highly illiquid, the system may not have enough valid market data or implied volatility to accurately calculate the Greeks, resulting in a value of <code>0</code>.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">How many strikes are returned?</p>
+<p>Typically, the API returns a balanced set of strikes both In-The-Money (ITM) and Out-Of-The-Money (OTM) around the ATM spot price.</p>
+</div>
 
 
 
@@ -2124,7 +2138,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.tracking", "navigation.top", "navigation.instant", "toc.follow", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.tracking", "navigation.top", "navigation.instant", "toc.follow", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>

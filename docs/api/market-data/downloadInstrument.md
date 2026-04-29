@@ -1,13 +1,15 @@
 # Download Instruments (GZ) API
 
-## Overview
+The **Download Instruments API** allows you to retrieve the *entire master list* of tradable instruments across all exchanges in one single request. 
 
-The **Download Instruments (GZ) API** allows users to download a compressed `.gz` file containing instrument data in JSON format. This can be used to retrieve a bulk set of instruments for offline processing or further analysis.
+Because this list is massive (containing hundreds of thousands of instruments), the response is compressed into a `.gz` (GZIP) file to save bandwidth and reduce download time.
+
+!!! tip "Best Practice: Fetch Once Daily"
+    You should only call this endpoint **once per day** (ideally early in the morning before market open) and cache the results locally in your database or memory. Do not call this endpoint repeatedly during live trading, as downloading and decompressing large files is resource-intensive.
 
 ---
 
 `BASE URL: http://uat.quantxpress.com/v1`
-
 
 ## Endpoint
 
@@ -15,48 +17,91 @@ The **Download Instruments (GZ) API** allows users to download a compressed `.gz
 |--------|---------------------------------------------|
 | GET    | `/api/instruments/gz/download`              |
 
----
-### Extracting the `.gz` File
+## Headers
 
-The downloaded file `instruments.json.gz` is compressed using GZIP format. You will need to extract it before consuming the data.
-
-You can use any tool or language that supports GZIP decompression. Below is an example using **Python**.
-
->  Note: Python is just one of many ways to extract the file. You can use other methods such as shell commands (`gunzip`), programming languages (Node.js, Java, C#), or GUI tools like 7-Zip and WinRAR.
+| Header        | Value            | Required |
+| ------------  | ---------------- | -------- |
+| Authorization | Bearer {access_token} | Yes      |
 
 ---
 
-####  Example: Extract Using Python
+## How to Download and Extract
 
-```python
-import requests
-import gzip
-import io
+The downloaded file is a compressed GZIP file containing a massive JSON array. If you try to open the raw response directly as text, it will look like gibberish. You must decompress it first.
 
-base_url = "{{baseUrl}}"
-endpoint = "/api/instruments/gz/download"
-url = f"{base_url}{endpoint}"
+Here are a few ways to download and read the file programmatically:
 
-headers = {}
+=== "cURL (Command Line)"
 
-response = requests.get(url, headers=headers)
+    To download the file directly to your computer using your terminal:
 
-if response.ok:
-    # Decompress directly from bytes using io.BytesIO and gzip
-    compressed_data = io.BytesIO(response.content)
-    with gzip.open(compressed_data, 'rt') as f:
-        content = f.read()
-        print("Uncompressed content:\n")
-        print(content)
-else:
-    print(f"Failed to download file: {response.status_code}")
-    print(response.text)
+    ```bash
+    curl -X 'GET' \
+      'http://uat.quantxpress.com/v1/api/instruments/gz/download' \
+      -H 'Authorization: Bearer {access_token}' \
+      --output instruments.json.gz
+    ```
+    *After downloading, you can extract it using terminal commands like `gunzip instruments.json.gz` or using GUI extraction tools like WinRAR or 7-Zip.*
 
+=== "Python"
 
-```
+    This script downloads the file, unzips it in memory, and parses the JSON seamlessly without needing to save it to your hard drive.
 
-Responses :
-Here is a sample response for an **Options Instrument** from the Instrument Master API:
+    ```python
+    import requests
+    import gzip
+    import io
+    import json
+
+    url = "http://uat.quantxpress.com/v1/api/instruments/gz/download"
+    headers = {
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+    }
+
+    response = requests.get(url, headers=headers)
+
+    if response.status_code == 200:
+        # Decompress directly from bytes
+        compressed_data = io.BytesIO(response.content)
+        with gzip.open(compressed_data, 'rt') as f:
+            data = json.load(f)
+            
+        print(f"Successfully loaded {len(data)} instruments!")
+        print("First instrument:", data[0])
+    else:
+        print(f"Failed: {response.status_code} - {response.text}")
+    ```
+
+=== "Node.js"
+
+    Node.js provides a built-in `zlib` module to handle gzip extraction easily. Ensure you set `responseType: 'arraybuffer'` so axios doesn't corrupt the binary data!
+
+    ```javascript
+    const axios = require('axios');
+    const zlib = require('zlib');
+
+    const url = 'http://uat.quantxpress.com/v1/api/instruments/gz/download';
+
+    axios.get(url, {
+      headers: { 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' },
+      responseType: 'arraybuffer' // Crucial for downloading binary gzip data
+    }).then(response => {
+      // Decompress the binary data
+      const unzipped = zlib.gunzipSync(response.data);
+      const instruments = JSON.parse(unzipped.toString());
+      
+      console.log(`Successfully loaded ${instruments.length} instruments!`);
+      console.log("First instrument:", instruments[0]);
+    }).catch(error => {
+      console.error('Error fetching instruments:', error.message);
+    });
+    ```
+
+---
+
+## Understanding the Response
+
+Once decompressed, the file will contain a JSON array of objects. Below is a sample object representing a single **Options Instrument**.
 
 ```json
 [
@@ -78,4 +123,23 @@ Here is a sample response for an **Options Instrument** from the Instrument Mast
 ]
 ```
 
+### Key Fields Explained
 
+| Field | Description |
+|-------|-------------|
+| `InstrumentId` | The unique numeric ID used for placing orders and fetching Live Market Data. |
+| `InstrumentName` | The exact string name used as an alternative identifier (`ExchangeSegment:Symbol...`). |
+| `ExchangeSegment` | Identifies the market (e.g., `NSECM` for Cash Equity, `NSEFO` for Futures & Options). |
+| `InstrumentType` | Determines if the instrument is `Equity`, `Futures`, or `Options`. |
+| `LotSize` | The minimum quantity you can buy/sell. Your order quantity must be a multiple of this number. |
+| `TickSize` | The minimum price movement allowed for this instrument. Your order price must be a multiple of this value. |
+
+---
+
+## Common Questions (FAQ)
+
+!!! question "Why am I getting weird gibberish characters when I print the response?"
+    You are trying to read the raw binary response as a standard text string. Because the file is GZIP compressed, you **must** use a GZIP library (like `gzip` in Python or `zlib` in Node.js) to decompress the response bytes first before trying to parse the JSON.
+
+!!! question "Do I need to download this every single day?"
+    **Yes.** Instruments (especially options and futures contracts) expire, and new ones are added daily. Furthermore, trading parameters like `PriceBandHigh` and `PriceBandLow` change every single day based on the previous day's closing prices. It is highly recommended to run an automated script to fetch this file every morning before the market opens.

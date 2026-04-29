@@ -169,4 +169,17 @@ h4 {
   color: #ffffff !important;
   background-color: rgba(255, 255, 255, 0.05) !important;
   border-bottom-color: rgba(255, 255, 255, 0.1) !important;
-}
+}
+
+/* ── Curved Search Bar ────────────────────────────── */
+.md-search__input,
+.md-search__form,
+.md-search__inner {
+  border-radius: 24px !important;
+}
+
+/* ── Fix Left Sidebar Scroll ────────────────────────────── */
+.md-sidebar--primary .md-sidebar__scrollwrap {
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+}

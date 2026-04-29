@@ -1,10 +1,9 @@
-# **Option Chain**
+# Option Chain API
 
-## **Overview**
+The **Option Chain API** provides the latest option chain data for a given symbol and expiry date. It returns detailed information about call and put options across multiple strike prices, including Live Market Prices, Open Interest, Implied Volatility, and the Option Greeks.
 
-The **Option Chain API** provides the latest option chain data for a given symbol and expiry date. It returns detailed information about call and put options across multiple strike prices, including Greeks, implied volatility, and pricing data.
-
-This API helps traders analyze market sentiment, volatility, and strike-level activity.
+!!! tip "Common Use Case"
+    This API helps traders analyze market sentiment, volatility, and strike-level activity. It is crucial for building option strategy dashboards, finding liquid strikes, or calculating risk metrics.
 
 ---
 
@@ -16,19 +15,18 @@ This API helps traders analyze market sentiment, volatility, and strike-level ac
 | ------ | ----------------------------------------------- |
 | POST   | `/marketfeed/optionChain`                       |
 
----
-
 ## Headers
 
-| Header        | Value            | Required |
-| ------------  | ---------------- | -------- |
-| Content-Type  | application/json | Yes      |
+| Header        | Value                 | Required |
+| ------------- | --------------------- | -------- |
+| Content-Type  | application/json      | Yes      |
 | Authorization | Bearer {access_token} | Yes      |
-| Accept        | `*/*`              | Yes      |
 
 ---
 
 ## Request Payload
+
+You must provide the underlying asset symbol and the specific expiration date you want to query.
 
 ```json
 {
@@ -37,30 +35,74 @@ This API helps traders analyze market sentiment, volatility, and strike-level ac
 }
 ```
 
-## Parameters
-|Parameter|	Type	|Required|	Description|
-|---------|--------|-------|-------------|
-|symbol	|string	|Yes	|Underlying asset symbol (e.g., NIFTY, BANKNIFTY, or equity symbol).|
-|expiryDate	|string	|Yes	|Expiry date in YYYY-MM-DD format.|
+### Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `symbol` | string | Yes | The underlying asset symbol (e.g., `NIFTY`, `BANKNIFTY`, or an equity symbol like `RELIANCE`). |
+| `expiryDate` | string | Yes | The exact expiry date formatted as `YYYY-MM-DD`. |
 
 ---
 
-## Example
+## Examples
 
-```bash
-curl -X POST http://uat.quantxpress.com/md-api/marketfeed/optionChain' \
-  -H 'Content-Type: application/json' \
-  -H 'Authorization: Bearer {access_token}' \
-  -H 'Accept: */*' \
-  -d '{
-    "symbol": "NIFTY",
-    "expiryDate": "2025-05-29"
-  }'
-```
+=== "cURL"
+
+    ```bash
+    curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/optionChain' \
+      -H 'Content-Type: application/json' \
+      -H 'Authorization: Bearer {access_token}' \
+      -d '{
+        "symbol": "NIFTY",
+        "expiryDate": "2025-05-29"
+      }'
+    ```
+
+=== "Python"
+
+    ```python
+    import requests
+
+    url = "http://uat.quantxpress.com/md-api/marketfeed/optionChain"
+    headers = {
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN",
+        "Content-Type": "application/json"
+    }
+    payload = {
+        "symbol": "NIFTY",
+        "expiryDate": "2025-05-29"
+    }
+
+    response = requests.post(url, json=payload, headers=headers)
+    print(response.json())
+    ```
+
+=== "Node.js"
+
+    ```javascript
+    const axios = require('axios');
+
+    const fetchOptionChain = async () => {
+      try {
+        const response = await axios.post('http://uat.quantxpress.com/md-api/marketfeed/optionChain', {
+          symbol: "NIFTY",
+          expiryDate: "2025-05-29"
+        }, {
+          headers: { 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' }
+        });
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error:", error.message);
+      }
+    };
+    fetchOptionChain();
+    ```
 
 ---
 
-## Successful Response (200 OK)
+## Understanding the Response
+
+A successful request returns the spot price of the underlying asset, the At-The-Money (ATM) strike, and an array of `chains` containing Call (CE) and Put (PE) data for each available strike price.
 
 ```json
 {
@@ -73,28 +115,28 @@ curl -X POST http://uat.quantxpress.com/md-api/marketfeed/optionChain' \
       {
         "strikePrice": 23800,
         "callOption": {
-          "gamma": 0,
-          "vega": 0,
-          "theta": 0,
-          "delta": 1,
-          "oiPercentage": 0,
-          "oi": 0,
+          "gamma": 0.001,
+          "vega": 12.5,
+          "theta": -5.2,
+          "delta": 0.85,
+          "oiPercentage": 2.5,
+          "oi": 15000,
           "ltp": 1042.8,
           "iv": 0.2,
           "price": 1013.5,
-          "rho": 0
+          "rho": 0.1
         },
         "putOption": {
-          "gamma": 0,
-          "vega": 0,
-          "theta": 0,
-          "delta": 0,
-          "oiPercentage": 0,
-          "oi": 0,
+          "gamma": 0.001,
+          "vega": 11.2,
+          "theta": -4.8,
+          "delta": -0.15,
+          "oiPercentage": -1.2,
+          "oi": 8000,
           "ltp": 8.85,
-          "iv": 0.2,
-          "price": 0,
-          "rho": 0
+          "iv": 0.22,
+          "price": 9.1,
+          "rho": -0.05
         }
       }
     ]
@@ -102,46 +144,51 @@ curl -X POST http://uat.quantxpress.com/md-api/marketfeed/optionChain' \
 }
 ```
 
----
-
-## Response Field Descriptions
-
 ### Root Fields
-|Field	|Type	|Description|
-|-------|-------|-----------|
-|status	|string	|Status of the request (success or error)|
-|data	|object	|Contains quote data mapped by instrument ID|
+| Field | Type | Description |
+|-------|------|-------------|
+| `status` | string | Status of the request (`success` or `error`). |
+| `data` | object | Contains the spot price and the option chain array. |
 
 ### Data Fields
-| Field      | Type   | Description                                               |
-| ---------- | ------ | --------------------------------------------------------- |
-| spotPrice  | float | Current market price of the underlying asset              |
-| expiryDate | string | Expiry date of the options contract (`YYYY-MM-DD`)        |
-| atm        | float | At-the-money strike price (closest to spot price)         |
-| chains     | array  | List of option data for different strike prices           |
+| Field | Type | Description |
+|-------|------|-------------|
+| `spotPrice` | float | Current Live Market Price (LTP) of the underlying asset. |
+| `expiryDate` | string | Expiry date of the requested options contract (`YYYY-MM-DD`). |
+| `atm` | float | At-The-Money strike price (the strike closest to the `spotPrice`). |
+| `chains` | array | List of option data mapped by different strike prices. |
 
 ### Chain Fields
-| Field        | Type   | Description                                   |
-| ------------ | ------ | --------------------------------------------- |
-| strikePrice  | float | Strike price of the option contract           |
-| callOption   | object | Call option (CE) data for the strike          |
-| putOption    | object | Put option (PE) data for the strike           |
+| Field | Type | Description |
+|-------|------|-------------|
+| `strikePrice` | float | Strike price of the option contract. |
+| `callOption` | object | Call option (**CE**) data for this specific strike. |
+| `putOption` | object | Put option (**PE**) data for this specific strike. |
 
 ### Call / Put Option Fields (CE & PE)
-| Field         | Type   | Description                                      |
-| ------------- | ------ | ------------------------------------------------ |
-| ltp           | float | Last traded price of the option                  |
-| price         | float | Last traded or closing price                     |
-| iv            | float | Implied volatility of the option                 |
-| delta         | float | Sensitivity of option price to underlying price  |
-| gamma         | float | Rate of change of delta                          |
-| theta         | float | Time decay of the option                         |
-| vega          | float | Sensitivity to volatility changes                |
-| rho           | float | Sensitivity to interest rate changes            |
-| oi            | float | Open interest (total outstanding contracts)      |
-| oiPercentage  | float | Change in open interest (percentage)             |
 
-## **Note:**  
- - `callOption` represents **CE (Call Option)**  
- - `putOption` represents **PE (Put Option)**  
- - Greeks (`delta`, `gamma`, `theta`, `vega`, `rho`) are key indicators for options trading analysis.
+!!! note "Understanding Greeks"
+    Greeks (`delta`, `gamma`, `theta`, `vega`, `rho`) are calculated dynamically based on live market conditions and are key indicators for analyzing risk and price sensitivity in options trading.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `ltp` | float | Last traded price of the option. |
+| `price` | float | Last traded or closing price. |
+| `iv` | float | Implied volatility of the option. |
+| `delta` | float | Sensitivity of option price to underlying price changes. |
+| `gamma` | float | Rate of change of delta. |
+| `theta` | float | Time decay of the option per day. |
+| `vega` | float | Sensitivity to volatility changes (1% change in IV). |
+| `rho` | float | Sensitivity to interest rate changes. |
+| `oi` | float | Open interest (total outstanding active contracts). |
+| `oiPercentage` | float | Percentage change in open interest. |
+
+---
+
+## Common Questions (FAQ)
+
+!!! question "Why are some of the Greeks returning as `0`?"
+    If you query strike prices that are extremely deep Out-Of-The-Money (OTM) or highly illiquid, the system may not have enough valid market data or implied volatility to accurately calculate the Greeks, resulting in a value of `0`.
+
+!!! question "How many strikes are returned?"
+    Typically, the API returns a balanced set of strikes both In-The-Money (ITM) and Out-Of-The-Money (OTM) around the ATM spot price.
