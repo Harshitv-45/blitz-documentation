@@ -130,8 +130,8 @@ Once decompressed, the file will contain a JSON array of objects. Below are samp
     | `instrumentId` | Numeric ID across the entire system. Use this for placing orders and fetching Live Market Data. |
     | `exchangeInstrumentId` | Numeric ID assigned to the instrument by the exchange itself. |
     | `instrumentName` | String name used as an alternative identifier. |
-    | `exchangeSegment` | Identifies the market segment (`NSECM` for Cash Equity). |
-    | `exchange` | The exchange code (e.g., `NSE`, `BSE`). |
+    | `exchangeSegment` | Identifies the market segment (Possibilities: `NSECM`, `BSECM`). |
+    | `exchange` | The exchange code (Possibilities: `NSE`, `BSE`). |
     | `expiryDate` | Returns `0001-01-01T00:00:00` since equities do not have an expiration date. |
     | `instrumentType` | The asset class (`Equity`). |
     | `lotSize` | Always `1` for cash equities. |
@@ -181,8 +181,8 @@ Once decompressed, the file will contain a JSON array of objects. Below are samp
     | `instrumentId` | Numeric ID across the entire system. Use this for placing orders and fetching Live Market Data. |
     | `exchangeInstrumentId` | Numeric ID assigned to the instrument by the exchange itself. |
     | `instrumentName` | String name representing the contract (e.g., `011NSETEST27NOV36FUT`). |
-    | `exchangeSegment` | Identifies the market segment (`NSEFO` for Futures & Options). |
-    | `exchange` | The exchange code (e.g., `NSE`, `MCX`). |
+    | `exchangeSegment` | Identifies the market segment (Possibilities: `NSEFO`, `BSEFO`, `MCXFO`, `BFO`, `NCDEX`). |
+    | `exchange` | The exchange code (Possibilities: `NSE`, `BSE`, `MCX`, `NCDEX`). |
     | `expiryDate` | The specific expiration date of the futures contract. |
     | `instrumentType` | The asset class (`Futures`). |
     | `lotSize` | The contract lot size. Order quantities must be a multiple of this number. |
@@ -232,12 +232,12 @@ Once decompressed, the file will contain a JSON array of objects. Below are samp
     | `instrumentId` | Numeric ID across the entire system. Use this for placing orders and fetching Live Market Data. |
     | `exchangeInstrumentId` | Numeric ID assigned to the instrument by the exchange itself. |
     | `instrumentName` | String name representing the contract (e.g., `360ONE28APR26440CE`). |
-    | `exchangeSegment` | Identifies the market segment (`NSEFO` for Futures & Options). |
-    | `exchange` | The exchange code (e.g., `NSE`, `MCX`). |
+    | `exchangeSegment` | Identifies the market segment (Possibilities: `NSEFO`, `BSEFO`, `MCXFO`, `BFO`, `NCDEX`). |
+    | `exchange` | The exchange code (Possibilities: `NSE`, `BSE`, `MCX`, `NCDEX`). |
     | `expiryDate` | The expiration date of the options contract. |
     | `instrumentType` | The asset class (`Options`). |
     | `lotSize` | The contract lot size. Order quantities must be a multiple of this number. |
-    | `optionType` | The option type (`CE` for Call, `PE` for Put). |
+    | `optionType` | The option type (Possibilities: `CE` for Call, `PE` for Put). |
     | `priceBandHigh` / `Low` | The upper/lower price limits. Orders placed outside this will be rejected. |
     | `strikePrice` | The strike price of the options contract (e.g., `440.0`). |
     | `symbol` | The base symbol of the underlying asset (e.g., `360ONE`). |
@@ -283,8 +283,8 @@ Once decompressed, the file will contain a JSON array of objects. Below are samp
     | `instrumentId` | Numeric ID across the entire system. Use this for placing orders and fetching Live Market Data. |
     | `exchangeInstrumentId` | Numeric ID assigned to the instrument by the exchange itself. |
     | `instrumentName` | String name representing the index (e.g., `BANKEX`). |
-    | `exchangeSegment` | Identifies the market segment (e.g., `BSECM` for Cash Market / Index). |
-    | `exchange` | The exchange code (e.g., `BSE`). |
+    | `exchangeSegment` | Identifies the market segment (Possibilities: `NSECM`, `BSECM`). |
+    | `exchange` | The exchange code (Possibilities: `NSE`, `BSE`). |
     | `expiryDate` | Returns `0001-01-01T00:00:00` since base indices do not have an expiration date. |
     | `instrumentType` | The asset class (`INDEX`). |
     | `lotSize` | The lot size (typically `1` for the base index). |

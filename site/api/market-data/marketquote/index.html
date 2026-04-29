@@ -1790,17 +1790,20 @@
 <hr />
 <h2 id="request-payload">Request Payload<a class="headerlink" href="#request-payload" title="Permanent link">&para;</a></h2>
 <p>You can request market quotes by providing either a list of <strong>Instrument IDs</strong> or a list of <strong>Instrument Names</strong>.</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Using Instrument IDs</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Using Instrument IDs</label><label for="__tabbed_1_2">Using Instrument Names</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;InstrumentIds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1010010002000001</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Using Instrument Names</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;InstrumentNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;NSECM:RELIANCE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;NSEFO:NIFTY28042026FUT&quot;</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <hr />
@@ -1852,7 +1855,9 @@
 <hr />
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>Here is how you can retrieve detailed Market Quotes programmatically.</p>
-<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">cURL</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">cURL</label><label for="__tabbed_2_2">Python</label><label for="__tabbed_2_3">Node.js</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/md-api/marketfeed/quote&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -1862,7 +1867,7 @@
 <span class="s1">  }&#39;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Python</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://uat.quantxpress.com/md-api/marketfeed/quote&quot;</span>
@@ -1888,7 +1893,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error fetching Market Quote&quot;</span><span class="p">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Node.js</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">fetchQuote</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -1914,6 +1919,7 @@
 <span class="p">};</span>
 <span class="nx">fetchQuote</span><span class="p">();</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <hr />

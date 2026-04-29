@@ -44,7 +44,7 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
 
 ## Examples
 
-=== "Using Instrument ID"
+=== "By Instrument ID"
 
     ```bash
     curl -X 'GET' \
@@ -54,87 +54,27 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
       -H 'Authorization: Bearer {access_token}'
     ```
     
-## **Response (By Instrument ID)**
+    #### Response
 
-```json
-{
-  "status": "success",
-  "message": "request processed successfully",
-  "data": {
-    "instrumentId": 110010000014366,
-    "exchange": "NSE",
-    "symbol": "IDEA",
-    "ticker": "VODAFONE IDEA LIMITED",
-    "exchangeSegment": "NSECM",
-    "instrumentType": "Equity",
-    "instrumentName": "IDEA",
-    "exchangeInstrumentId": 14366,
-    "marketInstrumentId": 110010000014366,
-    "series": "EQ",
-    "tickSize": 0.01,
-    "isin": "INE669E01016",
-    "priceBandHigh": 12.23,
-    "priceBandLow": 10.01,
-    "multiplier": 1,
-    "bvp": 1,
-    "priceType": "1.0",
-    "priceNumerator": 1,
-    "priceDenominator": 1,
-    "freezeQty": 999999,
-    "lotSize": 1,
-    "expiryDate": null,
-    "strikePrice": null,
-    "optionType": null,
-    "assetToken": null,
-    "underlyingInstrumentId": null,
-    "open": 0,
-    "high": 0,
-    "low": 0,
-    "close": 0,
-    "ltp": 0,
-    "reserve1": "",
-    "reserve2": "",
-    "reserve3": "",
-    "reserve4": "",
-    "reserve5": "",
-    "reserve6": "",
-    "reserve7": "",
-    "reserve8": ""
-  }
-}
-```
-
-=== "Using Instrument Name"
-
-    ```bash
-    curl -X 'GET' \
-      'http://uat.quantxpress.com/v1/api/instruments/NSECM:RELIANCE' \
-      -H 'Content-Type: application/json' \
-      -H 'Accept: application/json' \
-      -H 'Authorization: Bearer {access_token}'
-    ```
-
-## **Response (By Instrument Name)**
-
-```json
-{
-    "status": "success",
-    "message": "request processed successfully",
-    "data": {
-        "instrumentId": 110010000002885,
+    ```json
+    {
+      "status": "success",
+      "message": "request processed successfully",
+      "data": {
+        "instrumentId": 110010000014366,
         "exchange": "NSE",
-        "symbol": "RELIANCE",
-        "ticker": "RELIANCE INDUSTRIES LTD",
+        "symbol": "IDEA",
+        "ticker": "VODAFONE IDEA LIMITED",
         "exchangeSegment": "NSECM",
         "instrumentType": "Equity",
-        "instrumentName": "RELIANCE",
-        "exchangeInstrumentId": 2885,
-        "marketInstrumentId": 110010000002885,
+        "instrumentName": "IDEA",
+        "exchangeInstrumentId": 14366,
+        "marketInstrumentId": 110010000014366,
         "series": "EQ",
-        "tickSize": 0.1,
-        "isin": "INE002A01018",
-        "priceBandHigh": 1607.7,
-        "priceBandLow": 1315.5,
+        "tickSize": 0.01,
+        "isin": "INE669E01016",
+        "priceBandHigh": 12.23,
+        "priceBandLow": 10.01,
         "multiplier": 1,
         "bvp": 1,
         "priceType": "1.0",
@@ -147,11 +87,11 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
         "optionType": null,
         "assetToken": null,
         "underlyingInstrumentId": null,
-        "open": 1357,
-        "high": 1358.2,
-        "low": 1328,
-        "close": 1350.5,
-        "ltp": 1350.9,
+        "open": 0,
+        "high": 0,
+        "low": 0,
+        "close": 0,
+        "ltp": 0,
         "reserve1": "",
         "reserve2": "",
         "reserve3": "",
@@ -160,9 +100,69 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
         "reserve6": "",
         "reserve7": "",
         "reserve8": ""
+      }
     }
-}
-```
+    ```
+
+=== "By Instrument Name"
+
+    ```bash
+    curl -X 'GET' \
+      'http://uat.quantxpress.com/v1/api/instruments/NSECM:RELIANCE' \
+      -H 'Content-Type: application/json' \
+      -H 'Accept: application/json' \
+      -H 'Authorization: Bearer {access_token}'
+    ```
+
+    #### Response
+
+    ```json
+    {
+        "status": "success",
+        "message": "request processed successfully",
+        "data": {
+            "instrumentId": 110010000002885,
+            "exchange": "NSE",
+            "symbol": "RELIANCE",
+            "ticker": "RELIANCE INDUSTRIES LTD",
+            "exchangeSegment": "NSECM",
+            "instrumentType": "Equity",
+            "instrumentName": "RELIANCE",
+            "exchangeInstrumentId": 2885,
+            "marketInstrumentId": 110010000002885,
+            "series": "EQ",
+            "tickSize": 0.1,
+            "isin": "INE002A01018",
+            "priceBandHigh": 1607.7,
+            "priceBandLow": 1315.5,
+            "multiplier": 1,
+            "bvp": 1,
+            "priceType": "1.0",
+            "priceNumerator": 1,
+            "priceDenominator": 1,
+            "freezeQty": 999999,
+            "lotSize": 1,
+            "expiryDate": null,
+            "strikePrice": null,
+            "optionType": null,
+            "assetToken": null,
+            "underlyingInstrumentId": null,
+            "open": 1357,
+            "high": 1358.2,
+            "low": 1328,
+            "close": 1350.5,
+            "ltp": 1350.9,
+            "reserve1": "",
+            "reserve2": "",
+            "reserve3": "",
+            "reserve4": "",
+            "reserve5": "",
+            "reserve6": "",
+            "reserve7": "",
+            "reserve8": ""
+        }
+    }
+    ```
 
 ---
 

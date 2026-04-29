@@ -30,40 +30,20 @@ Using this API, you can fetch OHLC (Open, High, Low, Close) data along with volu
 
 You must provide the instrument identifier and the desired time interval for the candles.
 
-```json
-{
-  "instrument": "NSECM:IRFC",
-  "interval": "D"
-}
-```
-
 ### Parameters
 
 | Parameter  | Type   | Required | Description |
 |------------|--------|----------|--------------|
-| `instrument` | string | Yes      | The exact instrument name or numeric ID (e.g., `NSECM:IRFC`, `NSEFO:NIFTY28042026FUT`, or `1010010002000001`). |
+| `instrument` | string | Yes      | The exact instrument name (e.g., `IRFC`, `RELIANCE`). |
 | `interval`   | string | Yes      | Time interval of the candle data. |
-
-### Supported Intervals
-| Interval Code | Represents |
-|---------------|------------|
-| `1` | 1 Minute |
-| `5` | 5 Minutes |
-| `15` | 15 Minutes |
-| `30` | 30 Minutes |
-| `60` | 60 Minutes (1 Hour) |
-| `D` | Daily (1 Day) |
-
-!!! info "Instrument Naming Convention"
-    When fetching by Instrument Name, the string follows a specific pattern:
-    * **Cash Market (Equity)**: `[ExchangeSegment]:[Symbol]` (e.g., `NSECM:RELIANCE`)
-    * **Futures & Options**: `[ExchangeSegment]:[Symbol][Date][Strike][OptionType]` (e.g., `NSEFO:NIFTY2804202625000CE`)
 
 ---
 
-## Examples
+## Supported Intervals & Examples
 
-=== "cURL"
+Below are the supported intervals. Select an interval to see the exact cURL request and a sample JSON response.
+
+=== "1 Min"
 
     ```bash
     curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/historicalData' \
@@ -71,49 +51,261 @@ You must provide the instrument identifier and the desired time interval for the
       -H 'Authorization: Bearer {access_token}' \
       -H 'Accept: */*' \
       -d '{
-        "instrument": "NSECM:IRFC",
+        "instrument": "IRFC",
+        "interval": "1"
+      }'
+    ```
+
+    #### Response
+
+    ```json
+    [
+      {
+          "open": 115.9,
+          "high": 115.97,
+          "low": 115.8,
+          "close": 115.94,
+          "volume": 82563,
+          "oi": 0,
+          "timestamp": "10-02-2026 09:32:00"
+      },
+      {
+          "open": 115.99,
+          "high": 115.99000000000001,
+          "low": 115.83,
+          "close": 115.9,
+          "volume": 38996,
+          "oi": 0,
+          "timestamp": "10-02-2026 09:31:00"
+      },
+      {
+          "open": 116,
+          "high": 116,
+          "low": 115.89,
+          "close": 116,
+          "volume": 130817,
+          "oi": 0,
+          "timestamp": "10-02-2026 09:30:00"
+      },
+    ]
+    ```
+
+=== "5 Min"
+
+    ```bash
+    curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/historicalData' \
+      -H 'Content-Type: application/json' \
+      -H 'Authorization: Bearer {access_token}' \
+      -H 'Accept: */*' \
+      -d '{
+        "instrument": "RELIANCE",
+        "interval": "5"
+      }'
+    ```
+
+    #### Response
+
+    ```json
+    [
+      {
+          "open": 1467.4,
+          "high": 1467.6000000000001,
+          "low": 1466.4,
+          "close": 1466.9,
+          "volume": 28183,
+          "oi": 0,
+          "timestamp": "10-02-2026 09:30:00"
+      },
+      {
+          "open": 1465.1,
+          "high": 1467.6000000000001,
+          "low": 1464.5,
+          "close": 1467.2,
+          "volume": 63461,
+          "oi": 0,
+          "timestamp": "10-02-2026 09:25:00"
+      },
+      {
+          "open": 1466.4,
+          "high": 1466.4,
+          "low": 1464.5,
+          "close": 1464.8,
+          "volume": 85113,
+          "oi": 0,
+          "timestamp": "10-02-2026 09:20:00"
+      },
+
+    ]
+    ```
+
+=== "15 Min"
+
+    ```bash
+    curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/historicalData' \
+      -H 'Content-Type: application/json' \
+      -H 'Authorization: Bearer {access_token}' \
+      -H 'Accept: */*' \
+      -d '{
+        "instrument": "TCS",
+        "interval": "15"
+      }'
+    ```
+
+    #### Response
+
+    ```json
+    [
+      {
+          "open": 2964.9,
+          "high": 2968.5,
+          "low": 2964.2000000000003,
+          "close": 2965.9,
+          "volume": 41763,
+          "oi": 0,
+          "timestamp": "10-02-2026 09:30:00"
+      },
+      {
+          "open": 2957.8,
+          "high": 2965.4,
+          "low": 2954,
+          "close": 2965,
+          "volume": 138733,
+          "oi": 0,
+          "timestamp": "10-02-2026 09:15:00"
+      }
+    ]
+    ```
+
+=== "30 Min"
+
+    ```bash
+    curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/historicalData' \
+      -H 'Content-Type: application/json' \
+      -H 'Authorization: Bearer {access_token}' \
+      -H 'Accept: */*' \
+      -d '{
+        "instrument": "IRFC",
+        "interval": "30"
+      }'
+    ```
+
+    #### Response
+
+    ```json
+    [
+      {
+        "open": 147810,
+        "high": 148195,
+        "low": 147610,
+        "close": 147880,
+        "volume": 181,
+        "oi": 0,
+        "timestamp": "10-02-2026 09:45:00"
+      },
+      {
+        "open": 147145,
+        "high": 148290,
+        "low": 147010,
+        "close": 147820,
+        "volume": 1228,
+        "oi": 0,
+        "timestamp": "10-02-2026 09:15:00"
+      }
+    ]
+    ```
+
+=== "60 Min"
+
+    ```bash
+    curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/historicalData' \
+      -H 'Content-Type: application/json' \
+      -H 'Authorization: Bearer {access_token}' \
+      -H 'Accept: */*' \
+      -d '{
+        "instrument": "RELIANCE",
+        "interval": "60"
+      }'
+    ```
+
+    #### Response
+
+    ```json
+    [
+      {
+          "open": 1419.2,
+          "high": 1432.3,
+          "low": 1415.7,
+          "close": 1430.1,
+          "volume": 7763478,
+          "oi": 0,
+          "timestamp": "29-04-2026 15:00:00"
+      },
+      {
+          "open": 1415.6,
+          "high": 1419.4,
+          "low": 1411.5,
+          "close": 1419.3,
+          "volume": 3659628,
+          "oi": 0,
+          "timestamp": "29-04-2026 14:00:00"
+      },
+      {
+          "open": 1415.3,
+          "high": 1419.3,
+          "low": 1414.3,
+          "close": 1415.5,
+          "volume": 3742500,
+          "oi": 0,
+          "timestamp": "29-04-2026 13:00:00"
+      },
+    ]
+    ```
+
+=== "1 Day"
+
+    ```bash
+    curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/historicalData' \
+      -H 'Content-Type: application/json' \
+      -H 'Authorization: Bearer {access_token}' \
+      -H 'Accept: */*' \
+      -d '{
+        "instrument": "NIFTY",
         "interval": "D"
       }'
     ```
 
-=== "Python"
+    #### Response
 
-    ```python
-    import requests
-
-    url = "http://uat.quantxpress.com/md-api/marketfeed/historicalData"
-    headers = {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN",
-        "Content-Type": "application/json"
-    }
-    payload = {
-        "instrument": "NSECM:IRFC",
-        "interval": "D"
-    }
-
-    response = requests.post(url, json=payload, headers=headers)
-    print(response.json())
-    ```
-
-=== "Node.js"
-
-    ```javascript
-    const axios = require('axios');
-
-    const fetchHistory = async () => {
-      try {
-        const response = await axios.post('http://uat.quantxpress.com/md-api/marketfeed/historicalData', {
-          instrument: "NSECM:IRFC",
-          interval: "D"
-        }, {
-          headers: { 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' }
-        });
-        console.log(response.data);
-      } catch (error) {
-        console.error("Error:", error.message);
+    ```json
+    [
+      {
+          "open": 24044.9,
+          "high": 24181.75,
+          "low": 23958.05,
+          "close": 24016.5,
+          "volume": 44752,
+          "oi": 0,
+          "timestamp": "28-04-2026 09:15:00"
+      },
+      {
+          "open": 23965.35,
+          "high": 24130.3,
+          "low": 23952,
+          "close": 24110.2,
+          "volume": 44634,
+          "oi": 0,
+          "timestamp": "27-04-2026 09:15:00"
+      },
+      {
+          "open": 24109.55,
+          "high": 24203.350000000002,
+          "low": 23815.350000000002,
+          "close": 23903.95,
+          "volume": 44573,
+          "oi": 0,
+          "timestamp": "24-04-2026 09:15:00"
       }
-    };
-    fetchHistory();
+    ]
     ```
 
 ---
@@ -121,20 +313,6 @@ You must provide the instrument identifier and the desired time interval for the
 ## Understanding the Response
 
 A successful request returns an array of OHLC candle objects sorted chronologically.
-
-```json
-[
-  {
-    "open": 115.1,
-    "high": 116.7,
-    "low": 115.1,
-    "close": 115.6,
-    "volume": 8940523,
-    "oi": 0,
-    "timestamp": "10-02-2026 09:15:00"
-  }
-]
-```
 
 ### Response Field Descriptions
 
@@ -145,7 +323,7 @@ A successful request returns an array of OHLC candle objects sorted chronologica
 | `low` | number | Lowest price traded during the interval |
 | `close` | number | Closing price of the interval |
 | `volume` | number | Total number of shares or contracts traded during this period |
-| `oi` | number | Open interest (Only applicable and populated for derivative instruments) |
+| `oi` | number | Open interest |
 | `timestamp` | string | Date and start time of the candle (`DD-MM-YYYY HH:mm:ss`) |
 
 

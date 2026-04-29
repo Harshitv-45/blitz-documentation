@@ -46,8 +46,6 @@ You must provide the underlying asset symbol and the specific expiration date yo
 
 ## Examples
 
-=== "cURL"
-
     ```bash
     curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/optionChain' \
       -H 'Content-Type: application/json' \
@@ -58,45 +56,6 @@ You must provide the underlying asset symbol and the specific expiration date yo
       }'
     ```
 
-=== "Python"
-
-    ```python
-    import requests
-
-    url = "http://uat.quantxpress.com/md-api/marketfeed/optionChain"
-    headers = {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN",
-        "Content-Type": "application/json"
-    }
-    payload = {
-        "symbol": "NIFTY",
-        "expiryDate": "2025-05-29"
-    }
-
-    response = requests.post(url, json=payload, headers=headers)
-    print(response.json())
-    ```
-
-=== "Node.js"
-
-    ```javascript
-    const axios = require('axios');
-
-    const fetchOptionChain = async () => {
-      try {
-        const response = await axios.post('http://uat.quantxpress.com/md-api/marketfeed/optionChain', {
-          symbol: "NIFTY",
-          expiryDate: "2025-05-29"
-        }, {
-          headers: { 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' }
-        });
-        console.log(response.data);
-      } catch (error) {
-        console.error("Error:", error.message);
-      }
-    };
-    fetchOptionChain();
-    ```
 
 ---
 

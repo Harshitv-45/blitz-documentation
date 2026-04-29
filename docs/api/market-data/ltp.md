@@ -31,34 +31,83 @@ POST /marketfeed/ltp
 
 ---
 
-## Request Payload
-
-You can request the Last Trading Price (LTP) by providing either a list of **Instrument IDs** or a list of **Instrument Names**.
-
-=== "Using Instrument IDs"
-
-    ```json
-    {
-      "InstrumentIds": [1010010002000001, 1010010002000003]
-    }
-    ```
-
-=== "Using Instrument Names"
-
-    ```json
-    {
-      "InstrumentNames": ["NSECM:RELIANCE", "NSEFO:NIFTY28042026FUT"]
-    }
-    ```
-
----
-
 ## Parameters
 
 | Parameter | Type | Required | Description |
 | --------- | ---- | -------- | ----------- |
 | `InstrumentIds` | array of Long | No* | List of numeric instrument identifiers. (*Required if `InstrumentNames` is not provided). |
 | `InstrumentNames` | array of String | No* | List of exact instrument names. (*Required if `InstrumentIds` is not provided). |
+
+---
+
+## Request Payload & Examples
+
+You can request the Last Trading Price (LTP) by providing either a list of **Instrument IDs** or a list of **Instrument Names**.
+
+=== "By Instrument ID"
+
+    ```bash
+    curl -X 'POST' \
+      'http://uat.quantxpress.com/md-api/marketfeed/ltp' \
+      -H 'Content-Type: application/json' \
+      -H 'Authorization: Bearer {access_token}' \
+      -H 'Accept: */*' \
+      -d '{
+        "InstrumentIds": [110010002000001, 110010002000002]
+      }'
+    ```
+
+    #### Response
+
+    ```json
+    {
+        "status": "success",
+        "data": {
+            "110010002000001": {
+                "instrumentId": 110010002000001,
+                "ltp": 24188.10
+            },
+            "110010002000002": {
+                "instrumentId": 110010002000002,
+                "ltp": 56308.30
+            }
+        }
+    }
+    ```
+
+=== "By Instrument Name"
+
+    ```bash
+    curl -X 'POST' \
+      'http://uat.quantxpress.com/md-api/marketfeed/ltp' \
+      -H 'Content-Type: application/json' \
+      -H 'Authorization: Bearer {access_token}' \
+      -H 'Accept: */*' \
+      -d '{
+        "InstrumentNames": ["NSECM:RELIANCE", "NSEFO:NIFTY28042026FUT"]
+      }'
+    ```
+
+    #### Response
+
+    ```json
+    {
+        "status": "success",
+        "data": {
+            "NSECM:RELIANCE": {
+                "instrumentName": "NSECM:RELIANCE",
+                "ltp": 1350.90
+            },
+            "NSEFO:NIFTY28042026FUT": {
+                "instrumentName": "NSEFO:NIFTY28042026FUT",
+                "ltp": 24500.00
+            }
+        }
+    }
+    ```
+
+---
+
 
 !!! info "Instrument Naming Convention"
     When fetching by Instrument Name, the string follows a specific pattern based on the segment:
@@ -73,93 +122,9 @@ You can request the Last Trading Price (LTP) by providing either a list of **Ins
 
 ---
 
-## Examples
-
-Here is how you can retrieve the LTP programmatically. You can send either `InstrumentIds` or `InstrumentNames`.
-
-=== "cURL"
-
-    ```bash
-    curl -X 'POST' \
-      'http://uat.quantxpress.com/md-api/marketfeed/ltp' \
-      -H 'Content-Type: application/json' \
-      -H 'Authorization: Bearer {access_token}' \
-      -H 'Accept: */*' \
-      -d '{
-        "InstrumentIds": [110010002000001, 110010002000002]
-      }'
-    ```
-
-=== "Python"
-
-    ```python
-    import requests
-
-    url = "http://uat.quantxpress.com/md-api/marketfeed/ltp"
-    headers = {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN",
-        "Content-Type": "application/json"
-    }
-    payload = {
-        # Using Instrument Names instead of IDs
-        "InstrumentNames": ["NSECM:RELIANCE", "NSEFO:NIFTY28042026FUT"]
-    }
-
-    response = requests.post(url, json=payload, headers=headers)
-    
-    if response.status_code == 200:
-        data = response.json().get("data", {})
-        for key, value in data.items():
-            print(f"Instrument {key} LTP: {value.get('ltp')}")
-    else:
-        print("Error fetching LTP")
-    ```
-
-=== "Node.js"
-
-    ```javascript
-    const axios = require('axios');
-
-    const fetchLTP = async () => {
-      try {
-        const response = await axios.post('http://uat.quantxpress.com/md-api/marketfeed/ltp', {
-          InstrumentIds: [110010002000001, 110010002000002]
-        }, {
-          headers: { 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' }
-        });
-        
-        const data = response.data.data;
-        Object.keys(data).forEach(id => {
-            console.log(`Instrument ID ${id} LTP is ${data[id].ltp}`);
-        });
-      } catch (error) {
-        console.error("Error:", error.message);
-      }
-    };
-    fetchLTP();
-    ```
-
----
-
 ## Understanding the Response
 
 The response object maps the requested Instrument ID (or Name) directly to its Live Trading Data, allowing for extremely fast key-value lookups in your application.
-
-```json
-{
-    "status": "success",
-    "data": {
-        "110010002000001": {
-            "instrumentId": 110010002000001,
-            "ltp": 24188.10
-        },
-        "110010002000002": {
-            "instrumentId": 110010002000002,
-            "ltp": 56308.30
-        }
-    }
-}
-```
 
 ### Root Fields
 | Field   | Type   | Description                                  |
