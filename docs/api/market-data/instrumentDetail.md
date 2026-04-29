@@ -1,6 +1,6 @@
 # **Instrument Detail**
 
-The **Instrument Detail API** allows you to retrieve detailed information about a trading instrument using its instrument ID.
+The **Instrument Detail API** allows you to retrieve detailed information about a trading instrument using its instrument ID or instrument name.
 
 Using this API, you can fetch instrument metadata such as symbol details, exchange information, price bands, tick size, lot size, and other trading parameters.
 
@@ -213,7 +213,7 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
 | low                    | float       | Lowest traded price                                  |
 | close                  | float       | Closing price                                        |
 | ltp                    | float       | Last traded price                                    |
-| reserve1–reserve8      | string       | Reserved fields for future use                       |
+| reserve1–reserve8      | string       | Reserved fields                                      |
 
 ---
 

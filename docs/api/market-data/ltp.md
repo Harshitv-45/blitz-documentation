@@ -176,13 +176,3 @@ Inside each object within the `data` dictionary:
 | `instrumentId` | integer | Unique numeric identifier of the instrument. |
 | `instrumentName` | string | Name or symbol of the instrument (if requested by Name). |
 | `ltp` | float | **Last Traded Price** of the instrument. |
-
----
-
-## Common Questions (FAQ)
-
-!!! question "What happens if I request an invalid or expired instrument?"
-    The API will simply omit invalid or expired instruments from the `data` object. Always verify that the key exists in the response payload before attempting to read its `ltp`.
-
-!!! question "Can I request both IDs and Names in the same payload?"
-    It is heavily recommended to use **either** `InstrumentIds` **or** `InstrumentNames` in a single request, rather than mixing them, to ensure you can reliably map the response keys back to your application state.

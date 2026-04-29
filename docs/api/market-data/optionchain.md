@@ -180,15 +180,6 @@ A successful request returns the spot price of the underlying asset, the At-The-
 | `theta` | float | Time decay of the option per day. |
 | `vega` | float | Sensitivity to volatility changes (1% change in IV). |
 | `rho` | float | Sensitivity to interest rate changes. |
-| `oi` | float | Open interest (total outstanding active contracts). |
+| `oi` | float | Open interest. |
 | `oiPercentage` | float | Percentage change in open interest. |
 
----
-
-## Common Questions (FAQ)
-
-!!! question "Why are some of the Greeks returning as `0`?"
-    If you query strike prices that are extremely deep Out-Of-The-Money (OTM) or highly illiquid, the system may not have enough valid market data or implied volatility to accurately calculate the Greeks, resulting in a value of `0`.
-
-!!! question "How many strikes are returned?"
-    Typically, the API returns a balanced set of strikes both In-The-Money (ITM) and Out-Of-The-Money (OTM) around the ATM spot price.

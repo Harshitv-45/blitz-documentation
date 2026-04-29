@@ -148,12 +148,4 @@ A successful request returns an array of OHLC candle objects sorted chronologica
 | `oi` | number | Open interest (Only applicable and populated for derivative instruments) |
 | `timestamp` | string | Date and start time of the candle (`DD-MM-YYYY HH:mm:ss`) |
 
----
 
-## Common Questions (FAQ)
-
-!!! question "What timezone are the timestamps in?"
-    Typically, market data timestamps are returned in **IST (Indian Standard Time)**. Make sure your local charting libraries parse this correctly.
-
-!!! question "Why is Open Interest (`oi`) returning as `0`?"
-    The `oi` field represents Open Interest, which is only applicable for Futures and Options contracts. If you query a Cash Market (Equity) instrument like `IRFC`, the `oi` will always be `0`.
