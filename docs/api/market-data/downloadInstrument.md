@@ -91,88 +91,209 @@ Here are a few ways to download and read the file programmatically:
 
 ## Understanding the Response
 
-Once decompressed, the file will contain a JSON array of objects. Below is a sample object representing  **Options Instrument**.
+Once decompressed, the file will contain a JSON array of objects. Below are sample objects representing different types of instruments.
 
-```json
-[
-  {
-    "instrumentId": 110010000011536,
-    "exchangeInstrumentId": 11536,
-    "instrumentName": "TCS",
-    "exchangeSegment": "NSECM",
-    "exchange": "NSE",
-    "expiryDate": "0001-01-01T00:00:00",
-    "instrumentType": "Equity",
-    "lotSize": 1,
-    "optionType": "",
-    "priceBandHigh": 2636.5,
-    "priceBandLow": 2157.3,
-    "strikePrice": 0,
-    "symbol": "TCS",
-    "tickSize": 0.1,
-    "freezeQty": 999999,
-    "ticker": "TATA CONSULTANCY SERV LT",
-    "multiplier": 1,
-    "open": 0,
-    "high": 0,
-    "low": 0,
-    "close": 0,
-    "ltp": 0,
-    "isin": "INE467B01029"
-  },
-  {
-    "instrumentId": 110010000002885,
-    "exchangeInstrumentId": 2885,
-    "instrumentName": "RELIANCE",
-    "exchangeSegment": "NSECM",
-    "exchange": "NSE",
-    "expiryDate": "0001-01-01T00:00:00",
-    "instrumentType": "Equity",
-    "lotSize": 1,
-    "optionType": "",
-    "priceBandHigh": 1460.5,
-    "priceBandLow": 1195.1,
-    "strikePrice": 0,
-    "symbol": "RELIANCE",
-    "tickSize": 0.1,
-    "freezeQty": 999999,
-    "ticker": "RELIANCE INDUSTRIES LTD",
-    "multiplier": 1,
-    "open": 0,
-    "high": 0,
-    "low": 0,
-    "close": 0,
-    "ltp": 0,
-    "isin": "INE002A01018"
-  }
-]
-```
+=== "Equity"
 
-### Key Fields Explained
+    ```json
+    {
+      "instrumentId": 110010000002885,
+      "exchangeInstrumentId": 2885,
+      "instrumentName": "RELIANCE",
+      "exchangeSegment": "NSECM",
+      "exchange": "NSE",
+      "expiryDate": "0001-01-01T00:00:00",
+      "instrumentType": "Equity",
+      "lotSize": 1,
+      "optionType": "",
+      "priceBandHigh": 1460.5,
+      "priceBandLow": 1195.1,
+      "strikePrice": 0,
+      "symbol": "RELIANCE",
+      "tickSize": 0.1,
+      "freezeQty": 999999,
+      "ticker": "RELIANCE INDUSTRIES LTD",
+      "multiplier": 1,
+      "open": 0,
+      "high": 0,
+      "low": 0,
+      "close": 0,
+      "ltp": 0,
+      "isin": "INE002A01018"
+    }
+    ```
 
-| Field | Description |
-|-------|-------------|
-| `instrumentId` | The unique numeric ID across the entire system. Use this for placing orders and fetching Live Market Data. |
-| `exchangeInstrumentId` | The internal numeric ID assigned to the instrument by the exchange itself. |
-| `instrumentName` | The exact string name used as an alternative identifier (`ExchangeSegment:Symbol` or similar format). |
-| `exchangeSegment` | Identifies the market segment (e.g., `NSECM` for Cash Equity, `NSEFO` for Futures & Options). |
-| `exchange` | The exchange code (e.g., `NSE`, `BSE`, `MCX`). |
-| `expiryDate` | Expiration date of the contract. Returns `0001-01-01T00:00:00` for Equities without an expiry. |
-| `instrumentType` | The asset class. Can be `Equity`, `Futures`, or `Options`. |
-| `lotSize` | The minimum quantity you can buy/sell. Order quantities must be a multiple of this number. |
-| `optionType` | The option type (`CE` for Call, `PE` for Put). Empty for Equities and Futures. |
-| `priceBandHigh` | The upper circuit limit. Orders placed above this price will be rejected by the exchange. |
-| `priceBandLow` | The lower circuit limit. Orders placed below this price will be rejected by the exchange. |
-| `strikePrice` | The strike price for options contracts. Returns `0` for Equities and Futures. |
-| `symbol` | The base symbol of the underlying asset (e.g., `TCS`, `RELIANCE`). |
-| `tickSize` | The minimum price movement allowed for this instrument. Your order price must be a multiple of this value. |
-| `freezeQty` | Maximum quantity allowed in a single order by the exchange. Orders exceeding this will be frozen/rejected. |
-| `ticker` | Full company name or descriptive ticker name (e.g., `TATA CONSULTANCY SERV LT`). |
-| `multiplier` | The value multiplier for calculating total contract value. |
-| `open` | Opening price of the day (often `0` before the market opens or if illiquid). |
-| `high` | Highest traded price of the day. |
-| `low` | Lowest traded price of the day. |
-| `close` | The previous day's closing price. |
-| `ltp` | Last traded price from the master snapshot. |
-| `isin` | International Securities Identification Number (ISIN) for the instrument. |
+    #### Equity Fields Explained
+
+    | Field | Description |
+    |-------|-------------|
+    | `instrumentId` | Numeric ID across the entire system. Use this for placing orders and fetching Live Market Data. |
+    | `exchangeInstrumentId` | Numeric ID assigned to the instrument by the exchange itself. |
+    | `instrumentName` | String name used as an alternative identifier. |
+    | `exchangeSegment` | Identifies the market segment (`NSECM` for Cash Equity). |
+    | `exchange` | The exchange code (e.g., `NSE`, `BSE`). |
+    | `expiryDate` | Returns `0001-01-01T00:00:00` since equities do not have an expiration date. |
+    | `instrumentType` | The asset class (`Equity`). |
+    | `lotSize` | Always `1` for cash equities. |
+    | `optionType` | Empty (`""`) since equities are not options. |
+    | `priceBandHigh` / `Low` | The upper/lower circuit limits. Orders placed outside this will be rejected. |
+    | `strikePrice` | Returns `0` for equities. |
+    | `symbol` | The base symbol (e.g., `RELIANCE`). |
+    | `tickSize` | The minimum price movement allowed for this instrument. |
+    | `freezeQty` | Maximum quantity allowed in a single order by the exchange. |
+    | `ticker` | Full company name (e.g., `RELIANCE INDUSTRIES LTD`). |
+    | `isin` | International Securities Identification Number (ISIN) for the instrument. |
+
+=== "Future"
+
+    ```json
+    {
+      "instrumentId": 263320000036687,
+      "exchangeInstrumentId": 36687,
+      "instrumentName": "011NSETEST27NOV36FUT",
+      "exchangeSegment": "NSEFO",
+      "exchange": "NSE",
+      "expiryDate": "2036-11-27T00:00:00+00:00",
+      "instrumentType": "Futures",
+      "lotSize": 50,
+      "optionType": "XX",
+      "priceBandHigh": 220,
+      "priceBandLow": 180,
+      "strikePrice": 0,
+      "symbol": "011NSETEST",
+      "tickSize": 0.05,
+      "freezeQty": 100000,
+      "ticker": "011NSETEST 27NOV36 FUT",
+      "multiplier": 1,
+      "open": 0,
+      "high": 0,
+      "low": 0,
+      "close": 0,
+      "ltp": 0,
+      "isin": ""
+    }
+    ```
+
+    #### Future Fields Explained
+
+    | Field | Description |
+    |-------|-------------|
+    | `instrumentId` | Numeric ID across the entire system. Use this for placing orders and fetching Live Market Data. |
+    | `exchangeInstrumentId` | Numeric ID assigned to the instrument by the exchange itself. |
+    | `instrumentName` | String name representing the contract (e.g., `011NSETEST27NOV36FUT`). |
+    | `exchangeSegment` | Identifies the market segment (`NSEFO` for Futures & Options). |
+    | `exchange` | The exchange code (e.g., `NSE`, `MCX`). |
+    | `expiryDate` | The specific expiration date of the futures contract. |
+    | `instrumentType` | The asset class (`Futures`). |
+    | `lotSize` | The contract lot size. Order quantities must be a multiple of this number. |
+    | `optionType` | Empty (`""`) since this is a futures contract. |
+    | `priceBandHigh` / `Low` | The upper/lower circuit limits for the contract. |
+    | `strikePrice` | Returns `0` since futures don't have strike prices. |
+    | `symbol` | The base symbol of the underlying asset (e.g., `011NSETEST`). |
+    | `tickSize` | The minimum price movement allowed for this instrument. |
+    | `freezeQty` | Maximum quantity allowed in a single order by the exchange. |
+    | `ticker` | Display name of the contract (e.g., `011NSETEST 27NOV36 FUT`). |
+    | `isin` | Usually empty (`""`) for derivatives. |
+
+=== "Option"
+
+    ```json
+    {
+      "instrumentId": 261180000035082,
+      "exchangeInstrumentId": 35082,
+      "instrumentName": "360ONE28APR26440CE",
+      "exchangeSegment": "NSEFO",
+      "exchange": "NSE",
+      "expiryDate": "2026-04-28T00:00:00+00:00",
+      "instrumentType": "Options",
+      "lotSize": 500,
+      "optionType": "CE",
+      "priceBandHigh": 668.7,
+      "priceBandLow": 531.1,
+      "strikePrice": 440,
+      "symbol": "360ONE",
+      "tickSize": 0.05,
+      "freezeQty": 20000,
+      "ticker": "360ONE 28APR26 440 CE",
+      "multiplier": 1,
+      "open": 0,
+      "high": 0,
+      "low": 0,
+      "close": 0,
+      "ltp": 0,
+      "isin": ""
+    }
+    ```
+
+    #### Option Fields Explained
+
+    | Field | Description |
+    |-------|-------------|
+    | `instrumentId` | Numeric ID across the entire system. Use this for placing orders and fetching Live Market Data. |
+    | `exchangeInstrumentId` | Numeric ID assigned to the instrument by the exchange itself. |
+    | `instrumentName` | String name representing the contract (e.g., `360ONE28APR26440CE`). |
+    | `exchangeSegment` | Identifies the market segment (`NSEFO` for Futures & Options). |
+    | `exchange` | The exchange code (e.g., `NSE`, `MCX`). |
+    | `expiryDate` | The expiration date of the options contract. |
+    | `instrumentType` | The asset class (`Options`). |
+    | `lotSize` | The contract lot size. Order quantities must be a multiple of this number. |
+    | `optionType` | The option type (`CE` for Call, `PE` for Put). |
+    | `priceBandHigh` / `Low` | The upper/lower price limits. Orders placed outside this will be rejected. |
+    | `strikePrice` | The strike price of the options contract (e.g., `440.0`). |
+    | `symbol` | The base symbol of the underlying asset (e.g., `360ONE`). |
+    | `tickSize` | The minimum price movement allowed for this instrument. |
+    | `freezeQty` | Maximum quantity allowed in a single order by the exchange. |
+    | `ticker` | Display name of the contract (e.g., `360ONE 28APR26 440 CE`). |
+    | `isin` | Usually empty (`""`) for derivatives. |
+
+=== "Index"
+
+    ```json
+    {
+      "instrumentId": 1110010000300047,
+      "exchangeInstrumentId": 300047,
+      "instrumentName": "BANKEX",
+      "exchangeSegment": "BSECM",
+      "exchange": "BSE",
+      "expiryDate": "0001-01-01T00:00:00",
+      "instrumentType": "INDEX",
+      "lotSize": 1,
+      "optionType": "",
+      "priceBandHigh": 0,
+      "priceBandLow": 0,
+      "strikePrice": 0,
+      "symbol": "BANKEX",
+      "tickSize": 0,
+      "freezeQty": 1,
+      "ticker": "BANKEX",
+      "multiplier": 1,
+      "open": 0,
+      "high": 0,
+      "low": 0,
+      "close": 0,
+      "ltp": 0,
+      "isin": ""
+    }
+    ```
+
+    #### Index Fields Explained
+
+    | Field | Description |
+    |-------|-------------|
+    | `instrumentId` | Numeric ID across the entire system. Use this for placing orders and fetching Live Market Data. |
+    | `exchangeInstrumentId` | Numeric ID assigned to the instrument by the exchange itself. |
+    | `instrumentName` | String name representing the index (e.g., `BANKEX`). |
+    | `exchangeSegment` | Identifies the market segment (e.g., `BSECM` for Cash Market / Index). |
+    | `exchange` | The exchange code (e.g., `BSE`). |
+    | `expiryDate` | Returns `0001-01-01T00:00:00` since base indices do not have an expiration date. |
+    | `instrumentType` | The asset class (`INDEX`). |
+    | `lotSize` | The lot size (typically `1` for the base index). |
+    | `optionType` | Empty (`""`) since this is an index. |
+    | `priceBandHigh` / `Low` | The upper/lower price limits (typically `0` for an index). |
+    | `strikePrice` | Returns `0` since an index does not have a strike price. |
+    | `symbol` | The base symbol of the underlying index (e.g., `BANKEX`). |
+    | `tickSize` | The minimum price movement allowed for this instrument. |
+    | `freezeQty` | Maximum quantity allowed in a single order by the exchange. |
+    | `ticker` | Display name of the index (e.g., `BANKEX`). |
+    | `isin` | Usually empty (`""`) for indices. |
 
