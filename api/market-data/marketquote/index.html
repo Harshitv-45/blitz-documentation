@@ -885,6 +885,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -927,23 +929,14 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#market-quote" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Market Quote
-      
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#endpoint" class="md-nav__link">
@@ -968,10 +961,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-payload" class="md-nav__link">
+  <a href="#request-payload-examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Request Payload
+        Request Payload &amp; Examples
       
     </span>
   </a>
@@ -983,28 +976,6 @@
     <span class="md-ellipsis">
       
         Parameters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Examples
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#successful-response-200-ok" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Successful Response (200 OK)
       
     </span>
   </a>
@@ -1585,23 +1556,14 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#market-quote" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Market Quote
-      
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#endpoint" class="md-nav__link">
@@ -1626,10 +1588,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-payload" class="md-nav__link">
+  <a href="#request-payload-examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Request Payload
+        Request Payload &amp; Examples
       
     </span>
   </a>
@@ -1641,28 +1603,6 @@
     <span class="md-ellipsis">
       
         Parameters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Examples
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#successful-response-200-ok" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Successful Response (200 OK)
       
     </span>
   </a>
@@ -1736,9 +1676,7 @@
 
 
 
-  <h1>Market Quote</h1>
-
-<h2 id="market-quote"><strong>Market Quote</strong><a class="headerlink" href="#market-quote" title="Permanent link">&para;</a></h2>
+<h1 id="market-quote"><strong>Market Quote</strong><a class="headerlink" href="#market-quote" title="Permanent link">&para;</a></h1>
 <p>The Market Quote API allows you to retrieve detailed real-time market data for one or more instruments.</p>
 <p>Using this API, you can fetch comprehensive quote information including last traded price (LTP), last traded quantity (LTQ), volume, OHLC data, open interest, and market depth (bid/ask levels).</p>
 <p>This API is essential for building trading dashboards, order books, and real-time analytics systems.</p>
@@ -1788,19 +1726,104 @@
 </tbody>
 </table>
 <hr />
-<h2 id="request-payload">Request Payload<a class="headerlink" href="#request-payload" title="Permanent link">&para;</a></h2>
+<h2 id="request-payload-examples">Request Payload &amp; Examples<a class="headerlink" href="#request-payload-examples" title="Permanent link">&para;</a></h2>
 <p>You can request market quotes by providing either a list of <strong>Instrument IDs</strong> or a list of <strong>Instrument Names</strong>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Using Instrument IDs</label><label for="__tabbed_1_2">Using Instrument Names</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">By Instrument ID</label><label for="__tabbed_1_2">By Instrument Name</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/md-api/marketfeed/quote&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: */*&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;InstrumentIds&quot;: [1010010000002885]</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+<h4 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;InstrumentIds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1010010002000001</span><span class="p">]</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;1010010000002885&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;instrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1010010000002885</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2885</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RELIANCE&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1748339153</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1419.4</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ltq&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ltt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1748339153</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;atp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1422.41</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;vtt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1651139</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tbq&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tsq&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;oi&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1426.1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1429.7</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1418.1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1434.8</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;bidLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;askLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/md-api/marketfeed/quote&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: */*&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;InstrumentNames&quot;: [&quot;NSECM:RELIANCE&quot;, &quot;NSEFO:NIFTY28042026FUT&quot;]</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+<h4 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;InstrumentNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;NSECM:RELIANCE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;NSEFO:NIFTY28042026FUT&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;1010010000002885&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;instrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1010010000002885</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2885</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RELIANCE&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1748339153</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1419.4</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ltq&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ltt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1748339153</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;atp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1422.41</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;vtt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1651139</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tbq&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tsq&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;oi&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1426.1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1429.7</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1418.1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1434.8</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;bidLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;askLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;101002000012345&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;instrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">101002000012345</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO:NIFTY28042026FUT&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1748339155</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">24500.0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ltq&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ltt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1748339155</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;atp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">24495.5</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;vtt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">354890</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tbq&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tsq&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;oi&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1500000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">24400.0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">24550.0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">24350.0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">24380.0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;bidLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;askLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
@@ -1852,106 +1875,6 @@
 </li>
 </ul>
 </div>
-<hr />
-<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<p>Here is how you can retrieve detailed Market Quotes programmatically.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">cURL</label><label for="__tabbed_2_2">Python</label><label for="__tabbed_2_3">Node.js</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/md-api/marketfeed/quote&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: */*&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">    &quot;InstrumentNames&quot;: [&quot;NSEFO:NIFTY28042026FUT&quot;]</span>
-<span class="s1">  }&#39;</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://uat.quantxpress.com/md-api/marketfeed/quote&quot;</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer YOUR_ACCESS_TOKEN&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
-<span class="p">}</span>
-<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;InstrumentNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;NSECM:RELIANCE&quot;</span><span class="p">,</span> <span class="s2">&quot;NSEFO:NIFTY28042026FUT&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="p">{})</span>
-    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">quote</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- Quote for </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> ---&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LTP: </span><span class="si">{</span><span class="n">quote</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ltp&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Volume: </span><span class="si">{</span><span class="n">quote</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;volume&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Buy Qty: </span><span class="si">{</span><span class="n">quote</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;totalBuyQty&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Sell Qty: </span><span class="si">{</span><span class="n">quote</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;totalSellQty&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error fetching Market Quote&quot;</span><span class="p">)</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">fetchQuote</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;http://uat.quantxpress.com/md-api/marketfeed/quote&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">InstrumentNames</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;NSECM:RELIANCE&quot;</span><span class="p">]</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Authorization&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bearer YOUR_ACCESS_TOKEN&#39;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">    </span><span class="p">});</span>
-
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
-<span class="w">    </span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">data</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">id</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">quote</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">[</span><span class="nx">id</span><span class="p">];</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n--- Quote for </span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb"> ---`</span><span class="p">);</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`LTP: </span><span class="si">${</span><span class="nx">quote</span><span class="p">.</span><span class="nx">ltp</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Volume: </span><span class="si">${</span><span class="nx">quote</span><span class="p">.</span><span class="nx">volume</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Best Bid: </span><span class="si">${</span><span class="nx">quote</span><span class="p">.</span><span class="nx">bidPrice</span><span class="si">}</span><span class="sb"> (</span><span class="si">${</span><span class="nx">quote</span><span class="p">.</span><span class="nx">bidQty</span><span class="si">}</span><span class="sb">)`</span><span class="p">);</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Best Ask: </span><span class="si">${</span><span class="nx">quote</span><span class="p">.</span><span class="nx">askPrice</span><span class="si">}</span><span class="sb"> (</span><span class="si">${</span><span class="nx">quote</span><span class="p">.</span><span class="nx">askQty</span><span class="si">}</span><span class="sb">)`</span><span class="p">);</span>
-<span class="w">    </span><span class="p">});</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">};</span>
-<span class="nx">fetchQuote</span><span class="p">();</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<hr />
-<h2 id="successful-response-200-ok">Successful Response (200 OK)<a class="headerlink" href="#successful-response-200-ok" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;1010010000002885&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;instrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1010010000002885</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;exchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2885</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RELIANCE&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1748339153</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1419.4</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;ltq&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;ltt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1748339153</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;atp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1422.41</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;vtt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1651139</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;tbq&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;tsq&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;oi&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1426.1</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1429.7</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1418.1</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1434.8</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;bidLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;askLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
 <hr />
 <h2 id="response-field-descriptions">Response Field Descriptions<a class="headerlink" href="#response-field-descriptions" title="Permanent link">&para;</a></h2>
 <h3 id="root-fields">Root Fields<a class="headerlink" href="#root-fields" title="Permanent link">&para;</a></h3>

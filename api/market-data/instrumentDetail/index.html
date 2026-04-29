@@ -905,28 +905,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#response-by-instrument-id" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response (By Instrument ID)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-by-instrument-name" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response (By Instrument Name)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#response-field-descriptions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1644,28 +1622,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#response-by-instrument-id" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response (By Instrument ID)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-by-instrument-name" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response (By Instrument Name)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#response-field-descriptions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1818,7 +1774,7 @@
 </tbody>
 </table>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Using Instrument ID</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">By Instrument ID</label><label for="__tabbed_1_2">By Instrument Name</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -1827,10 +1783,7 @@
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span>
 </code></pre></div>
-</div>
-</div>
-</div>
-<h2 id="response-by-instrument-id"><strong>Response (By Instrument ID)</strong><a class="headerlink" href="#response-by-instrument-id" title="Permanent link">&para;</a></h2>
+<h4 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;request processed successfully&quot;</span><span class="p">,</span>
@@ -1877,8 +1830,7 @@
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Using Instrument Name</label></div>
-<div class="tabbed-content">
+</div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/instruments/NSECM:RELIANCE&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -1886,10 +1838,7 @@
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span>
 </code></pre></div>
-</div>
-</div>
-</div>
-<h2 id="response-by-instrument-name"><strong>Response (By Instrument Name)</strong><a class="headerlink" href="#response-by-instrument-name" title="Permanent link">&para;</a></h2>
+<h4 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;request processed successfully&quot;</span><span class="p">,</span>
@@ -1936,6 +1885,9 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+</div>
+</div>
+</div>
 <hr />
 <h2 id="response-field-descriptions"><strong>Response Field Descriptions</strong><a class="headerlink" href="#response-field-descriptions" title="Permanent link">&para;</a></h2>
 <h3 id="root-response-fields">Root Response Fields<a class="headerlink" href="#root-response-fields" title="Permanent link">&para;</a></h3>

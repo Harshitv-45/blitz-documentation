@@ -905,17 +905,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-payload" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request Payload
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -927,10 +916,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
+  <a href="#request-payload-examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Examples
+        Request Payload &amp; Examples
       
     </span>
   </a>
@@ -1588,17 +1577,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-payload" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request Payload
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1610,10 +1588,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
+  <a href="#request-payload-examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Examples
+        Request Payload &amp; Examples
       
     </span>
   </a>
@@ -1729,25 +1707,6 @@
 </tbody>
 </table>
 <hr />
-<h2 id="request-payload">Request Payload<a class="headerlink" href="#request-payload" title="Permanent link">&para;</a></h2>
-<p>You can request the Last Trading Price (LTP) by providing either a list of <strong>Instrument IDs</strong> or a list of <strong>Instrument Names</strong>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Using Instrument IDs</label><label for="__tabbed_1_2">Using Instrument Names</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;InstrumentIds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1010010002000001</span><span class="p">,</span><span class="w"> </span><span class="mi">1010010002000003</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;InstrumentNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;NSECM:RELIANCE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;NSEFO:NIFTY28042026FUT&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<hr />
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1773,6 +1732,66 @@
 </tr>
 </tbody>
 </table>
+<hr />
+<h2 id="request-payload-examples">Request Payload &amp; Examples<a class="headerlink" href="#request-payload-examples" title="Permanent link">&para;</a></h2>
+<p>You can request the Last Trading Price (LTP) by providing either a list of <strong>Instrument IDs</strong> or a list of <strong>Instrument Names</strong>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">By Instrument ID</label><label for="__tabbed_1_2">By Instrument Name</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/md-api/marketfeed/ltp&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: */*&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;InstrumentIds&quot;: [110010002000001, 110010002000002]</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+<h4 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;110010002000001&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010002000001</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">24188.10</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;110010002000002&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010002000002</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">56308.30</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/md-api/marketfeed/ltp&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: */*&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;InstrumentNames&quot;: [&quot;NSECM:RELIANCE&quot;, &quot;NSEFO:NIFTY28042026FUT&quot;]</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+<h4 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;NSECM:RELIANCE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM:RELIANCE&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1350.90</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;NSEFO:NIFTY28042026FUT&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO:NIFTY28042026FUT&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">24500.00</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
 <div class="admonition info">
 <p class="admonition-title">Instrument Naming Convention</p>
 <p>When fetching by Instrument Name, the string follows a specific pattern based on the segment:</p>
@@ -1794,85 +1813,8 @@
 </ul>
 </div>
 <hr />
-<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<p>Here is how you can retrieve the LTP programmatically. You can send either <code>InstrumentIds</code> or <code>InstrumentNames</code>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">cURL</label><label for="__tabbed_2_2">Python</label><label for="__tabbed_2_3">Node.js</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/md-api/marketfeed/ltp&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: */*&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">    &quot;InstrumentIds&quot;: [110010002000001, 110010002000002]</span>
-<span class="s1">  }&#39;</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://uat.quantxpress.com/md-api/marketfeed/ltp&quot;</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer YOUR_ACCESS_TOKEN&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
-<span class="p">}</span>
-<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="c1"># Using Instrument Names instead of IDs</span>
-    <span class="s2">&quot;InstrumentNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;NSECM:RELIANCE&quot;</span><span class="p">,</span> <span class="s2">&quot;NSEFO:NIFTY28042026FUT&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="p">{})</span>
-    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Instrument </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> LTP: </span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ltp&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error fetching LTP&quot;</span><span class="p">)</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">fetchLTP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;http://uat.quantxpress.com/md-api/marketfeed/ltp&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">InstrumentIds</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">110010002000001</span><span class="p">,</span><span class="w"> </span><span class="mf">110010002000002</span><span class="p">]</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Authorization&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bearer YOUR_ACCESS_TOKEN&#39;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">    </span><span class="p">});</span>
-
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
-<span class="w">    </span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">data</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">id</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Instrument ID </span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb"> LTP is </span><span class="si">${</span><span class="nx">data</span><span class="p">[</span><span class="nx">id</span><span class="p">].</span><span class="nx">ltp</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<span class="w">    </span><span class="p">});</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">};</span>
-<span class="nx">fetchLTP</span><span class="p">();</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<hr />
 <h2 id="understanding-the-response">Understanding the Response<a class="headerlink" href="#understanding-the-response" title="Permanent link">&para;</a></h2>
 <p>The response object maps the requested Instrument ID (or Name) directly to its Live Trading Data, allowing for extremely fast key-value lookups in your application.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;110010002000001&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010002000001</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">24188.10</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;110010002000002&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010002000002</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">56308.30</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
 <h3 id="root-fields">Root Fields<a class="headerlink" href="#root-fields" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
