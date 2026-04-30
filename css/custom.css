@@ -183,3 +183,9 @@ h4 {
   overflow-y: auto !important;
   overscroll-behavior: contain;
 }
+
+/* ── Full Width Layout ────────────────────────────── */
+/* Ensures sidebars don't leave their places at the edges when zooming out */
+.md-grid {
+  max-width: 100%;
+}
