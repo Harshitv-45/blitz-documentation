@@ -46,8 +46,8 @@ You must provide the underlying asset symbol and the specific expiration date yo
 
 ## Examples
 
-    ```bash
-    curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/optionChain' \
+```bash
+curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/optionChain' \
       -H 'Content-Type: application/json' \
       -H 'Authorization: Bearer {access_token}' \
       -d '{

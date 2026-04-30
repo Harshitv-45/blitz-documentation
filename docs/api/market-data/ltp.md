@@ -94,13 +94,13 @@ You can request the Last Trading Price (LTP) by providing either a list of **Ins
     {
         "status": "success",
         "data": {
-            "NSECM:RELIANCE": {
-                "instrumentName": "NSECM:RELIANCE",
-                "ltp": 1350.90
+            "110010002000001": {
+                "instrumentId": 110010002000001,
+                "ltp": 24188.10
             },
-            "NSEFO:NIFTY28042026FUT": {
-                "instrumentName": "NSEFO:NIFTY28042026FUT",
-                "ltp": 24500.00
+            "110010002000002": {
+                "instrumentId": 110010002000002,
+                "ltp": 56308.30
             }
         }
     }

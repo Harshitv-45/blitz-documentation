@@ -25,21 +25,21 @@ theme:
     - search.suggest
 
   palette:
-    # Dark Mode (Default)
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/weather-night
-        name: Switch to light mode
-
-    # Light Mode
+    # Light Mode (Default)
     - scheme: default
       primary: indigo
       accent: indigo
       toggle:
-        icon: material/weather-sunny
+        icon: material/weather-night
         name: Switch to dark mode
+
+    # Dark Mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
 
 markdown_extensions:
   - admonition
