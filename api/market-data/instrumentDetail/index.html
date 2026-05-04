@@ -928,10 +928,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#instrument-fields" class="md-nav__link">
+  <a href="#instrument-fields-explained" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instrument Fields
+        Instrument Fields Explained
       
     </span>
   </a>
@@ -1645,10 +1645,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#instrument-fields" class="md-nav__link">
+  <a href="#instrument-fields-explained" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instrument Fields
+        Instrument Fields Explained
       
     </span>
   </a>
@@ -1778,62 +1778,178 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">By Instrument ID</label><label for="__tabbed_1_2">By Instrument Name</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Equity</label><label for="__tabbed_2_2">Futures</label><label for="__tabbed_2_3">Options</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/instruments/110010000014366&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/instruments/110010000001134&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span>
 </code></pre></div>
 <h4 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;request processed successfully&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000014366</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VODAFONE IDEA LIMITED&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;instrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Equity&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">14366</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;marketInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000014366</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;series&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EQ&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;tickSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;isin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INE669E01016&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">12.23</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.01</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;multiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;bvp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;priceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;priceNumerator&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;priceDenominator&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;freezeQty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;lotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;expiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;strikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;optionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;assetToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;underlyingInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;reserve1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;reserve2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;reserve3&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;reserve4&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;reserve5&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;reserve6&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;reserve7&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;reserve8&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<span class="w">  </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;request processed successfully&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000001134</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;APOLLO&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;APOLLO MICRO SYSTEMS LTD&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Equity&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;APOLLO&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1134</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;marketInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000001134</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;series&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EQ&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;tickSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;isin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INE713T01028&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">356.55</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">237.75</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;multiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;bvp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceNumerator&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceDenominator&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;freezeQty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;expiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;strikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;optionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;assetToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;underlyingInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve3&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve4&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve5&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve6&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve7&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve8&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Equity</label><label for="__tabbed_2_2">Options</label><label for="__tabbed_2_3">Futures</label></div>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/instruments/261810000062367&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span>
+</code></pre></div>
+<h4 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;request processed successfully&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">261810000062367</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ASIANPAINT&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ASIANPAINT 30JUN26 FUT&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Futures&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ASIANPAINT30JUN26FUT&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">62367</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;marketInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">210010000062367</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;series&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;XX&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;tickSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;isin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2698.7</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2208.1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;multiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;bvp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceNumerator&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceDenominator&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;freezeQty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;expiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-06-30T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;strikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;optionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;XX&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;assetToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">236</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;underlyingInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve3&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve4&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve5&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve6&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve7&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve8&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/instruments/261810000069489&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span>
+</code></pre></div>
+<h4 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;request processed successfully&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">261810000069489</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ASIANPAINT&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ASIANPAINT 30JUN26 1820 CE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Options&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ASIANPAINT30JUN261820CE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">69489</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;marketInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">210010000069489</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;series&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;XX&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;tickSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;isin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">752.2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">531.2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;multiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;bvp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceNumerator&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceDenominator&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;freezeQty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;expiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-06-30T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;strikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1820</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;optionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;assetToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">236</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;underlyingInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.5&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve3&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve4&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve5&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve6&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve7&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve8&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Equity</label><label for="__tabbed_3_2">Options</label><label for="__tabbed_3_3">Futures</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -1842,7 +1958,7 @@
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span>
 </code></pre></div>
-<h4 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h4>
+<h4 id="response_3">Response<a class="headerlink" href="#response_3" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;request processed successfully&quot;</span><span class="p">,</span>
@@ -1892,48 +2008,48 @@
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/instruments/NSEFO:NIFTY28APR2625000CE&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/instruments//NSEFO:RELIANCE24FEB26680CE&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span>
 </code></pre></div>
-<h4 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">&para;</a></h4>
+<h4 id="response_4">Response<a class="headerlink" href="#response_4" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;request processed successfully&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000003456</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY Option&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">260550000062583</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RELIANCE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RELIANCE 24FEB26 680 CE&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;instrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Options&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY28APR2625000CE&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3456</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;marketInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000003456</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;series&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OPT&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RELIANCE24FEB26680CE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">62583</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;marketInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">210010000062583</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;series&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;XX&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;tickSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;isin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INE002A01018&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">200.0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;isin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">840.25</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">726.35</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;multiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;bvp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;priceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;priceNumerator&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;priceDenominator&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;freezeQty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;lotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;expiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-04-28&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;strikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">25000.0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;freezeQty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;expiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-24T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;strikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">680</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;optionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CE&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;assetToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;underlyingInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000001234</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">150.0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">160.0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">140.0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">155.0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">158.0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;reserve1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;assetToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2885</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;underlyingInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reserve1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5.25&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;reserve2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;reserve3&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;reserve4&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
@@ -1952,7 +2068,7 @@
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer {access_token}&#39;</span>
 </code></pre></div>
-<h4 id="response_3">Response<a class="headerlink" href="#response_3" title="Permanent link">&para;</a></h4>
+<h4 id="response_5">Response<a class="headerlink" href="#response_5" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;request processed successfully&quot;</span><span class="p">,</span>
@@ -1966,7 +2082,7 @@
 <span class="w">        </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY28APR26FUT&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3457</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;marketInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000003457</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;series&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FUT&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;series&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;XX&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;tickSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;isin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INE002A01018&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">25000.0</span><span class="p">,</span>
@@ -2035,7 +2151,10 @@
 </tbody>
 </table>
 <hr />
-<h3 id="instrument-fields">Instrument Fields<a class="headerlink" href="#instrument-fields" title="Permanent link">&para;</a></h3>
+<h3 id="instrument-fields-explained">Instrument Fields Explained<a class="headerlink" href="#instrument-fields-explained" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Equity</label><label for="__tabbed_4_2">Futures</label><label for="__tabbed_4_3">Options</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <table>
 <thead>
 <tr>
@@ -2068,12 +2187,12 @@
 <tr>
 <td>exchangeSegment</td>
 <td>string</td>
-<td>Exchange segment (e.g., <code>NSECM</code>, <code>NSEFO</code>)</td>
+<td>Exchange segment</td>
 </tr>
 <tr>
 <td>instrumentType</td>
 <td>string</td>
-<td>Type of instrument (<code>Equity</code>, <code>Futures</code>, <code>Options</code>, etc.)</td>
+<td>Type of instrument</td>
 </tr>
 <tr>
 <td>instrumentName</td>
@@ -2093,7 +2212,7 @@
 <tr>
 <td>series</td>
 <td>string</td>
-<td>Instrument series (e.g., EQ for equity)</td>
+<td>Instrument series</td>
 </tr>
 <tr>
 <td>tickSize</td>
@@ -2132,48 +2251,48 @@
 </tr>
 <tr>
 <td>priceNumerator</td>
-<td>float</td>
-<td>Price calculation numerator</td>
+<td>integer</td>
+<td>Price numerator</td>
 </tr>
 <tr>
 <td>priceDenominator</td>
-<td>float</td>
-<td>Price calculation denominator</td>
+<td>integer</td>
+<td>Price denominator</td>
 </tr>
 <tr>
 <td>freezeQty</td>
-<td>float</td>
-<td>Maximum quantity allowed per order</td>
+<td>integer</td>
+<td>Freeze quantity</td>
 </tr>
 <tr>
 <td>lotSize</td>
-<td>float</td>
-<td>Minimum tradable quantity</td>
+<td>integer</td>
+<td>Size of the lot</td>
 </tr>
 <tr>
 <td>expiryDate</td>
-<td>integer/null</td>
-<td>Expiry date (for derivatives)</td>
+<td>null</td>
+<td>Not applicable for equities</td>
 </tr>
 <tr>
 <td>strikePrice</td>
-<td>float/null</td>
-<td>Strike price (for options)</td>
+<td>null</td>
+<td>Not applicable for equities</td>
 </tr>
 <tr>
 <td>optionType</td>
-<td>string/null</td>
-<td>Option type (<code>CE</code>/<code>PE</code>)</td>
+<td>null</td>
+<td>Not applicable for equities</td>
 </tr>
 <tr>
 <td>assetToken</td>
-<td>string/null</td>
-<td>Asset token reference</td>
+<td>null</td>
+<td>Not applicable for equities</td>
 </tr>
 <tr>
 <td>underlyingInstrumentId</td>
-<td>integer/null</td>
-<td>Underlying instrument ID (for derivatives)</td>
+<td>null</td>
+<td>Not applicable for equities</td>
 </tr>
 <tr>
 <td>open</td>
@@ -2207,6 +2326,355 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrumentId</td>
+<td>integer</td>
+<td>Unique internal identifier of the instrument</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>string</td>
+<td>Exchange where instrument is traded (e.g., <code>NSE</code>, <code>BSE</code>)</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Trading symbol of the instrument</td>
+</tr>
+<tr>
+<td>ticker</td>
+<td>string</td>
+<td>Full company or instrument name</td>
+</tr>
+<tr>
+<td>exchangeSegment</td>
+<td>string</td>
+<td>Exchange segment (e.g., <code>NSEFO</code>)</td>
+</tr>
+<tr>
+<td>instrumentType</td>
+<td>string</td>
+<td>Type of instrument (<code>Futures</code>)</td>
+</tr>
+<tr>
+<td>instrumentName</td>
+<td>string</td>
+<td>Name of the instrument</td>
+</tr>
+<tr>
+<td>exchangeInstrumentId</td>
+<td>integer</td>
+<td>Instrument identifier assigned by exchange</td>
+</tr>
+<tr>
+<td>marketInstrumentId</td>
+<td>integer</td>
+<td>Market-wide instrument identifier</td>
+</tr>
+<tr>
+<td>series</td>
+<td>string</td>
+<td>Instrument series (e.g., <code>XX</code>)</td>
+</tr>
+<tr>
+<td>tickSize</td>
+<td>float</td>
+<td>Minimum price movement allowed</td>
+</tr>
+<tr>
+<td>isin</td>
+<td>string</td>
+<td>International Securities Identification Number</td>
+</tr>
+<tr>
+<td>priceBandHigh</td>
+<td>float</td>
+<td>Upper price band limit</td>
+</tr>
+<tr>
+<td>priceBandLow</td>
+<td>float</td>
+<td>Lower price band limit</td>
+</tr>
+<tr>
+<td>multiplier</td>
+<td>float</td>
+<td>Contract multiplier</td>
+</tr>
+<tr>
+<td>bvp</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>priceType</td>
+<td>string</td>
+<td>Price type configuration</td>
+</tr>
+<tr>
+<td>priceNumerator</td>
+<td>integer</td>
+<td>Price numerator</td>
+</tr>
+<tr>
+<td>priceDenominator</td>
+<td>integer</td>
+<td>Price denominator</td>
+</tr>
+<tr>
+<td>freezeQty</td>
+<td>integer</td>
+<td>Freeze quantity</td>
+</tr>
+<tr>
+<td>lotSize</td>
+<td>integer</td>
+<td>Size of the lot</td>
+</tr>
+<tr>
+<td>expiryDate</td>
+<td>string</td>
+<td>Expiry date of the future contract</td>
+</tr>
+<tr>
+<td>strikePrice</td>
+<td>float</td>
+<td><code>0</code> for futures</td>
+</tr>
+<tr>
+<td>optionType</td>
+<td>string</td>
+<td><code>"XX"</code> for futures</td>
+</tr>
+<tr>
+<td>assetToken</td>
+<td>string/integer</td>
+<td>Asset token reference</td>
+</tr>
+<tr>
+<td>underlyingInstrumentId</td>
+<td>integer/null</td>
+<td>Underlying instrument ID</td>
+</tr>
+<tr>
+<td>open</td>
+<td>float</td>
+<td>Opening price</td>
+</tr>
+<tr>
+<td>high</td>
+<td>float</td>
+<td>Highest traded price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>float</td>
+<td>Lowest traded price</td>
+</tr>
+<tr>
+<td>close</td>
+<td>float</td>
+<td>Closing price</td>
+</tr>
+<tr>
+<td>ltp</td>
+<td>float</td>
+<td>Last traded price</td>
+</tr>
+<tr>
+<td>reserve1–reserve8</td>
+<td>string</td>
+<td>Reserved fields</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrumentId</td>
+<td>integer</td>
+<td>Unique internal identifier of the instrument</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>string</td>
+<td>Exchange where instrument is traded (e.g., <code>NSE</code>, <code>BSE</code>)</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Trading symbol of the instrument</td>
+</tr>
+<tr>
+<td>ticker</td>
+<td>string</td>
+<td>Full company or instrument name</td>
+</tr>
+<tr>
+<td>exchangeSegment</td>
+<td>string</td>
+<td>Exchange segment (e.g., <code>NSEFO</code>)</td>
+</tr>
+<tr>
+<td>instrumentType</td>
+<td>string</td>
+<td>Type of instrument (<code>Options</code>)</td>
+</tr>
+<tr>
+<td>instrumentName</td>
+<td>string</td>
+<td>Name of the instrument</td>
+</tr>
+<tr>
+<td>exchangeInstrumentId</td>
+<td>integer</td>
+<td>Instrument identifier assigned by exchange</td>
+</tr>
+<tr>
+<td>marketInstrumentId</td>
+<td>integer</td>
+<td>Market-wide instrument identifier</td>
+</tr>
+<tr>
+<td>series</td>
+<td>string</td>
+<td>Instrument series (e.g., <code>XX</code>)</td>
+</tr>
+<tr>
+<td>tickSize</td>
+<td>float</td>
+<td>Minimum price movement allowed</td>
+</tr>
+<tr>
+<td>isin</td>
+<td>string</td>
+<td>International Securities Identification Number</td>
+</tr>
+<tr>
+<td>priceBandHigh</td>
+<td>float</td>
+<td>Upper price band limit</td>
+</tr>
+<tr>
+<td>priceBandLow</td>
+<td>float</td>
+<td>Lower price band limit</td>
+</tr>
+<tr>
+<td>multiplier</td>
+<td>integer</td>
+<td>Contract multiplier</td>
+</tr>
+<tr>
+<td>bvp</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>priceType</td>
+<td>string</td>
+<td>Price type configuration</td>
+</tr>
+<tr>
+<td>priceNumerator</td>
+<td>integer</td>
+<td>Price numerator</td>
+</tr>
+<tr>
+<td>priceDenominator</td>
+<td>integer</td>
+<td>Price denominator</td>
+</tr>
+<tr>
+<td>freezeQty</td>
+<td>integer</td>
+<td>Freeze quantity</td>
+</tr>
+<tr>
+<td>lotSize</td>
+<td>integer</td>
+<td>Size of the lot</td>
+</tr>
+<tr>
+<td>expiryDate</td>
+<td>string</td>
+<td>Expiry date of the option contract</td>
+</tr>
+<tr>
+<td>strikePrice</td>
+<td>float</td>
+<td>Strike price for the option</td>
+</tr>
+<tr>
+<td>optionType</td>
+<td>string</td>
+<td>Option type (<code>CE</code> for Call, <code>PE</code> for Put)</td>
+</tr>
+<tr>
+<td>assetToken</td>
+<td>string/integer</td>
+<td>Asset token reference</td>
+</tr>
+<tr>
+<td>underlyingInstrumentId</td>
+<td>integer/null</td>
+<td>Underlying instrument ID</td>
+</tr>
+<tr>
+<td>open</td>
+<td>float</td>
+<td>Opening price</td>
+</tr>
+<tr>
+<td>high</td>
+<td>float</td>
+<td>Highest traded price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>float</td>
+<td>Lowest traded price</td>
+</tr>
+<tr>
+<td>close</td>
+<td>float</td>
+<td>Closing price</td>
+</tr>
+<tr>
+<td>ltp</td>
+<td>float</td>
+<td>Last traded price</td>
+</tr>
+<tr>
+<td>reserve1–reserve8</td>
+<td>string</td>
+<td>Reserved fields</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 <hr />
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
