@@ -1582,7 +1582,7 @@
 <h2 id="how-to-download-and-extract">How to Download and Extract<a class="headerlink" href="#how-to-download-and-extract" title="Permanent link">&para;</a></h2>
 <p>The downloaded file is a compressed GZIP file containing a massive JSON array. If you try to open the raw response directly as text, it will look like gibberish. You must decompress it first.</p>
 <p>Here are a few ways to download and read the file programmatically:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">cURL (Command Line)</label><label for="__tabbed_1_2">Python</label><label for="__tabbed_1_3">Node.js</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">cURL (Command Line)</label><label for="__tabbed_1_2">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>To download the file directly to your computer using your terminal:</p>
@@ -1615,27 +1615,6 @@
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 </div>
-<div class="tabbed-block">
-<p>Node.js provides a built-in <code>zlib</code> module to handle gzip extraction easily. Ensure you set <code>responseType: 'arraybuffer'</code> so axios doesn't corrupt the binary data!</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">zlib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;zlib&#39;</span><span class="p">);</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/instruments/gz/download&#39;</span><span class="p">;</span>
-
-<span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">responseType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;arraybuffer&#39;</span><span class="w"> </span><span class="c1">// Crucial for downloading binary gzip data</span>
-<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// Decompress the binary data</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">unzipped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">zlib</span><span class="p">.</span><span class="nx">gunzipSync</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">instruments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">unzipped</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
-
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Successfully loaded </span><span class="si">${</span><span class="nx">instruments</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> instruments!`</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;First instrument:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">instruments</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
-<span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error fetching instruments:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div>
-</div>
 </div>
 </div>
 <hr />
@@ -1654,19 +1633,19 @@
 <span class="w">  </span><span class="nt">&quot;instrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Equity&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;lotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;optionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1460.5</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1195.1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1607.7</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1315.5</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;strikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RELIANCE&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;tickSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;freezeQty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RELIANCE INDUSTRIES LTD&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;multiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1357</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1358.2</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1328</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1350.5</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ltp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1350.9</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;isin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INE002A01018&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -1716,8 +1695,12 @@
 <td>Empty (<code>""</code>) since equities are not options.</td>
 </tr>
 <tr>
-<td><code>priceBandHigh</code> / <code>Low</code></td>
-<td>The upper/lower circuit limits. Orders placed outside this will be rejected.</td>
+<td><code>priceBandHigh</code></td>
+<td>The upper circuit limit. Orders placed above this will be rejected.</td>
+</tr>
+<tr>
+<td><code>priceBandLow</code></td>
+<td>The lower circuit limit. Orders placed below this will be rejected.</td>
 </tr>
 <tr>
 <td><code>strikePrice</code></td>
@@ -1740,6 +1723,30 @@
 <td>Full company name (e.g., <code>RELIANCE INDUSTRIES LTD</code>).</td>
 </tr>
 <tr>
+<td><code>multiplier</code></td>
+<td>The contract multiplier (1 for cash equities).</td>
+</tr>
+<tr>
+<td><code>open</code></td>
+<td>The opening price.</td>
+</tr>
+<tr>
+<td><code>high</code></td>
+<td>The highest traded price.</td>
+</tr>
+<tr>
+<td><code>low</code></td>
+<td>The lowest traded price.</td>
+</tr>
+<tr>
+<td><code>close</code></td>
+<td>The closing price.</td>
+</tr>
+<tr>
+<td><code>ltp</code></td>
+<td>The last traded price.</td>
+</tr>
+<tr>
 <td><code>isin</code></td>
 <td>International Securities Identification Number (ISIN) for the instrument.</td>
 </tr>
@@ -1748,22 +1755,22 @@
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">263320000036687</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">36687</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;011NSETEST27NOV36FUT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">260550000059175</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">59175</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BANKNIFTY24FEB26FUT&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;expiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2036-11-27T00:00:00+00:00&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;expiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-24T05:30:00+05:30&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;instrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Futures&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;lotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;optionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;XX&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">220</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">66800.8</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">54655.2</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;strikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;011NSETEST&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;tickSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;freezeQty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;011NSETEST 27NOV36 FUT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BANKNIFTY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tickSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;freezeQty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BANKNIFTY 24FEB26 FUT&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;multiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
@@ -1792,7 +1799,7 @@
 </tr>
 <tr>
 <td><code>instrumentName</code></td>
-<td>String name representing the contract (e.g., <code>011NSETEST27NOV36FUT</code>).</td>
+<td>String name representing the contract (e.g., <code>BANKNIFTY24FEB26FUT</code>).</td>
 </tr>
 <tr>
 <td><code>exchangeSegment</code></td>
@@ -1819,8 +1826,12 @@
 <td>Empty (<code>""</code>) since this is a futures contract.</td>
 </tr>
 <tr>
-<td><code>priceBandHigh</code> / <code>Low</code></td>
-<td>The upper/lower circuit limits for the contract.</td>
+<td><code>priceBandHigh</code></td>
+<td>The upper circuit limit for the contract.</td>
+</tr>
+<tr>
+<td><code>priceBandLow</code></td>
+<td>The lower circuit limit for the contract.</td>
 </tr>
 <tr>
 <td><code>strikePrice</code></td>
@@ -1828,7 +1839,7 @@
 </tr>
 <tr>
 <td><code>symbol</code></td>
-<td>The base symbol of the underlying asset (e.g., <code>011NSETEST</code>).</td>
+<td>The base symbol of the underlying asset (e.g., <code>BANKNIFTY</code>).</td>
 </tr>
 <tr>
 <td><code>tickSize</code></td>
@@ -1840,7 +1851,31 @@
 </tr>
 <tr>
 <td><code>ticker</code></td>
-<td>Display name of the contract (e.g., <code>011NSETEST 27NOV36 FUT</code>).</td>
+<td>Display name of the contract (e.g., <code>BANKNIFTY 24FEB26 FUT</code>).</td>
+</tr>
+<tr>
+<td><code>multiplier</code></td>
+<td>The contract multiplier.</td>
+</tr>
+<tr>
+<td><code>open</code></td>
+<td>The opening price.</td>
+</tr>
+<tr>
+<td><code>high</code></td>
+<td>The highest traded price.</td>
+</tr>
+<tr>
+<td><code>low</code></td>
+<td>The lowest traded price.</td>
+</tr>
+<tr>
+<td><code>close</code></td>
+<td>The closing price.</td>
+</tr>
+<tr>
+<td><code>ltp</code></td>
+<td>The last traded price.</td>
 </tr>
 <tr>
 <td><code>isin</code></td>
@@ -1851,22 +1886,22 @@
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">261180000035082</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">35082</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;360ONE28APR26440CE&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">260550000059522</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">59522</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BANKNIFTY24FEB2636500CE&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSEFO&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;expiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-04-28T00:00:00+00:00&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;expiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-24T05:30:00+05:30&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;instrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Options&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;lotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;optionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CE&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">668.7</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">531.1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;strikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">440</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;360ONE&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">25766.9</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">22750.7</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;strikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">36500</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BANKNIFTY&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;tickSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;freezeQty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20000</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;360ONE 28APR26 440 CE&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;freezeQty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BANKNIFTY 24FEB26 36500 CE&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;multiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
@@ -1895,7 +1930,7 @@
 </tr>
 <tr>
 <td><code>instrumentName</code></td>
-<td>String name representing the contract (e.g., <code>360ONE28APR26440CE</code>).</td>
+<td>String name representing the contract (e.g., <code>BANKNIFTY24FEB2636500CE</code>).</td>
 </tr>
 <tr>
 <td><code>exchangeSegment</code></td>
@@ -1922,16 +1957,20 @@
 <td>The option type (Possibilities: <code>CE</code> for Call, <code>PE</code> for Put).</td>
 </tr>
 <tr>
-<td><code>priceBandHigh</code> / <code>Low</code></td>
-<td>The upper/lower price limits. Orders placed outside this will be rejected.</td>
+<td><code>priceBandHigh</code></td>
+<td>The upper price limit. Orders placed above this will be rejected.</td>
+</tr>
+<tr>
+<td><code>priceBandLow</code></td>
+<td>The lower price limit. Orders placed below this will be rejected.</td>
 </tr>
 <tr>
 <td><code>strikePrice</code></td>
-<td>The strike price of the options contract (e.g., <code>440.0</code>).</td>
+<td>The strike price of the options contract (e.g., <code>36500</code>).</td>
 </tr>
 <tr>
 <td><code>symbol</code></td>
-<td>The base symbol of the underlying asset (e.g., <code>360ONE</code>).</td>
+<td>The base symbol of the underlying asset (e.g., <code>BANKNIFTY</code>).</td>
 </tr>
 <tr>
 <td><code>tickSize</code></td>
@@ -1943,7 +1982,31 @@
 </tr>
 <tr>
 <td><code>ticker</code></td>
-<td>Display name of the contract (e.g., <code>360ONE 28APR26 440 CE</code>).</td>
+<td>Display name of the contract (e.g., <code>BANKNIFTY 24FEB26 36500 CE</code>).</td>
+</tr>
+<tr>
+<td><code>multiplier</code></td>
+<td>The contract multiplier.</td>
+</tr>
+<tr>
+<td><code>open</code></td>
+<td>The opening price.</td>
+</tr>
+<tr>
+<td><code>high</code></td>
+<td>The highest traded price.</td>
+</tr>
+<tr>
+<td><code>low</code></td>
+<td>The lowest traded price.</td>
+</tr>
+<tr>
+<td><code>close</code></td>
+<td>The closing price.</td>
+</tr>
+<tr>
+<td><code>ltp</code></td>
+<td>The last traded price.</td>
 </tr>
 <tr>
 <td><code>isin</code></td>
@@ -1954,11 +2017,11 @@
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1110010000300047</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">300047</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BANKEX&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BSECM&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BSE&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010002000002</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;exchangeInstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2000002</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;instrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY BANK&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;exchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;expiryDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0001-01-01T00:00:00&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;instrumentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INDEX&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;lotSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -1966,10 +2029,10 @@
 <span class="w">  </span><span class="nt">&quot;priceBandHigh&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;priceBandLow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;strikePrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BANKEX&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BANKNIFTY&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;tickSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;freezeQty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BANKEX&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ticker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY BANK&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;multiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;open&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
@@ -1998,7 +2061,7 @@
 </tr>
 <tr>
 <td><code>instrumentName</code></td>
-<td>String name representing the index (e.g., <code>BANKEX</code>).</td>
+<td>String name representing the index (e.g., <code>NIFTY BANK</code>).</td>
 </tr>
 <tr>
 <td><code>exchangeSegment</code></td>
@@ -2025,8 +2088,12 @@
 <td>Empty (<code>""</code>) since this is an index.</td>
 </tr>
 <tr>
-<td><code>priceBandHigh</code> / <code>Low</code></td>
-<td>The upper/lower price limits (typically <code>0</code> for an index).</td>
+<td><code>priceBandHigh</code></td>
+<td>The upper price limit (typically <code>0</code> for an index).</td>
+</tr>
+<tr>
+<td><code>priceBandLow</code></td>
+<td>The lower price limit (typically <code>0</code> for an index).</td>
 </tr>
 <tr>
 <td><code>strikePrice</code></td>
@@ -2034,7 +2101,7 @@
 </tr>
 <tr>
 <td><code>symbol</code></td>
-<td>The base symbol of the underlying index (e.g., <code>BANKEX</code>).</td>
+<td>The base symbol of the underlying index (e.g., <code>BANKNIFTY</code>).</td>
 </tr>
 <tr>
 <td><code>tickSize</code></td>
@@ -2046,7 +2113,31 @@
 </tr>
 <tr>
 <td><code>ticker</code></td>
-<td>Display name of the index (e.g., <code>BANKEX</code>).</td>
+<td>Display name of the index (e.g., <code>NIFTY BANK</code>).</td>
+</tr>
+<tr>
+<td><code>multiplier</code></td>
+<td>The contract multiplier (1 for indices).</td>
+</tr>
+<tr>
+<td><code>open</code></td>
+<td>The opening price.</td>
+</tr>
+<tr>
+<td><code>high</code></td>
+<td>The highest traded price.</td>
+</tr>
+<tr>
+<td><code>low</code></td>
+<td>The lowest traded price.</td>
+</tr>
+<tr>
+<td><code>close</code></td>
+<td>The closing price.</td>
+</tr>
+<tr>
+<td><code>ltp</code></td>
+<td>The last traded price.</td>
 </tr>
 <tr>
 <td><code>isin</code></td>
