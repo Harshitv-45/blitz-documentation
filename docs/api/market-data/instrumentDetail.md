@@ -320,7 +320,7 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
 | priceBandHigh          | float       | Upper price band limit                               |
 | priceBandLow           | float       | Lower price band limit                               |
 | multiplier             | float       | Contract multiplier                                  |
-| bvp                    | float       | Base value point                                     |
+| bvp                    | integer       |                                    |
 | priceType              | string       | Price type configuration                             |
 | priceNumerator         | float       | Price calculation numerator                          |
 | priceDenominator       | float       | Price calculation denominator                        |
