@@ -310,6 +310,18 @@ Below are the supported intervals. Select an interval to see the exact cURL requ
 
 ---
 
+
+**Empty Payload for User**
+
+```json
+{
+  "instrument": "",
+  "interval": ""
+}
+```
+
+---
+
 ## Understanding the Response
 
 A successful request returns an array of OHLC candle objects sorted chronologically.

@@ -63,29 +63,6 @@ Here are a few ways to download and read the file programmatically:
         print(f"Failed: {response.status_code} - {response.text}")
     ```
 
-=== "Node.js"
-
-    Node.js provides a built-in `zlib` module to handle gzip extraction easily. Ensure you set `responseType: 'arraybuffer'` so axios doesn't corrupt the binary data!
-
-    ```javascript
-    const axios = require('axios');
-    const zlib = require('zlib');
-
-    const url = 'http://uat.quantxpress.com/v1/api/instruments/gz/download';
-
-    axios.get(url, {
-      responseType: 'arraybuffer' // Crucial for downloading binary gzip data
-    }).then(response => {
-      // Decompress the binary data
-      const unzipped = zlib.gunzipSync(response.data);
-      const instruments = JSON.parse(unzipped.toString());
-      
-      console.log(`Successfully loaded ${instruments.length} instruments!`);
-      console.log("First instrument:", instruments[0]);
-    }).catch(error => {
-      console.error('Error fetching instruments:', error.message);
-    });
-    ```
 
 ---
 
@@ -106,19 +83,19 @@ Once decompressed, the file will contain a JSON array of objects. Below are samp
       "instrumentType": "Equity",
       "lotSize": 1,
       "optionType": "",
-      "priceBandHigh": 1460.5,
-      "priceBandLow": 1195.1,
+      "priceBandHigh": 1607.7,
+      "priceBandLow": 1315.5,
       "strikePrice": 0,
       "symbol": "RELIANCE",
       "tickSize": 0.1,
       "freezeQty": 999999,
       "ticker": "RELIANCE INDUSTRIES LTD",
       "multiplier": 1,
-      "open": 0,
-      "high": 0,
-      "low": 0,
-      "close": 0,
-      "ltp": 0,
+      "open": 1357,
+      "high": 1358.2,
+      "low": 1328,
+      "close": 1350.5,
+      "ltp": 1350.9,
       "isin": "INE002A01018"
     }
     ```
@@ -136,34 +113,41 @@ Once decompressed, the file will contain a JSON array of objects. Below are samp
     | `instrumentType` | The asset class (`Equity`). |
     | `lotSize` | Always `1` for cash equities. |
     | `optionType` | Empty (`""`) since equities are not options. |
-    | `priceBandHigh` / `Low` | The upper/lower circuit limits. Orders placed outside this will be rejected. |
+    | `priceBandHigh` | The upper circuit limit. Orders placed above this will be rejected. |
+    | `priceBandLow` | The lower circuit limit. Orders placed below this will be rejected. |
     | `strikePrice` | Returns `0` for equities. |
     | `symbol` | The base symbol (e.g., `RELIANCE`). |
     | `tickSize` | The minimum price movement allowed for this instrument. |
     | `freezeQty` | Maximum quantity allowed in a single order by the exchange. |
     | `ticker` | Full company name (e.g., `RELIANCE INDUSTRIES LTD`). |
+    | `multiplier` | The contract multiplier (1 for cash equities). |
+    | `open` | The opening price. |
+    | `high` | The highest traded price. |
+    | `low` | The lowest traded price. |
+    | `close` | The closing price. |
+    | `ltp` | The last traded price. |
     | `isin` | International Securities Identification Number (ISIN) for the instrument. |
 
 === "Future"
 
     ```json
     {
-      "instrumentId": 263320000036687,
-      "exchangeInstrumentId": 36687,
-      "instrumentName": "011NSETEST27NOV36FUT",
+      "instrumentId": 260550000059175,
+      "exchangeInstrumentId": 59175,
+      "instrumentName": "BANKNIFTY24FEB26FUT",
       "exchangeSegment": "NSEFO",
       "exchange": "NSE",
-      "expiryDate": "2036-11-27T00:00:00+00:00",
+      "expiryDate": "2026-02-24T05:30:00+05:30",
       "instrumentType": "Futures",
-      "lotSize": 50,
+      "lotSize": 30,
       "optionType": "XX",
-      "priceBandHigh": 220,
-      "priceBandLow": 180,
+      "priceBandHigh": 66800.8,
+      "priceBandLow": 54655.2,
       "strikePrice": 0,
-      "symbol": "011NSETEST",
-      "tickSize": 0.05,
-      "freezeQty": 100000,
-      "ticker": "011NSETEST 27NOV36 FUT",
+      "symbol": "BANKNIFTY",
+      "tickSize": 0.2,
+      "freezeQty": 600,
+      "ticker": "BANKNIFTY 24FEB26 FUT",
       "multiplier": 1,
       "open": 0,
       "high": 0,
@@ -180,41 +164,48 @@ Once decompressed, the file will contain a JSON array of objects. Below are samp
     |-------|-------------|
     | `instrumentId` | Numeric ID across the entire system. Use this for placing orders and fetching Live Market Data. |
     | `exchangeInstrumentId` | Numeric ID assigned to the instrument by the exchange itself. |
-    | `instrumentName` | String name representing the contract (e.g., `011NSETEST27NOV36FUT`). |
+    | `instrumentName` | String name representing the contract (e.g., `BANKNIFTY24FEB26FUT`). |
     | `exchangeSegment` | Identifies the market segment (Possibilities: `NSEFO`, `BSEFO`, `MCXFO`, `BFO`, `NCDEX`). |
     | `exchange` | The exchange code (Possibilities: `NSE`, `BSE`, `MCX`, `NCDEX`). |
     | `expiryDate` | The specific expiration date of the futures contract. |
     | `instrumentType` | The asset class (`Futures`). |
     | `lotSize` | The contract lot size. Order quantities must be a multiple of this number. |
     | `optionType` | Empty (`""`) since this is a futures contract. |
-    | `priceBandHigh` / `Low` | The upper/lower circuit limits for the contract. |
+    | `priceBandHigh` | The upper circuit limit for the contract. |
+    | `priceBandLow` | The lower circuit limit for the contract. |
     | `strikePrice` | Returns `0` since futures don't have strike prices. |
-    | `symbol` | The base symbol of the underlying asset (e.g., `011NSETEST`). |
+    | `symbol` | The base symbol of the underlying asset (e.g., `BANKNIFTY`). |
     | `tickSize` | The minimum price movement allowed for this instrument. |
     | `freezeQty` | Maximum quantity allowed in a single order by the exchange. |
-    | `ticker` | Display name of the contract (e.g., `011NSETEST 27NOV36 FUT`). |
+    | `ticker` | Display name of the contract (e.g., `BANKNIFTY 24FEB26 FUT`). |
+    | `multiplier` | The contract multiplier. |
+    | `open` | The opening price. |
+    | `high` | The highest traded price. |
+    | `low` | The lowest traded price. |
+    | `close` | The closing price. |
+    | `ltp` | The last traded price. |
     | `isin` | Usually empty (`""`) for derivatives. |
 
 === "Option"
 
     ```json
     {
-      "instrumentId": 261180000035082,
-      "exchangeInstrumentId": 35082,
-      "instrumentName": "360ONE28APR26440CE",
+      "instrumentId": 260550000059522,
+      "exchangeInstrumentId": 59522,
+      "instrumentName": "BANKNIFTY24FEB2636500CE",
       "exchangeSegment": "NSEFO",
       "exchange": "NSE",
-      "expiryDate": "2026-04-28T00:00:00+00:00",
+      "expiryDate": "2026-02-24T05:30:00+05:30",
       "instrumentType": "Options",
-      "lotSize": 500,
+      "lotSize": 30,
       "optionType": "CE",
-      "priceBandHigh": 668.7,
-      "priceBandLow": 531.1,
-      "strikePrice": 440,
-      "symbol": "360ONE",
+      "priceBandHigh": 25766.9,
+      "priceBandLow": 22750.7,
+      "strikePrice": 36500,
+      "symbol": "BANKNIFTY",
       "tickSize": 0.05,
-      "freezeQty": 20000,
-      "ticker": "360ONE 28APR26 440 CE",
+      "freezeQty": 600,
+      "ticker": "BANKNIFTY 24FEB26 36500 CE",
       "multiplier": 1,
       "open": 0,
       "high": 0,
@@ -231,30 +222,37 @@ Once decompressed, the file will contain a JSON array of objects. Below are samp
     |-------|-------------|
     | `instrumentId` | Numeric ID across the entire system. Use this for placing orders and fetching Live Market Data. |
     | `exchangeInstrumentId` | Numeric ID assigned to the instrument by the exchange itself. |
-    | `instrumentName` | String name representing the contract (e.g., `360ONE28APR26440CE`). |
+    | `instrumentName` | String name representing the contract (e.g., `BANKNIFTY24FEB2636500CE`). |
     | `exchangeSegment` | Identifies the market segment (Possibilities: `NSEFO`, `BSEFO`, `MCXFO`, `BFO`, `NCDEX`). |
     | `exchange` | The exchange code (Possibilities: `NSE`, `BSE`, `MCX`, `NCDEX`). |
     | `expiryDate` | The expiration date of the options contract. |
     | `instrumentType` | The asset class (`Options`). |
     | `lotSize` | The contract lot size. Order quantities must be a multiple of this number. |
     | `optionType` | The option type (Possibilities: `CE` for Call, `PE` for Put). |
-    | `priceBandHigh` / `Low` | The upper/lower price limits. Orders placed outside this will be rejected. |
-    | `strikePrice` | The strike price of the options contract (e.g., `440.0`). |
-    | `symbol` | The base symbol of the underlying asset (e.g., `360ONE`). |
+    | `priceBandHigh` | The upper price limit. Orders placed above this will be rejected. |
+    | `priceBandLow` | The lower price limit. Orders placed below this will be rejected. |
+    | `strikePrice` | The strike price of the options contract (e.g., `36500`). |
+    | `symbol` | The base symbol of the underlying asset (e.g., `BANKNIFTY`). |
     | `tickSize` | The minimum price movement allowed for this instrument. |
     | `freezeQty` | Maximum quantity allowed in a single order by the exchange. |
-    | `ticker` | Display name of the contract (e.g., `360ONE 28APR26 440 CE`). |
+    | `ticker` | Display name of the contract (e.g., `BANKNIFTY 24FEB26 36500 CE`). |
+    | `multiplier` | The contract multiplier. |
+    | `open` | The opening price. |
+    | `high` | The highest traded price. |
+    | `low` | The lowest traded price. |
+    | `close` | The closing price. |
+    | `ltp` | The last traded price. |
     | `isin` | Usually empty (`""`) for derivatives. |
 
 === "Index"
 
     ```json
     {
-      "instrumentId": 1110010000300047,
-      "exchangeInstrumentId": 300047,
-      "instrumentName": "BANKEX",
-      "exchangeSegment": "BSECM",
-      "exchange": "BSE",
+      "instrumentId": 110010002000002,
+      "exchangeInstrumentId": 2000002,
+      "instrumentName": "NIFTY BANK",
+      "exchangeSegment": "NSECM",
+      "exchange": "NSE",
       "expiryDate": "0001-01-01T00:00:00",
       "instrumentType": "INDEX",
       "lotSize": 1,
@@ -262,10 +260,10 @@ Once decompressed, the file will contain a JSON array of objects. Below are samp
       "priceBandHigh": 0,
       "priceBandLow": 0,
       "strikePrice": 0,
-      "symbol": "BANKEX",
+      "symbol": "BANKNIFTY",
       "tickSize": 0,
       "freezeQty": 1,
-      "ticker": "BANKEX",
+      "ticker": "NIFTY BANK",
       "multiplier": 1,
       "open": 0,
       "high": 0,
@@ -282,18 +280,25 @@ Once decompressed, the file will contain a JSON array of objects. Below are samp
     |-------|-------------|
     | `instrumentId` | Numeric ID across the entire system. Use this for placing orders and fetching Live Market Data. |
     | `exchangeInstrumentId` | Numeric ID assigned to the instrument by the exchange itself. |
-    | `instrumentName` | String name representing the index (e.g., `BANKEX`). |
+    | `instrumentName` | String name representing the index (e.g., `NIFTY BANK`). |
     | `exchangeSegment` | Identifies the market segment (Possibilities: `NSECM`, `BSECM`). |
     | `exchange` | The exchange code (Possibilities: `NSE`, `BSE`). |
     | `expiryDate` | Returns `0001-01-01T00:00:00` since base indices do not have an expiration date. |
     | `instrumentType` | The asset class (`INDEX`). |
     | `lotSize` | The lot size (typically `1` for the base index). |
     | `optionType` | Empty (`""`) since this is an index. |
-    | `priceBandHigh` / `Low` | The upper/lower price limits (typically `0` for an index). |
+    | `priceBandHigh` | The upper price limit (typically `0` for an index). |
+    | `priceBandLow` | The lower price limit (typically `0` for an index). |
     | `strikePrice` | Returns `0` since an index does not have a strike price. |
-    | `symbol` | The base symbol of the underlying index (e.g., `BANKEX`). |
+    | `symbol` | The base symbol of the underlying index (e.g., `BANKNIFTY`). |
     | `tickSize` | The minimum price movement allowed for this instrument. |
     | `freezeQty` | Maximum quantity allowed in a single order by the exchange. |
-    | `ticker` | Display name of the index (e.g., `BANKEX`). |
+    | `ticker` | Display name of the index (e.g., `NIFTY BANK`). |
+    | `multiplier` | The contract multiplier (1 for indices). |
+    | `open` | The opening price. |
+    | `high` | The highest traded price. |
+    | `low` | The lowest traded price. |
+    | `close` | The closing price. |
+    | `ltp` | The last traded price. |
     | `isin` | Usually empty (`""`) for indices. |
 

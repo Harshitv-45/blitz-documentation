@@ -2,9 +2,6 @@
 
 The **Option Chain API** provides the latest option chain data for a given symbol and expiry date. It returns detailed information about call and put options across multiple strike prices, including Live Market Prices, Open Interest, Implied Volatility, and the Option Greeks.
 
-!!! tip "Common Use Case"
-    This API helps traders analyze market sentiment, volatility, and strike-level activity. It is crucial for building option strategy dashboards, finding liquid strikes, or calculating risk metrics.
-
 ---
 
 `BASE URL: http://uat.quantxpress.com/md-api`
@@ -42,6 +39,7 @@ You must provide the underlying asset symbol and the specific expiration date yo
 | `symbol` | string | Yes | The underlying asset symbol (e.g., `NIFTY`, `BANKNIFTY`, or an equity symbol like `RELIANCE`). |
 | `expiryDate` | string | Yes | The exact expiry date formatted as `YYYY-MM-DD`. |
 
+
 ---
 
 ## Examples
@@ -54,8 +52,16 @@ curl -X POST 'http://uat.quantxpress.com/md-api/marketfeed/optionChain' \
         "symbol": "NIFTY",
         "expiryDate": "2025-05-29"
       }'
-    ```
+```
 
+**Empty Payload for User**
+
+```json
+{
+  "symbol": "",
+  "expiryDate": ""
+}
+```
 
 ---
 
@@ -97,7 +103,8 @@ A successful request returns the spot price of the underlying asset, the At-The-
           "price": 9.1,
           "rho": -0.05
         }
-      }
+      },
+      "..."
     ]
   }
 }

@@ -45,6 +45,14 @@ You can request market quotes by providing either a list of **Instrument IDs** o
       }'
     ```
 
+    **Empty Payload for User**
+
+    ```json
+    {
+      "InstrumentIds": []
+    }
+    ```
+
     #### Response
 
     ```json
@@ -76,6 +84,7 @@ You can request market quotes by providing either a list of **Instrument IDs** o
     }
     ```
 
+
 === "By Instrument Name"
 
     ```bash
@@ -84,8 +93,16 @@ You can request market quotes by providing either a list of **Instrument IDs** o
       -H 'Authorization: Bearer {access_token}' \
       -H 'Accept: */*' \
       -d '{
-        "InstrumentNames": ["NSECM:RELIANCE", "NSEFO:NIFTY28042026FUT"]
+        "InstrumentNames": ["NSECM:RELIANCE", "NSEFO:NIFTY28APR26FUT"]
       }'
+    ```
+
+    **Empty Payload for User**
+
+    ```json
+    {
+      "InstrumentNames": []
+    }
     ```
 
     #### Response
@@ -119,7 +136,7 @@ You can request market quotes by providing either a list of **Instrument IDs** o
           "instrumentID": 101002000012345,
           "exchangeSegment": 2,
           "exchangeInstrumentID": 12345,
-          "instrumentName": "NSEFO:NIFTY28042026FUT",
+          "instrumentName": "NSEFO:NIFTY28APR26FUT",
           "timestamp": 1748339155,
           "ltp": 24500.0,
           "ltq": 50,
@@ -140,6 +157,7 @@ You can request market quotes by providing either a list of **Instrument IDs** o
     }
     ```
 
+
 ---
 
 ## Parameters
@@ -156,9 +174,10 @@ You can request market quotes by providing either a list of **Instrument IDs** o
         - *Example*: `NSECM:RELIANCE`
         
     * **Futures & Options**: `[ExchangeSegment]:[Symbol][Date][Strike][OptionType]`
-        - **Date Format**: `DDMMYYYY` (e.g., `28042026` represents **28 April 2026**).
-        - **Future Example**: `NSEFO:NIFTY28042026FUT` (NIFTY Future, expiring 28-Apr-2026).
-        - **Option Example**: `NSEFO:NIFTY2804202625000CE` (NIFTY Option, expiring 28-Apr-2026, 25000 Strike Price, Call Option. Similarly for PUT options use 'PE').
+        - **Date Format**: `DDMMMYY` (e.g., `28APR26` represents **28 April 2026**).
+        - **Month Codes**: January (`JAN`), February (`FEB`), March (`MAR`), April (`APR`), May (`MAY`), June (`JUN`), July (`JUL`), August (`AUG`), September (`SEP`), October (`OCT`), November (`NOV`), December (`DEC`).
+        - **Future Example**: `NSEFO:NIFTY28APR26FUT` (NIFTY Future, expiring 28-Apr-2026).
+        - **Option Example**: `NSEFO:NIFTY28APR2625000CE` (NIFTY Option, expiring 28-Apr-2026, 25000 Strike Price, Call Option. Similarly for PUT options use 'PE').
 
 ---
 

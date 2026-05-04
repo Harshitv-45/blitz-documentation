@@ -28,9 +28,10 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
         - *Example*: `NSECM:RELIANCE`
         
     * **Futures & Options**: `[ExchangeSegment]:[Symbol][Date][Strike][OptionType]`
-        - **Date Format**: `DDMMYYYY` (e.g., `28042026` represents **28 April 2026**).
-        - **Future Example**: `NSEFO:NIFTY28042026FUT` (NIFTY Future, expiring 28-Apr-2026).
-        - **Option Example**: `NSEFO:NIFTY2804202625000CE` (NIFTY Option, expiring 28-Apr-2026, 25000 Strike Price, Call Option similarly for PUT options use 'PE').
+        - **Date Format**: `DDMMMYY` (e.g., `28APR26` represents **28 April 2026**).
+        - **Month Codes**: January (`JAN`), February (`FEB`), March (`MAR`), April (`APR`), May (`MAY`), June (`JUN`), July (`JUL`), August (`AUG`), September (`SEP`), October (`OCT`), November (`NOV`), December (`DEC`).
+        - **Future Example**: `NSEFO:NIFTY28APR26FUT` (NIFTY Future, expiring 28-Apr-2026).
+        - **Option Example**: `NSEFO:NIFTY28APR2625000CE` (NIFTY Option, expiring 28-Apr-2026, 25000 Strike Price, Call Option similarly for PUT options use 'PE').
 
 ---
 
@@ -106,63 +107,185 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
 
 === "By Instrument Name"
 
-    ```bash
-    curl -X 'GET' \
-      'http://uat.quantxpress.com/v1/api/instruments/NSECM:RELIANCE' \
-      -H 'Content-Type: application/json' \
-      -H 'Accept: application/json' \
-      -H 'Authorization: Bearer {access_token}'
-    ```
+    === "Equity"
 
-    #### Response
+        ```bash
+        curl -X 'GET' \
+          'http://uat.quantxpress.com/v1/api/instruments/NSECM:RELIANCE' \
+          -H 'Content-Type: application/json' \
+          -H 'Accept: application/json' \
+          -H 'Authorization: Bearer {access_token}'
+        ```
 
-    ```json
-    {
-        "status": "success",
-        "message": "request processed successfully",
-        "data": {
-            "instrumentId": 110010000002885,
-            "exchange": "NSE",
-            "symbol": "RELIANCE",
-            "ticker": "RELIANCE INDUSTRIES LTD",
-            "exchangeSegment": "NSECM",
-            "instrumentType": "Equity",
-            "instrumentName": "RELIANCE",
-            "exchangeInstrumentId": 2885,
-            "marketInstrumentId": 110010000002885,
-            "series": "EQ",
-            "tickSize": 0.1,
-            "isin": "INE002A01018",
-            "priceBandHigh": 1607.7,
-            "priceBandLow": 1315.5,
-            "multiplier": 1,
-            "bvp": 1,
-            "priceType": "1.0",
-            "priceNumerator": 1,
-            "priceDenominator": 1,
-            "freezeQty": 999999,
-            "lotSize": 1,
-            "expiryDate": null,
-            "strikePrice": null,
-            "optionType": null,
-            "assetToken": null,
-            "underlyingInstrumentId": null,
-            "open": 1357,
-            "high": 1358.2,
-            "low": 1328,
-            "close": 1350.5,
-            "ltp": 1350.9,
-            "reserve1": "",
-            "reserve2": "",
-            "reserve3": "",
-            "reserve4": "",
-            "reserve5": "",
-            "reserve6": "",
-            "reserve7": "",
-            "reserve8": ""
+        #### Response
+
+        ```json
+        {
+            "status": "success",
+            "message": "request processed successfully",
+            "data": {
+                "instrumentId": 110010000002885,
+                "exchange": "NSE",
+                "symbol": "RELIANCE",
+                "ticker": "RELIANCE INDUSTRIES LTD",
+                "exchangeSegment": "NSECM",
+                "instrumentType": "Equity",
+                "instrumentName": "RELIANCE",
+                "exchangeInstrumentId": 2885,
+                "marketInstrumentId": 110010000002885,
+                "series": "EQ",
+                "tickSize": 0.1,
+                "isin": "INE002A01018",
+                "priceBandHigh": 1607.7,
+                "priceBandLow": 1315.5,
+                "multiplier": 1,
+                "bvp": 1,
+                "priceType": "1.0",
+                "priceNumerator": 1,
+                "priceDenominator": 1,
+                "freezeQty": 999999,
+                "lotSize": 1,
+                "expiryDate": null,
+                "strikePrice": null,
+                "optionType": null,
+                "assetToken": null,
+                "underlyingInstrumentId": null,
+                "open": 1357,
+                "high": 1358.2,
+                "low": 1328,
+                "close": 1350.5,
+                "ltp": 1350.9,
+                "reserve1": "",
+                "reserve2": "",
+                "reserve3": "",
+                "reserve4": "",
+                "reserve5": "",
+                "reserve6": "",
+                "reserve7": "",
+                "reserve8": ""
+            }
         }
-    }
-    ```
+        ```
+
+    === "Options"
+
+        ```bash
+        curl -X 'GET' \
+          'http://uat.quantxpress.com/v1/api/instruments/NSEFO:NIFTY28APR2625000CE' \
+          -H 'Content-Type: application/json' \
+          -H 'Accept: application/json' \
+          -H 'Authorization: Bearer {access_token}'
+        ```
+
+        #### Response
+
+        ```json
+        {
+            "status": "success",
+            "message": "request processed successfully",
+            "data": {
+                "instrumentId": 110010000003456,
+                "exchange": "NSEFO",
+                "symbol": "NIFTY",
+                "ticker": "NIFTY Option",
+                "exchangeSegment": "NSEFO",
+                "instrumentType": "Options",
+                "instrumentName": "NIFTY28APR2625000CE",
+                "exchangeInstrumentId": 3456,
+                "marketInstrumentId": 110010000003456,
+                "series": "OPT",
+                "tickSize": 0.05,
+                "isin": "INE002A01018",
+                "priceBandHigh": 200.0,
+                "priceBandLow": 100.0,
+                "multiplier": 1,
+                "bvp": 1,
+                "priceType": "1.0",
+                "priceNumerator": 1,
+                "priceDenominator": 1,
+                "freezeQty": 999999,
+                "lotSize": 50,
+                "expiryDate": "2026-04-28",
+                "strikePrice": 25000.0,
+                "optionType": "CE",
+                "assetToken": "1234",
+                "underlyingInstrumentId": 110010000001234,
+                "open": 150.0,
+                "high": 160.0,
+                "low": 140.0,
+                "close": 155.0,
+                "ltp": 158.0,
+                "reserve1": "",
+                "reserve2": "",
+                "reserve3": "",
+                "reserve4": "",
+                "reserve5": "",
+                "reserve6": "",
+                "reserve7": "",
+                "reserve8": ""
+            }
+        }
+        ```
+
+    === "Futures"
+
+        ```bash
+        curl -X 'GET' \
+          'http://uat.quantxpress.com/v1/api/instruments/NSEFO:NIFTY28APR26FUT' \
+          -H 'Content-Type: application/json' \
+          -H 'Accept: application/json' \
+          -H 'Authorization: Bearer {access_token}'
+        ```
+
+        #### Response
+
+        ```json
+        {
+            "status": "success",
+            "message": "request processed successfully",
+            "data": {
+                "instrumentId": 110010000003457,
+                "exchange": "NSEFO",
+                "symbol": "NIFTY",
+                "ticker": "NIFTY Future",
+                "exchangeSegment": "NSEFO",
+                "instrumentType": "Futures",
+                "instrumentName": "NIFTY28APR26FUT",
+                "exchangeInstrumentId": 3457,
+                "marketInstrumentId": 110010000003457,
+                "series": "FUT",
+                "tickSize": 0.05,
+                "isin": "INE002A01018",
+                "priceBandHigh": 25000.0,
+                "priceBandLow": 23000.0,
+                "multiplier": 1,
+                "bvp": 1,
+                "priceType": "1.0",
+                "priceNumerator": 1,
+                "priceDenominator": 1,
+                "freezeQty": 999999,
+                "lotSize": 50,
+                "expiryDate": "2026-04-28",
+                "strikePrice": null,
+                "optionType": null,
+                "assetToken": "1234",
+                "underlyingInstrumentId": 110010000001234,
+                "open": 24000.0,
+                "high": 24100.0,
+                "low": 23900.0,
+                "close": 24050.0,
+                "ltp": 24080.0,
+                "reserve1": "",
+                "reserve2": "",
+                "reserve3": "",
+                "reserve4": "",
+                "reserve5": "",
+                "reserve6": "",
+                "reserve7": "",
+                "reserve8": ""
+            }
+        }
+        ```
 
 ---
 
