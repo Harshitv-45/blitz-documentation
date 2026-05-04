@@ -47,63 +47,185 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
 
 === "By Instrument ID"
 
-    ```bash
-    curl -X 'GET' \
-      'http://uat.quantxpress.com/v1/api/instruments/110010000014366' \
-      -H 'Content-Type: application/json' \
-      -H 'Accept: application/json' \
-      -H 'Authorization: Bearer {access_token}'
-    ```
-    
-    #### Response
+    === "Equity"
 
-    ```json
-    {
-      "status": "success",
-      "message": "request processed successfully",
-      "data": {
-        "instrumentId": 110010000014366,
-        "exchange": "NSE",
-        "symbol": "IDEA",
-        "ticker": "VODAFONE IDEA LIMITED",
-        "exchangeSegment": "NSECM",
-        "instrumentType": "Equity",
-        "instrumentName": "IDEA",
-        "exchangeInstrumentId": 14366,
-        "marketInstrumentId": 110010000014366,
-        "series": "EQ",
-        "tickSize": 0.01,
-        "isin": "INE669E01016",
-        "priceBandHigh": 12.23,
-        "priceBandLow": 10.01,
-        "multiplier": 1,
-        "bvp": 1,
-        "priceType": "1.0",
-        "priceNumerator": 1,
-        "priceDenominator": 1,
-        "freezeQty": 999999,
-        "lotSize": 1,
-        "expiryDate": null,
-        "strikePrice": null,
-        "optionType": null,
-        "assetToken": null,
-        "underlyingInstrumentId": null,
-        "open": 0,
-        "high": 0,
-        "low": 0,
-        "close": 0,
-        "ltp": 0,
-        "reserve1": "",
-        "reserve2": "",
-        "reserve3": "",
-        "reserve4": "",
-        "reserve5": "",
-        "reserve6": "",
-        "reserve7": "",
-        "reserve8": ""
-      }
-    }
-    ```
+        ```bash
+        curl -X 'GET' \
+          'http://uat.quantxpress.com/v1/api/instruments/110010000001134' \
+          -H 'Content-Type: application/json' \
+          -H 'Accept: application/json' \
+          -H 'Authorization: Bearer {access_token}'
+        ```
+        
+        #### Response
+
+        ```json
+        {
+            "status": "success",
+            "message": "request processed successfully",
+            "data": {
+                "instrumentId": 110010000001134,
+                "exchange": "NSE",
+                "symbol": "APOLLO",
+                "ticker": "APOLLO MICRO SYSTEMS LTD",
+                "exchangeSegment": "NSECM",
+                "instrumentType": "Equity",
+                "instrumentName": "APOLLO",
+                "exchangeInstrumentId": 1134,
+                "marketInstrumentId": 110010000001134,
+                "series": "EQ",
+                "tickSize": 0.05,
+                "isin": "INE713T01028",
+                "priceBandHigh": 356.55,
+                "priceBandLow": 237.75,
+                "multiplier": 1,
+                "bvp": 1,
+                "priceType": "1.0",
+                "priceNumerator": 1,
+                "priceDenominator": 1,
+                "freezeQty": 999999,
+                "lotSize": 1,
+                "expiryDate": null,
+                "strikePrice": null,
+                "optionType": null,
+                "assetToken": null,
+                "underlyingInstrumentId": null,
+                "open": 0,
+                "high": 0,
+                "low": 0,
+                "close": 0,
+                "ltp": 0,
+                "reserve1": "",
+                "reserve2": "",
+                "reserve3": "",
+                "reserve4": "",
+                "reserve5": "",
+                "reserve6": "",
+                "reserve7": "",
+                "reserve8": ""
+            }
+        }
+        ```
+
+    === "Futures"
+
+        ```bash
+        curl -X 'GET' \
+          'http://uat.quantxpress.com/v1/api/instruments/261810000062367' \
+          -H 'Content-Type: application/json' \
+          -H 'Accept: application/json' \
+          -H 'Authorization: Bearer {access_token}'
+        ```
+
+        #### Response
+
+        ```json
+        {
+            "status": "success",
+            "message": "request processed successfully",
+            "data": {
+                "instrumentId": 261810000062367,
+                "exchange": "NSE",
+                "symbol": "ASIANPAINT",
+                "ticker": "ASIANPAINT 30JUN26 FUT",
+                "exchangeSegment": "NSEFO",
+                "instrumentType": "Futures",
+                "instrumentName": "ASIANPAINT30JUN26FUT",
+                "exchangeInstrumentId": 62367,
+                "marketInstrumentId": 210010000062367,
+                "series": "XX",
+                "tickSize": 0.1,
+                "isin": "",
+                "priceBandHigh": 2698.7,
+                "priceBandLow": 2208.1,
+                "multiplier": 1,
+                "bvp": 1,
+                "priceType": "1.0",
+                "priceNumerator": 1,
+                "priceDenominator": 1,
+                "freezeQty": 10000,
+                "lotSize": 250,
+                "expiryDate": "2026-06-30T00:00:00",
+                "strikePrice": 0,
+                "optionType": "XX",
+                "assetToken": 236,
+                "underlyingInstrumentId": null,
+                "open": 0,
+                "high": 0,
+                "low": 0,
+                "close": 0,
+                "ltp": 0,
+                "reserve1": "",
+                "reserve2": "",
+                "reserve3": "",
+                "reserve4": "",
+                "reserve5": "",
+                "reserve6": "",
+                "reserve7": "",
+                "reserve8": ""
+            }
+        }
+        ```
+
+    === "Options"
+
+        ```bash
+        curl -X 'GET' \
+          'http://uat.quantxpress.com/v1/api/instruments/261810000069489' \
+          -H 'Content-Type: application/json' \
+          -H 'Accept: application/json' \
+          -H 'Authorization: Bearer {access_token}'
+        ```
+
+        #### Response
+
+        ```json
+        {
+            "status": "success",
+            "message": "request processed successfully",
+            "data": {
+                "instrumentId": 261810000069489,
+                "exchange": "NSE",
+                "symbol": "ASIANPAINT",
+                "ticker": "ASIANPAINT 30JUN26 1820 CE",
+                "exchangeSegment": "NSEFO",
+                "instrumentType": "Options",
+                "instrumentName": "ASIANPAINT30JUN261820CE",
+                "exchangeInstrumentId": 69489,
+                "marketInstrumentId": 210010000069489,
+                "series": "XX",
+                "tickSize": 0.05,
+                "isin": "",
+                "priceBandHigh": 752.2,
+                "priceBandLow": 531.2,
+                "multiplier": 1,
+                "bvp": 1,
+                "priceType": "1.0",
+                "priceNumerator": 1,
+                "priceDenominator": 1,
+                "freezeQty": 10000,
+                "lotSize": 250,
+                "expiryDate": "2026-06-30T00:00:00",
+                "strikePrice": 1820,
+                "optionType": "CE",
+                "assetToken": 236,
+                "underlyingInstrumentId": null,
+                "open": 0,
+                "high": 0,
+                "low": 0,
+                "close": 0,
+                "ltp": 0,
+                "reserve1": "3.5",
+                "reserve2": "",
+                "reserve3": "",
+                "reserve4": "",
+                "reserve5": "",
+                "reserve6": "",
+                "reserve7": "",
+                "reserve8": ""
+            }
+        }
+        ```
 
 === "By Instrument Name"
 
@@ -171,7 +293,7 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
 
         ```bash
         curl -X 'GET' \
-          'http://uat.quantxpress.com/v1/api/instruments/NSEFO:NIFTY28APR2625000CE' \
+          'http://uat.quantxpress.com/v1/api/instruments//NSEFO:RELIANCE24FEB26680CE' \
           -H 'Content-Type: application/json' \
           -H 'Accept: application/json' \
           -H 'Authorization: Bearer {access_token}'
@@ -184,38 +306,38 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
             "status": "success",
             "message": "request processed successfully",
             "data": {
-                "instrumentId": 110010000003456,
-                "exchange": "NSEFO",
-                "symbol": "NIFTY",
-                "ticker": "NIFTY Option",
+                "instrumentId": 260550000062583,
+                "exchange": "NSE",
+                "symbol": "RELIANCE",
+                "ticker": "RELIANCE 24FEB26 680 CE",
                 "exchangeSegment": "NSEFO",
                 "instrumentType": "Options",
-                "instrumentName": "NIFTY28APR2625000CE",
-                "exchangeInstrumentId": 3456,
-                "marketInstrumentId": 110010000003456,
-                "series": "OPT",
+                "instrumentName": "RELIANCE24FEB26680CE",
+                "exchangeInstrumentId": 62583,
+                "marketInstrumentId": 210010000062583,
+                "series": "XX",
                 "tickSize": 0.05,
-                "isin": "INE002A01018",
-                "priceBandHigh": 200.0,
-                "priceBandLow": 100.0,
+                "isin": "",
+                "priceBandHigh": 840.25,
+                "priceBandLow": 726.35,
                 "multiplier": 1,
                 "bvp": 1,
                 "priceType": "1.0",
                 "priceNumerator": 1,
                 "priceDenominator": 1,
-                "freezeQty": 999999,
-                "lotSize": 50,
-                "expiryDate": "2026-04-28",
-                "strikePrice": 25000.0,
+                "freezeQty": 15000,
+                "lotSize": 500,
+                "expiryDate": "2026-02-24T00:00:00",
+                "strikePrice": 680,
                 "optionType": "CE",
-                "assetToken": "1234",
-                "underlyingInstrumentId": 110010000001234,
-                "open": 150.0,
-                "high": 160.0,
-                "low": 140.0,
-                "close": 155.0,
-                "ltp": 158.0,
-                "reserve1": "",
+                "assetToken": 2885,
+                "underlyingInstrumentId": null,
+                "open": 0,
+                "high": 0,
+                "low": 0,
+                "close": 0,
+                "ltp": 0,
+                "reserve1": "5.25",
                 "reserve2": "",
                 "reserve3": "",
                 "reserve4": "",
@@ -253,7 +375,7 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
                 "instrumentName": "NIFTY28APR26FUT",
                 "exchangeInstrumentId": 3457,
                 "marketInstrumentId": 110010000003457,
-                "series": "FUT",
+                "series": "XX",
                 "tickSize": 0.05,
                 "isin": "INE002A01018",
                 "priceBandHigh": 25000.0,
@@ -301,42 +423,118 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
 
 ---
 
-### Instrument Fields
+### Instrument Fields Explained
 
-| Field                  | Type         | Description                                          |
-| ---------------------- | ------------ | ---------------------------------------------------- |
-| instrumentId           | integer      | Unique internal identifier of the instrument         |
-| exchange               | string       | Exchange where instrument is traded (e.g., `NSE`, `BSE`) |
-| symbol                 | string       | Trading symbol of the instrument                     |
-| ticker                 | string       | Full company or instrument name                      |
-| exchangeSegment        | string       | Exchange segment (e.g., `NSECM`, `NSEFO`)                |
-| instrumentType         | string       | Type of instrument (`Equity`, `Futures`, `Options`, etc.)  |
-| instrumentName         | string       | Name of the instrument                               |
-| exchangeInstrumentId   | integer      | Instrument identifier assigned by exchange           |
-| marketInstrumentId     | integer      | Market-wide instrument identifier                    |
-| series                 | string       | Instrument series (e.g., EQ for equity)              |
-| tickSize               | float       | Minimum price movement allowed                       |
-| isin                   | string       | International Securities Identification Number       |
-| priceBandHigh          | float       | Upper price band limit                               |
-| priceBandLow           | float       | Lower price band limit                               |
-| multiplier             | float       | Contract multiplier                                  |
-| bvp                    | integer       |                                    |
-| priceType              | string       | Price type configuration                             |
-| priceNumerator         | float       | Price calculation numerator                          |
-| priceDenominator       | float       | Price calculation denominator                        |
-| freezeQty              | float       | Maximum quantity allowed per order                   |
-| lotSize                | float       | Minimum tradable quantity                            |
-| expiryDate             | integer/null | Expiry date (for derivatives)                        |
-| strikePrice            | float/null  | Strike price (for options)                           |
-| optionType             | string/null  | Option type (`CE`/`PE`)                                  |
-| assetToken             | string/null  | Asset token reference                                |
-| underlyingInstrumentId | integer/null | Underlying instrument ID (for derivatives)           |
-| open                   | float       | Opening price                                        |
-| high                   | float       | Highest traded price                                 |
-| low                    | float       | Lowest traded price                                  |
-| close                  | float       | Closing price                                        |
-| ltp                    | float       | Last traded price                                    |
-| reserve1–reserve8      | string       | Reserved fields                                      |
+=== "Equity"
+
+    | Field                  | Type         | Description                                          |
+    | ---------------------- | ------------ | ---------------------------------------------------- |
+    | instrumentId           | integer      | Unique internal identifier of the instrument         |
+    | exchange               | string       | Exchange where instrument is traded (e.g., `NSE`, `BSE`) |
+    | symbol                 | string       | Trading symbol of the instrument                     |
+    | ticker                 | string       | Full company or instrument name                      |
+    | exchangeSegment        | string       | Exchange segment                |
+    | instrumentType         | string       | Type of instrument              |
+    | instrumentName         | string       | Name of the instrument                               |
+    | exchangeInstrumentId   | integer      | Instrument identifier assigned by exchange           |
+    | marketInstrumentId     | integer      | Market-wide instrument identifier                    |
+    | series                 | string       | Instrument series               |
+    | tickSize               | float       | Minimum price movement allowed                       |
+    | isin                   | string       | International Securities Identification Number       |
+    | priceBandHigh          | float       | Upper price band limit                               |
+    | priceBandLow           | float       | Lower price band limit                               |
+    | multiplier             | float       | Contract multiplier                                  |
+    | bvp                    | integer       |                                  |
+    | priceType              | string       | Price type configuration                             |
+    | priceNumerator         | integer       | Price numerator                                    |
+    | priceDenominator       | integer       | Price denominator                                    |
+    | freezeQty              | integer       | Freeze quantity                                    |
+    | lotSize                | integer       | Size of the lot                                   |
+    | expiryDate             | null         | Not applicable for equities                          |
+    | strikePrice            | null         | Not applicable for equities                          |
+    | optionType             | null         | Not applicable for equities                          |
+    | assetToken             | null         | Not applicable for equities                          |
+    | underlyingInstrumentId | null         | Not applicable for equities                          |
+    | open                   | float       | Opening price                                        |
+    | high                   | float       | Highest traded price                                 |
+    | low                    | float       | Lowest traded price                                  |
+    | close                  | float       | Closing price                                        |
+    | ltp                    | float       | Last traded price                                    |
+    | reserve1–reserve8      | string       | Reserved fields                                      |
+
+=== "Futures"
+
+    | Field                  | Type         | Description                                          |
+    | ---------------------- | ------------ | ---------------------------------------------------- |
+    | instrumentId           | integer      | Unique internal identifier of the instrument         |
+    | exchange               | string       | Exchange where instrument is traded (e.g., `NSE`, `BSE`) |
+    | symbol                 | string       | Trading symbol of the instrument                     |
+    | ticker                 | string       | Full company or instrument name                      |
+    | exchangeSegment        | string       | Exchange segment (e.g., `NSEFO`)                |
+    | instrumentType         | string       | Type of instrument (`Futures`)  |
+    | instrumentName         | string       | Name of the instrument                               |
+    | exchangeInstrumentId   | integer      | Instrument identifier assigned by exchange           |
+    | marketInstrumentId     | integer      | Market-wide instrument identifier                    |
+    | series                 | string       | Instrument series (e.g., `XX`)              |
+    | tickSize               | float       | Minimum price movement allowed                       |
+    | isin                   | string       | International Securities Identification Number       |
+    | priceBandHigh          | float       | Upper price band limit                               |
+    | priceBandLow           | float       | Lower price band limit                               |
+    | multiplier             | float       | Contract multiplier                                  |
+    | bvp                    | integer       |                                   |
+    | priceType              | string       | Price type configuration                             |
+    | priceNumerator         | integer       | Price numerator                                    |
+    | priceDenominator       | integer       | Price denominator                                    |
+    | freezeQty              | integer       | Freeze quantity                                    |
+    | lotSize                | integer       | Size of the lot                                   |
+    | expiryDate             | string       | Expiry date of the future contract                   |
+    | strikePrice            | float       | `0` for futures                                      |
+    | optionType             | string       | `"XX"` for futures                                   |
+    | assetToken             | string/integer | Asset token reference                                |
+    | underlyingInstrumentId | integer/null | Underlying instrument ID                             |
+    | open                   | float       | Opening price                                        |
+    | high                   | float       | Highest traded price                                 |
+    | low                    | float       | Lowest traded price                                  |
+    | close                  | float       | Closing price                                        |
+    | ltp                    | float       | Last traded price                                    |
+    | reserve1–reserve8      | string       | Reserved fields                                      |
+
+=== "Options"
+
+    | Field                  | Type         | Description                                          |
+    | ---------------------- | ------------ | ---------------------------------------------------- |
+    | instrumentId           | integer      | Unique internal identifier of the instrument         |
+    | exchange               | string       | Exchange where instrument is traded (e.g., `NSE`, `BSE`) |
+    | symbol                 | string       | Trading symbol of the instrument                     |
+    | ticker                 | string       | Full company or instrument name                      |
+    | exchangeSegment        | string       | Exchange segment (e.g., `NSEFO`)                |
+    | instrumentType         | string       | Type of instrument (`Options`)  |
+    | instrumentName         | string       | Name of the instrument                               |
+    | exchangeInstrumentId   | integer      | Instrument identifier assigned by exchange           |
+    | marketInstrumentId     | integer      | Market-wide instrument identifier                    |
+    | series                 | string       | Instrument series (e.g., `XX`)              |
+    | tickSize               | float       | Minimum price movement allowed                       |
+    | isin                   | string       | International Securities Identification Number       |
+    | priceBandHigh          | float       | Upper price band limit                               |
+    | priceBandLow           | float       | Lower price band limit                               |
+    | multiplier             | integer       | Contract multiplier                                  |
+    | bvp                    | integer       |                                   |
+    | priceType              | string       | Price type configuration                             |
+    | priceNumerator         | integer       | Price numerator                                    |
+    | priceDenominator       | integer       | Price denominator                                    |
+    | freezeQty              | integer       | Freeze quantity                                    |
+    | lotSize                | integer       | Size of the lot                                   |
+    | expiryDate             | string       | Expiry date of the option contract                   |
+    | strikePrice            | float       | Strike price for the option                          |
+    | optionType             | string       | Option type (`CE` for Call, `PE` for Put)            |
+    | assetToken             | string/integer | Asset token reference                                |
+    | underlyingInstrumentId | integer/null | Underlying instrument ID                             |
+    | open                   | float       | Opening price                                        |
+    | high                   | float       | Highest traded price                                 |
+    | low                    | float       | Lowest traded price                                  |
+    | close                  | float       | Closing price                                        |
+    | ltp                    | float       | Last traded price                                    |
+    | reserve1–reserve8      | string       | Reserved fields                                      |
 
 ---
 

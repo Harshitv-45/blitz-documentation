@@ -157,5 +157,4 @@ Inside each object within the `data` dictionary:
 | Field | Type | Description |
 |-------|------|-------------|
 | `instrumentId` | integer | Unique numeric identifier of the instrument. |
-| `instrumentName` | string | Name or symbol of the instrument (if requested by Name). |
 | `ltp` | float | **Last Traded Price** of the instrument. |
