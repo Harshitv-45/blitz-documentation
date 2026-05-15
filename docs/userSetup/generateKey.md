@@ -15,7 +15,7 @@ Before creating an API key, ensure the following:
 You must already have:
 - A fully verified BlitzTrader account.
 
-### 2. Basic Technical Knowledge (Optional)
+### 2. Basic Technical Knowledge
 You don't need to be an expert, but familiarity with:
 - APIs and HTTP requests.
 
