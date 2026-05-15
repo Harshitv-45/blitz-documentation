@@ -6,16 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Blitz Trading Platform API, SDK and Broker Integration Documentation">
+        <meta name="description" content="Blitz Trader API, SDK and Broker Integration Documentation">
       
       
-        <meta name="author" content="Blitz Trader">
+        <meta name="author" content="Blitz Trader API">
       
       
-        <link rel="canonical" href="https://your-domain.com/sdk/interactiveServerSdk/">
       
-      
-        <link rel="prev" href="../authentication/">
+        <link rel="prev" href="../prerequisites/">
       
       
         <link rel="next" href="../marketdatasdk/">
@@ -29,7 +27,7 @@
     
     
       
-        <title>Interactive Server SDK - Blitz Trader</title>
+        <title>Interactive Server SDK - Blitz Trader API</title>
       
     
     
@@ -82,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#interactive-server-sdk" class="md-skip">
+        <a href="#blitz-api-client" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Blitz Trader" class="md-header__button md-logo" aria-label="Blitz Trader" data-md-component="logo">
+    <a href="../.." title="Blitz Trader API" class="md-header__button md-logo" aria-label="Blitz Trader API" data-md-component="logo">
       
   <img src="../../assets/icon.png" alt="logo">
 
@@ -111,7 +109,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Blitz Trader
+            Blitz Trader API
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -223,12 +221,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Blitz Trader" class="md-nav__button md-logo" aria-label="Blitz Trader" data-md-component="logo">
+    <a href="../.." title="Blitz Trader API" class="md-nav__button md-logo" aria-label="Blitz Trader API" data-md-component="logo">
       
   <img src="../../assets/icon.png" alt="logo">
 
     </a>
-    Blitz Trader
+    Blitz Trader API
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -770,7 +768,7 @@
   <span class="md-ellipsis">
     
   
-    Download Instruments
+    Instrument Master
   
 
     
@@ -1028,42 +1026,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../sdk/" class="md-nav__link">
+      <a href="../prerequisites/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Get Started with SDK
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../authentication/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Authentication
+    Prerequisites
   
 
     
@@ -1093,24 +1063,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Interactive Server SDK
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1127,281 +1079,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#blitzapiclient" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        BlitzAPIClient
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="BlitzAPIClient">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#__init__" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        __init__
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#order-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Order Management
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Order Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_orders" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_orders
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_open_orders" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_open_orders
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_order_by_blitz_id" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_order_by_blitz_id
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#place_order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        place_order
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modify_order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        modify_order
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cancel_order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cancel_order
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#position-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Position Management
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Position Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_positions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_positions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trade-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Trade Management
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Trade Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_trades" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_trades
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#signals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Signals
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Signals">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#send_signals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        send_signals
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#signals-fields" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        signals Fields
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#websocket-callbacks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        WebSocket Callbacks
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="WebSocket Callbacks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#on_connect" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        on_connect
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#on_close" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        on_close
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#on_message" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        on_message
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1423,34 +1100,6 @@
     
   
     Market Data SDK
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../instrumentmasterskd/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Instrument Master
   
 
     
@@ -1557,34 +1206,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../tpoms/blitz_order_request/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Order Request
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
     
@@ -1596,10 +1217,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
         
           
-          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
             
   
   
@@ -1617,8 +1238,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1719,270 +1340,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#blitzapiclient" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        BlitzAPIClient
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="BlitzAPIClient">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#__init__" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        __init__
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#order-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Order Management
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Order Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_orders" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_orders
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_open_orders" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_open_orders
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_order_by_blitz_id" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_order_by_blitz_id
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#place_order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        place_order
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modify_order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        modify_order
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cancel_order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cancel_order
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#position-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Position Management
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Position Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_positions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_positions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trade-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Trade Management
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Trade Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_trades" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_trades
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#signals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Signals
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Signals">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#send_signals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        send_signals
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#signals-fields" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        signals Fields
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#websocket-callbacks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        WebSocket Callbacks
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="WebSocket Callbacks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#on_connect" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        on_connect
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#on_close" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        on_close
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#on_message" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        on_message
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1998,680 +1355,518 @@
 
 
 
-<h1 id="interactive-server-sdk">Interactive Server SDK<a class="headerlink" href="#interactive-server-sdk" title="Permanent link">&para;</a></h1>
-<h2 id="blitzapiclient"><strong>BlitzAPIClient</strong><a class="headerlink" href="#blitzapiclient" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>class BlitzAPIClient
-</code></pre></div>
-<p>The <code>BlitzAPIClient</code> class provides access to order management, positions, trades, and strategy operations along with integrated authentication and WebSocket handling.</p>
+<h1 id="blitz-api-client">Blitz API Client<a class="headerlink" href="#blitz-api-client" title="Permanent link">&para;</a></h1>
+<p>This document explains how to use the <code>BlitzAPIClient</code> for order management, trade monitoring, positions, statistics, and signal handling.</p>
 <hr />
-<h3 id="__init__"><strong><code>__init__</code></strong><a class="headerlink" href="#__init__" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>def __init__(self, app_key: str, user_id: str)
+<h1 id="initialize-client">Initialize Client<a class="headerlink" href="#initialize-client" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="c1"># Configure logging</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">BLITZAPI.blitz_api_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">BlitzAPIClient</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">BlitzAPIClient</span><span class="p">(</span>
+    <span class="n">app_key</span><span class="o">=</span><span class="s2">&quot;YOUR_APP_KEY&quot;</span><span class="p">,</span>
+    <span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;YOUR_USER_ID&quot;</span>
+<span class="p">)</span>
 </code></pre></div>
-<details class="info">
-<summary>Source Code</summary>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">app_key</span> <span class="o">=</span> <span class="n">app_key</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">user_id</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">api_base_url</span> <span class="o">=</span> <span class="n">API_BASE_URL</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">api_hist_base_url</span> <span class="o">=</span> <span class="n">API_BASE_URL</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">auth_base_url</span> <span class="o">=</span> <span class="n">AUTH_BASE_URL</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">token</span> <span class="o">=</span> <span class="kc">None</span> 
-    <span class="bp">self</span><span class="o">.</span><span class="n">auth_client</span> <span class="o">=</span> <span class="n">AuthClient</span><span class="p">(</span><span class="n">app_key</span><span class="p">,</span> <span class="n">user_id</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">access_token</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_logged_in</span><span class="p">()</span>
-
-    <span class="bp">self</span><span class="o">.</span><span class="n">ws_client</span> <span class="o">=</span> <span class="n">MarketDataWebSocketClient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">access_token</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">ws_client</span><span class="o">.</span><span class="n">set_on_connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_connect</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">ws_client</span><span class="o">.</span><span class="n">set_on_close</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_close</span><span class="p">)</span>
-
-    <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">Redis</span><span class="o">.</span><span class="n">from_url</span><span class="p">(</span><span class="n">REDIS_URL</span><span class="p">,</span> <span class="n">decode_responses</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</code></pre></div>
-</details>
-<p>Initializes the client SDK with authentication and WebSocket connection.</p>
-<p><strong>Parameters</strong></p>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>app_key</code></td>
-<td><code>string</code></td>
-<td>Yes</td>
-<td>API key provided for authentication</td>
+<td>Application key provided by the platform</td>
 </tr>
 <tr>
 <td><code>user_id</code></td>
-<td><code>string</code></td>
-<td>Yes</td>
-<td>Unique user/client identifier</td>
+<td>User identifier</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Example</strong></p>
-<div class="highlight"><pre><span></span><code><span class="n">client</span> <span class="o">=</span> <span class="n">BlitzAPIClient</span><span class="p">(</span><span class="n">app_key</span><span class="o">=</span><span class="s2">&quot;abc123xyz&quot;</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;U12345&quot;</span><span class="p">)</span>
+<hr />
+<h1 id="get-orders">Get Orders<a class="headerlink" href="#get-orders" title="Permanent link">&para;</a></h1>
+<p>Retrieves the complete order book for the authenticated user account, including open, completed, cancelled, rejected, and partially executed orders along with their execution details and current statuses.</p>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<h2 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">order_details</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_orders</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Order Details Response:&quot;</span><span class="p">,</span> <span class="n">order_details</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h2 id="order-management">Order Management<a class="headerlink" href="#order-management" title="Permanent link">&para;</a></h2>
-<h3 id="get_orders"><strong><code>get_orders</code></strong><a class="headerlink" href="#get_orders" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>def get_orders(self)
-</code></pre></div>
-<details class="info">
-<summary>Source Code</summary>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_orders</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch all orders.&quot;&quot;&quot;</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Fetching all orders&quot;</span><span class="p">)</span>
-    <span class="n">endpoint</span> <span class="o">=</span> <span class="s2">&quot;orders&quot;</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GET&quot;</span><span class="p">)</span>
-</code></pre></div>
-</details>
-<p>Fetch all orders placed by the client.</p>
-<p><strong>Example</strong></p>
-<div class="highlight"><pre><span></span><code><span class="n">orders</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_orders</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">orders</span><span class="p">)</span>
+<h1 id="get-open-orders">Get Open Orders<a class="headerlink" href="#get-open-orders" title="Permanent link">&para;</a></h1>
+<p>Retrieves all currently active or pending orders for the authenticated user account.</p>
+<p>This API returns only orders that are still open at the exchange and waiting for execution, modification, or cancellation. Completed, rejected, or cancelled orders are not included in the response.</p>
+<p>Open orders are useful for:</p>
+<ul>
+<li>Monitoring pending executions</li>
+<li>Managing active positions</li>
+<li>Tracking unfilled quantities</li>
+<li>Modifying or cancelling existing orders</li>
+<li>Real-time strategy order management</li>
+</ul>
+<h2 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">open_order_details</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_open_orders</span><span class="p">()</span>
 
-<span class="c1"># Example Response:</span>
-<span class="c1"># {</span>
-<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
-<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
-<span class="c1">#   &#39;data&#39;: [</span>
-<span class="c1">#     {</span>
-<span class="c1">#       &#39;id&#39;: 136,</span>
-<span class="c1">#       &#39;entityId&#39;: &#39;9b4f9a76-f619-41a0-85bf-0d9ecff213c9&#39;,</span>
-<span class="c1">#       &#39;strategyId&#39;: &#39;36250ee3-ad08-4e09-862f-83deee8cdef9&#39;,</span>
-<span class="c1">#       &#39;strategyInstanceId&#39;: &#39;498cc797-3908-452a-91be-48157ebb9e71&#39;,</span>
-<span class="c1">#       &#39;strategyInstanceName&#39;: &#39;NSECM|IDEA&#39;,</span>
-<span class="c1">#       &#39;strategyName&#39;: &#39;Manual Trading&#39;,</span>
-<span class="c1">#       &#39;ivObjectName&#39;: &#39;IDEA&#39;,</span>
-<span class="c1">#       &#39;instrumentId&#39;: 110010000014366,</span>
-<span class="c1">#       &#39;exchangeSegment&#39;: &#39;NSECM&#39;,</span>
-<span class="c1">#       &#39;exchangeInstrumentId&#39;: 110010000014366,</span>
-<span class="c1">#       &#39;instrumentName&#39;: &#39;IDEA&#39;,</span>
-<span class="c1">#       &#39;instrumentType&#39;: 1,</span>
-<span class="c1">#       &#39;blitzOrderId&#39;: 225121947920000006,</span>
-<span class="c1">#       &#39;exchangeOrderId&#39;: &#39;&#39;,</span>
-<span class="c1">#       &#39;clientId&#39;: &#39;PRASHANT&#39;,</span>
-<span class="c1">#       &#39;orderType&#39;: &#39;Limit&#39;,</span>
-<span class="c1">#       &#39;orderSide&#39;: &#39;Buy&#39;,</span>
-<span class="c1">#       &#39;orderStatus&#39;: &#39;PendingNew&#39;,</span>
-<span class="c1">#       &#39;orderQuantity&#39;: 1,</span>
-<span class="c1">#       &#39;orderPrice&#39;: 11.51,</span>
-<span class="c1">#       &#39;tif&#39;: &#39;GFD&#39;,</span>
-<span class="c1">#       &#39;productType&#39;: &#39;MIS&#39;,</span>
-<span class="c1">#       &#39;isFictiveOrder&#39;: False,</span>
-<span class="c1">#       ...</span>
-<span class="c1">#     }</span>
-<span class="c1">#   ]</span>
-<span class="c1"># }</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Open Order Details Response:&quot;</span><span class="p">,</span> <span class="n">open_order_details</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="get_open_orders"><strong><code>get_open_orders</code></strong><a class="headerlink" href="#get_open_orders" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>def get_open_orders(self)
-</code></pre></div>
-<details class="info">
-<summary>Source Code</summary>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_open_orders</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch all Open Orders&quot;&quot;&quot;</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Fetching all Open Orders&quot;</span><span class="p">)</span>
-    <span class="n">endpoint</span> <span class="o">=</span> <span class="s2">&quot;orders/openOrders&quot;</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GET&quot;</span><span class="p">)</span>
-</code></pre></div>
-</details>
-<p>Fetch all currently open (active) orders.</p>
-<p><strong>Example</strong></p>
-<div class="highlight"><pre><span></span><code><span class="n">open_orders</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_open_orders</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">open_orders</span><span class="p">)</span>
+<hr />
+<h1 id="get-order-by-blitz-order-id">Get Order By Blitz Order ID<a class="headerlink" href="#get-order-by-blitz-order-id" title="Permanent link">&para;</a></h1>
+<p>Retrieves detailed information for a specific order using the unique Blitz Order ID.</p>
+<p>This API returns complete order information including order status, exchange details, quantity, price, execution status, timestamps, and rejection details (if applicable) for the requested order.</p>
+<p>Fetching orders by Blitz Order ID is useful for:</p>
+<ul>
+<li>Tracking a specific order</li>
+<li>Verifying order execution status</li>
+<li>Monitoring strategy-generated orders</li>
+<li>Fetching detailed order lifecycle information</li>
+<li>Debugging rejected or failed orders</li>
+</ul>
+<h2 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">blitz_order_id</span> <span class="o">=</span> <span class="mi">226090853560000052</span>
 
-<span class="c1"># Example Response:</span>
-<span class="c1"># {</span>
-<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
-<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
-<span class="c1">#   &#39;data&#39;: [</span>
-<span class="c1">#     {</span>
-<span class="c1">#       &#39;id&#39;: 136,</span>
-<span class="c1">#       &#39;entityId&#39;: &#39;9b4f9a76-f619-41a0-85bf-0d9ecff213c9&#39;,</span>
-<span class="c1">#       &#39;strategyInstanceName&#39;: &#39;NSECM|IDEA&#39;,</span>
-<span class="c1">#       &#39;instrumentName&#39;: &#39;IDEA&#39;,</span>
-<span class="c1">#       &#39;blitzOrderId&#39;: 225121947920000006,</span>
-<span class="c1">#       &#39;exchangeOrderId&#39;: &#39;&#39;,</span>
-<span class="c1">#       &#39;clientId&#39;: &#39;PRASHANT&#39;,</span>
-<span class="c1">#       &#39;orderType&#39;: &#39;Limit&#39;,</span>
-<span class="c1">#       &#39;orderSide&#39;: &#39;Buy&#39;,</span>
-<span class="c1">#       &#39;orderStatus&#39;: &#39;PendingNew&#39;,</span>
-<span class="c1">#       &#39;orderQuantity&#39;: 1,</span>
-<span class="c1">#       &#39;orderPrice&#39;: 11.51,</span>
-<span class="c1">#       &#39;leavesQuantity&#39;: 1,</span>
-<span class="c1">#       &#39;tif&#39;: &#39;GFD&#39;,</span>
-<span class="c1">#       &#39;productType&#39;: &#39;MIS&#39;,</span>
-<span class="c1">#       ...</span>
-<span class="c1">#     }</span>
-<span class="c1">#   ]</span>
-<span class="c1"># }</span>
-</code></pre></div>
-<h3 id="get_order_by_blitz_id"><strong><code>get_order_by_blitz_id</code></strong><a class="headerlink" href="#get_order_by_blitz_id" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>def get_order_by_blitz_id(self, blitz_order_id: int)
-</code></pre></div>
-<details class="info">
-<summary>Source Code</summary>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_order_by_blitz_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">blitz_order_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch a single order by BlitzOrderId.&quot;&quot;&quot;</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fetching order for BlitzOrderId=</span><span class="si">{</span><span class="n">blitz_order_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;orders/</span><span class="si">{</span><span class="n">blitz_order_id</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GET&quot;</span><span class="p">)</span>
-</code></pre></div>
-</details>
-<p>Fetch details of a specific order using its Blitz Order ID.</p>
-<p><strong>Parameters</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>blitz_order_id</td>
-<td>integer</td>
-<td>Yes</td>
-<td>Unique Blitz order ID</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Example</strong></p>
-<div class="highlight"><pre><span></span><code><span class="n">order</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_order_by_blitz_id</span><span class="p">(</span><span class="mi">225121947920000011</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+<span class="n">order_details</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_order_by_blitz_id</span><span class="p">(</span><span class="n">blitz_order_id</span><span class="p">)</span>
 
-<span class="c1"># Example Response:</span>
-<span class="c1"># {</span>
-<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
-<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
-<span class="c1">#   &#39;data&#39;: [</span>
-<span class="c1">#     {</span>
-<span class="c1">#       &#39;id&#39;: 157,</span>
-<span class="c1">#       &#39;entityId&#39;: &#39;9b4f9a76-f619-41a0-85bf-0d9ecff213c9&#39;,</span>
-<span class="c1">#       &#39;strategyInstanceName&#39;: &#39;NSECM|IDEA&#39;,</span>
-<span class="c1">#       &#39;instrumentName&#39;: &#39;IDEA&#39;,</span>
-<span class="c1">#       &#39;blitzOrderId&#39;: 225121947920000011,</span>
-<span class="c1">#       &#39;exchangeOrderId&#39;: &#39;3204124724133908&#39;,</span>
-<span class="c1">#       &#39;executionId&#39;: &#39;3204124724134090&#39;,</span>
-<span class="c1">#       &#39;clientId&#39;: &#39;PRASHANT&#39;,</span>
-<span class="c1">#       &#39;orderType&#39;: &#39;Limit&#39;,</span>
-<span class="c1">#       &#39;orderSide&#39;: &#39;Buy&#39;,</span>
-<span class="c1">#       &#39;orderStatus&#39;: &#39;Filled&#39;,</span>
-<span class="c1">#       &#39;orderQuantity&#39;: 1,</span>
-<span class="c1">#       &#39;orderPrice&#39;: 11.2,</span>
-<span class="c1">#       &#39;lastTradedQuantity&#39;: 1,</span>
-<span class="c1">#       &#39;lastTradedPrice&#39;: 11.2,</span>
-<span class="c1">#       &#39;cumulativeQuantity&#39;: 1,</span>
-<span class="c1">#       &#39;leavesQuantity&#39;: 0,</span>
-<span class="c1">#       &#39;averageTradedPrice&#39;: 11.2,</span>
-<span class="c1">#       &#39;isOrderCompleted&#39;: True,</span>
-<span class="c1">#       &#39;executionType&#39;: &#39;Fill&#39;,</span>
-<span class="c1">#       &#39;productType&#39;: &#39;MIS&#39;,</span>
-<span class="c1">#       ...</span>
-<span class="c1">#     }</span>
-<span class="c1">#   ]</span>
-<span class="c1"># }</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Order Details Response:&quot;</span><span class="p">,</span> <span class="n">order_details</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="place_order"><strong><code>place_order</code></strong><a class="headerlink" href="#place_order" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>def place_order(self, order_data: dict)
-</code></pre></div>
-<details class="info">
-<summary>Source Code</summary>
-<p><code>python
-def place_order(self, order_data: dict):
-    """Place a new order."""
-    logging.info(f"Placing order: {order_data}")
-    endpoint = "orders/placeOrder"
-    return self._send_request(endpoint, payload=order_data, method="POST")</code></p>
-</details>
-<p>Place a new order in the market.</p>
-<p><strong>Parameters</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>order_data</td>
-<td>dict</td>
-<td>Yes</td>
-<td>Order payload containing instrument details, quantity, price, and order configuration.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>order_data Fields</strong></p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>instrumentId</td>
-<td>integer</td>
-<td>No*</td>
-<td>Unique instrument identifier. Either <code>instrumentId</code> or <code>symbol</code> is required</td>
-</tr>
-<tr>
-<td>symbol</td>
-<td>string</td>
-<td>No*</td>
-<td>Trading symbol e.g., NSE</td>
-</tr>
-<tr>
-<td>quantity</td>
-<td>integer</td>
-<td>Yes</td>
-<td>Number of units to trade</td>
-</tr>
-<tr>
-<td>price</td>
-<td>number</td>
-<td>No</td>
-<td>Price for limit orders</td>
-</tr>
-<tr>
-<td>orderType</td>
-<td>string</td>
-<td>Yes</td>
-<td>Type of order (<code>MARKET</code>, <code>LIMIT</code>)</td>
-</tr>
-<tr>
-<td>transactionType</td>
-<td>string</td>
-<td>Yes</td>
-<td>Buy or Sell (<code>BUY</code>, <code>SELL</code>)</td>
-</tr>
-<tr>
-<td>productType</td>
-<td>string</td>
-<td>Yes</td>
-<td>Product type (<code>CNC</code>, <code>MIS</code>, etc.)</td>
-</tr>
-<tr>
-<td>validity</td>
-<td>string</td>
-<td>Yes</td>
-<td>Order validity (<code>DAY</code>, <code>IOC</code>)</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>Note:</strong> Either <code>instrumentId</code> or <code>symbol</code> must be provided.</p>
-</blockquote>
-<p><strong>Example</strong></p>
+<hr />
+<h1 id="place-order">Place Order<a class="headerlink" href="#place-order" title="Permanent link">&para;</a></h1>
+<p>Creates and submits a new trading order to the exchange for the authenticated user account.</p>
+<p>This API is used to place buy or sell orders across supported exchanges and product types. The order request can include details such as trading symbol, quantity, order type, price, product type, validity, and transaction type.</p>
+<p>After successful submission, the API returns order confirmation details including the generated order ID and current order status.</p>
+<p>This API supports various order workflows such as:</p>
+<ul>
+<li>Market orders</li>
+<li>Limit orders</li>
+<li>Stop-loss orders</li>
+<li>Intraday trading</li>
+<li>Delivery trading</li>
+<li>Strategy-based order execution</li>
+</ul>
+<p>Placed orders are processed by the exchange and may move through different statuses such as open, complete, rejected, cancelled, or partially filled.</p>
+<h2 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">order_data</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">&quot;correlationOrderId&quot;</span><span class="p">:</span> <span class="s2">&quot;corr_123&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="s2">&quot;product&quot;</span><span class="p">:</span> <span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;tif&quot;</span><span class="p">:</span> <span class="s2">&quot;GTD&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mf">10.1</span><span class="p">,</span>
-  <span class="s2">&quot;orderType&quot;</span><span class="p">:</span> <span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
-  <span class="c1">#&quot;instrumentId&quot;: 1010010000010666,</span>
-  <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;NSECM|IDEA&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;orderSide&quot;</span><span class="p">:</span> <span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;disclosedQuantity&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="s2">&quot;stopPrice&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="s2">&quot;clientId&quot;</span><span class="p">:</span> <span class="s2">&quot;ABC&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;tiF_GTD_Date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-10-10&quot;</span>
+    <span class="s2">&quot;correlationOrderId&quot;</span><span class="p">:</span> <span class="s2">&quot;corr_123&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;product&quot;</span><span class="p">:</span> <span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tif&quot;</span><span class="p">:</span> <span class="s2">&quot;GTD&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">&quot;orderType&quot;</span><span class="p">:</span> <span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;NSECM|IDEA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;orderSide&quot;</span><span class="p">:</span> <span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;disclosedQuantity&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;stopPrice&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;clientId&quot;</span><span class="p">:</span> <span class="s2">&quot;Algo123&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tiF_GTD_Date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-10-10&quot;</span>
 <span class="p">}</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">place_order</span><span class="p">(</span><span class="n">order_data</span><span class="p">)</span>
+<span class="n">order_resp</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">place_order</span><span class="p">(</span><span class="n">order_data</span><span class="p">)</span>
 
-<span class="c1"># Example Response:</span>
-<span class="c1"># {</span>
-<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
-<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
-<span class="c1">#   &#39;data&#39;: {</span>
-<span class="c1">#     &#39;blitzOrderId&#39;: 225121947920000028,</span>
-<span class="c1">#     &#39;correlationOrderId&#39;: &#39;225121947920000028&#39;</span>
-<span class="c1">#   }</span>
-<span class="c1"># }</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Place Order Response:&quot;</span><span class="p">,</span> <span class="n">order_resp</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="modify_order"><strong><code>modify_order</code></strong><a class="headerlink" href="#modify_order" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>def modify_order(self, order_data: dict)
-</code></pre></div>
-<p>Modify an existing order.</p>
-<p><strong>Parameters</strong></p>
+<hr />
+<h2 id="order-parameters">Order Parameters<a class="headerlink" href="#order-parameters" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>order_data</td>
-<td>dict</td>
-<td>Yes</td>
-<td>Payload containing updated order details.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>order_data Fields</strong></p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>blitzOrderId</td>
-<td>integer</td>
-<td>Yes</td>
-<td>Unique Blitz order ID</td>
+<td><code>correlationOrderId</code></td>
+<td>Unique order identifier</td>
 </tr>
 <tr>
-<td>quantity</td>
-<td>integer</td>
-<td>No</td>
-<td>Updated quantity</td>
+<td><code>quantity</code></td>
+<td>Order quantity</td>
 </tr>
 <tr>
-<td>price</td>
-<td>number</td>
-<td>No</td>
-<td>Updated price</td>
+<td><code>product</code></td>
+<td>Product type (MIS/CNC/etc.)</td>
 </tr>
 <tr>
-<td>orderType</td>
-<td>string</td>
-<td>No</td>
-<td>Updated order type (<code>LIMIT</code>, <code>MARKET</code>)</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>Only fields to be modified need to be passed.</p>
-</blockquote>
-<p><strong>Example</strong></p>
-<div class="highlight"><pre><span></span><code><span class="n">modify_data</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">&quot;modifiedOrderQuantity&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-  <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mf">10.8</span><span class="p">,</span>
-  <span class="s2">&quot;blitzOrderId&quot;</span><span class="p">:</span> <span class="mi">29104141260000005</span><span class="p">,</span>
-  <span class="s2">&quot;orderType&quot;</span><span class="p">:</span> <span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
-  <span class="c1">#&quot;instrumentId&quot;: 1010010000010666,</span>
-  <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;NSECM|IDEA&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;disclosedQuantity&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="s2">&quot;stopPrice&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="s2">&quot;tif&quot;</span><span class="p">:</span> <span class="s2">&quot;GFD&quot;</span><span class="p">,</span>
-  <span class="c1">#&quot;strategyInstanceId&quot;: &quot;656abb03-eec9-4cd0-a226-025090b3ff27&quot;,</span>
-  <span class="s2">&quot;tiF_GTD_Date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-10-10&quot;</span>
-<span class="p">}</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">modify_order</span><span class="p">(</span><span class="n">modify_data</span><span class="p">)</span>
-
-<span class="c1"># Example Response:</span>
-<span class="c1"># {</span>
-<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
-<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
-<span class="c1">#   &#39;data&#39;: &#39;successfully send modify order request to blitz server&#39;</span>
-<span class="c1"># }</span>
-</code></pre></div>
-<h3 id="cancel_order"><strong><code>cancel_order</code></strong><a class="headerlink" href="#cancel_order" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>def cancel_order(self, instrument: str, blitzOrderId: int)
-</code></pre></div>
-<p>Cancel an existing order.</p>
-<p><strong>Parameters</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>instrument</td>
-<td>string</td>
-<td>Yes</td>
-<td>Instrument identifier. Can be either <code>instrumentId</code> (numeric) or <code>symbol</code></td>
+<td><code>tif</code></td>
+<td>Time in force</td>
 </tr>
 <tr>
-<td>blitzOrderId</td>
-<td>integer</td>
-<td>Yes</td>
-<td>Unique Blitz Order ID</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Example</strong></p>
-<div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">cancel_order</span><span class="p">(</span><span class="s2">&quot;NSE|RELIANCE&quot;</span><span class="p">,</span> <span class="mi">12345</span><span class="p">)</span>
-
-<span class="c1"># Example Response:</span>
-<span class="c1"># {</span>
-<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
-<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
-<span class="c1">#   &#39;data&#39;: &#39;successfully send cancel order request to blitz server&#39;</span>
-<span class="c1"># }</span>
-</code></pre></div>
-<h2 id="position-management">Position Management<a class="headerlink" href="#position-management" title="Permanent link">&para;</a></h2>
-<h3 id="get_positions"><strong><code>get_positions</code></strong><a class="headerlink" href="#get_positions" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>def get_positions(self)
-</code></pre></div>
-<p>Fetch all current positions held by the client.</p>
-<p><strong>Example</strong></p>
-<div class="highlight"><pre><span></span><code><span class="n">positions</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_positions</span><span class="p">()</span>
-
-<span class="c1"># Example Response:</span>
-<span class="c1"># {</span>
-<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
-<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
-<span class="c1">#   &#39;data&#39;: [</span>
-<span class="c1">#     {</span>
-<span class="c1">#       &#39;instrumentName&#39;: &#39;IDEA&#39;,</span>
-<span class="c1">#       &#39;exchangeSegment&#39;: &#39;NSECM&#39;,</span>
-<span class="c1">#       &#39;productType&#39;: &#39;MIS&#39;,</span>
-<span class="c1">#       &#39;netQuantity&#39;: 1,</span>
-<span class="c1">#       &#39;buyQuantity&#39;: 1,</span>
-<span class="c1">#       &#39;sellQuantity&#39;: 0,</span>
-<span class="c1">#       &#39;buyValue&#39;: 11.51,</span>
-<span class="c1">#       &#39;sellValue&#39;: 0.0,</span>
-<span class="c1">#       &#39;ltp&#39;: 11.2,</span>
-<span class="c1">#       &#39;pnl&#39;: -0.31,</span>
-<span class="c1">#       ...</span>
-<span class="c1">#     }</span>
-<span class="c1">#   ]</span>
-<span class="c1"># }</span>
-</code></pre></div>
-<!-- ## Statistics Management
-
-
-### **`get_statistics`**
-
-<div class="highlight"><pre><span></span><code>def get_statistics(self)
-</code></pre></div>
-
-Fetch strategy statistics and performance metrics.
-
-
-**Example**
-
-<div class="highlight"><pre><span></span><code><span class="n">stats</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_statistics</span><span class="p">()</span>
-
-<span class="c1"># Example Response:</span>
-<span class="c1"># {</span>
-<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
-<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
-<span class="c1">#   &#39;data&#39;: {</span>
-<span class="c1">#     &#39;totalTrades&#39;: 12,</span>
-<span class="c1">#     &#39;profitableTrades&#39;: 7,</span>
-<span class="c1">#     &#39;lossTrades&#39;: 5,</span>
-<span class="c1">#     &#39;winRate&#39;: 58.33,</span>
-<span class="c1">#     &#39;totalPnl&#39;: 1250.75,</span>
-<span class="c1">#     &#39;realizedPnl&#39;: 980.50,</span>
-<span class="c1">#     &#39;unrealizedPnl&#39;: 270.25,</span>
-<span class="c1">#     &#39;totalTurnover&#39;: 125000.0</span>
-<span class="c1">#   }</span>
-<span class="c1"># }</span>
-</code></pre></div>
- -->
-
-<h2 id="trade-management">Trade Management<a class="headerlink" href="#trade-management" title="Permanent link">&para;</a></h2>
-<h3 id="get_trades"><strong><code>get_trades</code></strong><a class="headerlink" href="#get_trades" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>def get_trades(self)
-</code></pre></div>
-<p>Fetch all executed trades.</p>
-<p><strong>Example</strong></p>
-<div class="highlight"><pre><span></span><code><span class="n">trades</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_trades</span><span class="p">()</span>
-
-<span class="c1"># Example Response:</span>
-<span class="c1"># {</span>
-<span class="c1">#   &#39;status&#39;: &#39;success&#39;,</span>
-<span class="c1">#   &#39;message&#39;: &#39;request processed successfully&#39;,</span>
-<span class="c1">#   &#39;data&#39;: [</span>
-<span class="c1">#     {</span>
-<span class="c1">#       &#39;id&#39;: 27,</span>
-<span class="c1">#       &#39;entityId&#39;: &#39;9b4f9a76-f619-41a0-85bf-0d9ecff213c9&#39;,</span>
-<span class="c1">#       &#39;instrumentName&#39;: &#39;IDEA&#39;,</span>
-<span class="c1">#       &#39;exchangeSegment&#39;: &#39;NSECM&#39;,</span>
-<span class="c1">#       &#39;blitzOrderId&#39;: 225121947920000011,</span>
-<span class="c1">#       &#39;exchangeOrderId&#39;: &#39;3204124724133908&#39;,</span>
-<span class="c1">#       &#39;executionId&#39;: &#39;3204124724134090&#39;,</span>
-<span class="c1">#       &#39;clientId&#39;: &#39;PRASHANT&#39;,</span>
-<span class="c1">#       &#39;orderType&#39;: &#39;Limit&#39;,</span>
-<span class="c1">#       &#39;orderSide&#39;: &#39;Buy&#39;,</span>
-<span class="c1">#       &#39;orderStatus&#39;: &#39;Filled&#39;,</span>
-<span class="c1">#       &#39;orderQuantity&#39;: 1,</span>
-<span class="c1">#       &#39;orderPrice&#39;: 11.2,</span>
-<span class="c1">#       &#39;lastTradedQuantity&#39;: 1,</span>
-<span class="c1">#       &#39;lastTradedPrice&#39;: 11.2,</span>
-<span class="c1">#       &#39;averageTradedPrice&#39;: 11.2,</span>
-<span class="c1">#       &#39;executionType&#39;: &#39;Fill&#39;,</span>
-<span class="c1">#       &#39;productType&#39;: &#39;MIS&#39;,</span>
-<span class="c1">#       ...</span>
-<span class="c1">#     }</span>
-<span class="c1">#   ]</span>
-<span class="c1"># }</span>
-</code></pre></div>
-<h2 id="signals">Signals<a class="headerlink" href="#signals" title="Permanent link">&para;</a></h2>
-<h3 id="send_signals"><strong><code>send_signals</code></strong><a class="headerlink" href="#send_signals" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>def send_signals(self, signals: list)
-</code></pre></div>
-<p>Send trading signals and optionally publish them to Redis.</p>
-<p><strong>Parameters</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>signals</td>
-<td>list</td>
-<td>Yes</td>
-<td>List of signal objects containing trading instructions.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="signals-fields">signals Fields<a class="headerlink" href="#signals-fields" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>instrumentId</td>
-<td>int</td>
-<td>No*</td>
-<td>Instrument ID</td>
+<td><code>price</code></td>
+<td>Order price</td>
 </tr>
 <tr>
-<td>symbol</td>
-<td>string</td>
-<td>No*</td>
+<td><code>orderType</code></td>
+<td>LIMIT / MARKET</td>
+</tr>
+<tr>
+<td><code>symbol</code></td>
 <td>Trading symbol</td>
 </tr>
 <tr>
-<td>action</td>
-<td>string</td>
-<td>Yes</td>
-<td>Signal action (<code>BUY</code>, <code>SELL</code>)</td>
+<td><code>orderSide</code></td>
+<td>BUY / SELL</td>
 </tr>
 <tr>
-<td>quantity</td>
-<td>int</td>
-<td>Yes</td>
-<td>Quantity to trade</td>
+<td><code>disclosedQuantity</code></td>
+<td>Disclosed quantity</td>
 </tr>
 <tr>
-<td>price</td>
-<td>number</td>
-<td>No</td>
-<td>Price (if applicable)</td>
+<td><code>stopPrice</code></td>
+<td>Stop loss trigger price</td>
+</tr>
+<tr>
+<td><code>clientId</code></td>
+<td>Client identifier</td>
+</tr>
+<tr>
+<td><code>tiF_GTD_Date</code></td>
+<td>GTD expiry date</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>Either <code>instrumentId</code> or <code>symbol</code> must be provided.</p>
-</blockquote>
-<p><strong>Example</strong></p>
-<div class="highlight"><pre><span></span><code><span class="n">signals</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;NSE|RELIANCE&quot;</span><span class="p">,</span> <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;BUY&quot;</span><span class="p">}</span>
+<hr />
+<h1 id="modify-order">Modify Order<a class="headerlink" href="#modify-order" title="Permanent link">&para;</a></h1>
+<p>Modifies an existing open or pending order for the authenticated user account.</p>
+<p>This API allows updating specific order parameters such as quantity, price, trigger price, or validity before the order is fully executed or cancelled at the exchange.</p>
+<p>Only orders that are currently open or pending can be modified. Completed, rejected, or cancelled orders cannot be updated.</p>
+<p>Order modification is commonly used for:</p>
+<ul>
+<li>Changing limit prices</li>
+<li>Updating order quantities</li>
+<li>Revising stop-loss trigger values</li>
+<li>Adjusting strategy-generated orders</li>
+<li>Managing pending exchange orders in real time</li>
+</ul>
+<p>After successful modification, the exchange processes the updated order request and returns the latest order status and details.</p>
+<h2 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">modify_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;modifiedOrderQuantity&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mf">10.8</span><span class="p">,</span>
+    <span class="s2">&quot;blitzOrderId&quot;</span><span class="p">:</span> <span class="mi">212105238510000007</span><span class="p">,</span>
+    <span class="s2">&quot;orderType&quot;</span><span class="p">:</span> <span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;NSECM|IDEA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;disclosedQuantity&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;stopPrice&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;tif&quot;</span><span class="p">:</span> <span class="s2">&quot;GFD&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tiF_GTD_Date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-10-10&quot;</span>
+<span class="p">}</span>
+
+<span class="n">modify_resp</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">modify_order</span><span class="p">(</span><span class="n">modify_data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modify Order Response:&quot;</span><span class="p">,</span> <span class="n">modify_resp</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h1 id="cancel-order">Cancel Order<a class="headerlink" href="#cancel-order" title="Permanent link">&para;</a></h1>
+<p>Cancels an existing open or pending order for the authenticated user account.</p>
+<p>This API is used to stop an active order from further execution at the exchange. Only orders that are currently open or partially filled can be cancelled. Completed, rejected, or already cancelled orders cannot be cancelled again.</p>
+<p>Order cancellation is commonly used for:</p>
+<ul>
+<li>Removing pending orders from the market</li>
+<li>Managing risk exposure</li>
+<li>Stopping unintended executions</li>
+<li>Updating trading strategies dynamically</li>
+<li>Handling unfilled or partially filled orders</li>
+</ul>
+<p>After a successful cancellation request, the exchange updates the order status to <code>CANCELLED</code> if the request is accepted and processed successfully.</p>
+<h2 id="example_6">Example<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">cancel_resp</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">cancel_order</span><span class="p">(</span>
+    <span class="n">instrument</span><span class="o">=</span><span class="s2">&quot;NSECM|IDEA&quot;</span><span class="p">,</span>
+    <span class="n">blitzOrderId</span><span class="o">=</span><span class="mi">212105238510000007</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cancel Order Response:&quot;</span><span class="p">,</span> <span class="n">cancel_resp</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h1 id="get-trades">Get Trades<a class="headerlink" href="#get-trades" title="Permanent link">&para;</a></h1>
+<p>Retrieves all executed trade details for the authenticated user account.</p>
+<p>This API returns trade-level execution information generated from completed or partially completed orders. Each trade represents an actual execution that occurred at the exchange.</p>
+<p>The response typically includes details such as:</p>
+<ul>
+<li>Trade ID</li>
+<li>Order ID</li>
+<li>Trading symbol</li>
+<li>Exchange</li>
+<li>Buy/Sell side</li>
+<li>Executed quantity</li>
+<li>Execution price</li>
+<li>Product type</li>
+<li>Execution timestamp</li>
+<li>Brokerage and charges (if applicable)</li>
+</ul>
+<p>This API is useful for:</p>
+<ul>
+<li>Monitoring executed trades</li>
+<li>Calculating realized profit and loss</li>
+<li>Trade reconciliation</li>
+<li>Strategy execution tracking</li>
+<li>Building trade history dashboards and reports</li>
+</ul>
+<p>Only successfully executed trades are returned by this API.</p>
+<h2 id="example_7">Example<a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">trades</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_trades</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trades Response:&quot;</span><span class="p">,</span> <span class="n">trades</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h1 id="get-positions">Get Positions<a class="headerlink" href="#get-positions" title="Permanent link">&para;</a></h1>
+<p>Retrieves all current trading positions for the authenticated user account.</p>
+<p>This API returns consolidated position details across all executed trades and active holdings for the current trading session. Positions represent the net buy and sell quantities for each traded instrument.</p>
+<p>The response typically includes details such as:</p>
+<ul>
+<li>Trading symbol</li>
+<li>Exchange</li>
+<li>Product type</li>
+<li>Net quantity</li>
+<li>Buy quantity</li>
+<li>Sell quantity</li>
+<li>Average buy price</li>
+<li>Average sell price</li>
+<li>Realized profit and loss</li>
+<li>Unrealized profit and loss</li>
+<li>Day positions</li>
+<li>Overnight positions</li>
+</ul>
+<p>This API is useful for:</p>
+<ul>
+<li>Monitoring live positions</li>
+<li>Tracking portfolio exposure</li>
+<li>Calculating profit and loss</li>
+<li>Risk management</li>
+<li>Strategy position tracking</li>
+<li>Building portfolio dashboards</li>
+</ul>
+<p>Positions are dynamically updated based on executed trades and exchange updates during market hours.</p>
+<h2 id="example_8">Example<a class="headerlink" href="#example_8" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">positions</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_positions</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Positions Response:&quot;</span><span class="p">,</span> <span class="n">positions</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h1 id="get-statistics">Get Statistics<a class="headerlink" href="#get-statistics" title="Permanent link">&para;</a></h1>
+<p>Retrieves trading and account-related statistical information for the authenticated user account.</p>
+<p>This API provides summarized trading metrics and performance-related data that can be used for monitoring trading activity, strategy analysis, and account performance evaluation.</p>
+<p>The response may include details such as:</p>
+<ul>
+<li>Total orders placed</li>
+<li>Total executed trades</li>
+<li>Win/loss statistics</li>
+<li>Profit and loss summary</li>
+<li>Trade volume</li>
+<li>Strategy performance metrics</li>
+<li>Execution statistics</li>
+<li>Day-wise or session-wise summaries</li>
+</ul>
+<p>This API is useful for:</p>
+<ul>
+<li>Monitoring trading performance</li>
+<li>Building analytics dashboards</li>
+<li>Strategy evaluation</li>
+<li>Performance reporting</li>
+<li>Risk and exposure analysis</li>
+<li>Generating trading summaries</li>
+</ul>
+<p>Statistical values are calculated based on available trading and execution data for the authenticated account.</p>
+<h2 id="example_9">Example<a class="headerlink" href="#example_9" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">statistics</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_statistics</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Statistics Response:&quot;</span><span class="p">,</span> <span class="n">statistics</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h1 id="send-signals">Send Signals<a class="headerlink" href="#send-signals" title="Permanent link">&para;</a></h1>
+<p>Sends trading or strategy signals from the source strategy to one or more destination strategies within the QuantXpress platform.</p>
+<p>This API is used to trigger strategy actions such as buy, sell, exit, or custom trading events and distribute them to connected destination strategies or execution engines.</p>
+<p>Signals can be used for:</p>
+<ul>
+<li>Strategy-to-strategy communication</li>
+<li>Automated trade execution</li>
+<li>Copy trading workflows</li>
+<li>Multi-account signal distribution</li>
+<li>Event-driven trading systems</li>
+<li>Centralized strategy management</li>
+</ul>
+<p>The API allows strategies to exchange execution instructions and synchronize trading actions across multiple connected systems in real time.</p>
+<p>The response typically includes signal processing status, delivery confirmation, and execution acknowledgement details.</p>
+<h2 id="example_10">Example<a class="headerlink" href="#example_10" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">signals_payload</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;sourceStrategy&quot;</span><span class="p">:</span> <span class="s2">&quot;StrategyA&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;destinationStrategy&quot;</span><span class="p">:</span> <span class="s2">&quot;Matrix&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sourceSID&quot;</span><span class="p">:</span> <span class="s2">&quot;SID123&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;instanceRunningMode&quot;</span><span class="p">:</span> <span class="s2">&quot;Start&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;globalAction&quot;</span><span class="p">:</span> <span class="s2">&quot;signal&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;instruments&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;exchangeSegment&quot;</span><span class="p">:</span> <span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;instrumentName&quot;</span><span class="p">:</span> <span class="s2">&quot;NIFTY10FEB2625900CE&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;EnterShort&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;lot&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;timeStamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-10-23T14:30:00Z&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;infoText&quot;</span><span class="p">:</span> <span class="s2">&quot;Test order&quot;</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
 <span class="p">]</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">send_signals</span><span class="p">(</span><span class="n">signals</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">send_signals</span><span class="p">(</span><span class="n">signals_payload</span><span class="p">)</span>
 
-<span class="c1"># Example Response:</span>
-<span class="c1"># {</span>
-<span class="c1">#    &quot;status&quot;:&quot;success&quot;,</span>
-<span class="c1">#    &quot;message&quot;:&quot;request processed successfully.&quot;,</span>
-<span class="c1">#    &quot;data&quot;:</span>
-<span class="c1">#        {&quot;message&quot;:&quot;Signal received successfully.&quot;}}&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="websocket-callbacks">WebSocket Callbacks<a class="headerlink" href="#websocket-callbacks" title="Permanent link">&para;</a></h2>
-<h3 id="on_connect"><strong><code>on_connect</code></strong><a class="headerlink" href="#on_connect" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>def on_connect(self)
-</code></pre></div>
-<p>Callback triggered when WebSocket connection is established.</p>
-<h3 id="on_close"><strong><code>on_close</code></strong><a class="headerlink" href="#on_close" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>def on_close(self, close_status_code, close_msg)
-</code></pre></div>
-<p>Callback triggered when WebSocket connection is closed.</p>
-<h3 id="on_message"><strong><code>on_message</code></strong><a class="headerlink" href="#on_message" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>@property def on_message(self)
-</code></pre></div>
-<p>Setter to register callback for receiving real-time tick data.</p>
-<p><strong>Example</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">handle_tick</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<hr />
+<h1 id="signal-payload-parameters">Signal Payload Parameters<a class="headerlink" href="#signal-payload-parameters" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sourceStrategy</code></td>
+<td>Source strategy name</td>
+</tr>
+<tr>
+<td><code>destinationStrategy</code></td>
+<td>Destination strategy name</td>
+</tr>
+<tr>
+<td><code>sourceSID</code></td>
+<td>Strategy instance identifier</td>
+</tr>
+<tr>
+<td><code>instanceRunningMode</code></td>
+<td>Strategy running mode</td>
+</tr>
+<tr>
+<td><code>globalAction</code></td>
+<td>Signal action</td>
+</tr>
+<tr>
+<td><code>exchangeSegment</code></td>
+<td>Exchange segment</td>
+</tr>
+<tr>
+<td><code>instrumentName</code></td>
+<td>Instrument symbol</td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td>Trading action</td>
+</tr>
+<tr>
+<td><code>lot</code></td>
+<td>Quantity/lots</td>
+</tr>
+<tr>
+<td><code>timeStamp</code></td>
+<td>Signal timestamp</td>
+</tr>
+<tr>
+<td><code>infoText</code></td>
+<td>Additional information</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="complete-example">Complete Example<a class="headerlink" href="#complete-example" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
-<span class="n">client</span><span class="o">.</span><span class="n">on_message</span> <span class="o">=</span> <span class="n">handle_tick</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">BLITZAPI.blitz_api_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">BlitzAPIClient</span>
+
+<span class="c1"># =============================== Initialize Client ===============================</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">BlitzAPIClient</span><span class="p">(</span>
+    <span class="n">app_key</span><span class="o">=</span><span class="s2">&quot;YOUR_APP_KEY&quot;</span><span class="p">,</span>
+    <span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;YOUR_USER_ID&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># =============================== Get Orders ===============================</span>
+
+<span class="n">order_details</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_orders</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Order Details Response:&quot;</span><span class="p">,</span> <span class="n">order_details</span><span class="p">)</span>
+
+<span class="c1"># =============================== Place Order ===============================</span>
+
+<span class="n">order_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;correlationOrderId&quot;</span><span class="p">:</span> <span class="s2">&quot;corr_123&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;product&quot;</span><span class="p">:</span> <span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tif&quot;</span><span class="p">:</span> <span class="s2">&quot;GTD&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">&quot;orderType&quot;</span><span class="p">:</span> <span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;NSECM|IDEA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;orderSide&quot;</span><span class="p">:</span> <span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;disclosedQuantity&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;stopPrice&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;clientId&quot;</span><span class="p">:</span> <span class="s2">&quot;Algo123&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tiF_GTD_Date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-10-10&quot;</span>
+<span class="p">}</span>
+
+<span class="n">order_resp</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">place_order</span><span class="p">(</span><span class="n">order_data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Place Order Response:&quot;</span><span class="p">,</span> <span class="n">order_resp</span><span class="p">)</span>
+
+<span class="c1"># =============================== Modify Order ===============================</span>
+
+<span class="n">modify_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;modifiedOrderQuantity&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mf">10.8</span><span class="p">,</span>
+    <span class="s2">&quot;blitzOrderId&quot;</span><span class="p">:</span> <span class="mi">212105238510000007</span><span class="p">,</span>
+    <span class="s2">&quot;orderType&quot;</span><span class="p">:</span> <span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;NSECM|IDEA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;disclosedQuantity&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;stopPrice&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;tif&quot;</span><span class="p">:</span> <span class="s2">&quot;GFD&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tiF_GTD_Date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-10-10&quot;</span>
+<span class="p">}</span>
+
+<span class="n">modify_resp</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">modify_order</span><span class="p">(</span><span class="n">modify_data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modify Order Response:&quot;</span><span class="p">,</span> <span class="n">modify_resp</span><span class="p">)</span>
+
+<span class="c1"># =============================== Cancel Order ===============================</span>
+
+<span class="n">cancel_resp</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">cancel_order</span><span class="p">(</span>
+    <span class="n">instrument</span><span class="o">=</span><span class="s2">&quot;NSECM|IDEA&quot;</span><span class="p">,</span>
+    <span class="n">blitzOrderId</span><span class="o">=</span><span class="mi">212105238510000007</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cancel Order Response:&quot;</span><span class="p">,</span> <span class="n">cancel_resp</span><span class="p">)</span>
+
+<span class="c1"># =============================== Send Signals ===============================</span>
+
+<span class="n">signals_payload</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;sourceStrategy&quot;</span><span class="p">:</span> <span class="s2">&quot;StrategyA&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;destinationStrategy&quot;</span><span class="p">:</span> <span class="s2">&quot;Matrix&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sourceSID&quot;</span><span class="p">:</span> <span class="s2">&quot;SID123&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;instanceRunningMode&quot;</span><span class="p">:</span> <span class="s2">&quot;Start&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;globalAction&quot;</span><span class="p">:</span> <span class="s2">&quot;signal&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;instruments&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;exchangeSegment&quot;</span><span class="p">:</span> <span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;instrumentName&quot;</span><span class="p">:</span> <span class="s2">&quot;NIFTY10FEB2625900CE&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;EnterShort&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;lot&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;timeStamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-10-23T14:30:00Z&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;infoText&quot;</span><span class="p">:</span> <span class="s2">&quot;Test order&quot;</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">send_signals</span><span class="p">(</span><span class="n">signals_payload</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </code></pre></div>
 
 
