@@ -1,9 +1,9 @@
-site_name: Blitz Trader
-site_description: Blitz Trading Platform API, SDK and Broker Integration Documentation
-site_author: Blitz Trader
-site_url: https://your-domain.com
+site_name: Blitz Trader API
+site_description: Blitz Trader API, SDK and Broker Integration Documentation
+site_author: Blitz Trader API
+#site_url: https://your-domain.com
 
-repo_name: Blitz Trader
+repo_name: Blitz Trader API
 #repo_url: https://github.com/your-org/blitz-docs
 
 theme:
@@ -87,7 +87,7 @@ nav:
           
 
       - Market Data APIs:
-          - Download Instruments: api/market-data/downloadInstrument.md
+          - Instrument Master: api/market-data/downloadInstrument.md
           - Instrument Detail: api/market-data/instrumentDetail.md
           - Last Trading Price: api/market-data/ltp.md
           - Option Chain: api/market-data/optionchain.md
@@ -100,11 +100,12 @@ nav:
 
   - Blitz SDK:
       - What is SDK: sdk/about_sdk.md
-      - Get Started with SDK: sdk/sdk.md
-      - Authentication: sdk/authentication.md
+      - Prerequisites: sdk/prerequisites.md
+      # - Get Started with SDK: sdk/sdk.md
+      # - Authentication: sdk/authentication.md
       - Interactive Server SDK: sdk/interactiveServerSdk.md
       - Market Data SDK: sdk/marketdatasdk.md
-      - Instrument Master: sdk/instrumentmasterskd.md
+      # - Instrument Master: sdk/instrumentmasterskd.md
 
   # ---------------------------------------------------
   # TPOMS
@@ -112,7 +113,7 @@ nav:
 
   - TPOMS:
       - Overview: tpoms/overview.md
-      - Order Request: tpoms/blitz_order_request.md
+      # - Order Request: tpoms/blitz_order_request.md
 
       - Broker Integrations:
           - Zerodha: tpoms/brokers/zerodha.md

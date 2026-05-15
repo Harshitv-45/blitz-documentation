@@ -1,605 +1,508 @@
-# Interactive Server SDK
+# Blitz API Client 
 
-## **BlitzAPIClient**
-
-```
-class BlitzAPIClient
-```
-
-The `BlitzAPIClient` class provides access to order management, positions, trades, and strategy operations along with integrated authentication and WebSocket handling.
+This document explains how to use the `BlitzAPIClient` for order management, trade monitoring, positions, statistics, and signal handling.
 
 ---
 
-
-### **`__init__`**
-
-```
-def __init__(self, app_key: str, user_id: str)
-```
-
-??? info "Source Code"
-    ```python
-    def __init__(self, app_key: str, user_id: str):
-        self.app_key = app_key
-        self.user_id = user_id
-        self.api_base_url = API_BASE_URL
-        self.api_hist_base_url = API_BASE_URL
-        self.auth_base_url = AUTH_BASE_URL
-        self.token = None 
-        self.auth_client = AuthClient(app_key, user_id)
-        self.access_token = None
-
-        self._ensure_logged_in()
-
-        self.ws_client = MarketDataWebSocketClient(self.access_token)
-        self.ws_client.set_on_connect(self.on_connect)
-        self.ws_client.set_on_close(self.on_close)
-
-        self.redis_client = redis.Redis.from_url(REDIS_URL, decode_responses=True)
-    ```
-
-
-Initializes the client SDK with authentication and WebSocket connection.
-
-
-**Parameters**
-
-|Parameter |	Type|	Required|	Description|
-|----------|---------|----------|--------------|
-|`app_key`|	`string`|	Yes|	API key provided for authentication|
-|`user_id`	|`string`	|Yes	|Unique user/client identifier|
-
-
-**Example**
+# Initialize Client
 
 ```python
-client = BlitzAPIClient(app_key="abc123xyz", user_id="U12345")
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+
+from BLITZAPI.blitz_api_client import BlitzAPIClient
+
+client = BlitzAPIClient(
+    app_key="YOUR_APP_KEY",
+    user_id="YOUR_USER_ID"
+)
+```
+
+## Parameters
+
+| Parameter | Description |
+|----------|-------------|
+| `app_key` | Application key provided by the platform |
+| `user_id` | User identifier |
+
+---
+
+# Get Orders
+
+Retrieves the complete order book for the authenticated user account, including open, completed, cancelled, rejected, and partially executed orders along with their execution details and current statuses.
+
+## Example
+
+## Example
+
+```python
+order_details = client.get_orders()
+
+print("Order Details Response:", order_details)
+```
+
+---
+# Get Open Orders
+
+Retrieves all currently active or pending orders for the authenticated user account.
+
+This API returns only orders that are still open at the exchange and waiting for execution, modification, or cancellation. Completed, rejected, or cancelled orders are not included in the response.
+
+Open orders are useful for:
+
+- Monitoring pending executions
+- Managing active positions
+- Tracking unfilled quantities
+- Modifying or cancelling existing orders
+- Real-time strategy order management
+
+## Example
+
+```python
+open_order_details = client.get_open_orders()
+
+print("Open Order Details Response:", open_order_details)
 ```
 
 ---
 
-## Order Management
+# Get Order By Blitz Order ID
 
+Retrieves detailed information for a specific order using the unique Blitz Order ID.
 
-### **`get_orders`**
+This API returns complete order information including order status, exchange details, quantity, price, execution status, timestamps, and rejection details (if applicable) for the requested order.
 
-```
-def get_orders(self)
-```
+Fetching orders by Blitz Order ID is useful for:
 
-??? info "Source Code"
-    ```python
-    def get_orders(self):
-        """Fetch all orders."""
-        logging.info("Fetching all orders")
-        endpoint = "orders"
-        return self._send_request(endpoint, method="GET")
-    ```
+- Tracking a specific order
+- Verifying order execution status
+- Monitoring strategy-generated orders
+- Fetching detailed order lifecycle information
+- Debugging rejected or failed orders
 
-Fetch all orders placed by the client.
-
-**Example**
+## Example
 
 ```python
-orders = client.get_orders()
-print(orders)
+blitz_order_id = 226090853560000052
 
-# Example Response:
-# {
-#   'status': 'success',
-#   'message': 'request processed successfully',
-#   'data': [
-#     {
-#       'id': 136,
-#       'entityId': '9b4f9a76-f619-41a0-85bf-0d9ecff213c9',
-#       'strategyId': '36250ee3-ad08-4e09-862f-83deee8cdef9',
-#       'strategyInstanceId': '498cc797-3908-452a-91be-48157ebb9e71',
-#       'strategyInstanceName': 'NSECM|IDEA',
-#       'strategyName': 'Manual Trading',
-#       'ivObjectName': 'IDEA',
-#       'instrumentId': 110010000014366,
-#       'exchangeSegment': 'NSECM',
-#       'exchangeInstrumentId': 110010000014366,
-#       'instrumentName': 'IDEA',
-#       'instrumentType': 1,
-#       'blitzOrderId': 225121947920000006,
-#       'exchangeOrderId': '',
-#       'clientId': 'PRASHANT',
-#       'orderType': 'Limit',
-#       'orderSide': 'Buy',
-#       'orderStatus': 'PendingNew',
-#       'orderQuantity': 1,
-#       'orderPrice': 11.51,
-#       'tif': 'GFD',
-#       'productType': 'MIS',
-#       'isFictiveOrder': False,
-#       ...
-#     }
-#   ]
-# }
+order_details = client.get_order_by_blitz_id(blitz_order_id)
+
+print("Order Details Response:", order_details)
 ```
 
+---
 
-### **`get_open_orders`**
+# Place Order
 
-```
-def get_open_orders(self)
-```
+Creates and submits a new trading order to the exchange for the authenticated user account.
 
-??? info "Source Code"
-    ```python
-    def get_open_orders(self):
-        """Fetch all Open Orders"""
-        logging.info("Fetching all Open Orders")
-        endpoint = "orders/openOrders"
-        return self._send_request(endpoint, method="GET")
-    ```
+This API is used to place buy or sell orders across supported exchanges and product types. The order request can include details such as trading symbol, quantity, order type, price, product type, validity, and transaction type.
 
-Fetch all currently open (active) orders.
+After successful submission, the API returns order confirmation details including the generated order ID and current order status.
 
+This API supports various order workflows such as:
 
-**Example**
+- Market orders
+- Limit orders
+- Stop-loss orders
+- Intraday trading
+- Delivery trading
+- Strategy-based order execution
 
-```python
-open_orders = client.get_open_orders()
-print(open_orders)
+Placed orders are processed by the exchange and may move through different statuses such as open, complete, rejected, cancelled, or partially filled.
 
-# Example Response:
-# {
-#   'status': 'success',
-#   'message': 'request processed successfully',
-#   'data': [
-#     {
-#       'id': 136,
-#       'entityId': '9b4f9a76-f619-41a0-85bf-0d9ecff213c9',
-#       'strategyInstanceName': 'NSECM|IDEA',
-#       'instrumentName': 'IDEA',
-#       'blitzOrderId': 225121947920000006,
-#       'exchangeOrderId': '',
-#       'clientId': 'PRASHANT',
-#       'orderType': 'Limit',
-#       'orderSide': 'Buy',
-#       'orderStatus': 'PendingNew',
-#       'orderQuantity': 1,
-#       'orderPrice': 11.51,
-#       'leavesQuantity': 1,
-#       'tif': 'GFD',
-#       'productType': 'MIS',
-#       ...
-#     }
-#   ]
-# }
-```
-
-
-### **`get_order_by_blitz_id`**
-
-```
-def get_order_by_blitz_id(self, blitz_order_id: int)
-```
-
-??? info "Source Code"
-    ```python
-    def get_order_by_blitz_id(self, blitz_order_id: int):
-        """Fetch a single order by BlitzOrderId."""
-        logging.info(f"Fetching order for BlitzOrderId={blitz_order_id}")
-        endpoint = f"orders/{blitz_order_id}"
-        return self._send_request(endpoint, method="GET")
-    ```
-
-Fetch details of a specific order using its Blitz Order ID.
-
-**Parameters**
-
-| Parameter      | Type    | Required | Description           |
-| -------------- | ------- | -------- | --------------------- |
-| blitz_order_id | integer | Yes      | Unique Blitz order ID |
-
-
-**Example**
-
-```python
-order = client.get_order_by_blitz_id(225121947920000011)
-print(order)
-
-# Example Response:
-# {
-#   'status': 'success',
-#   'message': 'request processed successfully',
-#   'data': [
-#     {
-#       'id': 157,
-#       'entityId': '9b4f9a76-f619-41a0-85bf-0d9ecff213c9',
-#       'strategyInstanceName': 'NSECM|IDEA',
-#       'instrumentName': 'IDEA',
-#       'blitzOrderId': 225121947920000011,
-#       'exchangeOrderId': '3204124724133908',
-#       'executionId': '3204124724134090',
-#       'clientId': 'PRASHANT',
-#       'orderType': 'Limit',
-#       'orderSide': 'Buy',
-#       'orderStatus': 'Filled',
-#       'orderQuantity': 1,
-#       'orderPrice': 11.2,
-#       'lastTradedQuantity': 1,
-#       'lastTradedPrice': 11.2,
-#       'cumulativeQuantity': 1,
-#       'leavesQuantity': 0,
-#       'averageTradedPrice': 11.2,
-#       'isOrderCompleted': True,
-#       'executionType': 'Fill',
-#       'productType': 'MIS',
-#       ...
-#     }
-#   ]
-# }
-```
-
-
-### **`place_order`**
-
-```
-def place_order(self, order_data: dict)
-```
-
-??? info "Source Code"
-    ```python
-    def place_order(self, order_data: dict):
-        """Place a new order."""
-        logging.info(f"Placing order: {order_data}")
-        endpoint = "orders/placeOrder"
-        return self._send_request(endpoint, payload=order_data, method="POST")
-        ```
-
-Place a new order in the market.
-
-**Parameters**
-
-| Parameter  | Type | Required | Description |
-| ---------- | ---- | -------- | ----------- |
-| order_data | dict | Yes      | Order payload containing instrument details, quantity, price, and order configuration. |
-
-**order_data Fields**
-
-| Field         | Type    | Required | Description                                                                 |
-| ------------- | ------- | -------- | --------------------------------------------------------------------------- |
-| instrumentId  | integer | No*      | Unique instrument identifier. Either `instrumentId` or `symbol` is required |
-| symbol        | string  | No*      | Trading symbol e.g., NSE|RELIANCE. Either `symbol` or `instrumentId` required |
-| quantity      | integer | Yes      | Number of units to trade                                                    |
-| price         | number  | No       | Price for limit orders                                                      |
-| orderType     | string  | Yes      | Type of order (`MARKET`, `LIMIT`)                                           |
-| transactionType | string | Yes     | Buy or Sell (`BUY`, `SELL`)                                                 |
-| productType   | string  | Yes      | Product type (`CNC`, `MIS`, etc.)                                           |
-| validity      | string  | Yes      | Order validity (`DAY`, `IOC`)                                               |
-
-> **Note:** Either `instrumentId` or `symbol` must be provided.
-
-**Example**
+## Example
 
 ```python
 order_data = {
-  "correlationOrderId": "corr_123",
-  "quantity": 1,
-  "product": "MIS",
-  "tif": "GTD",
-  "price": 10.1,
-  "orderType": "LIMIT",
-  #"instrumentId": 1010010000010666,
-  "symbol": "NSECM|IDEA",
-  "orderSide": "BUY",
-  "disclosedQuantity": 0,
-  "stopPrice": 0,
-  "clientId": "ABC",
-  "tiF_GTD_Date": "2025-10-10"
+    "correlationOrderId": "corr_123",
+    "quantity": 1,
+    "product": "MIS",
+    "tif": "GTD",
+    "price": 10,
+    "orderType": "LIMIT",
+    "symbol": "NSECM|IDEA",
+    "orderSide": "BUY",
+    "disclosedQuantity": 0,
+    "stopPrice": 0,
+    "clientId": "Algo123",
+    "tiF_GTD_Date": "2025-10-10"
 }
 
-response = client.place_order(order_data)
+order_resp = client.place_order(order_data)
 
-# Example Response:
-# {
-#   'status': 'success',
-#   'message': 'request processed successfully',
-#   'data': {
-#     'blitzOrderId': 225121947920000028,
-#     'correlationOrderId': '225121947920000028'
-#   }
-# }
+print("Place Order Response:", order_resp)
 ```
 
+---
 
-### **`modify_order`**
+## Order Parameters
 
-```
-def modify_order(self, order_data: dict)
-```
+| Parameter | Description |
+|----------|-------------|
+| `correlationOrderId` | Unique order identifier |
+| `quantity` | Order quantity |
+| `product` | Product type (MIS/CNC/etc.) |
+| `tif` | Time in force |
+| `price` | Order price |
+| `orderType` | LIMIT / MARKET |
+| `symbol` | Trading symbol |
+| `orderSide` | BUY / SELL |
+| `disclosedQuantity` | Disclosed quantity |
+| `stopPrice` | Stop loss trigger price |
+| `clientId` | Client identifier |
+| `tiF_GTD_Date` | GTD expiry date |
 
-Modify an existing order.
+---
+# Modify Order
 
+Modifies an existing open or pending order for the authenticated user account.
 
-**Parameters**
+This API allows updating specific order parameters such as quantity, price, trigger price, or validity before the order is fully executed or cancelled at the exchange.
 
-| Parameter  | Type | Required | Description |
-| ---------- | ---- | -------- | ----------- |
-| order_data | dict | Yes      | Payload containing updated order details. |
+Only orders that are currently open or pending can be modified. Completed, rejected, or cancelled orders cannot be updated.
 
-**order_data Fields**
+Order modification is commonly used for:
 
-| Field         | Type    | Required | Description                                      |
-| ------------- | ------- | -------- | ------------------------------------------------ |
-| blitzOrderId  | integer | Yes      | Unique Blitz order ID                            |
-| quantity      | integer | No       | Updated quantity                                 |
-| price         | number  | No       | Updated price                                    |
-| orderType     | string  | No       | Updated order type (`LIMIT`, `MARKET`)           |
+- Changing limit prices
+- Updating order quantities
+- Revising stop-loss trigger values
+- Adjusting strategy-generated orders
+- Managing pending exchange orders in real time
 
-> Only fields to be modified need to be passed.
+After successful modification, the exchange processes the updated order request and returns the latest order status and details.
 
-
-
-**Example**
+## Example
 
 ```python
-
 modify_data = {
-  "modifiedOrderQuantity": 10,
-  "price": 10.8,
-  "blitzOrderId": 29104141260000005,
-  "orderType": "LIMIT",
-  #"instrumentId": 1010010000010666,
-  "symbol": "NSECM|IDEA",
-  "disclosedQuantity": 0,
-  "stopPrice": 0,
-  "tif": "GFD",
-  #"strategyInstanceId": "656abb03-eec9-4cd0-a226-025090b3ff27",
-  "tiF_GTD_Date": "2025-10-10"
+    "modifiedOrderQuantity": 10,
+    "price": 10.8,
+    "blitzOrderId": 212105238510000007,
+    "orderType": "LIMIT",
+    "symbol": "NSECM|IDEA",
+    "disclosedQuantity": 0,
+    "stopPrice": 0,
+    "tif": "GFD",
+    "tiF_GTD_Date": "2025-10-10"
 }
-response = client.modify_order(modify_data)
 
-# Example Response:
-# {
-#   'status': 'success',
-#   'message': 'request processed successfully',
-#   'data': 'successfully send modify order request to blitz server'
-# }
+modify_resp = client.modify_order(modify_data)
+
+print("Modify Order Response:", modify_resp)
 ```
 
-### **`cancel_order`**
+---
 
-```
-def cancel_order(self, instrument: str, blitzOrderId: int)
-```
+# Cancel Order
 
-Cancel an existing order.
+Cancels an existing open or pending order for the authenticated user account.
 
-**Parameters**
+This API is used to stop an active order from further execution at the exchange. Only orders that are currently open or partially filled can be cancelled. Completed, rejected, or already cancelled orders cannot be cancelled again.
 
-| Parameter    | Type    | Required | Description                                                                 |
-| ------------ | ------- | -------- | --------------------------------------------------------------------------- |
-| instrument   | string  | Yes      | Instrument identifier. Can be either `instrumentId` (numeric) or `symbol`   |
-| blitzOrderId | integer | Yes      | Unique Blitz Order ID                                                       |
+Order cancellation is commonly used for:
 
+- Removing pending orders from the market
+- Managing risk exposure
+- Stopping unintended executions
+- Updating trading strategies dynamically
+- Handling unfilled or partially filled orders
 
-**Example**
+After a successful cancellation request, the exchange updates the order status to `CANCELLED` if the request is accepted and processed successfully.
+
+## Example
 
 ```python
+cancel_resp = client.cancel_order(
+    instrument="NSECM|IDEA",
+    blitzOrderId=212105238510000007
+)
 
-response = client.cancel_order("NSE|RELIANCE", 12345)
-
-# Example Response:
-# {
-#   'status': 'success',
-#   'message': 'request processed successfully',
-#   'data': 'successfully send cancel order request to blitz server'
-# }
+print("Cancel Order Response:", cancel_resp)
 ```
 
+---
 
-## Position Management
+# Get Trades
 
+Retrieves all executed trade details for the authenticated user account.
 
-### **`get_positions`**
+This API returns trade-level execution information generated from completed or partially completed orders. Each trade represents an actual execution that occurred at the exchange.
 
+The response typically includes details such as:
+
+- Trade ID
+- Order ID
+- Trading symbol
+- Exchange
+- Buy/Sell side
+- Executed quantity
+- Execution price
+- Product type
+- Execution timestamp
+- Brokerage and charges (if applicable)
+
+This API is useful for:
+
+- Monitoring executed trades
+- Calculating realized profit and loss
+- Trade reconciliation
+- Strategy execution tracking
+- Building trade history dashboards and reports
+
+Only successfully executed trades are returned by this API.
+
+## Example
+
+```python
+trades = client.get_trades()
+
+print("Trades Response:", trades)
 ```
-def get_positions(self)
-```
 
-Fetch all current positions held by the client.
+---
 
-**Example**
+# Get Positions
+
+Retrieves all current trading positions for the authenticated user account.
+
+This API returns consolidated position details across all executed trades and active holdings for the current trading session. Positions represent the net buy and sell quantities for each traded instrument.
+
+The response typically includes details such as:
+
+- Trading symbol
+- Exchange
+- Product type
+- Net quantity
+- Buy quantity
+- Sell quantity
+- Average buy price
+- Average sell price
+- Realized profit and loss
+- Unrealized profit and loss
+- Day positions
+- Overnight positions
+
+This API is useful for:
+
+- Monitoring live positions
+- Tracking portfolio exposure
+- Calculating profit and loss
+- Risk management
+- Strategy position tracking
+- Building portfolio dashboards
+
+Positions are dynamically updated based on executed trades and exchange updates during market hours.
+
+## Example
 
 ```python
 positions = client.get_positions()
 
-# Example Response:
-# {
-#   'status': 'success',
-#   'message': 'request processed successfully',
-#   'data': [
-#     {
-#       'instrumentName': 'IDEA',
-#       'exchangeSegment': 'NSECM',
-#       'productType': 'MIS',
-#       'netQuantity': 1,
-#       'buyQuantity': 1,
-#       'sellQuantity': 0,
-#       'buyValue': 11.51,
-#       'sellValue': 0.0,
-#       'ltp': 11.2,
-#       'pnl': -0.31,
-#       ...
-#     }
-#   ]
-# }
+print("Positions Response:", positions)
 ```
 
+---
+# Get Statistics
 
-<!-- ## Statistics Management
+Retrieves trading and account-related statistical information for the authenticated user account.
 
+This API provides summarized trading metrics and performance-related data that can be used for monitoring trading activity, strategy analysis, and account performance evaluation.
 
-### **`get_statistics`**
+The response may include details such as:
 
-```
-def get_statistics(self)
-```
+- Total orders placed
+- Total executed trades
+- Win/loss statistics
+- Profit and loss summary
+- Trade volume
+- Strategy performance metrics
+- Execution statistics
+- Day-wise or session-wise summaries
 
-Fetch strategy statistics and performance metrics.
+This API is useful for:
 
+- Monitoring trading performance
+- Building analytics dashboards
+- Strategy evaluation
+- Performance reporting
+- Risk and exposure analysis
+- Generating trading summaries
 
-**Example**
+Statistical values are calculated based on available trading and execution data for the authenticated account.
+
+## Example
 
 ```python
-stats = client.get_statistics()
+statistics = client.get_statistics()
 
-# Example Response:
-# {
-#   'status': 'success',
-#   'message': 'request processed successfully',
-#   'data': {
-#     'totalTrades': 12,
-#     'profitableTrades': 7,
-#     'lossTrades': 5,
-#     'winRate': 58.33,
-#     'totalPnl': 1250.75,
-#     'realizedPnl': 980.50,
-#     'unrealizedPnl': 270.25,
-#     'totalTurnover': 125000.0
-#   }
-# }
-```
- -->
-
-
-## Trade Management
-
-
-### **`get_trades`**
-
-```
-def get_trades(self)
+print("Statistics Response:", statistics)
 ```
 
-Fetch all executed trades.
+---
 
+# Send Signals
 
-**Example**
+Sends trading or strategy signals from the source strategy to one or more destination strategies within the QuantXpress platform.
+
+This API is used to trigger strategy actions such as buy, sell, exit, or custom trading events and distribute them to connected destination strategies or execution engines.
+
+Signals can be used for:
+
+- Strategy-to-strategy communication
+- Automated trade execution
+- Copy trading workflows
+- Multi-account signal distribution
+- Event-driven trading systems
+- Centralized strategy management
+
+The API allows strategies to exchange execution instructions and synchronize trading actions across multiple connected systems in real time.
+
+The response typically includes signal processing status, delivery confirmation, and execution acknowledgement details.
+
+## Example
 
 ```python
-
-trades = client.get_trades()
-
-# Example Response:
-# {
-#   'status': 'success',
-#   'message': 'request processed successfully',
-#   'data': [
-#     {
-#       'id': 27,
-#       'entityId': '9b4f9a76-f619-41a0-85bf-0d9ecff213c9',
-#       'instrumentName': 'IDEA',
-#       'exchangeSegment': 'NSECM',
-#       'blitzOrderId': 225121947920000011,
-#       'exchangeOrderId': '3204124724133908',
-#       'executionId': '3204124724134090',
-#       'clientId': 'PRASHANT',
-#       'orderType': 'Limit',
-#       'orderSide': 'Buy',
-#       'orderStatus': 'Filled',
-#       'orderQuantity': 1,
-#       'orderPrice': 11.2,
-#       'lastTradedQuantity': 1,
-#       'lastTradedPrice': 11.2,
-#       'averageTradedPrice': 11.2,
-#       'executionType': 'Fill',
-#       'productType': 'MIS',
-#       ...
-#     }
-#   ]
-# }
-```
-
-
-## Signals
-
-
-### **`send_signals`**
-
-```
-def send_signals(self, signals: list)
-```
-
-
-Send trading signals and optionally publish them to Redis.
-
-
-**Parameters**
-
-| Parameter | Type | Required | Description |
-| --------- | ---- | -------- | ----------- |
-| signals   | list | Yes      | List of signal objects containing trading instructions. |
-
-### signals Fields
-
-| Field        | Type   | Required | Description                                      |
-| ------------ | ------ | -------- | ------------------------------------------------ |
-| instrumentId | int    | No*      | Instrument ID                                    |
-| symbol       | string | No*      | Trading symbol                                   |
-| action       | string | Yes      | Signal action (`BUY`, `SELL`)                    |
-| quantity     | int    | Yes      | Quantity to trade                                |
-| price        | number | No       | Price (if applicable)                            |
-
-> Either `instrumentId` or `symbol` must be provided.
-
-**Example**
-
-```python
-signals = [
-    {"symbol": "NSE|RELIANCE", "action": "BUY"}
+signals_payload = [
+    {
+        "sourceStrategy": "StrategyA",
+        "destinationStrategy": "Matrix",
+        "sourceSID": "SID123",
+        "instanceRunningMode": "Start",
+        "globalAction": "signal",
+        "instruments": [
+            {
+                "exchangeSegment": "NSE",
+                "instrumentName": "NIFTY10FEB2625900CE",
+                "action": "EnterShort",
+                "lot": "1",
+                "timeStamp": "2025-10-23T14:30:00Z",
+                "infoText": "Test order"
+            }
+        ]
+    }
 ]
 
-response = client.send_signals(signals)
+result = client.send_signals(signals_payload)
 
-# Example Response:
-# {
-#    "status":"success",
-#    "message":"request processed successfully.",
-#    "data":
-#        {"message":"Signal received successfully."}}'
+print(result)
 ```
 
+---
 
-## WebSocket Callbacks
+# Signal Payload Parameters
 
+| Parameter | Description |
+|----------|-------------|
+| `sourceStrategy` | Source strategy name |
+| `destinationStrategy` | Destination strategy name |
+| `sourceSID` | Strategy instance identifier |
+| `instanceRunningMode` | Strategy running mode |
+| `globalAction` | Signal action |
+| `exchangeSegment` | Exchange segment |
+| `instrumentName` | Instrument symbol |
+| `action` | Trading action |
+| `lot` | Quantity/lots |
+| `timeStamp` | Signal timestamp |
+| `infoText` | Additional information |
 
-### **`on_connect`**
+---
 
-```
-def on_connect(self)
-```
-
-
-Callback triggered when WebSocket connection is established.
-
-### **`on_close`**
-
-```
-def on_close(self, close_status_code, close_msg)
-```
-
-Callback triggered when WebSocket connection is closed.
-
-### **`on_message`**
-
-```
-@property def on_message(self)
-```
-
-Setter to register callback for receiving real-time tick data.
-
-
-**Example**
+# Complete Example
 
 ```python
-def handle_tick(data):
-    print(data)
+import logging
 
-client.on_message = handle_tick
+logging.basicConfig(level=logging.INFO)
+
+from BLITZAPI.blitz_api_client import BlitzAPIClient
+
+# =============================== Initialize Client ===============================
+
+client = BlitzAPIClient(
+    app_key="YOUR_APP_KEY",
+    user_id="YOUR_USER_ID"
+)
+
+# =============================== Get Orders ===============================
+
+order_details = client.get_orders()
+
+print("Order Details Response:", order_details)
+
+# =============================== Place Order ===============================
+
+order_data = {
+    "correlationOrderId": "corr_123",
+    "quantity": 1,
+    "product": "MIS",
+    "tif": "GTD",
+    "price": 10,
+    "orderType": "LIMIT",
+    "symbol": "NSECM|IDEA",
+    "orderSide": "BUY",
+    "disclosedQuantity": 0,
+    "stopPrice": 0,
+    "clientId": "Algo123",
+    "tiF_GTD_Date": "2025-10-10"
+}
+
+order_resp = client.place_order(order_data)
+
+print("Place Order Response:", order_resp)
+
+# =============================== Modify Order ===============================
+
+modify_data = {
+    "modifiedOrderQuantity": 10,
+    "price": 10.8,
+    "blitzOrderId": 212105238510000007,
+    "orderType": "LIMIT",
+    "symbol": "NSECM|IDEA",
+    "disclosedQuantity": 0,
+    "stopPrice": 0,
+    "tif": "GFD",
+    "tiF_GTD_Date": "2025-10-10"
+}
+
+modify_resp = client.modify_order(modify_data)
+
+print("Modify Order Response:", modify_resp)
+
+# =============================== Cancel Order ===============================
+
+cancel_resp = client.cancel_order(
+    instrument="NSECM|IDEA",
+    blitzOrderId=212105238510000007
+)
+
+print("Cancel Order Response:", cancel_resp)
+
+# =============================== Send Signals ===============================
+
+signals_payload = [
+    {
+        "sourceStrategy": "StrategyA",
+        "destinationStrategy": "Matrix",
+        "sourceSID": "SID123",
+        "instanceRunningMode": "Start",
+        "globalAction": "signal",
+        "instruments": [
+            {
+                "exchangeSegment": "NSE",
+                "instrumentName": "NIFTY10FEB2625900CE",
+                "action": "EnterShort",
+                "lot": "1",
+                "timeStamp": "2025-10-23T14:30:00Z",
+                "infoText": "Test order"
+            }
+        ]
+    }
+]
+
+result = client.send_signals(signals_payload)
+
+print(result)
 ```

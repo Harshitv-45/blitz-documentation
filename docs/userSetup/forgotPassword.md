@@ -1,73 +1,55 @@
 # Reset Password
 
-If you’ve forgotten your password, the **BlitzTrader API portal** offers a simple and secure password reset flow.
+If you've forgotten your password, the **BlitzTrader** portal offers a simple and secure process to get you back into your account.
 
 ---
 
-## Step-by-Step Process
+## Step-by-Step Guide
 
-There are **three stages** in the password reset journey:
-
-1. **Forgot Password** – Submit your registered email ID.  
-2. **OTP + New Password** – Enter the OTP received on your email and set a new password.  
-3. **Reset Successful** – Confirmation message and option to log in.
-
----
-
-## Forgot Password
-
-When you click **"Forgot Password?"** on the login screen, you’ll see a page like this:
+### 1. Request a Password Reset
+Start by clicking the **"Forgot Password?"** link on the main login screen. 
 
 ![Forgot Password Screen](../assets/forgot-password-screen.png)
 
-### Steps to perform
+- Enter the **Email Address / User ID** associated with your BlitzTrader account.
+- Click the **Send Reset Link** button.
 
-- **Email Address / User ID** – Enter the email ID associated with your BlitzTrader account.  
-- Click **Send Reset Link**.
-
-Once submitted, you’ll receive a **4-digit OTP** on your email.
+Once submitted, the system will send a secure **4-digit OTP (One-Time Password)** to your registered email address.
 
 ---
 
-
-You’ll be redirected to the **Reset Password** screen.
-Enter OTP & New Password
+### 2. Enter OTP and New Password
+After requesting the reset, you will be automatically redirected to the **Reset Password** screen.
 
 ![Reset Password Screen](../assets/send-reset-link-screen.png)
 
-### Fields Required
+You will need to fill in the following details:
 
-- **OTP** – A 4-digit One-Time Password sent to your email.  
-- **New Password** – Choose a secure password.  
-- **Confirm Password** – Retype the new password to confirm.  
+- **OTP**: Enter the 4-digit code sent to your email.
+- **New Password**: Type in your new secure password.
+- **Confirm Password**: Re-type the password to make sure there are no typos.
 
 !!! tip "Password Guidelines"
-    To keep your account secure, we recommend:
-    - Minimum 8 characters
-    - At least one uppercase and lowercase letter
-    - Include numbers and symbols
-    - Avoid using personal info or reused passwords
+    To keep your account secure, your password should:
+    - Be at least **8 characters** long.
+    - Include both **uppercase and lowercase** letters.
+    - Include at least **one number** and **one symbol**.
+    - Avoid using personal info or previously used passwords.
 
-Click **Reset Now** to proceed.
+Once everything is filled out, click **Reset Now**.
 
 ---
 
-### Reset Successful
-
-Once OTP and new password are validated, you’ll see:
+### 3. Log Back In
+If your OTP is correct and your passwords match, you will see a success confirmation!
 
 ![Reset Successful Screen](../assets/reset-successful-screen.png)
 
-Your password has been successfully updated.  
-You can now log in using your new credentials.
-
-Click **Login** to go back to the login screen.
+Your password has been successfully updated. Click the **Login** button to return to the main login screen and sign in with your new credentials.
 
 ---
 
-### Notes & Tips
-
-!!! note
-    - Ensure your email is correct and accessible before initiating reset.
-    - OTPs are valid for a short time. If expired, re-initiate the process.
-    - If you didn’t request a reset, contact QuantXpress Support immediately.
+!!! note "Things to keep in mind"
+    - **Check your spam folder:** If you don't see the OTP in your inbox, it might have been filtered.
+    - **OTPs expire quickly:** If your OTP expires before you use it, you will need to restart the process.
+    - **Security alert:** If you receive an OTP but didn't request a password reset, please contact QuantXpress Support immediately.

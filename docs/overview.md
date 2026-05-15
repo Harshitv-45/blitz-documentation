@@ -1,76 +1,66 @@
-## **Platform Overview**
+# **Welcome to the BlitzTrader Ecosystem**
 
-Blitz is built around three core components, each designed to handle a specific layer of the trading workflow:
+The **BlitzTrader API** ecosystem provides all the tools you need. Our platform is designed to be user-friendly and easy to integrate.
 
-| Component     | Description |
-|--------------|------------|
-| **Blitz API** | REST-based interface for trading operations and market data |
-| **Blitz SDK** | Developer-friendly libraries for faster and easier integration |
-| **TPOMS**     | Broker communication and order routing layer |
+The ecosystem is built around three core pillars, each handling a crucial part of the trading lifecycle:
 
----
-
-## **Blitz API**
-
-The **Blitz API** provides a comprehensive set of REST endpoints that allow direct interaction with the trading platform.
-
-### Key Capabilities
-
-- Place, modify, and cancel orders
-- Retrieve trades, orders, and positions
-- Access real-time and historical market data
-- Track order execution and status
-- Manage portfolio information
-
-### Highlights
-
-- Resource-oriented REST architecture  
-- JSON-based request and response format  
-- Standard HTTP methods and status codes  
-
-➡️ Refer to the **API Reference** for detailed endpoint documentation.
+| Component | What it does | Who it's for |
+| --- | --- | --- |
+| **Blitz API** | Direct REST-based endpoints for trading and market data. | Users who want full control over their HTTP requests. |
+| **Blitz SDK** | Pre-built libraries to quickly connect to Blitz without writing boilerplate code. | Users who want to build features fast in their preferred language. |
+| **TPOMS** | A built-in dashboard feature where you can configure and manage your external broker connections. | Any user who needs to link their trading account to external brokers. |
 
 ---
 
-## **Blitz SDK**
+## **1. Blitz API: Direct Control**
 
-The **Blitz SDK** offers client libraries that abstract away low-level API complexities, enabling faster and more efficient integration.
+The **Blitz API** gives you direct, unmediated access to our platform via standard HTTP requests. Everything you can do on a trading terminal, you can do through our API.
 
-### What the SDK Handles
+### What can you build with it?
+- **Order Management:** Place, modify, cancel, and track orders in real-time.
+- **Portfolio Tracking:** Retrieve your daily trades, open orders, and current positions.
+- **Market Data:** Access live streaming quotes or pull historical data for backtesting.
 
-- Authentication and session management  
-- Request construction and formatting  
-- API communication  
-- Response parsing  
-- Error handling  
+### Why use the API?
+- **Universally Compatible:** Since it uses JSON over REST, you can connect to it using any programming language or tool (like Postman or curl).
+- **Predictable:** Uses standard HTTP methods (GET, POST) and clear status codes.
 
-This allows developers to focus on building features rather than managing infrastructure.
-
-➡️ Refer to the **Blitz SDK** to get started.
-
----
-
-## **TPOMS**
-
-**TPOMS (Third-Party Order Management System)** acts as the broker integration layer within Blitz.
-
-It bridges the gap between Blitz and external broker systems by:
-
-- Translating Blitz requests into broker-specific formats  
-- Normalizing broker responses  
-- Managing the full order lifecycle  
-- Supporting multiple brokers through adapter-based architecture  
-
-This ensures seamless multi-broker support through a unified interface.
-
-➡️ Refer to the **TPOMS** for architecture and integration details.
+➡️ *Dive into the **[API Reference](api/API_Structure.md)** for detailed endpoint documentation.*
 
 ---
 
-## **Quickstart**
+## **2. Blitz SDK: Build Faster**
 
-### 1. Generate Access Token
-Authenticate with Blitz to obtain your access token.
+Don't want to handle the low-level HTTP networking yourself? The **Blitz SDK** provides ready-to-use client libraries that wrap the API for you.
+
+### How the SDK makes your life easier:
+- **Automatic Authentication:** Handles login and token management automatically.
+- **Built-in Error Handling:** Parses errors cleanly so your app doesn't crash unexpectedly.
+- **Data Formatting:** Automatically formats your requests and responses into native objects.
+
+Instead of writing networking code, you can focus entirely on your trading strategy and business logic.
+
+➡️ *Check out the **[Blitz SDK](sdk/about_sdk.md)** section to get started.*
+
+---
+
+## **3. TPOMS: Centralized Broker Management**
+
+**TPOMS** stands for *Third-Party Order Management System*. It is a built-in feature available directly from the Blitz UI that allows you to connect and manage your external market brokers (like Zerodha, Motilal, etc.) in one place.
+ 
+
+➡️ *Learn more about broker integrations in the **[TPOMS Overview](tpoms/overview.md)**.*
+
+---
+
+## **Quickstart: Your First Trade**
+
+Ready to see it in action? Here is a simple three-step process to place your first order using raw HTTP requests.
+
+### Step 1: Generate an Access Token
+
+Before you can interact with the system, you must log in to verify your identity. This request returns a secure token that you must include in all future requests.
+
 ```bash
 curl -X 'POST' \
   'http://uat.quantxpress.com/interactive/v1/api/v1/authentication/login' \
@@ -82,7 +72,9 @@ curl -X 'POST' \
 }'
 ```
 
-### 2. Place Your First Order
+### Step 2: Place an Order
+
+Using the access token you just received (replace `{access_token}`), you can place an order. The following payload contains the required fields to route your order to the exchange. *(Make sure to replace placeholder values with actual trading parameters when testing).*
 
 ```bash
 curl -X 'POST' \
@@ -107,19 +99,30 @@ curl -X 'POST' \
   "isFictive": true,
   "correlationOrderId": "string"
 }'
-
 ```
 
-### 3. Check Order Status
+```json
+{
+  "status": "success",
+  "message": "request processed successfully",
+  "data": {
+    "blitzOrderId": 225121947920000028,
+    "correlationOrderId": "225121947920000028"
+  }
+}
+```
+
+### Step 3: Check Order Status
+
+Once your order is placed, you can fetch its current status to see if it was executed, pending, or rejected by the broker.
+
 ```bash
 curl -X 'GET' \
   'http://uat.quantxpress.com/interactive/v1/api/v1/order' \
   -H 'Content-Type: application/json' \
   -H 'Accept: */*' \
-  -H 'Authorization: Bearer {access_token}' \
+  -H 'Authorization: Bearer {access_token}'
 ```
 
-!!! tip
-    New to Blitz? Start with the **API Reference** for direct integration, or use the **SDK** for a faster setup.
-
----
+!!! tip "Where to go next?"
+    If you want to build direct integrations, start with the **[API Reference](api/API_Structure.md)**. If you want a smoother development experience, head over to the **[Blitz SDK](sdk/about_sdk.md)**.

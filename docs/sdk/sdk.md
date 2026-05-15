@@ -1,64 +1,170 @@
-# **Blitz** module
+# Getting Started with SDK
 
-Blitz SDK for Python.
+This guide helps you quickly set up and start using the Blitz SDK for trading and market data operations.
 
-```python
-pip install blitzSDK
-```
+---
 
-## **The library**
+# Prerequisites
 
-Blitz provides a comprehensive set of APIs for building trading and investment applications. With Blitz, you can place orders instantly, monitor portfolios, access live market data through WebSockets, and leverage a variety of trading features using a simple, unified HTTP interface.
+Before using the SDK, ensure the following are installed and configured:
 
-## **Getting started**
+- Python 3.9 or above
+- pip package manager
+- Internet connectivity
+- Valid `app_key`
+- Valid `user_id`
 
-    from blitzSDK import AuthClient, MarketDataClient, BlitzAPIClient
+---
 
-    # Step 1: Authenticate
-    auth_client = AuthClient(app_key="your_app_key_here", user_id="USER123")
+# Install Python
 
-    # Step 2: Generate Access Token
-    access_token = auth_client.get_access_token()
-    print("Access Token:", access_token)
+Download and install Python from:
 
-    # Step 3: Initialize Market Data Client
-    market_client = MarketDataClient(app_key="your_app_key_here", user_id="USER123")
+- [Python Official Website](https://www.python.org/downloads/)
 
-    # Step 4: Fetch LTP for instruments
-    ltp_data = market_client.get_ltp(["NSE|RELIANCE", "NSE|TCS"])
-    print("LTP Data:", ltp_data)
+Verify installation:
 
-    # Step 5: Initialize Trading Client
-    client = BlitzAPIClient(app_key="your_app_key_here", user_id="USER123")
-
-    # Step 6: Place an Order
-    order_data = {
-        "symbol": "NSE|RELIANCE",   # or use "instrumentId": 1010010000002885
-        "quantity": 10,
-        "price": 1420,
-        "orderType": "LIMIT",
-        "transactionType": "BUY",
-        "productType": "CNC",
-        "validity": "DAY"
-    }
-    
-    order_response = client.place_order(order_data)
-    print("Order Response:", order_response)
-
-**Output**
-
-```python
-Access Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-Downloading instruments...
-Loaded 85313 instruments.
-INFO:root:App login successful.
-Matched → Symbol: NSECM|RELIANCE | Instrument ID: 1010010000002885
-Matched → Symbol: NSECM|TCS | Instrument ID: 1010010000011536
-LTP Response: {'data': {
-    '1010010000002885': {'InstrumentID': 1010010000002885, 'InstrumentName': 'RELIANCE', 'LTP': 1422.7}, '1010010000011536': {'InstrumentID': 1010010000011536, 'InstrumentName': 'TCS', 'LTP': 3507.8}},
-    'status': 'success'
-    }
+```bash
+python --version
 ```
 
 ---
 
+# Upgrade pip
+
+Ensure pip is updated to the latest version:
+
+```bash
+python -m pip install --upgrade pip
+```
+
+---
+
+# Install Dependencies
+
+Install required packages using:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+
+---
+
+# Initialize SDK Client
+
+## Blitz Trading SDK
+
+```python
+from BLITZAPI.blitz_api_client import BlitzAPIClient
+
+client = BlitzAPIClient(
+    app_key="YOUR_APP_KEY",
+    user_id="YOUR_USER_ID"
+)
+```
+
+---
+
+## Market Data SDK
+
+```python
+from market_data import MarketDataClient
+
+client = MarketDataClient(
+    app_key="YOUR_APP_KEY",
+    user_id="YOUR_USER_ID"
+)
+```
+
+---
+
+# Generate API Keys
+
+Before using the SDK, generate your API credentials.
+
+- [Generate API Key](../userSetup/generateKey.md)
+
+---
+
+# Basic Usage
+
+## Fetch Orders
+
+```python
+orders = client.get_orders()
+
+print(orders)
+```
+
+---
+
+## Fetch LTP
+
+```python
+ltp = client.get_ltp(["NSECM|IDEA"])
+
+print(ltp)
+```
+
+---
+
+# Run Examples
+
+Execute sample files:
+
+```bash
+python example.py
+```
+
+---
+
+# Documentation
+
+## SDK Modules
+
+- [Blitz Trading SDK](../blitzSdk/blitzSdk.md)
+- [Market Data SDK](../marketDataSdk/marketDataSdk.md)
+
+---
+
+# Troubleshooting
+
+## pip not recognized
+
+Reinstall Python and ensure:
+
+```text
+Add Python to PATH
+```
+
+is checked during installation.
+
+---
+
+## Module not found
+
+Install dependencies again:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# Summary
+
+You are now ready to use the Blitz SDK for:
+
+- Trading operations
+- Market data access
+- Real-time WebSocket streaming
+- Strategy execution
+- Order and position management
+
+---
+
+!!! tip
+    Start with the example scripts to quickly understand SDK usage and workflows.

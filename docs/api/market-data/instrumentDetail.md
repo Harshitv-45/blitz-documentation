@@ -79,7 +79,6 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
                 "priceBandHigh": 356.55,
                 "priceBandLow": 237.75,
                 "multiplier": 1,
-                "bvp": 1,
                 "priceType": "1.0",
                 "priceNumerator": 1,
                 "priceDenominator": 1,
@@ -139,7 +138,6 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
                 "priceBandHigh": 2698.7,
                 "priceBandLow": 2208.1,
                 "multiplier": 1,
-                "bvp": 1,
                 "priceType": "1.0",
                 "priceNumerator": 1,
                 "priceDenominator": 1,
@@ -199,7 +197,6 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
                 "priceBandHigh": 752.2,
                 "priceBandLow": 531.2,
                 "multiplier": 1,
-                "bvp": 1,
                 "priceType": "1.0",
                 "priceNumerator": 1,
                 "priceDenominator": 1,
@@ -261,7 +258,6 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
                 "priceBandHigh": 1607.7,
                 "priceBandLow": 1315.5,
                 "multiplier": 1,
-                "bvp": 1,
                 "priceType": "1.0",
                 "priceNumerator": 1,
                 "priceDenominator": 1,
@@ -321,7 +317,6 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
                 "priceBandHigh": 840.25,
                 "priceBandLow": 726.35,
                 "multiplier": 1,
-                "bvp": 1,
                 "priceType": "1.0",
                 "priceNumerator": 1,
                 "priceDenominator": 1,
@@ -381,7 +376,6 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
                 "priceBandHigh": 25000.0,
                 "priceBandLow": 23000.0,
                 "multiplier": 1,
-                "bvp": 1,
                 "priceType": "1.0",
                 "priceNumerator": 1,
                 "priceDenominator": 1,
@@ -444,7 +438,6 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
     | priceBandHigh          | float       | Upper price band limit                               |
     | priceBandLow           | float       | Lower price band limit                               |
     | multiplier             | float       | Contract multiplier                                  |
-    | bvp                    | integer       |                                  |
     | priceType              | string       | Price type configuration                             |
     | priceNumerator         | integer       | Price numerator                                    |
     | priceDenominator       | integer       | Price denominator                                    |
@@ -481,7 +474,6 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
     | priceBandHigh          | float       | Upper price band limit                               |
     | priceBandLow           | float       | Lower price band limit                               |
     | multiplier             | float       | Contract multiplier                                  |
-    | bvp                    | integer       |                                   |
     | priceType              | string       | Price type configuration                             |
     | priceNumerator         | integer       | Price numerator                                    |
     | priceDenominator       | integer       | Price denominator                                    |
@@ -518,7 +510,6 @@ Using this API, you can fetch instrument metadata such as symbol details, exchan
     | priceBandHigh          | float       | Upper price band limit                               |
     | priceBandLow           | float       | Lower price band limit                               |
     | multiplier             | integer       | Contract multiplier                                  |
-    | bvp                    | integer       |                                   |
     | priceType              | string       | Price type configuration                             |
     | priceNumerator         | integer       | Price numerator                                    |
     | priceDenominator       | integer       | Price denominator                                    |

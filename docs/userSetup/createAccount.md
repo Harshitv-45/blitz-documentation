@@ -1,10 +1,6 @@
 # Create Your Account
 
-To start using the **BlitzTrader API**, you need to register and create a developer account.
-
-This section guides you through the signup process on the BlitzTrader portal.
-
----
+To start using the **BlitzTrader API**, you first need to register and create an account. This quick guide will walk you through the sign-up process on the BlitzTrader portal.
 
 ![Create Account Page](../assets/create-account.png)
 
@@ -12,43 +8,31 @@ This section guides you through the signup process on the BlitzTrader portal.
 
 ## Steps to Sign Up
 
-### Open the Create Account Page
-Navigate to the BlitzTrader login screen and click on **"Create Account"**.
+### 1. Open the Create Account Page
+Go to the BlitzTrader login screen and click on the **Create Account** link at the bottom.
 
-### Required Fields
+### 2. Fill in the Form Details
+You will need to provide some basic information to set up your account:
 
-- **First Name** – Enter your first name.  
-- **Last Name** – Enter your last name.  
-- **Email Address** – Provide a valid email address for account verification.  
+- **First & Last Name**: Your full legal name.
+- **Email Address**: An active email address. *(We will send important account notifications and verification links here).*
+- **Mobile Number**: A valid mobile number. *(Make sure you can receive SMS on this number for OTP verifications and alerts).*
+- **Username**: A unique name you will use to log into your account.
+- **Password**: A strong, secure password to protect your account.
 
-!!! note "Email Note"
-    Make sure the email address is valid and active. You'll receive verification and account-related notifications here.
+!!! tip "Password Guidelines"
+    To keep your account safe, your password must:
+    - Be at least **8 characters** long.
+    - Include both **uppercase and lowercase** letters.
+    - Include at least **one number** and **one special character** (e.g., `@`, `#`, `!`).
 
-- **Mobile Number** – Enter a valid Indian mobile number (prefixed with `+91`).  
+### 3. Accept Terms & Conditions
+Before you can proceed, you must check the box that says **"I agree to the Terms and Conditions"**.
 
-!!! note "Mobile Note"
-    Use a mobile number you can access — OTPs and alerts will be sent here.
+!!! info
+    Make sure to read through the terms before accepting. This includes our general platform terms as well as POS machine terms, which govern the use of BlitzTrader services.
 
-- **Username** – Choose a unique username that you'll use to log in.  
-- **Password** – Choose a secure password.  
+### 4. Complete Registration
+Once all fields are filled out correctly, click the **Create Account** button to finish registering.
 
-!!! note "Password Guidelines"
-    Your password must:
-    - Be at least **8 characters** long
-    - Include **uppercase & lowercase letters**
-    - Include at least **one number** and **one special character** (like `@`, `#`, or `!`)  
-    Avoid using passwords like `password123`, your name, or simple patterns.
-
-### Accept Terms & Conditions
-Check the box **"I agree to the Terms and Conditions"**.
-
-!!! info "Terms & Conditions"
-    Please read and accept the terms and conditions to proceed with the account creation.  
-    The **POS machine terms** also apply to the services provided via the BlitzTrader platform.
-
----
-
-
-Click the **"Create Account"** button to complete your registration.
-
-If you already have an account, simply click **Login** to sign in.
+That's it! If you already have an account, you can simply click the **Login** link instead to sign in directly.
