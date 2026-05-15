@@ -6,13 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Blitz Trading Platform API, SDK and Broker Integration Documentation">
+        <meta name="description" content="Blitz Trader API, SDK and Broker Integration Documentation">
       
       
-        <meta name="author" content="Blitz Trader">
+        <meta name="author" content="Blitz Trader API">
       
-      
-        <link rel="canonical" href="https://your-domain.com/api/API_Structure/">
       
       
         <link rel="prev" href="../../userSetup/generateKey/">
@@ -29,7 +27,7 @@
     
     
       
-        <title>API Structure - Blitz Trader</title>
+        <title>API Structure - Blitz Trader API</title>
       
     
     
@@ -98,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Blitz Trader" class="md-header__button md-logo" aria-label="Blitz Trader" data-md-component="logo">
+    <a href="../.." title="Blitz Trader API" class="md-header__button md-logo" aria-label="Blitz Trader API" data-md-component="logo">
       
   <img src="../../assets/icon.png" alt="logo">
 
@@ -111,7 +109,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Blitz Trader
+            Blitz Trader API
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -223,12 +221,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Blitz Trader" class="md-nav__button md-logo" aria-label="Blitz Trader" data-md-component="logo">
+    <a href="../.." title="Blitz Trader API" class="md-nav__button md-logo" aria-label="Blitz Trader API" data-md-component="logo">
       
   <img src="../../assets/icon.png" alt="logo">
 
     </a>
-    Blitz Trader
+    Blitz Trader API
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -592,6 +590,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Request Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-request-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Request Headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -602,6 +628,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Response Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success-envelope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Envelope
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -874,7 +917,7 @@
   <span class="md-ellipsis">
     
   
-    Download Instruments
+    Instrument Master
   
 
     
@@ -1130,42 +1173,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sdk/sdk/" class="md-nav__link">
+      <a href="../../sdk/prerequisites/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Get Started with SDK
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../sdk/authentication/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Authentication
+    Prerequisites
   
 
     
@@ -1222,34 +1237,6 @@
     
   
     Market Data SDK
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../sdk/instrumentmasterskd/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Instrument Master
   
 
     
@@ -1356,34 +1343,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../tpoms/blitz_order_request/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Order Request
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
     
@@ -1395,10 +1354,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
         
           
-          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
             
   
   
@@ -1416,8 +1375,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1566,6 +1525,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Request Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-request-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Request Headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1576,6 +1563,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Response Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success-envelope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Envelope
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1603,42 +1607,58 @@
 <p>All API requests should be made to:</p>
 <div class="highlight"><pre><span></span><code><span class="err">http://uat.quantxpress.com</span>
 </code></pre></div>
+<p>When accessing specific endpoints, the full URL generally follows this pattern:<br />
+<code>http://uat.quantxpress.com/v1/api/[API_ENDPOINT]</code></p>
+<hr />
 <h2 id="authentication"><strong>Authentication</strong><a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
 <p>All endpoints require authentication using an access token.</p>
 <p>Include the token in the request header:</p>
 <div class="highlight"><pre><span></span><code><span class="err">Authorization: Bearer {access_Token}</span>
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Security Note</p>
+<p>Never expose your access token in public repositories, frontend JavaScript code, or client-side applications. Always keep it secure and handle it strictly via your backend systems.</p>
+</div>
 <hr />
 <h2 id="http-methods"><strong>HTTP Methods</strong><a class="headerlink" href="#http-methods" title="Permanent link">&para;</a></h2>
-<p>Blitz API uses standard HTTP methods:</p>
+<p>The API relies on standard HTTP methods (verbs) to indicate the intention of the request:</p>
 <table>
 <thead>
 <tr>
 <th>Method</th>
-<th>Usage</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>GET</td>
-<td>Retrieve data</td>
+<td><strong>GET</strong></td>
+<td>Retrieve data (e.g., fetch open orders, check current positions, retrieve trades).</td>
 </tr>
 <tr>
-<td>POST</td>
-<td>Create resources (e.g., place order)</td>
+<td><strong>POST</strong></td>
+<td>Create new resources or trigger actions (e.g., place a new order).</td>
 </tr>
 <tr>
-<td>PUT</td>
-<td>Update existing resources</td>
+<td><strong>PUT</strong></td>
+<td>Update existing resources (e.g., modify a pending order).</td>
 </tr>
 <tr>
-<td>DELETE</td>
-<td>Remove resources</td>
+<td><strong>DELETE</strong></td>
+<td>Remove or cancel resources (e.g., cancel an open order).</td>
 </tr>
 </tbody>
 </table>
+<hr />
 <h2 id="request-structure"><strong>Request Structure</strong><a class="headerlink" href="#request-structure" title="Permanent link">&para;</a></h2>
-<p>Use the following structure to make requests to the Blitz API:</p>
+<p>A typical API request involves setting the correct headers and, for <code>POST</code> and <code>PUT</code> methods, sending a JSON payload.</p>
+<h3 id="standard-request-headers">Standard Request Headers<a class="headerlink" href="#standard-request-headers" title="Permanent link">&para;</a></h3>
+<p>For every request, ensure you include the following headers:</p>
+<ul>
+<li><code>Content-Type: application/json</code>: Informs the server that you are sending JSON data in the request body.</li>
+<li><code>Accept: application/json</code>: Informs the server that you expect a JSON response.</li>
+<li><code>Authorization: Bearer {access_token}</code>: Provides your active session token for authentication.</li>
+</ul>
+<h3 id="example-request">Example Request<a class="headerlink" href="#example-request" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="o">[</span>API_METHOD<span class="o">]</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://uat.quantxpress.com/v1/api/[API_ENDPOINT]&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -1647,13 +1667,23 @@
 <span class="w">  </span><span class="o">[</span>REQUEST_PAYLOAD<span class="o">]</span>
 </code></pre></div>
 <h2 id="response-structure"><strong>Response Structure</strong><a class="headerlink" href="#response-structure" title="Permanent link">&para;</a></h2>
-<p>All responses are returned in JSON format:</p>
+<p>All API responses, regardless of success or failure, are wrapped in a standard JSON envelope. This ensures predictability when parsing responses in your application.</p>
+<h3 id="success-envelope">Success Envelope<a class="headerlink" href="#success-envelope" title="Permanent link">&para;</a></h3>
+<p>A successful request will typically return an HTTP <code>200 OK</code> status, along with the following structure:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;request processed successfully&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="c1">// Endpoint-specific payload goes here</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+<ul>
+<li><strong><code>status</code></strong>: Indicates the result of the request. Commonly <code>"success"</code> or <code>"error"</code>.</li>
+<li><strong><code>message</code></strong>: A human-readable string providing additional context about the response or describing an error if one occurred.</li>
+<li><strong><code>data</code></strong>: The actual payload of the response. Depending on the endpoint, this can be an object <code>{}</code> or an array <code>[]</code>.</li>
+</ul>
+<hr />
 
 
 

@@ -6,13 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Blitz Trading Platform API, SDK and Broker Integration Documentation">
+        <meta name="description" content="Blitz Trader API, SDK and Broker Integration Documentation">
       
       
-        <meta name="author" content="Blitz Trader">
+        <meta name="author" content="Blitz Trader API">
       
-      
-        <link rel="canonical" href="https://your-domain.com/api/trading/orders/">
       
       
         <link rel="prev" href="../../authentication/">
@@ -29,7 +27,7 @@
     
     
       
-        <title>Orders - Blitz Trader</title>
+        <title>Orders - Blitz Trader API</title>
       
     
     
@@ -98,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Blitz Trader" class="md-header__button md-logo" aria-label="Blitz Trader" data-md-component="logo">
+    <a href="../../.." title="Blitz Trader API" class="md-header__button md-logo" aria-label="Blitz Trader API" data-md-component="logo">
       
   <img src="../../../assets/icon.png" alt="logo">
 
@@ -111,7 +109,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Blitz Trader
+            Blitz Trader API
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -223,12 +221,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Blitz Trader" class="md-nav__button md-logo" aria-label="Blitz Trader" data-md-component="logo">
+    <a href="../../.." title="Blitz Trader API" class="md-nav__button md-logo" aria-label="Blitz Trader API" data-md-component="logo">
       
   <img src="../../../assets/icon.png" alt="logo">
 
     </a>
-    Blitz Trader
+    Blitz Trader API
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -887,7 +885,7 @@
   <span class="md-ellipsis">
     
   
-    Download Instruments
+    Instrument Master
   
 
     
@@ -1143,42 +1141,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sdk/sdk/" class="md-nav__link">
+      <a href="../../../sdk/prerequisites/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Get Started with SDK
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../sdk/authentication/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Authentication
+    Prerequisites
   
 
     
@@ -1235,34 +1205,6 @@
     
   
     Market Data SDK
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../sdk/instrumentmasterskd/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Instrument Master
   
 
     
@@ -1369,34 +1311,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../tpoms/blitz_order_request/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Order Request
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
     
@@ -1408,10 +1322,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
         
           
-          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
             
   
   
@@ -1429,8 +1343,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1682,6 +1596,11 @@
 <td>Internal unique ID of the order</td>
 </tr>
 <tr>
+<td>correlationOrderId</td>
+<td>string</td>
+<td>Correlation ID linked to the order</td>
+</tr>
+<tr>
 <td>entityId</td>
 <td>string</td>
 <td>ID of the entity (user) who placed the order</td>
@@ -1772,13 +1691,13 @@
 <td>Side of the order: <code>Buy</code> or <code>Sell</code></td>
 </tr>
 <tr>
-<td>orderStatus</td>
+<td>status</td>
 <td>string</td>
 <td>Current status of the order (<code>New</code>, <code>Filled</code>, <code>Cancelled</code>, <code>Rejected</code>)</td>
 </tr>
 <tr>
 <td>orderQuantity</td>
-<td>number</td>
+<td>integer</td>
 <td>Quantity of the order</td>
 </tr>
 <tr>
@@ -1798,7 +1717,7 @@
 </tr>
 <tr>
 <td>lastTradedQuantity</td>
-<td>number</td>
+<td>integer</td>
 <td>Quantity executed in the last trade</td>
 </tr>
 <tr>
@@ -1808,12 +1727,12 @@
 </tr>
 <tr>
 <td>cumulativeQuantity</td>
-<td>number</td>
+<td>integer</td>
 <td>Total quantity executed</td>
 </tr>
 <tr>
 <td>leavesQuantity</td>
-<td>number</td>
+<td>integer</td>
 <td>Quantity remaining to be executed</td>
 </tr>
 <tr>
@@ -1828,12 +1747,12 @@
 </tr>
 <tr>
 <td>orderDisclosedQuantity</td>
-<td>number</td>
+<td>integer</td>
 <td>Disclosed quantity for iceberg orders</td>
 </tr>
 <tr>
 <td>minimumQuantity</td>
-<td>number</td>
+<td>integer</td>
 <td>Minimum quantity allowed per execution</td>
 </tr>
 <tr>
@@ -1853,12 +1772,12 @@
 </tr>
 <tr>
 <td>orderModificationCount</td>
-<td>number</td>
+<td>integer</td>
 <td>Number of modifications made</td>
 </tr>
 <tr>
 <td>orderTradeCount</td>
-<td>number</td>
+<td>integer</td>
 <td>Number of trades executed</td>
 </tr>
 <tr>
@@ -1890,6 +1809,11 @@
 <td>orderTag</td>
 <td>string</td>
 <td>Optional tag for order categorization</td>
+</tr>
+<tr>
+<td>ctclId</td>
+<td>string</td>
+<td>CTCL terminal ID</td>
 </tr>
 <tr>
 <td>algoId</td>
@@ -1933,28 +1857,8 @@
 </tr>
 <tr>
 <td>sequenceNumber</td>
-<td>number</td>
+<td>integer</td>
 <td>Sequence number of the order in the system</td>
-</tr>
-<tr>
-<td>ctclId</td>
-<td>string</td>
-<td>CTCL terminal ID</td>
-</tr>
-<tr>
-<td>correlationOrderId</td>
-<td>string</td>
-<td>Correlation ID linked to the order</td>
-</tr>
-<tr>
-<td>productType</td>
-<td>string</td>
-<td>Product type for the order (<code>MIS</code>, <code>NRML</code>, <code>CNC</code>)</td>
-</tr>
-<tr>
-<td>sourceResponse</td>
-<td>object</td>
-<td>Raw response received from the source broker</td>
 </tr>
 </tbody>
 </table>
@@ -1996,16 +1900,18 @@ When an order is submitted, the system validates it for trading session availabi
 </code></pre></div>
 <h4 id="request-body">Request Body<a class="headerlink" href="#request-body" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;correlationOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;tif&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GFD&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;45.90&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tif&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">45.90</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000012018</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Limit&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Buy&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;disclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;stopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PRASHANT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT123&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;tiF_GTD_Date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -2030,8 +1936,13 @@ When an order is submitted, the system validates it for trading session availabi
 </thead>
 <tbody>
 <tr>
+<td>correlationOrderId</td>
+<td>string</td>
+<td>Correlation order identifier</td>
+</tr>
+<tr>
 <td>quantity</td>
-<td>number</td>
+<td>integer</td>
 <td>Quantity of the order to be placed</td>
 </tr>
 <tr>
@@ -2041,8 +1952,8 @@ When an order is submitted, the system validates it for trading session availabi
 </tr>
 <tr>
 <td>tif</td>
-<td>string</td>
-<td>Time-in-force for the order: <code>GFD</code>, <code>IOC</code></td>
+<td>integer</td>
+<td>Time-in-force for the order (Enum values)</td>
 </tr>
 <tr>
 <td>price</td>
@@ -2050,9 +1961,9 @@ When an order is submitted, the system validates it for trading session availabi
 <td>Price at which the order should be executed</td>
 </tr>
 <tr>
-<td>OrderType</td>
-<td>string</td>
-<td>Type of order: <code>MARKET</code>, <code>LIMIT</code>, <code>SL</code>, <code>SL-M</code></td>
+<td>orderType</td>
+<td>integer</td>
+<td>Type of order (Enum values)</td>
 </tr>
 <tr>
 <td>instrumentId</td>
@@ -2060,13 +1971,18 @@ When an order is submitted, the system validates it for trading session availabi
 <td>Internal ID of the instrument to trade</td>
 </tr>
 <tr>
-<td>OrderSide</td>
+<td>symbol</td>
 <td>string</td>
-<td>Side of the order: <code>Buy</code> or <code>Sell</code></td>
+<td>Symbol of the instrument</td>
+</tr>
+<tr>
+<td>orderSide</td>
+<td>integer</td>
+<td>Side of the order (Enum values)</td>
 </tr>
 <tr>
 <td>disclosedQuantity</td>
-<td>number</td>
+<td>integer</td>
 <td>Quantity disclosed for iceberg orders</td>
 </tr>
 <tr>
@@ -2163,8 +2079,13 @@ After modification, query the <a href="#fetching-orders">orders</a> to confirm t
 </thead>
 <tbody>
 <tr>
+<td>blitzOrderId</td>
+<td>integer</td>
+<td>Order ID assigned by the system</td>
+</tr>
+<tr>
 <td>modifiedOrderQuantity</td>
-<td>number</td>
+<td>integer</td>
 <td>Updated quantity of the order</td>
 </tr>
 <tr>
@@ -2173,14 +2094,9 @@ After modification, query the <a href="#fetching-orders">orders</a> to confirm t
 <td>Updated price at which the order should be executed</td>
 </tr>
 <tr>
-<td>exchangeOrderId</td>
-<td>string</td>
-<td>Exchange-assigned order ID identifying which order to modify</td>
-</tr>
-<tr>
 <td>orderType</td>
-<td>string</td>
-<td>Type of order: <code>Market</code>, <code>Limit</code>, <code>SL</code>, <code>SL-M</code></td>
+<td>integer</td>
+<td>Type of order (Enum values)</td>
 </tr>
 <tr>
 <td>instrumentId</td>
@@ -2188,13 +2104,13 @@ After modification, query the <a href="#fetching-orders">orders</a> to confirm t
 <td>Internal ID of the instrument being traded</td>
 </tr>
 <tr>
-<td>strategyInstanceId</td>
+<td>symbol</td>
 <td>string</td>
-<td>Unique identifier of the strategy instance associated with the order</td>
+<td>Symbol of the instrument</td>
 </tr>
 <tr>
 <td>disclosedQuantity</td>
-<td>number</td>
+<td>integer</td>
 <td>Updated disclosed quantity for the order</td>
 </tr>
 <tr>
@@ -2204,8 +2120,8 @@ After modification, query the <a href="#fetching-orders">orders</a> to confirm t
 </tr>
 <tr>
 <td>tif</td>
-<td>string</td>
-<td>Time-in-force for the order: <code>GFD</code>, <code>IOC</code></td>
+<td>integer</td>
+<td>Time-in-force for the order (Enum values)</td>
 </tr>
 <tr>
 <td>tiF_GTD_Date</td>
@@ -2216,17 +2132,16 @@ After modification, query the <a href="#fetching-orders">orders</a> to confirm t
 </table>
 <h4 id="request-body_1">Request Body<a class="headerlink" href="#request-body_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;disclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchangeOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3204164728325564&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000012018</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;blitzOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">225121947920000028</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;modifiedOrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;orderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Limit&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">44.9</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110010000012018</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;disclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;stopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;strategyInstanceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;30d04070-4e8f-4a69-8983-14c8ab474599&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;tiF_GTD_Date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;tif&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GFD&quot;</span>
+<span class="w">  </span><span class="nt">&quot;tif&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tiF_GTD_Date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <h4 id="response-body_1">Response Body<a class="headerlink" href="#response-body_1" title="Permanent link">&para;</a></h4>
@@ -2279,12 +2194,10 @@ After modification, query the <a href="#fetching-orders">orders</a> to confirm t
 <h2 id="cancel-order">Cancel Order<a class="headerlink" href="#cancel-order" title="Permanent link">&para;</a></h2>
 <p>The <strong>Cancel Order</strong> endpoint allows you to cancel an existing open or pending order using its unique <code>InstrumentId</code> and <code>ExchangeOrderId</code>.</p>
 <blockquote>
-<p>Note</p>
+<p>Note
+- Only orders that are in <em>open</em> or <em>pending</em> state can be cancelled.
+- Orders that are already executed or expired cannot be cancelled.</p>
 </blockquote>
-<ul>
-<li>Only orders that are in <em>open</em> or <em>pending</em> state can be cancelled.</li>
-<li>Orders that are already executed or expired cannot be cancelled.</li>
-</ul>
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -2399,7 +2312,7 @@ After modification, query the <a href="#fetching-orders">orders</a> to confirm t
 <span class="w">      </span><span class="nt">&quot;exchangeOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;executionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PRASHANT&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT123&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;orderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Limit&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;orderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Buy&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;orderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PendingNew&quot;</span><span class="p">,</span>
@@ -2457,7 +2370,7 @@ After modification, query the <a href="#fetching-orders">orders</a> to confirm t
 <span class="w">      </span><span class="nt">&quot;exchangeOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;executionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PRASHANT&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT123&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;orderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Limit&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;orderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Buy&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;orderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;New&quot;</span><span class="p">,</span>
@@ -2552,7 +2465,7 @@ After modification, query the <a href="#fetching-orders">orders</a> to confirm t
 <span class="w">      </span><span class="nt">&quot;exchangeOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3204124724133908&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;executionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3204124724134090&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PRASHANT&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT123&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;orderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Limit&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;orderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Buy&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;orderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Filled&quot;</span><span class="p">,</span>
@@ -2610,7 +2523,7 @@ After modification, query the <a href="#fetching-orders">orders</a> to confirm t
 <span class="w">      </span><span class="nt">&quot;exchangeOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3204124724133908&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;executionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3204124724134089&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PRASHANT&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT123&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;orderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Limit&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;orderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Buy&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;orderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;New&quot;</span><span class="p">,</span>
@@ -2668,7 +2581,7 @@ After modification, query the <a href="#fetching-orders">orders</a> to confirm t
 <span class="w">      </span><span class="nt">&quot;exchangeOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;executionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PRASHANT&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT123&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;orderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Limit&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;orderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Buy&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;orderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PendingNew&quot;</span><span class="p">,</span>
